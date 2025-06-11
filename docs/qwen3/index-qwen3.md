@@ -18,6 +18,7 @@ Qwen3 是 Qwen 系列最新一代的大语言模型，提供了一系列密集�
 
 ## 使用说明
 在完成模型部署后，可以在计算巢服务实例详情概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址（开启公网访问后会有）和Api_Key，下面会分别介绍如何访问使用。
+
 ![img.png](img.png)
 ### 私网API访问
 在和部署服务器同一VPC内的ECS中调用概览页面中的Api调用示例，其中的${PrivateIP}要替换成内网IP,${API_KEY}替换成对应的Api_Key。
@@ -67,8 +68,10 @@ curl http://${PublicIp}:8000/v1/chat/completions \
 ### 使用 Chatbox 客户端配置 vLLM API 进行对话
 在开通公网访问权限的情况下，除了使用Curl命令进行API调用，还可以使用Chatbox客户端进行对话，具体操作步骤如下：
 1. 访问 Chatbox [下载地址](https://chatboxai.app/zh#download)下载并安装客户端，本方案以 macOS M3 为例。
+
 ![img_1.png](img_1.png)
 2. 运行并配置 vLLM API ，单击设置。
+
 ![img_2.png](img_2.png)
 3. 在弹出的看板中按照如下表格进行配置。
 
@@ -83,12 +86,14 @@ curl http://${PublicIp}:8000/v1/chat/completions \
 | 模型     | 填写调用的模型。         | Qwen/QwQ-32B              |
 
 4. 保存配置。在文本输入框中可以进行对话交互。输入问题你是谁？或者其他指令后，调用模型服务获得相应的响应。
+
 ![img_3.png](img_3.png)
 
 ## 自定义模型部署参数
 如果您有自定义的模型部署参数的需求，可以在部署服务实例后，手动进行修改。
 ### Ecs单机版
 1. 通过服务实例详情中的资源页面，进行ECS远程登录。
+
 ![img_4.png](img_4.png)
 
 2. 执行下面的命令，将现有docker启动的模型服务进行停止并删除。
@@ -123,6 +128,7 @@ docker run -d -t --net=host --gpus all \
 
 ### Ecs双机版
 1. 通过服务实例详情中的资源页面，进行ECS远程登录，分别登入master节点和worker节点（两台实例分别命名为llm-xxxx-master和llm-xxxx-worker）。
+
 ![img_5.png](img_5.png)
 2. 在master节点和worker节点中执行下面的命令，将现有docker启动的模型服务进行停止并删除。
 ```shell
@@ -196,6 +202,7 @@ sudo docker rm vllm
 Acs集群的部署方式支持两种方式来修改模型部署参数，下面分别进行说明。
 #### 跳板机方式
 1. 进入计算巢控制台服务实例的资源界面，可以看到对应的ECS跳板机，执行远程连接，选择免密登录。
+
 ![img_6.png](img_6.png)
 2. 进入跳板机后执行命令
 ```shell
@@ -219,9 +226,12 @@ kubectl apply -f /root/llm-k8s-resource/model.yaml
 
 #### 控制台方式
 1. 进入计算巢控制台，点击服务实例，点击资源，找到对应的ACS实例，点击进入。
+
 ![img_7.png](img_7.png)
 2. 进入ACS控制台后点击工作负载，查看无状态，以qwq-32b为例：可以看到对应的Deployment。
+
 ![img_8.png](img_8.png)
 3. 点击该Deployment后进入详情页面，点击编辑可以修改一些基本参数，或者点击查看yaml修改后更新。
+
 ![img_9.png](img_9.png)
 
