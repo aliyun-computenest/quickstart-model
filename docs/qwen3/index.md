@@ -21,76 +21,82 @@ Qwen3 是 Qwen 系列最新一代的大语言模型，提供了一系列密集�
 
 ![img.png](../image-cn/img.png)
 
-### 私网API访问
-在和部署服务器同一VPC内的ECS中调用概览页面中的Api调用示例，其中的${PrivateIP}要替换成内网IP,${API_KEY}替换成对应的Api_Key。
+### API调用
+#### Curl命令调用
+Curl命令调用API示例如下，需要对其中的变量参数做替换：
+- 其中的${ServerIP}要替换成对应的内网地址或公网地址中的IP地址，使用内网地址时，需要在同一VPC下进行操作。
+- ${ApiKey}替换成对应的Api_Key，作为访问凭证
+- ${ModelName}替换成对应的模型名称，例如：Qwen/QwQ-32B
+
 ```shell
-# 私网有认证请求，流式访问，若想关闭流式访问，删除stream即可。
-curl http://{$PrivateIP}:8000/v1/chat/completions \
+curl http://${ServerIP}:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${ApiKey}" \
   -d '{
-    "model": "ds",
+    "model": "${ModelName}",
     "messages": [
       {
         "role": "user",
         "content": "给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级"
       }
-    ],
-    "max_tokens": 1024,
-    "temperature": 0,
-    "top_p": 0.9,
-    "seed": 10,
-    "stream": true
+    ]
   }'
 ```
 
-### 公网API访问
-在开通公网访问权限的情况下，公网API访问和私网API访问一样，只是访问地址不同，具体参见下面的API调用示例，其中的${PublicIp}要替换成公网IP, ${API_KEY}替换成对应的Api_Key。
-```shell
-curl http://${PublicIp}:8000/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${API_KEY}" \
-  -d '{
-    "model": "ds",
-    "messages": [
-      {
-        "role": "user",
-        "content": "给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级"
-      }
-    ],
-    "max_tokens": 1024,
-    "temperature": 0,
-    "top_p": 0.9,
-    "seed": 10,
-    "stream": true
-  }'
+#### Python调用
+以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的Api_Key；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。
+```python
+from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = "${ApiKey}"
+openai_api_base = "${ServerUrl}"
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+print(model)
+
+
+def main():
+
+    stream = True
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "你好，介绍一下你自己，越详细越好。",
+                    }
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion:
+            print(chunk.choices[0].delta.content, end="")
+    else:
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 使用 Chatbox 客户端配置 vLLM API 进行对话
-在开通公网访问权限的情况下，除了使用Curl命令进行API调用，还可以使用Chatbox客户端进行对话，具体操作步骤如下：
-1. 访问 Chatbox [下载地址](https://chatboxai.app/zh#download)下载并安装客户端，本方案以 macOS M3 为例。
-
-![img_1.png](../image-cn/img_1.png)
-
-2. 运行并配置 vLLM API ，单击设置。
-
-![img_2.png](../image-cn/img_2.png)
-
-3. 在弹出的看板中按照如下表格进行配置。
-
-| 项目     | 说明               | 示例值                       |
-|--------|------------------|---------------------------|
-| 模型提供方  | 下拉选择模型提供方。       | 添加自定义提供方                  |
-| 名称     | 填写定义模型提供方名称。     | vLLM API                  |
-| API 域名 | 填写模型服务调用地址。      | http://<公网IP>:8000        |
-| API 路径 | 填写 API 路径。       | /v1/chat/completions      |
-| 网络兼容性  | 点击开启改善网络兼容性      | 开启                        |
-| API 密钥 | 填写模型服务调用 API 密钥。 | 部署服务实例后，在服务实例页面可获取Api_Key |
-| 模型     | 填写调用的模型。         | Qwen/QwQ-32B              |
-
-4. 保存配置。在文本输入框中可以进行对话交互。输入问题你是谁？或者其他指令后，调用模型服务获得相应的响应。
-
-![img_3.png](../image-cn/img_3.png)
+### Web应用
+通过AppFlow提供Web UI页面可以直接进行模型服务在线访问。
 
 
 
