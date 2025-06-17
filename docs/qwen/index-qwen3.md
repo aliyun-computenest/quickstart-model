@@ -17,19 +17,20 @@ Qwen3 是 Qwen 系列最新一代的大语言模型，提供了一系列密集�
 235B 模型部署需要最低配置为 8* 96G 显存
 
 ## 使用说明
-在完成模型部署后，可以在计算巢服务实例详情概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址（开启公网访问后会有）和Api_Key，下面会分别介绍如何访问使用。
+在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。
 
-![img.png](../image-cn/img.png)
+![img-llm-use-desc.png](../image-cn/img-llm-use-desc.png)
 
 ### API调用
 #### Curl命令调用
-Curl命令调用API示例如下，需要对其中的变量参数做替换：
-- 其中的${ServerIP}要替换成对应的内网地址或公网地址中的IP地址，使用内网地址时，需要在同一VPC下进行操作。
-- ${ApiKey}替换成对应的Api_Key，作为访问凭证
-- ${ModelName}替换成对应的模型名称，例如：Qwen/QwQ-32B
 
+![img.png](../image-cn/img-api-call.png)
+
+Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：
+
+其中${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。
 ```shell
-curl http://${ServerIP}:8000/v1/chat/completions \
+curl -X Post http://${ServerIP}:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${ApiKey}" \
   -d '{
@@ -44,7 +45,7 @@ curl http://${ServerIP}:8000/v1/chat/completions \
 ```
 
 #### Python调用
-以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的Api_Key；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。
+以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。
 ```python
 from openai import OpenAI
 
@@ -96,7 +97,7 @@ if __name__ == "__main__":
 ```
 
 ### Web应用
-通过AppFlow提供Web UI页面可以直接进行模型服务在线访问。
+点击在线访问链接，跳转到对应的页面就可以直接进行模型服务在线访问了。
 
 
 
