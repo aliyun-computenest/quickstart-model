@@ -1,18 +1,7 @@
-# QuickStart Demo
+# QuickStart Model
 
-查看服务实例部署在线文档，请访问 [服务实例部署文档](https://aliyun-computenest.github.io/quickstart-demo)
+## 简介
+这是计算巢模型市场上模型对应文档仓库，由于vllm部署方式下不同模型的使用说明都是类似的，
+因此将大语言模型和多模态大语言模型的使用说明抽成了公共模块，并可以通过generate_md.py
+进行模型介绍markdown文档的动态生成。
 
-本文档通过 [MkDocs](https://github.com/mkdocs/mkdocs) 生成，请参考[使用文档](https://www.mkdocs.org/getting-started/#installation) 
-
-1）安装和使用：
-
-```shell
-$ pip install mkdocs # or use pip3 安装文档工具
-$ pip install --upgrade mkdocs-aliyun-computenest # or use pip3 安装计算巢主题
-$ mkdocs serve # in root folder
-```
-2）本地预览：本地在浏览器打开 [http://localhost:8000/](http://localhost:8000/) 。
-
-3）本地新建分支后，提交 `Pull request` 到 `main`分支。
-
-4）合并至 `main` 分支后，查看 pages 部署结果。
