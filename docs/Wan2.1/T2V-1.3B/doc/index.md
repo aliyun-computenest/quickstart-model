@@ -66,7 +66,7 @@ COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 import requests, json, uuid, time, random
 
 # 配置参数
-COMFYUI_SERVER, COMFYUI_TOKEN = "127.0.0.1:8188", "输入token"  
+COMFYUI_SERVER, COMFYUI_TOKEN = "输入您的服务器地址", "输入您的token"
 T5_MODEL, VIDEO_MODEL, VAE_MODEL = "wan2.1/umt5-xxl-enc-bf16.safetensors", "wan2.1/Wan2_1-T2V-1_3B_fp8_e4m3fn.safetensors", "wan2.1/Wan2_1_VAE_bf16.safetensors"
 
 class ComfyUIClient:

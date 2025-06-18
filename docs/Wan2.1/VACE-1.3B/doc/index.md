@@ -54,7 +54,7 @@ COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 import requests, json, uuid, time, random, os
 
 # 配置参数
-COMFYUI_SERVER, COMFYUI_TOKEN = "127.0.0.1:8188", "您的token"
+COMFYUI_SERVER, COMFYUI_TOKEN = "输入您的服务器地址", "输入您的token"
 UNET_MODEL = "wan21_vace_1_3_b.safetensors"
 CLIP_MODEL = "umt5_xxl_fp8_e4m3fn.safetensors"
 VAE_MODEL = "wan21_vace_vae.safetensors"
