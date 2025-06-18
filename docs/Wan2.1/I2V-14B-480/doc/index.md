@@ -41,7 +41,7 @@ Wan2.1-I2V-14B 是一个强大的图像到视频生成模型，能够基于输�
 ### API调用
 
 #### 标准API接口
-点击右上方按钮，打开地步面板，获取token：![img_1.png](img_1.png)
+点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 ```python
 import requests, json, uuid, time, random, os

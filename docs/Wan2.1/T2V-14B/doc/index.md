@@ -36,7 +36,7 @@ Wan2.1-T2V-14B 是一个强大的文本到视频生成模型，能够在给定�
 5. 其余参数可参考官网：https://comfyui-wiki.com/zh/interface/node-options  或以下文档：https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md
 
 #### ComfyUI API调用示例
-点击右上方按钮，打开地步面板，获取token：![img_1.png](img_1.png)
+点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 ```python
 import requests, json, uuid, time, random

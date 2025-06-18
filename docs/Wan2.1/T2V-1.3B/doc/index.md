@@ -60,7 +60,7 @@ Wan2.1-T2V-1.3B 是 WanVideo 2.1 系列的轻量版文本到视频生成模型�
 4. **下载结果**: 生成完成后下载视频文件
 
 ### ComfyUI API调用示例
-点击右上方按钮，打开地步面板，获取token：![img_1.png](img_1.png)
+点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 ```python
 import requests, json, uuid, time, random

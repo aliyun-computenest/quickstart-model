@@ -48,7 +48,7 @@ Wan2.1-VACE-1.3B 是一个专门用于视频内容编辑和处理的轻量化模
 
 
 ### API调用
-点击右上方按钮，打开地步面板，获取token：![img_1.png](img_1.png)
+点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 ```python
 import requests, json, uuid, time, random, os
