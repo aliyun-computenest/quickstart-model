@@ -4,7 +4,7 @@
 Wan2.1-VACE-1.3B 是一个专门用于视频内容编辑和处理的轻量化模型。VACE（Video Adaptive Content Editing）技术专注于对现有视频进行智能编辑，包括风格转换、内容修改、场景增强等功能。该模型在保持视频时序一致性的同时，能够根据文本指令对视频内容进行精确编辑。
 
 ### 核心特性
-- **参数规模**: 1.3B参数，轻量化设计，资源需求较低
+- **参数规模**: 1.3B
 - **视频编辑专用**: 专门针对视频编辑任务优化
 - **时序一致性**: 保持视频帧间的连贯性和一致性
 - **多种编辑功能**: 支持风格转换、内容修改、场景增强等
@@ -41,14 +41,18 @@ Wan2.1-VACE-1.3B 是一个专门用于视频内容编辑和处理的轻量化模
 
 ### ComfyUI使用
 
-1. **访问界面**: 单击"查看Web应用"打开UI界面
-2. 使用工作流vace.json作为
+1. **访问界面**: 单击服务实例处的访问链接。![img.png](img.png)
+2. 使用工作流vace.json
 3. 输入想要生成的视频或图片的提示词，点击生成
 
 
 ### API调用
 点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
+<details>
+<summary>点击展开API调用Python代码</summary>
+
+
 ```python
 import requests, json, uuid, time, random, os
 
@@ -179,7 +183,7 @@ def main():
 
 if __name__ == "__main__": main()
 ```
-
+</details>
 
 
 ## 相关资源

@@ -149,6 +149,10 @@ portrait_prompts = [
 ```
 
 ## API调用
+<details>
+<summary>点击展开API调用Python代码</summary>
+
+
 ```python
 import requests
 import base64
@@ -191,6 +195,9 @@ else:
     print("错误:", result)
 
 ```
+
+</details>
+
 ## 最佳实践
 
 ### 提示词优化

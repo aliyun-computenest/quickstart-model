@@ -3,8 +3,7 @@
 Wan2.1-T2V-14B 是一个强大的文本到视频生成模型，能够在给定文本提示的情况下生成高质量的视频内容。该模型具有以下特点：
 
 ### 核心特性
-- **参数规模**: 14B参数，提供强大的生成能力
-- **多分辨率支持**: 支持480P和720P分辨率输出
+- **参数规模**: 14B
 - **先进架构**: 结合扩散变换器架构和变分自编码器（VAE）
 - **内存优化**: 使用FP8量化技术，在有限GPU内存下高效生成
 - **多语言支持**: 支持中文和英文文本提示
@@ -13,11 +12,6 @@ Wan2.1-T2V-14B 是一个强大的文本到视频生成模型，能够在给定�
 ### 技术规格
 - **模型类型**: 文本到视频生成（Text-to-Video）
 - **量化方式**: FP8量化版本
-- **支持分辨率**:
-    - 720×1280
-    - 1280×720
-    - 480×832
-    - 832×480
 - **最大帧数**: 81帧
 - **推荐帧率**: 16fps
 
@@ -25,7 +19,8 @@ Wan2.1-T2V-14B 是一个强大的文本到视频生成模型，能够在给定�
 
 ### 方式一：ComfyUI界面
 
-1. 按图中指引选择工作流侧栏，选择wanx-21.json或wans.json并打开。![img.png](img/app2.png)
+1. **访问界面**: 单击服务实例处的访问链接。![img3.png](img3.png)
+2. 按图中指引选择工作流侧栏，选择wanx-21.json或wans.json并打开。![img.png](img/app2.png)
 2. 在下图处选择文生视频。![img.png](img.png)
 3. 在TextEncode处填写描述词。上面部分是你想要生成的内容，下面部分是你不想要生成的内容。![img.png](img/prompt.png)
 4. 在ImageClip Encode处可设置图片的分辨率和帧数。![img.png](img/definition.png)
@@ -34,6 +29,10 @@ Wan2.1-T2V-14B 是一个强大的文本到视频生成模型，能够在给定�
 #### ComfyUI API调用示例
 点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
+<details>
+<summary>点击展开API调用Python代码</summary>
+
+
 ```python
 import requests, json, uuid, time, random
 
@@ -100,7 +99,7 @@ def main():
 
 if __name__ == "__main__": main()
 ```
-
+</details>
 
 ## 相关资源
 

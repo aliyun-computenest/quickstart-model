@@ -57,10 +57,11 @@ Stable Diffusion 1.5 是由 Stability AI 开发的经典文本到图像生成模
 
 ### API 调用
 
-#### 标准API接口
-## API调用示例
 需要将BASE_URL和APIKEY替换。![img_1.png](img_1.png)
 如果要用公网调用，则选择公网的ip:端口
+
+<details>
+<summary>点击展开API调用Python代码</summary>
 
 ```python
 import requests
@@ -104,6 +105,9 @@ else:
     print("错误:", result)
 
 ```
+
+</details>
+
 若未开启APIKEY，参考下述代码修改请求：
 ```python
 model_response = requests.post(f"{base_url}/sdapi/v1/options", json=model_data)

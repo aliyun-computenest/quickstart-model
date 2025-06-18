@@ -13,8 +13,6 @@ Flux1-Dev 是由 Black Forest Labs 开发的先进文本到图像生成模型，
 
 ### 技术规格
 - **模型类型**: 文本到图像生成（Text-to-Image）
-- **架构**: 流匹配扩散变换器
-- **参数规模**: 约12B参数
 - **文本编码器**: T5-XXL + CLIP-L
 - **VAE**: 专用的flux-ae变分自编码器
 - **原生分辨率**: 1024×1024
@@ -47,20 +45,20 @@ Flux1-Dev 是由 Black Forest Labs 开发的先进文本到图像生成模型，
     - `clip_l.safetensors`
 
 
-## 使用指南
-### ComfyUI 使用
-#### 界面操作
+# 使用指南
+## ComfyUI 使用
+### 界面操作
 1. 工作流框处选择该工作流。![img.png](text2img.png)
 2. 输入你想要的内容。![img.png](text2img2.png)
 3. 这里可以输入一些比较搞怪的内容，比如我这里是关羽大战白雪公主。
 4. 可以在此处设置图片的分辨率和图片的数量。如果想加快生产速度，可将batch_size设置为1.![img.png](text2img3.png)
 5. 等待图片的生成。
 
-#### ComfyUI API调用
+### ComfyUI API调用
 点击右上方按钮，打开底部面板，获取token：![img_1.png](img_3.png)
 COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
 <details>
-<summary>点击展开Python代码</summary>
+<summary>点击展开API调用Python代码</summary>
 
 ```python
 import requests, json, uuid, time, random, os
@@ -110,9 +108,11 @@ def main():
 
 if __name__ == "__main__": main()
 ```
-### Web UI 使用
+</details>
 
-#### 界面操作
+## Web UI 使用
+
+### 界面操作
 1. **模型切换**: 在Checkpoint模型选择器中选择Flux1-Dev（HyFY-8-Step-Hybrid-v1.0.safetensors）模型
 2. **VAE和CLIP模型选择**: 选择Clip_l.safetensors,t5xxl_fp16.safetensors,flux-ae.safetensors![img_1.png](img_1.png)
 2. **提示词输入**:
@@ -126,21 +126,9 @@ if __name__ == "__main__": main()
 4. **生成图像**: 点击"Generate"按钮开始生成
 5. **结果处理**: 查看、保存或进一步编辑生成的图像
 
-![UI界面使用示例](img.png)
 
-### 分辨率设置
-常用分辨率：
-- **1024×1024**: 标准正方形
-- **1024×768**: 横向4:3
-- **768×1024**: 纵向3:4
-- **1152×896**: 横向宽屏
-- **896×1152**: 纵向宽屏
-- **1216×832**: 超宽横向
-- **832×1216**: 超高纵向
-- 
-```
 
-#### 示例提示词
+
 ```python
 # 写实风格
 "a professional portrait of a young woman, natural lighting, high resolution, detailed skin texture, photorealistic"
@@ -157,8 +145,10 @@ if __name__ == "__main__": main()
 
 ui界面使用示例
 ![img.png](img.png)
+<details>
+<summary>点击展开API调用Python代码</summary>
 
-## api调用示例
+### api调用示例
 ```python
 import requests
 import base64
@@ -213,6 +203,7 @@ else:
 
 
 ```
+</details>
 
 ## 其他内置模型
 当前服务中，Flux模型会部署到ECS实例中。除了当前的Flux-dev模型，还支持了SD1.5和SD3模型，可在Webui Forge界面进行动态切换提示。
