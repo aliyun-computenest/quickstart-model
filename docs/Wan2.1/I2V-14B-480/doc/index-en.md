@@ -1,59 +1,58 @@
-## 模型简介
+## Model Introduction
 
-Wan2.1-I2V-14B 是一个强大的图像到视频生成模型，能够基于输入图像和文本提示生成高质量的视频内容。该模型在保持输入图像主体特征的同时，根据文本描述添加动态效果和场景变化。
+Wan2.1-I2V-14B is a powerful image-to-video generation model that can generate high-quality video content based on input images and text prompts. The model maintains the main characteristics of the input image while adding dynamic effects and scene changes according to text descriptions.
 
-### 核心特性
-- **参数规模**: 14B参数，提供强大的图像理解和视频生成能力
-- **图像驱动**: 以输入图像为基础，生成连贯的视频序列
-- **多语言支持**: 支持中文和英文文本提示
-- **图像一致性**: 保持输入图像的主要特征和风格
+### Core Features
+- **Parameter Scale**: 14B parameters, providing powerful image understanding and video generation capabilities
+- **Image-Driven**: Generates coherent video sequences based on input images
+- **Multi-language Support**: Supports Chinese and English text prompts
+- **Image Consistency**: Maintains main features and style of the input image
 
-### 技术规格
-- **模型类型**: 图像到视频生成（Image-to-Video）
-- **量化方式**: FP8量化版本
-- **支持分辨率**: 480p
-- **最大帧数**: 81帧
-- **推荐帧率**: 16fps
-- **输入格式**: JPEG、PNG等常见图像格式
+### Technical Specifications
+- **Model Type**: Image-to-Video Generation
+- **Quantization**: FP8 quantized version
+- **Supported Resolution**: 480p
+- **Maximum Frames**: 81 frames
+- **Recommended Frame Rate**: 16fps
+- **Input Format**: Common image formats like JPEG, PNG
 
-## 使用说明
+## Usage Instructions
 
-### Web UI使用
-1. **访问界面**: 单击服务实例处的访问链接。![img.png](img.png)
-2. 选择 `wanx-21.json` 工作流并打开，选择图生视频功能选项
-3. **上传图像**:
-    - 在LoadImage节点选择示例图片
-    - 或从本机电脑上传自定义图像
-    - ![app3.png](app3.png)
-4. **设置文本描述**:
-    - 在TextEncode节点填写描述词
-    - 上方：描述希望的动作和场景变化
-    - 下方：不想要生成的内容
-5. **配置参数**:
-    - 在ImageClip Encode设置分辨率和帧数
-6. 执行工作流
+### Web UI Usage
+1. **Access Interface**: Click the access link at the service instance. ![img_3.png](img_3.png)
+2. Select `wanx-21.json` workflow and open it, choose the image-to-video function option
+3. **Upload Image**:
+    - Select sample image in LoadImage node
+    - Or upload custom image from local computer
+4. **Set Text Description**:
+    - Fill in description words in TextEncode node
+    - Top: Describe desired actions and scene changes
+    - Bottom: Content you don't want to generate
+5. **Configure Parameters**:
+    - Set resolution and frame count in ImageClip Encode
+6. Execute workflow
 
-### API调用
+### API Calls
 
-#### 标准API接口
+#### Standard API Interface
 
-点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
-COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
+Click the button in the upper right corner, open the bottom panel, and get the token: ![img_1.png](img_1.png)
+For COMFYUI_SERVER acquisition, refer to: ![img_3.png](img_3.png)
 
 <details>
-<summary>点击展开API调用Python代码</summary>
+<summary>Click to expand API call Python code</summary>
 
 ```python
 import requests, json, uuid, time, random, os
 
-# 配置参数
-COMFYUI_SERVER, COMFYUI_TOKEN = "输入您的服务器地址", "输入您的token"
+# Configuration parameters
+COMFYUI_SERVER, COMFYUI_TOKEN = "Enter your server address", "Enter your token"
 T5_MODEL = "wan2.1/umt5-xxl-enc-bf16.safetensors"
 VIDEO_MODEL = "Wan2_1-I2V-14B-480P_fp8_e4m3fn.safetensors"
 VAE_MODEL = "wan2.1/Wan2_1_VAE_bf16.safetensors"
 CLIP_MODEL = "wan2.1/open-clip-xlm-roberta-large-vit-huge-14_visual_fp16.safetensors"
 
-# 预设参数
+# Preset parameters
 IMAGE_PATH = "girl.png"
 PROMPT = "A beautiful anime girl with long flowing hair, graceful movements, smooth animation, cinematic lighting, high quality"
 NEG_PROMPT = "bad quality video, low quality, blurry, distorted, choppy animation, static, bad anatomy"
@@ -64,9 +63,9 @@ class ComfyUIClient:
       self.headers = {"Content-Type": "application/json", **({"Authorization": f"Bearer {token}"} if token else {})}
 
    def upload_image(self, image_path):
-      """上传图片到ComfyUI"""
+      """Upload image to ComfyUI"""
       if not os.path.exists(image_path):
-         raise Exception(f"图片文件不存在: {image_path}")
+         raise Exception(f"Image file does not exist: {image_path}")
 
       try:
          with open(image_path, 'rb') as f:
@@ -79,21 +78,21 @@ class ComfyUIClient:
             print(f"Upload response: {response.text}")
 
             if response.status_code != 200:
-               raise Exception(f"上传失败，状态码: {response.status_code}")
+               raise Exception(f"Upload failed, status code: {response.status_code}")
 
             result = response.json()
             if 'name' not in result:
-               raise Exception(f"上传响应中没有文件名: {result}")
+               raise Exception(f"No filename in upload response: {result}")
 
             return result['name']
       except Exception as e:
-         raise Exception(f"图片上传失败: {e}")
+         raise Exception(f"Image upload failed: {e}")
 
    def generate_i2v(self, image_path, prompt, neg_prompt, steps=10, cfg=6, width=512, height=512, frames=81):
-      """图生视频 - 修复clip_vision输入"""
-      print("📤 正在上传图片...")
+      """Image-to-Video - Fixed clip_vision input"""
+      print("📤 Uploading image...")
       image_name = self.upload_image(image_path)
-      print(f"✅ 图片上传成功: {image_name}")
+      print(f"✅ Image uploaded successfully: {image_name}")
 
       workflow = {
          "42": {"inputs": {"image": image_name, "upload": "image"}, "class_type": "LoadImage"},
@@ -116,7 +115,7 @@ class ComfyUIClient:
                "adjust_resolution": True,
                "image": ["42", 0],
                "vae": ["43", 0],
-               "clip_vision": ["44", 0]  # 修改为clip_vision
+               "clip_vision": ["44", 0]  # Modified to clip_vision
             },
             "class_type": "WanVideoImageClipEncode"
          },
@@ -125,7 +124,7 @@ class ComfyUIClient:
          "54": {"inputs": {"frame_rate": 16, "loop_count": 0, "filename_prefix": "WanVideo2_1", "format": "video/h264-mp4", "pix_fmt": "yuv420p", "crf": 19, "save_metadata": True, "trim_to_audio": False, "pingpong": False, "save_output": True, "images": ["53", 0]}, "class_type": "VHS_VideoCombine"}
       }
 
-      print("📤 提交工作流...")
+      print("📤 Submitting workflow...")
       response = requests.post(f"{self.base_url}/prompt", headers=self.headers, json={"prompt": workflow, "client_id": self.client_id})
       print(f"API Response: {response.text}")
       result = response.json()
@@ -159,13 +158,13 @@ class ComfyUIClient:
 def main():
    client = ComfyUIClient()
    try:
-      print(f"🎬 开始图生视频任务...")
-      print(f"📷 输入图片: {IMAGE_PATH}")
-      print(f"📝 提示词: {PROMPT}")
+      print(f"🎬 Starting image-to-video task...")
+      print(f"📷 Input image: {IMAGE_PATH}")
+      print(f"📝 Prompt: {PROMPT}")
 
       if not os.path.exists(IMAGE_PATH):
-         print(f"❌ 图片文件不存在: {IMAGE_PATH}")
-         print("请确保当前目录下有 girl.png 文件")
+         print(f"❌ Image file does not exist: {IMAGE_PATH}")
+         print("Please ensure there is a girl.png file in the current directory")
          return
 
       task_id = client.generate_i2v(IMAGE_PATH, PROMPT, NEG_PROMPT, 10, 6, 512, 512, 81)
@@ -185,94 +184,90 @@ def main():
    except Exception as e: print(f"❌ Error: {e}")
 
 if __name__ == "__main__": main()
-
 ```
 
 </details>
 
-#### ComfyUI API端点
+#### ComfyUI API Endpoints
 
-| 端点 | 方法 | 功能 | 说明 |
-|------|------|------|------|
-| `/queue` | GET | 获取队列状态 | 查看当前任务队列 |
-| `/prompt` | POST | 提交工作流 | 执行生成任务 |
-| `/history/{prompt_id}` | GET | 获取执行历史 | 查看任务执行结果 |
-| `/upload/image` | POST | 上传图片 | 上传输入图片文件 |
-| `/view` | GET | 下载输出文件 | 获取生成的结果文件 |
+| Endpoint | Method | Function | Description |
+|----------|--------|----------|-------------|
+| `/queue` | GET | Get queue status | View current task queue |
+| `/prompt` | POST | Submit workflow | Execute generation task |
+| `/history/{prompt_id}` | GET | Get execution history | View task execution results |
+| `/upload/image` | POST | Upload image | Upload input image file |
+| `/view` | GET | Download output file | Get generated result files |
 
+## Parameter Description
 
-## 参数说明
+### Generation Parameters
+- **steps**: Inference steps (recommended 20-30)
+- **cfg**: CFG guidance strength (recommended 6-8)
+- **shift**: Noise schedule offset (recommended 5)
+- **seed**: Random seed (controls randomness of generation results)
+- **denoise_strength**: Denoising strength (0.6-0.9, controls preservation of original image)
 
-### 生成参数
-- **steps**: 推理步数（建议20-30）
-- **cfg**: CFG引导强度（建议6-8）
-- **shift**: 噪声调度偏移（建议5）
-- **seed**: 随机种子（控制生成结果的随机性）
-- **denoise_strength**: 去噪强度（0.6-0.9，控制对原图的保持程度）
+### Image Requirements
+- **Resolution**: Recommended 512×512 or higher
+- **Format**: JPEG, PNG, WebP, etc.
+- **Content**: Clear main subject, avoid overly complex backgrounds
+- **Quality**: High-quality images yield better video effects
 
-### 图像要求
-- **分辨率**: 建议512×512以上
-- **格式**: JPEG、PNG、WebP等
-- **内容**: 清晰的主体对象，避免过于复杂的背景
-- **质量**: 高质量图像能获得更好的视频效果
+### Prompt Suggestions
 
-
-### 提示词建议
-
-#### 正向提示词示例
+#### Positive Prompt Examples
 - "The person in the image is walking slowly through a garden"
 - "The cat in the photo is playing with a ball of yarn"
 - "The car in the image is driving down a winding mountain road"
 - "The dancer in the picture is performing elegant ballet movements"
 
-#### 负向提示词建议
+#### Negative Prompt Suggestions
 - "static, motionless, frozen, distorted, blurry"
 - "unnatural movement, jerky motion, inconsistent"
 - "low quality, artifacts, noise, compression"
 
-## 最佳实践
+## Best Practices
 
-### 输入图像选择
-1. **清晰度**: 选择高清晰度的图像
-2. **主体明确**: 确保主要对象清晰可见
-3. **构图合理**: 避免过于复杂的背景
-4. **光照良好**: 光照均匀的图像效果更佳
+### Input Image Selection
+1. **Clarity**: Choose high-definition images
+2. **Clear Subject**: Ensure main objects are clearly visible
+3. **Reasonable Composition**: Avoid overly complex backgrounds
+4. **Good Lighting**: Images with even lighting work better
 
-### 提示词编写
-1. **具体描述**: 详细描述希望的动作和场景
-2. **保持一致**: 确保描述与图像内容相符
-3. **动作合理**: 描述符合物理规律的动作
-4. **风格统一**: 保持与原图风格一致的描述
+### Prompt Writing
+1. **Specific Description**: Describe desired actions and scenes in detail
+2. **Maintain Consistency**: Ensure descriptions match image content
+3. **Reasonable Actions**: Describe actions that follow physical laws
+4. **Unified Style**: Maintain descriptions consistent with original image style
 
-### 参数调优
-1. **去噪强度**:
-    - 0.6-0.7: 保持原图特征较多
-    - 0.8-0.9: 允许更多变化和动态效果
-2. **CFG值**:
-    - 6-7: 平衡的引导强度
-    - 8-10: 更强的文本引导
-3. **步数**:
-    - 20-25: 快速生成
-    - 25-30: 更高质量
+### Parameter Tuning
+1. **Denoising Strength**:
+    - 0.6-0.7: Preserve more original image features
+    - 0.8-0.9: Allow more changes and dynamic effects
+2. **CFG Value**:
+    - 6-7: Balanced guidance strength
+    - 8-10: Stronger text guidance
+3. **Steps**:
+    - 20-25: Fast generation
+    - 25-30: Higher quality
 
-## 注意事项
+## Important Notes
 
-1. **内存管理**: 图生视频比文生视频需要更多显存
-2. **图像预处理**: 确保输入图像尺寸合适，避免过大或过小
-3. **一致性保持**: 去噪强度不宜过高，以保持图像一致性
-4. **动作合理性**: 描述的动作应符合图像中对象的特征
-5. **批处理**: 建议单次处理一个任务，避免内存溢出
+1. **Memory Management**: Image-to-video requires more VRAM than text-to-video
+2. **Image Preprocessing**: Ensure input image size is appropriate, avoid too large or too small
+3. **Consistency Preservation**: Denoising strength should not be too high to maintain image consistency
+4. **Action Reasonableness**: Described actions should match characteristics of objects in the image
+5. **Batch Processing**: Recommend processing one task at a time to avoid memory overflow
 
-## 应用场景
+## Application Scenarios
 
-- **人物动画**: 让静态人物照片动起来
-- **产品展示**: 为产品图片添加动态效果
-- **艺术创作**: 将绘画作品转换为动态视频
-- **教育演示**: 让教学图片具有动态效果
-- **社交媒体**: 创建有趣的动态内容
+- **Character Animation**: Bring static character photos to life
+- **Product Showcase**: Add dynamic effects to product images
+- **Artistic Creation**: Convert paintings into dynamic videos
+- **Educational Demonstration**: Make teaching images have dynamic effects
+- **Social Media**: Create interesting dynamic content
 
-## 相关资源
+## Related Resources
 
-- [ComfyUI官方文档](https://comfyui-wiki.com/zh/interface/node-options)
-- [WanVideo插件文档](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md)
-- [Comfyui文档](https://docs.comfy.org/essentials/image_preprocessing)
+- [ComfyUI Official Documentation](https://comfyui-wiki.com/zh/interface/node-options)
+- [WanVideo Plugin Documentation](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md)
