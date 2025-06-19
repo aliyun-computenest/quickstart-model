@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index deepseek v3 en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#introduction">Introduction</a></li>
+              
+          
+              <li><a href="#usage-instructions">Usage Instructions</a></li>
+              
+                  <li><a href="#api-calls">API Calls</a></li>
+                  
+                      <li class="li-h3"><a href="#curl-command-call">Curl Command Call</a></li>
+                  
+                      <li class="li-h3"><a href="#python-call">Python Call</a></li>
+                  
+              
+                  <li><a href="#web-application">Web Application</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="introduction">Introduction</h2>
+<p>DeepSeek-V3 is a powerful Mixture of Experts (MoE) language model with a total of 671 billion parameters, of which 37 billion are activated for each token. To achieve efficient inference and economical training costs, DeepSeek-V3 employs Multi-head Latent Attention (MLA) and the DeepSeekMoE architecture, both thoroughly validated in DeepSeek-V2. Additionally, DeepSeek-V3 pioneers a load balancing strategy without auxiliary loss and sets a multi-token prediction training objective to enhance performance. DeepSeek pre-trained DeepSeek-V3 on 14.8 trillion diverse and high-quality tokens, followed by supervised fine-tuning and reinforcement learning phases to fully unleash its capabilities. Comprehensive evaluations indicate that DeepSeek-V3 outperforms other open-source models and achieves performance comparable to leading closed-source models. Moreover, DeepSeek-V3 requires only 2.788 million H800 GPU hours to complete the entire training process. Furthermore, its training process is remarkably stable. Throughout the entire training, no unrecoverable loss spikes were encountered, and no rollback operations were necessary.</p>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<p>After completing the model deployment, you can view the usage methods on the service instance overview page in Compute Nest. It provides API call examples, intranet access addresses, public network access addresses, and ApiKey. The following sections will explain how to access and use these.</p>
+<p><img alt="img-llm-use-desc.png" src="../../image-en/img-llm-use-desc.png" /></p>
+<h3 id="api-calls">API Calls</h3>
+<h4 id="curl-command-call">Curl Command Call</h4>
+<p><img alt="img.png" src="../../image-en/img-api-call.png" /></p>
+<p>You can directly use the API call example from the service instance overview page for Curl command calls. The specific structure for calling the model API is as follows:</p>
+<p>Where ${ServerIP} can be filled with the IP address from either the intranet or public network address, ${ApiKey} is the ApiKey, and ${ModelName} is the model name.</p>
+<pre><code class="language-shell">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+  -d '{
+    &quot;model&quot;: &quot;${ModelName}&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Write a letter to my daughter from the future 2035, telling her to study technology well, be the master of technology, and promote technological and economic development; she is currently in 3rd grade&quot;
+      }
+    ]
+  }'
+</code></pre>
+<h4 id="python-call">Python Call</h4>
+<p>Here's a Python example code: Where ${ApiKey} needs to be filled with the ApiKey from the page; ${ServerUrl} needs to be filled with the public or intranet address from the page, including /v1.</p>
+<pre><code class="language-python">from openai import OpenAI
+
+##### API Configuration #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+print(model)
+
+
+def main():
+
+    stream = True
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;Hello, introduce yourself, the more detailed the better.&quot;,
+                    }
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="web-application">Web Application</h3>
+<p>Click on the online access link to jump to the corresponding page where you can directly access the model service online.</p>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-06-19 11:39:57.408541+00:00
+  -->
+</body>
+</html>

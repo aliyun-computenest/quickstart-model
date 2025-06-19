@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>🎬 Wan2.1-T2V-14B Text-to-Video Model - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#wan21-t2v-14b-text-to-video-model">🎬 Wan2.1-T2V-14B Text-to-Video Model</a></li>
+              
+                  <li><a href="#model-introduction">🌟 Model Introduction</a></li>
+                  
+                      <li class="li-h3"><a href="#core-features">✨ Core Features</a></li>
+                  
+                      <li class="li-h3"><a href="#technical-specifications">🔧 Technical Specifications</a></li>
+                  
+              
+                  <li><a href="#usage-guide">📖 Usage Guide</a></li>
+                  
+                      <li class="li-h3"><a href="#method-1-comfyui-visual-interface">🌐 Method 1: ComfyUI Visual Interface</a></li>
+                  
+                      <li class="li-h3"><a href="#method-2-api-integration">🔌 Method 2: API Integration</a></li>
+                  
+              
+                  <li><a href="#creative-tips-best-practices">🎯 Creative Tips &amp; Best Practices</a></li>
+                  
+                      <li class="li-h3"><a href="#prompt-writing-guide">✍️ Prompt Writing Guide</a></li>
+                  
+                      <li class="li-h3"><a href="#creative-examples">🎨 Creative Examples</a></li>
+                  
+              
+                  <li><a href="#parameter-optimization-guide">🎛️ Parameter Optimization Guide</a></li>
+                  
+              
+                  <li><a href="#application-scenarios">🎪 Application Scenarios</a></li>
+                  
+              
+                  <li><a href="#resources-documentation">📚 Resources &amp; Documentation</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h1 id="wan21-t2v-14b-text-to-video-model">🎬 Wan2.1-T2V-14B Text-to-Video Model</h1>
+<blockquote>
+<p>🚀 Transform Words into Cinematic Magic! Revolutionary AI-powered video generation that brings your imagination to life with just a text prompt.</p>
+</blockquote>
+<hr />
+<h2 id="model-introduction">🌟 Model Introduction</h2>
+<p><strong>Wan2.1-T2V-14B</strong> is a groundbreaking text-to-video generation model that creates stunning, high-quality video content from simple text descriptions. Whether for creative expression or commercial applications, this model opens up infinite possibilities for content creation!</p>
+<h3 id="core-features">✨ Core Features</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0;">
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3); transition: transform 0.3s ease;">
+<h4 style="margin: 0 0 15px 0; font-size: 18px;">🧠 Massive Parameter Scale</h4>
+<p style="margin: 0; font-size: 16px; opacity: 0.9;">14B parameters delivering exceptional understanding and generation capabilities</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 25px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 10px 20px rgba(240, 147, 251, 0.3); transition: transform 0.3s ease;">
+<h4 style="margin: 0 0 15px 0; font-size: 18px;">🏗️ Advanced Architecture</h4>
+<p style="margin: 0; font-size: 16px; opacity: 0.9;">Cutting-edge Diffusion Transformer + VAE technology</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 25px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3); transition: transform 0.3s ease;">
+<h4 style="margin: 0 0 15px 0; font-size: 18px;">⚡ Memory Optimization</h4>
+<p style="margin: 0; font-size: 16px; opacity: 0.9;">FP8 quantization for efficient GPU utilization</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 25px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 10px 20px rgba(67, 233, 123, 0.3); transition: transform 0.3s ease;">
+<h4 style="margin: 0 0 15px 0; font-size: 18px;">🌍 Multi-language Support</h4>
+<p style="margin: 0; font-size: 16px; opacity: 0.9;">Seamless Chinese and English text processing</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 25px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 10px 20px rgba(250, 112, 154, 0.3); transition: transform 0.3s ease;">
+<h4 style="margin: 0 0 15px 0; font-size: 18px;">🎭 Complex Scene Understanding</h4>
+<p style="margin: 0; font-size: 16px; opacity: 0.9;">Deep text comprehension for realistic scene generation</p>
+</div>
+
+</div>
+
+<h3 id="technical-specifications">🔧 Technical Specifications</h3>
+<div style="background: linear-gradient(145deg, #f0f8ff, #e6f3ff); border: 3px solid #2196F3; border-radius: 20px; padding: 30px; margin: 30px 0; box-shadow: 0 15px 30px rgba(33, 150, 243, 0.2);">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+
+<div style="text-align: center; padding: 15px;">
+<div style="font-size: 24px; margin-bottom: 10px;">🤖</div>
+<strong>Model Type</strong><br>
+<span style="color: #2196F3;">Text-to-Video Generation</span>
+</div>
+
+<div style="text-align: center; padding: 15px;">
+<div style="font-size: 24px; margin-bottom: 10px;">⚡</div>
+<strong>Quantization</strong><br>
+<span style="color: #2196F3;">FP8 Quantized Version</span>
+</div>
+
+<div style="text-align: center; padding: 15px;">
+<div style="font-size: 24px; margin-bottom: 10px;">🎞️</div>
+<strong>Maximum Frames</strong><br>
+<span style="color: #2196F3;">81 frames</span>
+</div>
+
+<div style="text-align: center; padding: 15px;">
+<div style="font-size: 24px; margin-bottom: 10px;">🎬</div>
+<strong>Frame Rate</strong><br>
+<span style="color: #2196F3;">16fps (Recommended)</span>
+</div>
+
+</div>
+
+</div>
+
+<hr />
+<h2 id="usage-guide">📖 Usage Guide</h2>
+<h3 id="method-1-comfyui-visual-interface">🌐 Method 1: ComfyUI Visual Interface</h3>
+<div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 20px; padding: 30px; margin: 25px 0; box-shadow: 0 10px 20px rgba(255, 236, 210, 0.4);">
+
+#### 🚀 Quick Start Guide
+
+<div style="background: rgba(255, 255, 255, 0.3); border-radius: 12px; padding: 20px; margin: 20px 0;">
+
+**Step 1: Access Interface**  
+Click the access link at the service instance
+![img_3.png](img_3.png)
+
+**Step 2: Select Workflow**  
+Follow the guidance to select the workflow sidebar, choose `wanx-21.json` or `wans.json` and open it
+
+**Step 3: Choose Function**  
+Select text-to-video at the designated location
+
+**Step 4: Write Prompts**  
+Fill in description words at TextEncode
+- **Upper section**: Content you want to generate ✅
+- **Lower section**: Content you don't want to generate ❌
+![img.png](img/prompt.png)
+
+**Step 5: Configure Settings**  
+Set image resolution and frame count at ImageClip Encode
+![img.png](img/definition.png)
+
+</div>
+
+#### 📚 Additional Resources
+- [ComfyUI Official Documentation](https://comfyui-wiki.com/zh/interface/node-options)
+- [WanVideo Plugin Detailed Guide](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md)
+
+</div>
+
+<h3 id="method-2-api-integration">🔌 Method 2: API Integration</h3>
+<h4 id="authentication-setup">🔑 Authentication Setup</h4>
+<div style="background-color: #fff3cd; border: 2px solid #ffeaa7; border-radius: 15px; padding: 25px; margin: 25px 0;">
+
+**🎫 Get Token**  
+Click the button in the upper right corner, open the bottom panel to get token
+![img_1.png](img_1.png)
+
+**🌐 Get Server Address**  
+For COMFYUI_SERVER acquisition, refer to:
+![img_3.png](img_3.png)
+
+</div>
+
+<h4 id="python-implementation">💻 Python Implementation</h4>
+<details style="border: 3px solid #2196F3; border-radius: 18px; padding: 30px; margin: 30px 0; background: linear-gradient(145deg, #f0f8ff, #e3f2fd); box-shadow: 0 15px 30px rgba(33, 150, 243, 0.3);">
+<summary style="font-weight: bold; font-size: 24px; color: white; cursor: pointer; padding: 25px; background: linear-gradient(135deg, #2196F3, #1976D2); border-radius: 15px; margin: -30px -30px 30px -30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 16px rgba(33, 150, 243, 0.4);">
+🐍 Click to Expand Complete Python API Code
+</summary>
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random
+
+# 🔧 Configuration parameters
+COMFYUI_SERVER, COMFYUI_TOKEN = &quot;Enter your server address&quot;, &quot;Enter your token&quot;
+T5_MODEL = &quot;wan2.1/umt5-xxl-enc-bf16.safetensors&quot;
+VIDEO_MODEL = &quot;Wan2_1-T2V-14B_fp8_e4m3fn.safetensors&quot;
+VAE_MODEL = &quot;wan2.1/Wan2_1_VAE_bf16.safetensors&quot;
+
+class ComfyUIClient:
+    &quot;&quot;&quot;🎬 ComfyUI Video Generation Client&quot;&quot;&quot;
+
+    def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+        self.base_url = f&quot;http://{server}&quot;
+        self.token = token
+        self.client_id = str(uuid.uuid4())
+        self.headers = {
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            **({&quot;Authorization&quot;: f&quot;Bearer {token}&quot;} if token else {})
+        }
+
+    def generate(self, prompt, neg_prompt=&quot;&quot;, steps=15, cfg=6, width=832, height=480, frames=81):
+        &quot;&quot;&quot;
+        🎥 Generate Video
+
+        Args:
+            prompt (str): Positive prompt
+            neg_prompt (str): Negative prompt
+            steps (int): Inference steps
+            cfg (float): CFG guidance strength
+            width (int): Video width
+            height (int): Video height
+            frames (int): Number of frames
+
+        Returns:
+            str: Task ID
+        &quot;&quot;&quot;
+        workflow = {
+            &quot;1&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;model_name&quot;: T5_MODEL,
+                    &quot;precision&quot;: &quot;bf16&quot;
+                },
+                &quot;class_type&quot;: &quot;LoadWanVideoT5TextEncoder&quot;
+            },
+            &quot;2&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;positive_prompt&quot;: prompt,
+                    &quot;negative_prompt&quot;: neg_prompt,
+                    &quot;force_offload&quot;: True,
+                    &quot;t5&quot;: [&quot;1&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;WanVideoTextEncode&quot;
+            },
+            &quot;3&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;model&quot;: VIDEO_MODEL,
+                    &quot;base_precision&quot;: &quot;bf16&quot;,
+                    &quot;quantization&quot;: &quot;fp8_e4m3fn&quot;,
+                    &quot;load_device&quot;: &quot;offload_device&quot;
+                },
+                &quot;class_type&quot;: &quot;WanVideoModelLoader&quot;
+            },
+            &quot;4&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;width&quot;: width,
+                    &quot;height&quot;: height,
+                    &quot;num_frames&quot;: frames
+                },
+                &quot;class_type&quot;: &quot;WanVideoEmptyEmbeds&quot;
+            },
+            &quot;5&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;model_name&quot;: VAE_MODEL,
+                    &quot;precision&quot;: &quot;bf16&quot;
+                },
+                &quot;class_type&quot;: &quot;WanVideoVAELoader&quot;
+            },
+            &quot;6&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;steps&quot;: steps,
+                    &quot;cfg&quot;: cfg,
+                    &quot;shift&quot;: 5,
+                    &quot;seed&quot;: random.randint(1, 1000000),
+                    &quot;force_offload&quot;: True,
+                    &quot;scheduler&quot;: &quot;dpm++&quot;,
+                    &quot;riflex_freq_index&quot;: 0,
+                    &quot;model&quot;: [&quot;3&quot;, 0],
+                    &quot;text_embeds&quot;: [&quot;2&quot;, 0],
+                    &quot;image_embeds&quot;: [&quot;4&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;WanVideoSampler&quot;
+            },
+            &quot;7&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;enable_vae_tiling&quot;: True,
+                    &quot;tile_x&quot;: 272,
+                    &quot;tile_y&quot;: 272,
+                    &quot;tile_stride_x&quot;: 144,
+                    &quot;tile_stride_y&quot;: 128,
+                    &quot;vae&quot;: [&quot;5&quot;, 0],
+                    &quot;samples&quot;: [&quot;6&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;WanVideoDecode&quot;
+            },
+            &quot;8&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;frame_rate&quot;: 16,
+                    &quot;loop_count&quot;: 0,
+                    &quot;filename_prefix&quot;: &quot;generated_video&quot;,
+                    &quot;format&quot;: &quot;video/h264-mp4&quot;,
+                    &quot;save_output&quot;: True,
+                    &quot;pingpong&quot;: False,
+                    &quot;images&quot;: [&quot;7&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;VHS_VideoCombine&quot;
+            }
+        }
+
+        print(&quot;🚀 Submitting video generation task...&quot;)
+        response = requests.post(
+            f&quot;{self.base_url}/prompt&quot;,
+            headers=self.headers,
+            json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id}
+        )
+
+        print(f&quot;📡 API Response: {response.text}&quot;)
+        result = response.json()
+
+        if &quot;prompt_id&quot; not in result:
+            raise Exception(f&quot;❌ No prompt_id in response: {result}&quot;)
+
+        return result[&quot;prompt_id&quot;]
+
+    def get_status(self, task_id):
+        &quot;&quot;&quot;📊 Get task status&quot;&quot;&quot;
+        try:
+            queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+
+            # Check if in running queue
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])):
+                return &quot;processing&quot;
+
+            # Check if in pending queue
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])):
+                return &quot;pending&quot;
+
+            # Check history
+            history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            if history_response.status_code == 200 and task_id in history_response.json():
+                return &quot;completed&quot;
+
+            return &quot;processing&quot;
+        except:
+            return &quot;processing&quot;
+
+    def download_video(self, task_id, output_path=&quot;generated_video.mp4&quot;):
+        &quot;&quot;&quot;📥 Download generated video&quot;&quot;&quot;
+        try:
+            response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            history = response.json()
+
+            if task_id in history:
+                for output in history[task_id]['outputs'].values():
+                    if 'gifs' in output:
+                        filename = output['gifs'][0]['filename']
+                        video_response = requests.get(
+                            f&quot;{self.base_url}/view?filename={filename}&quot;,
+                            headers=self.headers
+                        )
+
+                        with open(output_path, &quot;wb&quot;) as f:
+                            f.write(video_response.content)
+
+                        return output_path
+
+            return None
+        except Exception as e:
+            print(f&quot;❌ Download error: {e}&quot;)
+            return None
+
+def main():
+    &quot;&quot;&quot;🎬 Main function - Video generation example&quot;&quot;&quot;
+    client = ComfyUIClient()
+
+    try:
+        print(&quot;🎭 Starting text-to-video generation task...&quot;)
+
+        # 🎨 Example prompts
+        prompt = &quot;A beautiful anime girl with long black hair dancing gracefully in a cherry blossom garden, soft lighting, cinematic quality&quot;
+        neg_prompt = &quot;low quality, blurry, distorted, bad anatomy, static&quot;
+
+        print(f&quot;📝 Prompt: {prompt}&quot;)
+        print(f&quot;🚫 Negative prompt: {neg_prompt}&quot;)
+
+        # 🚀 Submit generation task
+        task_id = client.generate(
+            prompt=prompt,
+            neg_prompt=neg_prompt,
+            steps=15,
+            cfg=6,
+            width=832,
+            height=480,
+            frames=81
+        )
+
+        print(f&quot;🆔 Task ID: {task_id}&quot;)
+
+        # 📊 Monitor task status
+        while True:
+            status = client.get_status(task_id)
+            print(f&quot;📈 Current status: {status}&quot;)
+
+            if status == &quot;completed&quot;:
+                print(&quot;✅ Video generation completed!&quot;)
+                break
+            elif status == &quot;failed&quot;:
+                print(&quot;❌ Generation failed!&quot;)
+                exit(1)
+
+            time.sleep(10)
+
+        # 📥 Download video
+        output_file = client.download_video(task_id, &quot;my_generated_video.mp4&quot;)
+
+        if output_file:
+            print(&quot;🎉 Video downloaded successfully!&quot;)
+            print(f&quot;📁 Saved as: {output_file}&quot;)
+        else:
+            print(&quot;❌ Failed to download video!&quot;)
+
+    except Exception as e:
+        print(f&quot;💥 Error occurred: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+
+</details>
+
+<hr />
+<h2 id="creative-tips-best-practices">🎯 Creative Tips &amp; Best Practices</h2>
+<h3 id="prompt-writing-guide">✍️ Prompt Writing Guide</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0;">
+
+<div style="background: linear-gradient(135deg, #d4edda, #c3e6cb); border: 2px solid #28a745; border-radius: 15px; padding: 25px;">
+<h4 style="color: #155724; margin-top: 0;">✅ Positive Prompt Tips</h4>
+<ul style="color: #155724; margin: 0;">
+<li><strong>Detailed Description</strong>: Describe scenes, characters, and actions in detail</li>
+<li><strong>Style Specification</strong>: Add artistic styles and lighting effects</li>
+<li><strong>Quality Keywords</strong>: Use "high quality", "cinematic", etc.</li>
+<li><strong>Motion Description</strong>: Clearly specify desired dynamic effects</li>
+</ul>
+</div>
+
+<div style="background: linear-gradient(135deg, #f8d7da, #f5c6cb); border: 2px solid #dc3545; border-radius: 15px; padding: 25px;">
+<h4 style="color: #721c24; margin-top: 0;">❌ Negative Prompt Suggestions</h4>
+<ul style="color: #721c24; margin: 0;">
+<li><strong>Quality Control</strong>: "low quality", "blurry", "distorted"</li>
+<li><strong>Avoid Static</strong>: "static", "motionless", "frozen"</li>
+<li><strong>Anatomical Accuracy</strong>: "bad anatomy", "deformed"</li>
+<li><strong>Technical Issues</strong>: "artifacts", "noise", "compression"</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="creative-examples">🎨 Creative Examples</h3>
+<div style="background: linear-gradient(145deg, #f8f9fa, #e9ecef); border-radius: 15px; padding: 25px; margin: 25px 0;">
+
+**🌸 Anime Style**
+
+<pre><code>A beautiful anime girl with flowing pink hair dancing in a field of cherry blossoms, 
+soft wind, petals falling, golden hour lighting, studio ghibli style, high quality
+</code></pre>
+
+
+**🏙️ Sci-Fi Scene**
+
+<pre><code>Futuristic cityscape at night, neon lights reflecting on wet streets, 
+flying cars in the distance, cyberpunk aesthetic, cinematic composition
+</code></pre>
+
+
+**🌊 Natural Landscape**
+
+<pre><code>Majestic waterfall cascading down moss-covered rocks, rainbow mist, 
+lush green forest, birds flying, peaceful atmosphere, 4K quality
+</code></pre>
+
+
+**🎭 Fantasy Adventure**
+
+<pre><code>Epic dragon soaring through stormy clouds, lightning illuminating its scales, 
+medieval castle below, dramatic atmosphere, fantasy art style
+</code></pre>
+
+
+</div>
+
+<hr />
+<h2 id="parameter-optimization-guide">🎛️ Parameter Optimization Guide</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0;">
+
+<div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 2px solid #2196F3; border-radius: 15px; padding: 25px;">
+<h4 style="color: #1976D2; margin-top: 0;">🔢 Steps Configuration</h4>
+<ul style="color: #1976D2; margin: 0;">
+<li><strong>10-15 steps</strong>: Fast generation, good for testing</li>
+<li><strong>15-20 steps</strong>: Balanced quality and speed</li>
+<li><strong>20-30 steps</strong>: High quality, longer processing time</li>
+</ul>
+</div>
+
+<div style="background: linear-gradient(135deg, #f3e5f5, #e1bee7); border: 2px solid #9c27b0; border-radius: 15px; padding: 25px;">
+<h4 style="color: #7b1fa2; margin-top: 0;">🎯 CFG Settings</h4>
+<ul style="color: #7b1fa2; margin: 0;">
+<li><strong>4-6</strong>: More creative, less adherence to prompt</li>
+<li><strong>6-8</strong>: Balanced guidance (recommended)</li>
+<li><strong>8-12</strong>: Strong prompt adherence</li>
+</ul>
+</div>
+
+<div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c9); border: 2px solid #4caf50; border-radius: 15px; padding: 25px;">
+<h4 style="color: #388e3c; margin-top: 0;">📐 Resolution Options</h4>
+<ul style="color: #388e3c; margin: 0;">
+<li><strong>512x512</strong>: Square format, fast generation</li>
+<li><strong>832x480</strong>: Widescreen, cinematic feel</li>
+<li><strong>Custom</strong>: Adjust based on your needs</li>
+</ul>
+</div>
+
+</div>
+
+<hr />
+<h2 id="application-scenarios">🎪 Application Scenarios</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0;">
+
+<div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(255, 154, 158, 0.3);">
+<h3>🎬 Content Creation</h3>
+<p>Social media videos, marketing content, storytelling</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(168, 237, 234, 0.3);">
+<h3>🎨 Artistic Expression</h3>
+<p>Digital art, creative projects, visual experiments</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(255, 236, 210, 0.3);">
+<h3>📚 Educational Content</h3>
+<p>Learning materials, demonstrations, tutorials</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(168, 230, 207, 0.3);">
+<h3>🚀 Prototyping</h3>
+<p>Concept visualization, storyboarding, idea development</p>
+</div>
+
+</div>
+
+<hr />
+<h2 id="resources-documentation">📚 Resources &amp; Documentation</h2>
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 30px; margin: 30px 0; color: white; text-align: center;">
+
+### 🔗 Official Documentation Links
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+
+<div style="background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 20px;">
+<h4 style="margin: 0 0 15px 0;">📖 ComfyUI Official Docs</h4>
+<a href="https://comfyui-wiki.com/zh/interface/node-options" style="color: #fff; text-decoration: none; font-weight: bold;">View Detailed Guide →</a>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 20px;">
+<h4 style="margin: 0 0 15px 0;">🎥 WanVideo Plugin Docs</h4>
+<a href="https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md" style="color: #fff; text-decoration: none; font-weight: bold;">GitHub Repository →</a>
+</div>
+
+</div>
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 25px; color: white; margin: 40px 0; box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);">
+
+## 🎉 Start Your Video Creation Journey!
+
+**Transform your ideas into stunning videos with Wan2.1-T2V-14B**
+
+*From text to video, just one step away*
+
+<div style="margin-top: 30px; font-size: 18px; opacity: 0.9;">
+✨ Unlimited Creativity | 🚀 Lightning Fast | 🎯 Precise Control | 🌟 Professional Quality
+</div>
+
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-06-19 11:39:57.396747+00:00
+  -->
+</body>
+</html>

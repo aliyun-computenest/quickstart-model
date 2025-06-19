@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index qwen3 - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">简介</a></li>
+              
+          
+              <li><a href="#_2">部署配置</a></li>
+              
+          
+              <li><a href="#_3">使用说明</a></li>
+              
+                  <li><a href="#api">API调用</a></li>
+                  
+                      <li class="li-h3"><a href="#curl">Curl命令调用</a></li>
+                  
+                      <li class="li-h3"><a href="#python">Python调用</a></li>
+                  
+              
+                  <li><a href="#web">Web应用</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">简介</h2>
+<p>Qwen3 是 Qwen 系列最新一代的大语言模型，提供了一系列密集（Dense）和混合专家(MOE）模型。基于广泛的训练，Qwen3 在推理、指令跟随、代理能力和多语言支持方面取得了突破性的进展，具有以下关键特性：</p>
+<ul>
+<li>独特支持在思考模式（用于复杂逻辑推理、数学和编码）和 非思考模式（用于高效通用对话）之间无缝切换，确保在各种场景下的最佳性能。</li>
+<li>显著增强的推理能力，在数学、代码生成和常识逻辑推理方面超越了之前的 QwQ （在思考模式下）和 Qwen2.5 指令模型（在非思考模式下）。</li>
+<li>卓越的人类偏好对齐，在创意写作、角色扮演、多轮对话和指令跟随方面表现出色，提供更自然、更吸引人和更具沉浸感的对话体验。</li>
+<li>擅长 Agent 能力，可以在思考和非思考模式下精确集成外部工具，在复杂的基于代理的任务中在开源模型中表现领先。</li>
+<li>支持 100 多种语言和方言，具有强大的多语言理解、推理、指令跟随和生成能力。</li>
+</ul>
+<h2 id="_2">部署配置</h2>
+<p>0.6B、1.7B、4B、8B 模型部署需要最低配置为 24G 显存</p>
+<p>14B 模型部署需要最低配置为 48G 显存</p>
+<p>30B、32B 模型部署需要最低配置为 96G 显存</p>
+<p>235B 模型部署需要最低配置为 8* 96G 显存</p>
+<h2 id="_3">使用说明</h2>
+<p>在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。</p>
+<p><img alt="img-llm-use-desc.png" src="../../image-cn/img-llm-use-desc.png" /></p>
+<h3 id="api">API调用</h3>
+<h4 id="curl">Curl命令调用</h4>
+<p><img alt="img.png" src="../../image-cn/img-api-call.png" /></p>
+<p>Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：</p>
+<p>其中${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。</p>
+<pre><code class="language-shell">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+  -d '{
+    &quot;model&quot;: &quot;${ModelName}&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级&quot;
+      }
+    ]
+  }'
+</code></pre>
+<h4 id="python">Python调用</h4>
+<p>以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。</p>
+<pre><code class="language-python">from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+print(model)
+
+
+def main():
+
+    stream = True
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;你好，介绍一下你自己，越详细越好。&quot;,
+                    }
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="web">Web应用</h3>
+<p>点击在线访问链接，跳转到对应的页面就可以直接进行模型服务在线访问了。</p>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-06-19 11:39:57.415263+00:00
+  -->
+</body>
+</html>

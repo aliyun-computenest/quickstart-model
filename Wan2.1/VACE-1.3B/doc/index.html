@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>🎬 Wan2.1-VACE-1.3B 视频编辑完整指南 - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#wan21-vace-13b">🎬 Wan2.1-VACE-1.3B 视频编辑完整指南</a></li>
+              
+                  <li><a href="#_1">🌟 模型简介</a></li>
+                  
+                      <li class="li-h3"><a href="#_2">✨ 核心特性</a></li>
+                  
+                      <li class="li-h3"><a href="#_3">📊 技术规格</a></li>
+                  
+                      <li class="li-h3"><a href="#_4">🎨 编辑能力</a></li>
+                  
+              
+                  <li><a href="#_5">🚀 部署方式</a></li>
+                  
+                      <li class="li-h3"><a href="#_6">🏗️ 部署架构（推荐）</a></li>
+                  
+              
+                  <li><a href="#_7">🎯 使用指南</a></li>
+                  
+                      <li class="li-h3"><a href="#comfyui">🌐 ComfyUI 使用</a></li>
+                  
+                      <li class="li-h3"><a href="#api">🔌 API 调用</a></li>
+                  
+              
+                  <li><a href="#_8">💡 最佳实践</a></li>
+                  
+              
+                  <li><a href="#_9">🔧 常见问题与解决方案</a></li>
+                  
+              
+                  <li><a href="#_10">📚 相关资源</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h1 id="wan21-vace-13b">🎬 Wan2.1-VACE-1.3B 视频编辑完整指南</h1>
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; color: white; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+  <h2 style="margin: 0; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">🚀 智能视频内容编辑技术</h2>
+  <p style="font-size: 1.2em; margin: 10px 0 0 0; opacity: 0.9;">VACE (Video Adaptive Content Editing) 技术</p>
+</div>
+
+<h2 id="_1">🌟 模型简介</h2>
+<p><strong>Wan2.1-VACE-1.3B</strong> 是一个专门用于视频内容编辑和处理的轻量化模型。VACE（Video Adaptive Content Editing）技术专注于对现有视频进行智能编辑，包括风格转换、内容修改、场景增强等功能。该模型在保持视频时序一致性的同时，能够根据文本指令对视频内容进行精确编辑。</p>
+<h3 id="_2">✨ 核心特性</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+
+<div style="background: linear-gradient(135deg, #667eea, #764ba2); padding: 20px; border-radius: 12px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0;">⚡ 参数规模</h4>
+  <p style="margin-bottom: 0;">1.3B 参数，性能优化</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #f093fb, #f5576c); padding: 20px; border-radius: 12px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0;">🎥 视频编辑专用</h4>
+  <p style="margin-bottom: 0;">专门针对视频编辑任务优化</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #4facfe, #00f2fe); padding: 20px; border-radius: 12px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0;">⏰ 时序一致性</h4>
+  <p style="margin-bottom: 0;">保持视频帧间的连贯性和一致性</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #43e97b, #38f9d7); padding: 20px; border-radius: 12px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0;">🛠️ 多种编辑功能</h4>
+  <p style="margin-bottom: 0;">支持风格转换、内容修改、场景增强等</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #fa709a, #fee140); padding: 20px; border-radius: 12px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0;">🚀 快速处理</h4>
+  <p style="margin-bottom: 0;">轻量化架构，处理速度快</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #a8edea, #fed6e3); padding: 20px; border-radius: 12px; color: #333; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0;">🌐 多语言支持</h4>
+  <p style="margin-bottom: 0;">支持中文和英文编辑指令</p>
+</div>
+
+</div>
+
+<h3 id="_3">📊 技术规格</h3>
+<div style="background: #f8f9fa; border-radius: 12px; padding: 25px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+
+| 规格项目 | 详细信息 |
+|---------|---------|
+| **模型类型** | 视频编辑（Video Editing） |
+| **参数规模** | 1.3B |
+| **量化方式** | FP8量化版本 |
+| **部署架构** | ECS单机部署/ACS集群部署 |
+| **支持分辨率** | 480P |
+| **输入格式** | MP4、AVI、MOV等常见视频格式 |
+| **输出格式** | MP4（H.264编码） |
+
+</div>
+
+<h3 id="_4">🎨 编辑能力</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+
+<div style="background: #e8f5e8; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50;">
+  <strong>🎭 风格转换</strong><br>
+  <small>将视频转换为不同艺术风格</small>
+</div>
+
+<div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2196f3;">
+  <strong>🌈 色彩调整</strong><br>
+  <small>调整视频的色调、饱和度、亮度</small>
+</div>
+
+<div style="background: #fce4ec; padding: 15px; border-radius: 8px; border-left: 4px solid #e91e63;">
+  <strong>🏞️ 场景修改</strong><br>
+  <small>改变视频背景或添加新元素</small>
+</div>
+
+<div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #9c27b0;">
+  <strong>🎯 对象编辑</strong><br>
+  <small>修改或替换视频中的特定对象</small>
+</div>
+
+<div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800;">
+  <strong>✨ 特效添加</strong><br>
+  <small>为视频添加各种视觉特效</small>
+</div>
+
+<div style="background: #e0f2f1; padding: 15px; border-radius: 8px; border-left: 4px solid #009688;">
+  <strong>📈 质量增强</strong><br>
+  <small>提升视频清晰度和质量</small>
+</div>
+
+</div>
+
+<hr />
+<h2 id="_5">🚀 部署方式</h2>
+<h3 id="_6">🏗️ 部署架构（推荐）</h3>
+<div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); padding: 25px; border-radius: 12px; border-left: 5px solid #2196f3; margin: 20px 0;">
+  <h4 style="color: #1976d2; margin-top: 0;">⚙️ 部署配置</h4>
+  <ul style="margin-bottom: 0;">
+    <li><strong>部署架构</strong>: ECS单机部署或ACS部署</li>
+    <li><strong>内存需求</strong>: 显存需求低，适合资源受限环境</li>
+    <li><strong>扩展性</strong>: 支持单机和集群部署</li>
+  </ul>
+</div>
+
+<hr />
+<h2 id="_7">🎯 使用指南</h2>
+<h3 id="comfyui">🌐 ComfyUI 使用</h3>
+<div style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); padding: 25px; border-radius: 12px; border-left: 5px solid #ff9800; margin: 20px 0;">
+
+#### 🔧 操作步骤
+
+**1. 访问界面**
+- 单击服务实例处的访问链接
+- ![img.png](img.png)
+
+**2. 加载工作流**
+- 使用工作流 `vace.json`
+- 将工作流导入到 ComfyUI 中
+
+**3. 生成内容**
+- 输入想要生成的视频或图片的提示词
+- 点击生成开始处理
+
+</div>
+
+<h3 id="api">🔌 API 调用</h3>
+<div style="background: #f3e5f5; padding: 20px; border-radius: 12px; margin: 20px 0;">
+
+**设置说明：**
+- 点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
+- COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
+
+</div>
+
+<details style="border: 2px solid #2196f3; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
+<summary style="font-weight: bold; font-size: 18px; color: #1976d2; cursor: pointer;">
+📋 点击展开API调用Python代码
+</summary>
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random, os
+
+# 配置参数
+COMFYUI_SERVER, COMFYUI_TOKEN = &quot;输入您的服务器地址&quot;, &quot;输入您的token&quot;
+UNET_MODEL = &quot;wan21_vace_1_3_b.safetensors&quot;
+CLIP_MODEL = &quot;umt5_xxl_fp8_e4m3fn.safetensors&quot;
+VAE_MODEL = &quot;wan21_vace_vae.safetensors&quot;
+
+# 预设参数
+IMAGE_PATH = &quot;example.png&quot;
+PROMPT = &quot;女孩偷偷咬一口苹果&quot;
+NEG_PROMPT = &quot;色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的&quot;
+
+class VACEClient:
+   def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+      self.base_url, self.token, self.client_id = f&quot;http://{server}&quot;, token, str(uuid.uuid4())
+      self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;, **({&quot;Authorization&quot;: f&quot;Bearer {token}&quot;} if token else {})}
+
+   def upload_image(self, image_path):
+      &quot;&quot;&quot;上传图片到ComfyUI&quot;&quot;&quot;
+      if not os.path.exists(image_path):
+         raise Exception(f&quot;图片文件不存在: {image_path}&quot;)
+
+      try:
+         with open(image_path, 'rb') as f:
+            files = {'image': (os.path.basename(image_path), f, 'image/png')}
+            headers = {}
+            if self.token:
+               headers[&quot;Authorization&quot;] = f&quot;Bearer {self.token}&quot;
+
+            response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files, headers=headers)
+            print(f&quot;Upload response: {response.text}&quot;)
+
+            if response.status_code != 200:
+               raise Exception(f&quot;上传失败，状态码: {response.status_code}&quot;)
+
+            result = response.json()
+            if 'name' not in result:
+               raise Exception(f&quot;上传响应中没有文件名: {result}&quot;)
+
+            return result['name']
+      except Exception as e:
+         raise Exception(f&quot;图片上传失败: {e}&quot;)
+
+   def generate_vace(self, image_path, prompt, neg_prompt, steps=20, cfg=4, frames=49, width=480, height=480):
+      &quot;&quot;&quot;VACE视频编辑&quot;&quot;&quot;
+      print(&quot;📤 正在上传图片...&quot;)
+      image_name = self.upload_image(image_path)
+      print(f&quot;✅ 图片上传成功: {image_name}&quot;)
+
+      workflow = {
+         &quot;11&quot;: {&quot;inputs&quot;: {&quot;unet_name&quot;: UNET_MODEL, &quot;weight_dtype&quot;: &quot;fp8_e4m3fn_fast&quot;}, &quot;class_type&quot;: &quot;UNETLoader&quot;},
+         &quot;13&quot;: {&quot;inputs&quot;: {&quot;clip_name&quot;: CLIP_MODEL, &quot;type&quot;: &quot;wan&quot;, &quot;device&quot;: &quot;default&quot;}, &quot;class_type&quot;: &quot;CLIPLoader&quot;},
+         &quot;14&quot;: {&quot;inputs&quot;: {&quot;vae_name&quot;: VAE_MODEL}, &quot;class_type&quot;: &quot;VAELoader&quot;},
+         &quot;15&quot;: {&quot;inputs&quot;: {&quot;text&quot;: prompt, &quot;clip&quot;: [&quot;13&quot;, 0]}, &quot;class_type&quot;: &quot;CLIPTextEncode&quot;},
+         &quot;16&quot;: {&quot;inputs&quot;: {&quot;text&quot;: neg_prompt, &quot;clip&quot;: [&quot;13&quot;, 0]}, &quot;class_type&quot;: &quot;CLIPTextEncode&quot;},
+         &quot;17&quot;: {&quot;inputs&quot;: {&quot;width&quot;: width, &quot;height&quot;: height, &quot;length&quot;: [&quot;21&quot;, 0], &quot;batch_size&quot;: 1, &quot;strength&quot;: 1.0, &quot;positive&quot;: [&quot;15&quot;, 0], &quot;negative&quot;: [&quot;16&quot;, 0], &quot;vae&quot;: [&quot;14&quot;, 0]}, &quot;class_type&quot;: &quot;WanVaceToVideo&quot;},
+         &quot;18&quot;: {&quot;inputs&quot;: {&quot;image&quot;: image_name, &quot;upload&quot;: &quot;image&quot;}, &quot;class_type&quot;: &quot;LoadImage&quot;},
+         &quot;21&quot;: {&quot;inputs&quot;: {&quot;value&quot;: frames}, &quot;class_type&quot;: &quot;INTConstant&quot;},
+         &quot;22&quot;: {&quot;inputs&quot;: {&quot;width&quot;: width, &quot;height&quot;: height, &quot;upscale_method&quot;: &quot;nearest-exact&quot;, &quot;keep_proportion&quot;: &quot;crop&quot;, &quot;pad_color&quot;: &quot;0, 0, 0&quot;, &quot;crop_position&quot;: &quot;center&quot;, &quot;divisible_by&quot;: 2, &quot;device&quot;: &quot;gpu&quot;, &quot;image&quot;: [&quot;18&quot;, 0]}, &quot;class_type&quot;: &quot;ImageResizeKJv2&quot;},
+         &quot;23&quot;: {&quot;inputs&quot;: {&quot;images&quot;: [&quot;22&quot;, 0]}, &quot;class_type&quot;: &quot;PreviewImage&quot;},
+         &quot;24&quot;: {&quot;inputs&quot;: {&quot;seed&quot;: random.randint(1, 1000000000000000), &quot;steps&quot;: steps, &quot;cfg&quot;: cfg, &quot;sampler_name&quot;: &quot;uni_pc&quot;, &quot;scheduler&quot;: &quot;simple&quot;, &quot;denoise&quot;: 1, &quot;model&quot;: [&quot;27&quot;, 0], &quot;positive&quot;: [&quot;17&quot;, 0], &quot;negative&quot;: [&quot;17&quot;, 1], &quot;latent_image&quot;: [&quot;17&quot;, 2]}, &quot;class_type&quot;: &quot;KSampler&quot;},
+         &quot;27&quot;: {&quot;inputs&quot;: {&quot;shift&quot;: 8.0, &quot;model&quot;: [&quot;11&quot;, 0]}, &quot;class_type&quot;: &quot;ModelSamplingSD3&quot;},
+         &quot;30&quot;: {&quot;inputs&quot;: {&quot;trim_amount&quot;: [&quot;17&quot;, 3], &quot;samples&quot;: [&quot;24&quot;, 0]}, &quot;class_type&quot;: &quot;TrimVideoLatent&quot;},
+         &quot;31&quot;: {&quot;inputs&quot;: {&quot;samples&quot;: [&quot;30&quot;, 0], &quot;vae&quot;: [&quot;14&quot;, 0]}, &quot;class_type&quot;: &quot;VAEDecode&quot;},
+         &quot;32&quot;: {&quot;inputs&quot;: {&quot;frame_rate&quot;: 16, &quot;loop_count&quot;: 0, &quot;filename_prefix&quot;: &quot;VACE_video&quot;, &quot;format&quot;: &quot;video/h264-mp4&quot;, &quot;pix_fmt&quot;: &quot;yuv420p&quot;, &quot;crf&quot;: 19, &quot;save_metadata&quot;: True, &quot;trim_to_audio&quot;: False, &quot;pingpong&quot;: False, &quot;save_output&quot;: True, &quot;images&quot;: [&quot;31&quot;, 0]}, &quot;class_type&quot;: &quot;VHS_VideoCombine&quot;}
+      }
+
+      print(&quot;📤 提交VACE工作流...&quot;)
+      response = requests.post(f&quot;{self.base_url}/prompt&quot;, headers=self.headers, json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id})
+      print(f&quot;API Response: {response.text}&quot;)
+      result = response.json()
+      if &quot;error&quot; in result: raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+      if &quot;prompt_id&quot; not in result: raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+      return result[&quot;prompt_id&quot;]
+
+   def get_status(self, task_id):
+      try:
+         queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+         if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])): return &quot;processing&quot;
+         if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])): return &quot;pending&quot;
+         history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+         return &quot;completed&quot; if history_response.status_code == 200 and task_id in history_response.json() else &quot;processing&quot;
+      except: return &quot;processing&quot;
+
+   def download_video(self, task_id, output_path=&quot;vace_output.mp4&quot;):
+      try:
+         response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+         history = response.json()
+         if task_id in history:
+            for output in history[task_id]['outputs'].values():
+               if 'gifs' in output:
+                  filename = output['gifs'][0]['filename']
+                  video_response = requests.get(f&quot;{self.base_url}/view?filename={filename}&quot;, headers=self.headers)
+                  with open(output_path, &quot;wb&quot;) as f: f.write(video_response.content)
+                  return output_path
+      except Exception as e: print(f&quot;Download error: {e}&quot;)
+      return None
+
+def main():
+   client = VACEClient()
+   try:
+      print(f&quot;🎬 开始VACE视频编辑任务...&quot;)
+      print(f&quot;📷 输入图片: {IMAGE_PATH}&quot;)
+      print(f&quot;📝 编辑提示: {PROMPT}&quot;)
+
+      if not os.path.exists(IMAGE_PATH):
+         print(f&quot;❌ 图片文件不存在: {IMAGE_PATH}&quot;)
+         print(&quot;请确保当前目录下有 example.png 文件&quot;)
+         return
+
+      task_id = client.generate_vace(IMAGE_PATH, PROMPT, NEG_PROMPT, 20, 4, 49, 480, 480)
+      print(f&quot;🆔 Task ID: {task_id}&quot;)
+
+      while True:
+         status = client.get_status(task_id)
+         print(f&quot;📊 Current status: {status}&quot;)
+         if status == &quot;completed&quot;: print(&quot;✅ Video ready!&quot;); break
+         elif status == &quot;failed&quot;: print(&quot;❌ Generation failed!&quot;); exit(1)
+         time.sleep(10)
+
+      output_file = client.download_video(task_id, &quot;vace_output.mp4&quot;)
+      print(&quot;🎉 Video downloaded successfully!&quot; if output_file else &quot;❌ Failed to download video&quot;)
+      if output_file: print(f&quot;📁 Saved as: {output_file}&quot;)
+
+   except Exception as e: print(f&quot;❌ Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;: main()
+</code></pre>
+
+
+</details>
+
+<hr />
+<h2 id="_8">💡 最佳实践</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+
+<div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c9); padding: 25px; border-radius: 12px;">
+  <h4 style="color: #2e7d32; margin-top: 0;">🎯 提示词优化</h4>
+  <ul style="margin-bottom: 0;">
+    <li>使用清晰具体的描述</li>
+    <li>包含风格和情绪关键词</li>
+    <li>指定时序元素以保持一致性</li>
+  </ul>
+</div>
+
+<div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); padding: 25px; border-radius: 12px;">
+  <h4 style="color: #1976d2; margin-top: 0;">⚙️ 参数调优</h4>
+  <ul style="margin-bottom: 0;">
+    <li>从默认设置开始（20步，CFG 4）</li>
+    <li>根据内容调整帧数</li>
+    <li>监控显存使用以获得最佳性能</li>
+  </ul>
+</div>
+
+<div style="background: linear-gradient(135deg, #fce4ec, #f8bbd9); padding: 25px; border-radius: 12px;">
+  <h4 style="color: #c2185b; margin-top: 0;">🎬 视频质量</h4>
+  <ul style="margin-bottom: 0;">
+    <li>使用高质量输入图片</li>
+    <li>确保正确的宽高比</li>
+    <li>先用短片段测试</li>
+  </ul>
+</div>
+
+</div>
+
+<hr />
+<h2 id="_9">🔧 常见问题与解决方案</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+
+<div style="background: #ffebee; padding: 20px; border-radius: 12px; border-left: 5px solid #f44336;">
+  <h4 style="color: #d32f2f; margin-top: 0;">🎨 生成质量问题</h4>
+  <ol style="margin-bottom: 0;">
+    <li><strong>提示词不够详细</strong>：增加更具体的描述</li>
+    <li><strong>参数设置不当</strong>：调整步数和CFG值</li>
+    <li><strong>输入图片质量低</strong>：使用更高质量的源图片</li>
+  </ol>
+</div>
+
+<div style="background: #fff3e0; padding: 20px; border-radius: 12px; border-left: 5px solid #ff9800;">
+  <h4 style="color: #f57c00; margin-top: 0;">⚡ 性能问题</h4>
+  <ol style="margin-bottom: 0;">
+    <li><strong>显存不足</strong>：降低分辨率或使用medvram模式</li>
+    <li><strong>加载缓慢</strong>：模型较大，需要耐心等待</li>
+    <li><strong>生成缓慢</strong>：减少步数或使用更快的采样器</li>
+  </ol>
+</div>
+
+<div style="background: #e8f5e8; padding: 20px; border-radius: 12px; border-left: 5px solid #4caf50;">
+  <h4 style="color: #2e7d32; margin-top: 0;">🔧 兼容性问题</h4>
+  <ol style="margin-bottom: 0;">
+    <li><strong>ComfyUI版本</strong>：确保使用支持VACE的最新版本</li>
+    <li><strong>插件兼容性</strong>：某些插件可能与VACE不兼容</li>
+    <li><strong>参数范围</strong>：注意VACE的推荐参数范围</li>
+  </ol>
+</div>
+
+</div>
+
+<hr />
+<h2 id="_10">📚 相关资源</h2>
+<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 12px; margin: 20px 0;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+
+<div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0; color: #1976d2;">📄 技术文档</h4>
+  <ul style="margin-bottom: 0; list-style: none; padding: 0;">
+    <li>• <a href="https://arxiv.org/abs/vace-video-editing" style="color: #1976d2; text-decoration: none;">VACE技术论文</a></li>
+    <li>• <a href="https://docs.comfy.org/video/best_practices" style="color: #1976d2; text-decoration: none;">视频编辑最佳实践</a></li>
+  </ul>
+</div>
+
+<div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <h4 style="margin-top: 0; color: #f57c00;">🛠️ 工具与指南</h4>
+  <ul style="margin-bottom: 0; list-style: none; padding: 0;">
+    <li>• <a href="https://comfyui-wiki.com/zh/video/editing" style="color: #f57c00; text-decoration: none;">ComfyUI视频编辑指南</a></li>
+    <li>• <a href="https://github.com/kijai/ComfyUI-VACEWrapper" style="color: #f57c00; text-decoration: none;">VACE插件文档</a></li>
+  </ul>
+</div>
+
+</div>
+
+</div>
+
+<hr />
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white; text-align: center; margin-top: 40px;">
+  <p style="margin: 0; font-size: 1.1em;">🎉 开始使用 VACE 技术创作精彩视频吧！🎬</p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-06-19 11:39:57.399602+00:00
+  -->
+</body>
+</html>
