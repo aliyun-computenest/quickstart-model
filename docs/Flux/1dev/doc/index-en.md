@@ -1,72 +1,157 @@
-# Model Introduction
+# 🎨 Flux1-Dev 模型介绍
 
-Flux1-Dev is an advanced text-to-image generation model developed by Black Forest Labs, representing the highest standard of current open-source image generation technology. This model is based on Flow Matching technology and shows significant improvements in image quality, text understanding capabilities, and generation speed.
+<div align="center">
 
-### Core Features
-- **Advanced Architecture**: Diffusion transformer architecture based on flow matching technology
-- **Exceptional Quality**: Generated image quality approaches commercial-grade model standards
-- **Powerful Text Understanding**: Integrated complete FP16 version CLIP-L and T5 text encoders
-- **High Resolution Support**: Native support for 1024×1024 and higher resolutions
-- **Fast Generation**: Optimized inference speed with support for few-step generation
-- **Open Source Friendly**: Fully open source with commercial use support
-- **Diverse Styles**: Supports realistic, artistic, concept design, and various other styles
+![Flux1-Dev](https://img.shields.io/badge/Flux1--Dev-Advanced%20AI%20Model-blue?style=for-the-badge&logo=artificial-intelligence)
+![Open Source](https://img.shields.io/badge/Open%20Source-Commercial%20Use-green?style=for-the-badge&logo=open-source-initiative)
+![Quality](https://img.shields.io/badge/Quality-Commercial%20Grade-gold?style=for-the-badge&logo=quality)
 
-### Technical Specifications
-- **Model Type**: Text-to-Image Generation
-- **Text Encoders**: T5-XXL + CLIP-L
-- **VAE**: Dedicated flux-ae variational autoencoder
-- **Native Resolution**: 1024×1024
-- **Supported Resolutions**: 512×512 to 2048×2048
-- **Recommended Steps**: 4-50 steps (8 steps for optimal balance)
+</div>
 
-### Model Advantages
-- **Image Quality**: Rich details, natural colors, reasonable composition
-- **Text Following**: Precise understanding of complex text descriptions
-- **Style Diversity**: From photorealistic to abstract art
-- **Consistency**: Stable and controllable generation results
-- **Efficiency**: Faster inference speed compared to models of the same level
+Flux1-Dev 是由 Black Forest Labs 开发的先进文本到图像生成模型，代表了当前开源图像生成技术的最高标准。该模型基于 Flow Matching 技术，在图像质量、文本理解能力和生成速度方面都有显著提升。
 
-## Configuration Instructions
+---
 
-#### Model Files
-Core model inventory as follows:
-##### In WebUI
-- **Main Model**: `flux.1_dev_8x8_e4m3fn.safetensors` or
+## ✨ 核心特性
+
+<table>
+<tr>
+<td width="50%">
+
+### 🏗️ 技术架构
+- **先进架构**: 基于流匹配技术的扩散变换器架构
+- **卓越质量**: 生成图像质量接近商业级模型标准
+- **强大理解**: 集成完整 FP16 版本 CLIP-L 和 T5 文本编码器
+
+</td>
+<td width="50%">
+
+### 🚀 性能优势
+- **高分辨率支持**: 原生支持 1024×1024 及更高分辨率
+- **快速生成**: 优化推理速度，支持少步生成
+- **开源友好**: 完全开源，支持商业使用
+- **风格多样**: 支持写实、艺术、概念设计等多种风格
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📊 技术规格
+
+| 规格项目 | 详细信息 |
+|---------|---------|
+| **模型类型** | 文本到图像生成 |
+| **文本编码器** | T5-XXL + CLIP-L |
+| **VAE** | 专用 flux-ae 变分自编码器 |
+| **原生分辨率** | 1024×1024 |
+| **支持分辨率** | 512×512 到 2048×2048 |
+| **推荐步数** | 4-50 步（8 步为最佳平衡） |
+
+---
+
+## 🎯 模型优势
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0;">
+
+<div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #f8fff8 0%, #e8f5e8 100%);">
+<h4>🖼️ 图像质量</h4>
+<p>细节丰富、色彩自然、构图合理</p>
+</div>
+
+<div style="border: 2px solid #2196F3; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #f8fbff 0%, #e3f2fd 100%);">
+<h4>📝 文本跟随</h4>
+<p>精确理解复杂文本描述</p>
+</div>
+
+<div style="border: 2px solid #FF9800; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);">
+<h4>🎨 风格多样</h4>
+<p>从照片写实到抽象艺术</p>
+</div>
+
+<div style="border: 2px solid #9C27B0; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #faf8ff 0%, #f3e5f5 100%);">
+<h4>⚡ 高效性能</h4>
+<p>相比同级别模型推理速度更快</p>
+</div>
+
+</div>
+
+---
+
+## 🔧 配置说明
+
+### 📁 模型文件清单
+
+<details>
+<summary><strong>🌐 WebUI 环境</strong></summary>
+
+- **主模型**: `flux.1_dev_8x8_e4m3fn.safetensors`
 - **VAE**: `flux-ae.safetensors`
-- **Text Encoders**:
+- **文本编码器**:
     - `t5xxl_fp16.safetensors`
     - `clip_l.safetensors`
     - `clip_g.safetensors`
-##### In ComfyUI
-- **Main Model**: `Flux1-dev.safetensors`
+
+</details>
+
+<details>
+<summary><strong>🎛️ ComfyUI 环境</strong></summary>
+
+- **主模型**: `Flux1-dev.safetensors`
 - **VAE**: `flux-ae.safetensors`
-- **Text Encoders**:
+- **文本编码器**:
     - `t5xxl_fp16.safetensors`
     - `clip_l.safetensors`
 
-# Usage Guide
-## ComfyUI Usage
-### Interface Operations
-1. Select this workflow in the workflow frame. ![img_4.png](img_4.png)
-2. Input the content you want. ![img.png](text2img2.png)
-3. You can input some interesting content here, for example, I have "Guan Yu fighting Snow White" here.
-4. You can set the image resolution and number of images here. If you want to speed up production, you can set batch_size to 1. ![img.png](text2img3.png)
-5. Wait for image generation.
+</details>
 
-### ComfyUI API Calls
-Click the button in the upper right corner, open the bottom panel, and get the token: ![img_1.png](img_3.png)
-For COMFYUI_SERVER acquisition, refer to: ![img_2.png](img_2.png)
+---
+
+# 📖 使用指南
+
+## 🎛️ ComfyUI 使用方法
+
+### 🖱️ 界面操作
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+
+#### 📋 操作步骤
+
+1. **选择工作流**: 在工作流框架中选择此工作流
+   ![工作流选择](img_4.png)
+
+2. **输入内容**: 输入您想要生成的内容
+   ![内容输入](text2img2.png)
+
+3. **创意示例**: 您可以输入一些有趣的内容，例如"关羽大战白雪公主"
+
+4. **参数设置**: 设置图像分辨率和图像数量。如果想要加快生成速度，可以将 batch_size 设置为 1
+   ![参数设置](text2img3.png)
+
+5. **等待生成**: 等待图像生成完成
+
+</div>
+
+### 🔌 ComfyUI API 调用
+
+**获取 Token**: 点击右上角按钮，打开底部面板，获取 token
+![Token获取](img_3.png)
+
+**获取服务器地址**: 参考下图获取 COMFYUI_SERVER
+![服务器地址](img_2.png)
+
 <details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
-  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
-    📋 Click to expand API call Python code
-  </summary>
+<summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
+📋 点击展开 API 调用 Python 代码
+</summary>
 
 ```python
 import requests, json, uuid, time, random, os
 
-COMFYUI_SERVER, COMFYUI_TOKEN = "#Fill in your server address here", "Fill in your token here"  
+COMFYUI_SERVER, COMFYUI_TOKEN = "#在此填入您的服务器地址", "在此填入您的token"  
 UNET_MODEL, VAE_MODEL, CLIP1_MODEL, CLIP2_MODEL = "flux1-dev.safetensors", "ae.safetensors", "t5xxl_fp16.safetensors", "clip_l.safetensors"
-PROMPT = "A beautiful anime girl with long flowing hair, wearing elegant dress, standing in a magical garden with glowing flowers, soft lighting, high quality, detailed"
+PROMPT = "一个美丽的动漫女孩，长发飘逸，穿着优雅的裙子，站在魔法花园中，发光的花朵，柔和的光线，高质量，细节丰富"
 
 class FluxClient:
     def __init__(self):
@@ -96,70 +181,99 @@ class FluxClient:
 
 def main():
     client = FluxClient()
-    print(f"🎨 Generating: {PROMPT}")
+    print(f"🎨 正在生成: {PROMPT}")
     task_id = client.generate(PROMPT)
-    print(f"🆔 ID: {task_id}")
+    print(f"🆔 任务ID: {task_id}")
     while True:
         status = client.status(task_id)
-        print(f"📊 {status}")
+        print(f"📊 状态: {status}")
         if status == "completed": break
         time.sleep(5)
     files = client.download(task_id)
-    print(f"🎉 Complete! Generated {len(files)} images: {files}")
+    print(f"🎉 完成！生成了 {len(files)} 张图片: {files}")
 
 if __name__ == "__main__": main()
 ```
 </details>
 
-## Web UI Usage
+---
 
-### Interface Operations
-1. **Model Switching**: Select the Flux1-Dev (HyFY-8-Step-Hybrid-v1.0.safetensors) model in the Checkpoint model selector
-2. **VAE and CLIP Model Selection**: Select Clip_l.safetensors, t5xxl_fp16.safetensors, flux-ae.safetensors ![img_1.png](img_1.png)
-2. **Prompt Input**:
-    - Positive prompt: Detailed description of the desired image
-    - Negative prompt: Description of unwanted elements (Flux model is not sensitive to negative prompts)
-3. **Parameter Settings**:
-    - **Steps**: Recommended 8-20 steps
-    - **CFG**: Recommended 1.0-3.5 (lower values work better)
-    - **Sampler**: Recommended Euler or DPM++ 2M
-    - **Resolution**: 1024×1024 or other supported sizes
-4. **Generate Image**: Click the "Generate" button to start generation
-5. **Result Processing**: View, save, or further edit the generated images
+## 🌐 Web UI 使用方法
 
-```python
-# Realistic style
-"a professional portrait of a young woman, natural lighting, high resolution, detailed skin texture, photorealistic"
+### 🖱️ 界面操作
 
-# Artistic style
-"an impressionist painting of a garden in spring, soft brushstrokes, vibrant colors, artistic masterpiece"
+<div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
 
-# Concept design
-"futuristic robot design, sleek metallic surface, glowing blue accents, concept art, highly detailed"
+#### 🔧 配置步骤
 
-# Landscape photography
-"mountain landscape at golden hour, dramatic clouds, professional photography, ultra-wide angle, HDR"
-```
+1. **模型切换**: 在 Checkpoint 模型选择器中选择 Flux1-Dev (HyFY-8-Step-Hybrid-v1.0.safetensors) 模型
 
-UI interface usage example
-![img.png](img.png)
-<details>
-<summary>Click to expand API call Python code</summary>
+2. **VAE 和 CLIP 模型选择**: 选择 Clip_l.safetensors, t5xxl_fp16.safetensors, flux-ae.safetensors
+   ![模型选择](img_1.png)
 
-### API Call Example
+3. **提示词输入**:
+    - **正向提示词**: 详细描述期望的图像
+    - **负向提示词**: 描述不想要的元素（Flux 模型对负向提示词不敏感）
+
+4. **参数设置**:
+    - **步数**: 推荐 8-20 步
+    - **CFG**: 推荐 1.0-3.5（较低值效果更好）
+    - **采样器**: 推荐 Euler 或 DPM++ 2M
+    - **分辨率**: 1024×1024 或其他支持的尺寸
+
+5. **生成图像**: 点击"生成"按钮开始生成
+
+6. **结果处理**: 查看、保存或进一步编辑生成的图像
+
+</div>
+
+### 🎨 提示词示例
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+
+<div style="border-left: 4px solid #4CAF50; padding: 15px; background: #f8fff8;">
+<h4>📸 写实风格</h4>
+<code>"一位年轻女性的专业肖像，自然光线，高分辨率，详细的皮肤纹理，照片写实"</code>
+</div>
+
+<div style="border-left: 4px solid #2196F3; padding: 15px; background: #f8fbff;">
+<h4>🎨 艺术风格</h4>
+<code>"春天花园的印象派绘画，柔和的笔触，鲜艳的色彩，艺术杰作"</code>
+</div>
+
+<div style="border-left: 4px solid #FF9800; padding: 15px; background: #fff8f0;">
+<h4>🚀 概念设计</h4>
+<code>"未来机器人设计，光滑的金属表面，发光的蓝色装饰，概念艺术，高度详细"</code>
+</div>
+
+<div style="border-left: 4px solid #9C27B0; padding: 15px; background: #faf8ff;">
+<h4>🏔️ 风景摄影</h4>
+<code>"黄金时刻的山景，戏剧性的云彩，专业摄影，超广角，HDR"</code>
+</div>
+
+</div>
+
+**UI 界面使用示例**
+![UI界面](img.png)
+
+<details style="border: 2px solid #ff6b6b; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #fff5f5;">
+<summary style="font-weight: bold; font-size: 18px; color: #ff6b6b; cursor: pointer;">
+🔌 点击展开 API 调用 Python 代码
+</summary>
+
 ```python
 import requests
 import base64
 import time
 import uuid
 
-# Configuration
+# 配置
 base_url = "http://127.0.0.1:7680"
 auth = ("admin", "${APIKEY}")
 session_hash = str(uuid.uuid4())[:12]
 
-# Set VAE/Text Encoder
-print("Setting VAE/Text Encoder...")
+# 设置 VAE/文本编码器
+print("设置 VAE/文本编码器...")
 requests.post(f"{base_url}/run/predict", json={
     "data": [["flux-ae.safetensors", "t5xxl_fp16.safetensors", "clip_l.safetensors", "clip_g.safetensors"]],
     "event_data": None,
@@ -169,8 +283,8 @@ requests.post(f"{base_url}/run/predict", json={
 }, auth=auth)
 time.sleep(3)
 
-# Switch FLUX model
-print("Switching FLUX model...")
+# 切换 FLUX 模型
+print("切换 FLUX 模型...")
 requests.post(f"{base_url}/queue/join", json={
     "data": ["HyFY-8-Step-Hybrid-v1.0.safetensors"],
     "event_data": None,
@@ -180,10 +294,10 @@ requests.post(f"{base_url}/queue/join", json={
 }, auth=auth)
 time.sleep(15)
 
-# Generate image
-print("Generating image...")
+# 生成图像
+print("生成图像...")
 result = requests.post(f"{base_url}/sdapi/v1/txt2img", json={
-    "prompt": "a beautiful cat",
+    "prompt": "一只美丽的猫",
     "steps": 8,
     "width": 1024,
     "height": 1024,
@@ -191,15 +305,37 @@ result = requests.post(f"{base_url}/sdapi/v1/txt2img", json={
     "sampler_name": "Euler"
 }, auth=auth).json()
 
-# Save image
+# 保存图像
 if "images" in result:
     with open("output.png", "wb") as f:
         f.write(base64.b64decode(result["images"][0]))
-    print("Image saved as output.png")
+    print("图像已保存为 output.png")
 else:
-    print("Error:", result)
+    print("错误:", result)
 ```
 </details>
 
-## Other Built-in Models
-Currently in the service, Flux models will be deployed to ECS instances. In addition to the current Flux-dev model, SD1.5 and SD3 models are also supported, which can be dynamically switched in the Webui Forge interface.
+---
+
+## 🔄 其他内置模型
+
+<div style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+
+目前在服务中，Flux 模型将部署到 ECS 实例。除了当前的 Flux-dev 模型外，还支持 SD1.5 和 SD3 模型，可以在 Webui Forge 界面中动态切换。
+
+### 支持的模型列表
+- **Flux1-Dev**: 最新的高质量文本到图像生成模型
+- **SD1.5**: 经典稳定扩散模型
+- **SD3**: 最新版本稳定扩散模型
+
+</div>
+
+---
+
+<div align="center" style="margin-top: 40px;">
+
+### 🎉 开始您的 AI 艺术创作之旅！
+
+![创作](https://img.shields.io/badge/Ready%20to%20Create-Let's%20Go!-brightgreen?style=for-the-badge&logo=rocket)
+
+</div>

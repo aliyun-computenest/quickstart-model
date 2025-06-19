@@ -1,49 +1,90 @@
-## 模型简介
+# 🎬 Wan2.1-I2V-14B 模型使用指南
 
-Wan2.1-I2V-14B 是一个强大的图像到视频生成模型，能够基于输入图像和文本提示生成高质量的视频内容。该模型在保持输入图像主体特征的同时，根据文本描述添加动态效果和场景变化。
+> 强大的图像到视频生成模型，让静态图片动起来！
 
-### 核心特性
-- **参数规模**: 14B参数，提供强大的图像理解和视频生成能力
-- **图像驱动**: 以输入图像为基础，生成连贯的视频序列
-- **多语言支持**: 支持中文和英文文本提示
-- **图像一致性**: 保持输入图像的主要特征和风格
+---
 
-### 技术规格
-- **模型类型**: 图像到视频生成（Image-to-Video）
-- **量化方式**: FP8量化版本
-- **支持分辨率**: 480p
-- **最大帧数**: 81帧
-- **推荐帧率**: 16fps
-- **输入格式**: JPEG、PNG等常见图像格式
+## 📋 模型简介
 
-## 使用说明
+**Wan2.1-I2V-14B** 是一个强大的图像到视频生成模型，能够基于输入图像和文本提示生成高质量的视频内容。该模型在保持输入图像主体特征的同时，根据文本描述添加动态效果和场景变化。
 
-### Web UI使用
-1. **访问界面**: 单击服务实例处的访问链接。![img.png](img.png)
-2. 选择 `wanx-21.json` 工作流并打开，选择图生视频功能选项
-3. **上传图像**:
-    - 在LoadImage节点选择示例图片
-    - 或从本机电脑上传自定义图像
-    - ![app3.png](app3.png)
-4. **设置文本描述**:
-    - 在TextEncode节点填写描述词
-    - 上方：描述希望的动作和场景变化
-    - 下方：不想要生成的内容
-5. **配置参数**:
-    - 在ImageClip Encode设置分辨率和帧数
-6. 执行工作流
+### ✨ 核心特性
 
-### API调用
+| 特性 | 描述 |
+|------|------|
+| 🧠 **参数规模** | 14B参数，提供强大的图像理解和视频生成能力 |
+| 🖼️ **图像驱动** | 以输入图像为基础，生成连贯的视频序列 |
+| 🌍 **多语言支持** | 支持中文和英文文本提示 |
+| 🎯 **图像一致性** | 保持输入图像的主要特征和风格 |
 
-#### 标准API接口
+### 🔧 技术规格
 
-点击右上方按钮，打开底部面板，获取token：![img_1.png](img_1.png)
-COMFYUI_SERVER的获取可参考：![img_2.png](img_2.png)
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; color: white; margin: 15px 0;">
 
-<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
-  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
-    📋 点击展开API调用Python代码
-  </summary>
+| 规格项 | 参数值 |
+|--------|--------|
+| **模型类型** | 图像到视频生成（Image-to-Video） |
+| **量化方式** | FP8量化版本 |
+| **支持分辨率** | 480p |
+| **最大帧数** | 81帧 |
+| **推荐帧率** | 16fps |
+| **输入格式** | JPEG、PNG等常见图像格式 |
+
+</div>
+
+---
+
+## 🚀 使用说明
+
+### 🌐 Web UI使用
+
+<div style="border-left: 4px solid #4CAF50; padding-left: 20px; background-color: #f9f9f9; margin: 15px 0; padding: 15px;">
+
+#### 步骤一：访问界面
+单击服务实例处的访问链接
+![img.png](img.png)
+
+#### 步骤二：选择工作流
+选择 `wanx-21.json` 工作流并打开，选择图生视频功能选项
+
+#### 步骤三：上传图像
+- 在LoadImage节点选择示例图片
+- 或从本机电脑上传自定义图像
+![app3.png](app3.png)
+
+#### 步骤四：设置文本描述
+- 在TextEncode节点填写描述词
+- **上方**：描述希望的动作和场景变化
+- **下方**：不想要生成的内容
+
+#### 步骤五：配置参数
+在ImageClip Encode设置分辨率和帧数
+
+#### 步骤六：执行工作流
+点击执行按钮开始生成
+
+</div>
+
+### 🔌 API调用
+
+#### 🔑 获取认证信息
+
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 15px; margin: 15px 0;">
+
+**获取Token：** 点击右上方按钮，打开底部面板
+![img_1.png](img_1.png)
+
+**获取服务器地址：** COMFYUI_SERVER的获取参考
+![img_2.png](img_2.png)
+
+</div>
+
+#### 💻 Python代码示例
+
+<details style="border: 2px solid #2196F3; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f0f8ff, #e6f3ff); box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);">
+<summary style="font-weight: bold; font-size: 20px; color: #1976D2; cursor: pointer; padding: 15px; background: linear-gradient(135deg, #2196F3, #1976D2); color: white; border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+🐍 点击展开完整Python代码
+</summary>
 
 ```python
 import requests, json, uuid, time, random, os
@@ -118,7 +159,7 @@ class ComfyUIClient:
                "adjust_resolution": True,
                "image": ["42", 0],
                "vae": ["43", 0],
-               "clip_vision": ["44", 0]  # 修改为clip_vision
+               "clip_vision": ["44", 0]
             },
             "class_type": "WanVideoImageClipEncode"
          },
@@ -187,94 +228,206 @@ def main():
    except Exception as e: print(f"❌ Error: {e}")
 
 if __name__ == "__main__": main()
-
 ```
 
 </details>
 
-#### ComfyUI API端点
+#### 🔗 ComfyUI API端点
+
+<div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin: 15px 0;">
 
 | 端点 | 方法 | 功能 | 说明 |
 |------|------|------|------|
-| `/queue` | GET | 获取队列状态 | 查看当前任务队列 |
-| `/prompt` | POST | 提交工作流 | 执行生成任务 |
-| `/history/{prompt_id}` | GET | 获取执行历史 | 查看任务执行结果 |
-| `/upload/image` | POST | 上传图片 | 上传输入图片文件 |
-| `/view` | GET | 下载输出文件 | 获取生成的结果文件 |
+| 🔍 `/queue` | GET | 获取队列状态 | 查看当前任务队列 |
+| 🚀 `/prompt` | POST | 提交工作流 | 执行生成任务 |
+| 📊 `/history/{prompt_id}` | GET | 获取执行历史 | 查看任务执行结果 |
+| 📤 `/upload/image` | POST | 上传图片 | 上传输入图片文件 |
+| 📥 `/view` | GET | 下载输出文件 | 获取生成的结果文件 |
 
+</div>
 
-## 参数说明
+---
 
-### 生成参数
-- **steps**: 推理步数（建议20-30）
-- **cfg**: CFG引导强度（建议6-8）
-- **shift**: 噪声调度偏移（建议5）
-- **seed**: 随机种子（控制生成结果的随机性）
-- **denoise_strength**: 去噪强度（0.6-0.9，控制对原图的保持程度）
+## ⚙️ 参数说明
 
-### 图像要求
-- **分辨率**: 建议512×512以上
-- **格式**: JPEG、PNG、WebP等
-- **内容**: 清晰的主体对象，避免过于复杂的背景
-- **质量**: 高质量图像能获得更好的视频效果
+### 🎛️ 生成参数
 
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
 
-### 提示词建议
+<div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 20px; border-radius: 10px; color: #333;">
 
-#### 正向提示词示例
-- "The person in the image is walking slowly through a garden"
-- "The cat in the photo is playing with a ball of yarn"
-- "The car in the image is driving down a winding mountain road"
-- "The dancer in the picture is performing elegant ballet movements"
+**🔢 steps**  
+推理步数（建议20-30）
 
-#### 负向提示词建议
-- "static, motionless, frozen, distorted, blurry"
-- "unnatural movement, jerky motion, inconsistent"
-- "low quality, artifacts, noise, compression"
+**🎯 cfg**  
+CFG引导强度（建议6-8）
 
-## 最佳实践
+**📊 shift**  
+噪声调度偏移（建议5）
 
-### 输入图像选择
-1. **清晰度**: 选择高清晰度的图像
-2. **主体明确**: 确保主要对象清晰可见
-3. **构图合理**: 避免过于复杂的背景
-4. **光照良好**: 光照均匀的图像效果更佳
+</div>
 
-### 提示词编写
-1. **具体描述**: 详细描述希望的动作和场景
-2. **保持一致**: 确保描述与图像内容相符
-3. **动作合理**: 描述符合物理规律的动作
-4. **风格统一**: 保持与原图风格一致的描述
+<div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 20px; border-radius: 10px; color: #333;">
 
-### 参数调优
-1. **去噪强度**:
-    - 0.6-0.7: 保持原图特征较多
-    - 0.8-0.9: 允许更多变化和动态效果
-2. **CFG值**:
-    - 6-7: 平衡的引导强度
-    - 8-10: 更强的文本引导
-3. **步数**:
-    - 20-25: 快速生成
-    - 25-30: 更高质量
+**🎲 seed**  
+随机种子（控制生成结果的随机性）
 
-## 注意事项
+**🎨 denoise_strength**  
+去噪强度（0.6-0.9，控制对原图的保持程度）
 
-1. **内存管理**: 图生视频比文生视频需要更多显存
-2. **图像预处理**: 确保输入图像尺寸合适，避免过大或过小
-3. **一致性保持**: 去噪强度不宜过高，以保持图像一致性
-4. **动作合理性**: 描述的动作应符合图像中对象的特征
-5. **批处理**: 建议单次处理一个任务，避免内存溢出
+</div>
 
-## 应用场景
+</div>
 
-- **人物动画**: 让静态人物照片动起来
-- **产品展示**: 为产品图片添加动态效果
-- **艺术创作**: 将绘画作品转换为动态视频
-- **教育演示**: 让教学图片具有动态效果
-- **社交媒体**: 创建有趣的动态内容
+### 🖼️ 图像要求
 
-## 相关资源
+> **💡 提示：** 高质量的输入图像是生成优秀视频的关键！
 
-- [ComfyUI官方文档](https://comfyui-wiki.com/zh/interface/node-options)
-- [WanVideo插件文档](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md)
-- [Comfyui文档](https://docs.comfy.org/essentials/image_preprocessing)
+- **📐 分辨率**: 建议512×512以上
+- **📄 格式**: JPEG、PNG、WebP等
+- **🎯 内容**: 清晰的主体对象，避免过于复杂的背景
+- **✨ 质量**: 高质量图像能获得更好的视频效果
+
+---
+
+## 💡 提示词建议
+
+### ✅ 正向提示词示例
+
+<div style="background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; padding: 15px; margin: 15px 0;">
+
+- 🚶 "The person in the image is walking slowly through a garden"
+- 🐱 "The cat in the photo is playing with a ball of yarn"
+- 🚗 "The car in the image is driving down a winding mountain road"
+- 💃 "The dancer in the picture is performing elegant ballet movements"
+
+</div>
+
+### ❌ 负向提示词建议
+
+<div style="background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; padding: 15px; margin: 15px 0;">
+
+- 🚫 "static, motionless, frozen, distorted, blurry"
+- ⚠️ "unnatural movement, jerky motion, inconsistent"
+- 📉 "low quality, artifacts, noise, compression"
+
+</div>
+
+---
+
+## 🏆 最佳实践
+
+### 📸 输入图像选择
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+
+<div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2196F3;">
+<strong>🔍 清晰度</strong><br>
+选择高清晰度的图像
+</div>
+
+<div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #9c27b0;">
+<strong>🎯 主体明确</strong><br>
+确保主要对象清晰可见
+</div>
+
+<div style="background: #e8f5e8; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50;">
+<strong>🖼️ 构图合理</strong><br>
+避免过于复杂的背景
+</div>
+
+<div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800;">
+<strong>💡 光照良好</strong><br>
+光照均匀的图像效果更佳
+</div>
+
+</div>
+
+### ✍️ 提示词编写
+
+1. **📝 具体描述**: 详细描述希望的动作和场景
+2. **🔄 保持一致**: 确保描述与图像内容相符
+3. **⚖️ 动作合理**: 描述符合物理规律的动作
+4. **🎨 风格统一**: 保持与原图风格一致的描述
+
+### 🔧 参数调优
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; color: white; margin: 15px 0;">
+
+**🎨 去噪强度调节**
+- `0.6-0.7`: 保持原图特征较多
+- `0.8-0.9`: 允许更多变化和动态效果
+
+**🎯 CFG值设置**
+- `6-7`: 平衡的引导强度
+- `8-10`: 更强的文本引导
+
+**⏱️ 步数选择**
+- `20-25`: 快速生成
+- `25-30`: 更高质量
+
+</div>
+
+---
+
+## ⚠️ 注意事项
+
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 20px; margin: 20px 0;">
+
+1. **💾 内存管理**: 图生视频比文生视频需要更多显存
+2. **🔧 图像预处理**: 确保输入图像尺寸合适，避免过大或过小
+3. **🎯 一致性保持**: 去噪强度不宜过高，以保持图像一致性
+4. **🎭 动作合理性**: 描述的动作应符合图像中对象的特征
+5. **⚡ 批处理**: 建议单次处理一个任务，避免内存溢出
+
+</div>
+
+---
+
+## 🎯 应用场景
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+
+<div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 20px; border-radius: 10px; text-align: center;">
+<h3>👤 人物动画</h3>
+让静态人物照片动起来
+</div>
+
+<div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 20px; border-radius: 10px; text-align: center;">
+<h3>🛍️ 产品展示</h3>
+为产品图片添加动态效果
+</div>
+
+<div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 10px; text-align: center;">
+<h3>🎨 艺术创作</h3>
+将绘画作品转换为动态视频
+</div>
+
+<div style="background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%); padding: 20px; border-radius: 10px; text-align: center;">
+<h3>📚 教育演示</h3>
+让教学图片具有动态效果
+</div>
+
+</div>
+
+---
+
+## 📚 相关资源
+
+<div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin: 20px 0;">
+
+- 📖 [ComfyUI官方文档](https://comfyui-wiki.com/zh/interface/node-options)
+- 🎥 [WanVideo插件文档](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md)
+- 🔧 [Comfyui文档](https://docs.comfy.org/essentials/image_preprocessing)
+
+</div>
+
+---
+
+<div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white; margin: 30px 0;">
+
+## 🎉 开始您的创作之旅！
+
+**Wan2.1-I2V-14B** 让您的静态图片焕发生机，创造无限可能！
+
+</div>
