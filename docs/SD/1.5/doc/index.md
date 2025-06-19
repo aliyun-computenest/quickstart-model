@@ -60,8 +60,10 @@ Stable Diffusion 1.5 是由 Stability AI 开发的经典文本到图像生成模
 需要将BASE_URL和APIKEY替换。![img_1.png](img_1.png)
 如果要用公网调用，则选择公网的ip:端口
 
-<details>
-<summary>点击展开API调用Python代码</summary>
+<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
+  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
+    📋 点击展开API调用Python代码
+  </summary>
 
 ```python
 import requests

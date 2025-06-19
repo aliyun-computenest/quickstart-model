@@ -146,8 +146,10 @@ portrait_prompts = [
 ```
 
 ## API Calls
-<details>
-<summary>Click to expand API call Python code</summary>
+<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
+  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
+    📋 Click to expand API call Python code
+  </summary>
 
 ```python
 import requests

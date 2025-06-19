@@ -149,8 +149,10 @@ portrait_prompts = [
 ```
 
 ## API调用
-<details>
-<summary>点击展开API调用Python代码</summary>
+<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
+  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
+    📋 点击展开API调用Python代码
+  </summary>
 
 
 ```python

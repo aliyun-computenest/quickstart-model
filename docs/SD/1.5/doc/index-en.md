@@ -57,8 +57,10 @@ Stable Diffusion 1.5 is a classic text-to-image generation model developed by St
 Need to replace BASE_URL and APIKEY. ![img_4.png](img_4.png)
 If using public network calls, select the public IP:port
 
-<details>
-<summary>Click to expand API call Python code</summary>
+<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
+  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
+    📋 Click to expand API call Python code
+  </summary>
 
 ```python
 import requests

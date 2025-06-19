@@ -51,8 +51,10 @@ Wan2.1-T2V-1.3B is the lightweight version of the WanVideo 2.1 series text-to-vi
 ### ComfyUI API Call Example
 Click the button in the upper right corner, open the bottom panel, and get the token: ![img_1.png](img_1.png)
 For COMFYUI_SERVER acquisition, refer to: ![img_3.png](img_3.png)
-<details>
-<summary>Click to expand API call Python code</summary>
+<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
+  <summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
+    📋 Click to expand API call Python code
+  </summary>
 
 ```python
 import requests, json, uuid, time, random
