@@ -2,9 +2,9 @@
 
 <div align="center">
 
-![Flux1-Dev](https://img.shields.io/badge/Flux1--Dev-Advanced%20AI%20Model-blue?style=for-the-badge&logo=artificial-intelligence)
-![Open Source](https://img.shields.io/badge/Open%20Source-Commercial%20Use-green?style=for-the-badge&logo=open-source-initiative)
-![Quality](https://img.shields.io/badge/Quality-Commercial%20Grade-gold?style=for-the-badge&logo=quality)
+![Flux1-Dev](images/Flux1_Dev_4344e7ae45da.svg)
+![Open Source](images/Open_Source_d299db273210.svg)
+![Quality](images/Quality_da480e7d9c5e.svg)
 
 </div>
 
@@ -336,6 +336,6 @@ else:
 
 ### 🎉 开始您的 AI 艺术创作之旅！
 
-![创作](https://img.shields.io/badge/Ready%20to%20Create-Let's%20Go!-brightgreen?style=for-the-badge&logo=rocket)
+![创作](images/创作_05d39064853d.svg)
 
 </div>

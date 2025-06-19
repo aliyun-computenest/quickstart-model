@@ -2,10 +2,10 @@
 
 <div align="center">
 
-![SD3 Medium](https://img.shields.io/badge/SD3%20Medium-第三代扩散模型-blue?style=for-the-badge&logo=artificial-intelligence)
-![参数量](https://img.shields.io/badge/参数量-2B-green?style=for-the-badge&logo=cpu)
-![架构](https://img.shields.io/badge/架构-MMDiT-purple?style=for-the-badge&logo=network-wired)
-![开源](https://img.shields.io/badge/开源-Stability%20AI-orange?style=for-the-badge&logo=open-source-initiative)
+![SD3 Medium](images/SD3_Medium_4294b8c6ad11.svg)
+![参数量](images/参数量_8d903817f54e.svg)
+![架构](images/架构_e344d0d87dab.svg)
+![开源](images/开源_89f7e05eb906.svg)
 
 </div>
 
@@ -509,7 +509,7 @@ else:
 
 ### 🎨 开始您的 SD3 创作之旅！
 
-![开始创作](https://img.shields.io/badge/Ready%20to%20Create-Let's%20Generate!-brightgreen?style=for-the-badge&logo=palette)
+![开始创作](images/开始创作_9c49130615fc.svg)
 
 <p style="color: #666; font-style: italic; margin-top: 20px;">
 第三代扩散模型，让 AI 艺术创作更加精彩
