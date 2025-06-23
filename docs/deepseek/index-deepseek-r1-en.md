@@ -1,15 +1,15 @@
 ## Introduction
 DeepSeek-R1 is a large language model (LLM) developed by Hangzhou DeepSeek Company, specifically optimized for tasks such as mathematics, coding, and logical reasoning. It employs advanced technologies like Mixture of Experts (MoE) and Multi-head Latent Attention (MLA), boasting 671 billion parameters and supporting input contexts of up to 128,000 tokens. DeepSeek-R1 aims to match or surpass the performance of OpenAI's o1 model in reasoning tasks.
 
-- Strong Reasoning Ability: DeepSeek-R1 excels in tasks such as mathematics, code generation, and natural language reasoning, even surpassing similar models.
+- **Strong Reasoning Ability**: DeepSeek-R1 excels in tasks such as mathematics, code generation, and natural language reasoning, even surpassing similar models.
 
-- MoE Architecture: Utilizes a Mixture of Experts model, employing numerous experts in each layer to process different inputs, thereby enhancing reasoning capabilities.
+- **MoE Architecture**: Utilizes a Mixture of Experts model, employing numerous experts in each layer to process different inputs, thereby enhancing reasoning capabilities.
 
-- Long Context Support: Can handle longer input contexts (128,000 tokens), which is crucial for complex reasoning tasks.
+- **Long Context Support**: Can handle longer input contexts (128,000 tokens), which is crucial for complex reasoning tasks.
 
-- Fully Open Source: DeepSeek Company has completely open-sourced DeepSeek-R1's training techniques and model weights, allowing developers to conduct further exploration and research.
+- **Fully Open Source**: DeepSeek Company has completely open-sourced DeepSeek-R1's training techniques and model weights, allowing developers to conduct further exploration and research.
 
-- Open Source Distilled Models: DeepSeek R1 has generated six smaller models (such as Qwen2.5 and Llama3.1) for community use through distillation technology.
+- **Open Source Distilled Models**: DeepSeek R1 has generated six smaller models (such as Qwen2.5 and Llama3.1) for community use through distillation technology.
 
 
 ## Usage Instructions
@@ -91,6 +91,3 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-### Web Application
-Click on the online access link to jump to the corresponding page where you can directly access the model service online.

@@ -80,6 +80,3 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-### Web Application
-Click on the online access link to jump to the corresponding page where you can directly access the model service online.

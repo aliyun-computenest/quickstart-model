@@ -1,15 +1,15 @@
 ## Introduction
 Qwen2.5-VL is a more useful visual language model built by the Alibaba Cloud Qwen team based on Qwen2-VL, incorporating valuable feedback from numerous developers. Its main enhanced features include:
 
-- Visual understanding of objects: Qwen2.5-VL can not only skillfully recognize common objects like flowers, birds, fish, and insects, but also analyze text, charts, icons, graphics, and layouts in images.
+- **Visual understanding of objects**: Qwen2.5-VL can not only skillfully recognize common objects like flowers, birds, fish, and insects, but also analyze text, charts, icons, graphics, and layouts in images.
 
-- Agency: Qwen2.5-VL directly plays the role of a visual agent, with the ability to reason and dynamically direct tools, applicable for both computers and mobile phones.
+- **Agency**: Qwen2.5-VL directly plays the role of a visual agent, with the ability to reason and dynamically direct tools, applicable for both computers and mobile phones.
 
-- Understanding long videos and capturing events: Qwen2.5-VL can understand videos over 1 hour long, and now has the new ability to capture events by precisely locating relevant video segments.
+- **Understanding long videos and capturing events**: Qwen2.5-VL can understand videos over 1 hour long, and now has the new ability to capture events by precisely locating relevant video segments.
 
-- Capable of visual localization in different formats: Qwen2.5-VL can accurately locate objects in images by generating bounding boxes or points, and can provide stable JSON output for coordinates and attributes.
+- **Capable of visual localization in different formats**: Qwen2.5-VL can accurately locate objects in images by generating bounding boxes or points, and can provide stable JSON output for coordinates and attributes.
 
-- Generating structured output: For scanned data such as invoices, forms, and tables, Qwen2.5-VL supports structured output of their content, beneficial for applications in fields like finance and business.
+- **Generating structured output**: For scanned data such as invoices, forms, and tables, Qwen2.5-VL supports structured output of their content, beneficial for applications in fields like finance and business.
 
 ## Usage Instructions
 After completing the model deployment, you can view the model's usage methods on the Compute Nest service instance overview page. It provides API call examples, intranet access addresses, public network access addresses (available after enabling public network access), and Api_Key. The following sections will explain how to access and use these.
@@ -162,8 +162,5 @@ if __name__ == "__main__":
     infer_image()
     infer_video()
 ```
-
-### Web Application
-Click on the online access link to jump to the corresponding page where you can directly access the model service online.
 
 

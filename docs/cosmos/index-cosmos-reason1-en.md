@@ -152,6 +152,3 @@ if __name__ == "__main__":
     infer_image()
     infer_video()
 ```
-
-### Web Application
-Click on the online access link to jump to the corresponding page where you can directly access the model service online.
