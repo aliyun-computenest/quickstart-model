@@ -6,19 +6,19 @@ QwQ is the reasoning model in the Qwen series. Compared to traditional instructi
 - **Multi-step Reasoning**: Utilizes the "Chain-of-Thought" mechanism to address complex problems incrementally, such as deriving mathematical proofs step by step.
 - **Reinforcement Learning Fine-tuning**: Optimizes reasoning accuracy through feedback mechanisms, demonstrating exceptional performance in tasks requiring precise calculations.
 
-## 使用说明
-在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。
+## Usage Instructions
+After completing the model deployment, you can view the usage methods on the service instance overview page in Compute Nest. It provides API call examples, intranet access addresses, public network access addresses, and ApiKey. The following sections will explain how to access and use these.
 
-![img-llm-use-desc.png](../image-cn/img-llm-use-desc.png)
+![img-llm-use-desc.png](../image-en/img-llm-use-desc.png)
 
-### API调用
-#### Curl命令调用
+### API Calls
+#### Curl Command Call
 
-![img.png](../image-cn/img-api-call.png)
+![img.png](../image-en/img-api-call.png)
 
-Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：
+You can directly use the API call example from the service instance overview page for Curl command calls. The specific structure for calling the model API is as follows:
 
-其中${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。
+Where ${ServerIP} can be filled with the IP address from either the intranet or public network address, ${ApiKey} is the ApiKey, and ${ModelName} is the model name.
 ```shell
 curl -X Post http://${ServerIP}:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -28,18 +28,18 @@ curl -X Post http://${ServerIP}:8000/v1/chat/completions \
     "messages": [
       {
         "role": "user",
-        "content": "给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级"
+        "content": "Write a letter to my daughter from the future 2035, telling her to study technology well, be the master of technology, and promote technological and economic development; she is currently in 3rd grade"
       }
     ]
   }'
 ```
 
-#### Python调用
-以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。
+#### Python Call
+Here's a Python example code: Where ${ApiKey} needs to be filled with the ApiKey from the page; ${ServerUrl} needs to be filled with the public or intranet address from the page, including /v1.
 ```python
 from openai import OpenAI
 
-##### API 配置 #####
+##### API Configuration #####
 openai_api_key = "${ApiKey}"
 openai_api_base = "${ServerUrl}"
 
@@ -64,7 +64,7 @@ def main():
                 "content": [
                     {
                         "type": "text",
-                        "text": "你好，介绍一下你自己，越详细越好。",
+                        "text": "Hello, introduce yourself, the more detailed the better.",
                     }
                 ],
             }
