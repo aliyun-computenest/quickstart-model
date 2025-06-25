@@ -1,157 +1,198 @@
-# 🎨 Flux1-Dev 模型介绍
+<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🎨 Flux1-Dev Model Usage Guide</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Advanced Text-to-Image Generation Model by Black Forest Labs</p>
+</div>
 
-<div align="center">
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-![Flux1-Dev](images/Flux1_Dev_4344e7ae45da.svg)
-![Open Source](images/Open_Source_d299db273210.svg)
-![Quality](images/Quality_da480e7d9c5e.svg)
+**Flux1-Dev** represents the pinnacle of open-source image generation technology, built on Flow Matching techniques with significant improvements in image quality, text understanding capabilities, and generation speed.
 
 </div>
 
-Flux1-Dev 是由 Black Forest Labs 开发的先进文本到图像生成模型，代表了当前开源图像生成技术的最高标准。该模型基于 Flow Matching 技术，在图像质量、文本理解能力和生成速度方面都有显著提升。
+## 🚀 Core Features
 
----
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
 
-## ✨ 核心特性
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🏗️ Advanced Architecture</h4>
+<p style="margin: 0; color: #065f46;">Diffusion Transformer architecture based on Flow Matching technology</p>
+</div>
 
-<table>
-<tr>
-<td width="50%">
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🎯 Exceptional Quality</h4>
+<p style="margin: 0; color: #1e40af;">Generated image quality approaches commercial-grade model standards</p>
+</div>
 
-### 🏗️ 技术架构
-- **先进架构**: 基于流匹配技术的扩散变换器架构
-- **卓越质量**: 生成图像质量接近商业级模型标准
-- **强大理解**: 集成完整 FP16 版本 CLIP-L 和 T5 文本编码器
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🧠 Powerful Text Understanding</h4>
+<p style="margin: 0; color: #5b21b6;">Integrated full FP16 CLIP-L and T5 text encoders</p>
+</div>
 
-</td>
-<td width="50%">
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">📐 High Resolution Support</h4>
+<p style="margin: 0; color: #9a3412;">Native support for 1024×1024 and higher resolutions</p>
+</div>
 
-### 🚀 性能优势
-- **高分辨率支持**: 原生支持 1024×1024 及更高分辨率
-- **快速生成**: 优化推理速度，支持少步生成
-- **开源友好**: 完全开源，支持商业使用
-- **风格多样**: 支持写实、艺术、概念设计等多种风格
+<div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; border-radius: 4px;">
+<h4 style="color: #10b981; margin: 0 0 8px 0;">⚡ Fast Generation</h4>
+<p style="margin: 0; color: #047857;">Optimized inference speed with few-step generation support</p>
+</div>
 
-</td>
-</tr>
+<div style="background: #fdf2f8; border-left: 4px solid #ec4899; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ec4899; margin: 0 0 8px 0;">🎨 Diverse Styles</h4>
+<p style="margin: 0; color: #be185d;">Supports photorealistic, artistic, concept design, and various styles</p>
+</div>
+
+</div>
+
+## 📊 Technical Specifications
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Specification</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Model Type</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Text-to-Image Generation</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Text Encoder</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">T5-XXL + CLIP-L</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">VAE</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Dedicated flux-ae Variational Autoencoder</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Native Resolution</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">1024×1024</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Supported Resolutions</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">512×512 to 2048×2048</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">Recommended Steps</td>
+      <td style="padding: 12px;">4-50 steps (8 steps for optimal balance)</td>
+    </tr>
+  </tbody>
 </table>
-
----
-
-## 📊 技术规格
-
-| 规格项目 | 详细信息 |
-|---------|---------|
-| **模型类型** | 文本到图像生成 |
-| **文本编码器** | T5-XXL + CLIP-L |
-| **VAE** | 专用 flux-ae 变分自编码器 |
-| **原生分辨率** | 1024×1024 |
-| **支持分辨率** | 512×512 到 2048×2048 |
-| **推荐步数** | 4-50 步（8 步为最佳平衡） |
-
----
-
-## 🎯 模型优势
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0;">
-
-<div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #f8fff8 0%, #e8f5e8 100%);">
-<h4>🖼️ 图像质量</h4>
-<p>细节丰富、色彩自然、构图合理</p>
 </div>
 
-<div style="border: 2px solid #2196F3; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #f8fbff 0%, #e3f2fd 100%);">
-<h4>📝 文本跟随</h4>
-<p>精确理解复杂文本描述</p>
-</div>
+## 🏆 Model Advantages
 
-<div style="border: 2px solid #FF9800; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);">
-<h4>🎨 风格多样</h4>
-<p>从照片写实到抽象艺术</p>
-</div>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-<div style="border: 2px solid #9C27B0; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #faf8ff 0%, #f3e5f5 100%);">
-<h4>⚡ 高效性能</h4>
-<p>相比同级别模型推理速度更快</p>
-</div>
+**Core Advantages**
+
+- **🖼️ Image Quality**: Rich details, natural colors, reasonable composition
+- **📝 Text Following**: Precise understanding of complex text descriptions
+- **🎭 Style Diversity**: From photorealistic to abstract art
+- **🎯 Consistency**: Stable and controllable generation results
+- **⚡ Efficiency**: Faster inference speed compared to similar-level models
 
 </div>
 
 ---
 
-## 🔧 配置说明
+# ⚙️ Configuration Guide
 
-### 📁 模型文件清单
+## 📁 Model Files
 
-<details>
-<summary><strong>🌐 WebUI 环境</strong></summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
 
-- **主模型**: `flux.1_dev_8x8_e4m3fn.safetensors`
-- **VAE**: `flux-ae.safetensors`
-- **文本编码器**:
-    - `t5xxl_fp16.safetensors`
-    - `clip_l.safetensors`
-    - `clip_g.safetensors`
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🌐 WebUI Environment</h3>
 
-</details>
+**Main Model**
+- `flux.1_dev_8x8_e4m3fn.safetensors`
 
-<details>
-<summary><strong>🎛️ ComfyUI 环境</strong></summary>
+**VAE**
+- `flux-ae.safetensors`
 
-- **主模型**: `Flux1-dev.safetensors`
-- **VAE**: `flux-ae.safetensors`
-- **文本编码器**:
-    - `t5xxl_fp16.safetensors`
-    - `clip_l.safetensors`
+**Text Encoders**
+- `t5xxl_fp16.safetensors`
+- `clip_l.safetensors`
+- `clip_g.safetensors`
+</div>
 
-</details>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🎛️ ComfyUI Environment</h3>
 
----
+**Main Model**
+- `Flux1-dev.safetensors`
 
-# 📖 使用指南
+**VAE**
+- `flux-ae.safetensors`
 
-## 🎛️ ComfyUI 使用方法
-
-### 🖱️ 界面操作
-
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
-
-#### 📋 操作步骤
-
-1. **选择工作流**: 在工作流框架中选择此工作流
-   ![工作流选择](img_4.png)
-
-2. **输入内容**: 输入您想要生成的内容
-   ![内容输入](text2img2.png)
-
-3. **创意示例**: 您可以输入一些有趣的内容，例如"关羽大战白雪公主"
-
-4. **参数设置**: 设置图像分辨率和图像数量。如果想要加快生成速度，可以将 batch_size 设置为 1
-   ![参数设置](text2img3.png)
-
-5. **等待生成**: 等待图像生成完成
+**Text Encoders**
+- `t5xxl_fp16.safetensors`
+- `clip_l.safetensors`
+</div>
 
 </div>
 
-### 🔌 ComfyUI API 调用
+---
 
-**获取 Token**: 点击右上角按钮，打开底部面板，获取 token
-![Token获取](img_3.png)
+# 📖 Usage Guide
 
-**获取服务器地址**: 参考下图获取 COMFYUI_SERVER
-![服务器地址](img_2.png)
+## 🎛️ ComfyUI Usage
 
-<details style="border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #f8f9fa;">
-<summary style="font-weight: bold; font-size: 18px; color: #0066cc; cursor: pointer;">
-📋 点击展开 API 调用 Python 代码
+### 🖱️ Interface Operations
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Step 1: Select Workflow**
+- Choose the workflow in the workflow selector
+  ![img.png](text2img.png)
+
+**Step 2: Input Prompts**
+- Enter your desired content description
+  ![img.png](text2img2.png)
+
+**Step 3: Creative Examples**
+- You can input interesting content, such as "Guan Yu fighting Snow White"
+
+**Step 4: Parameter Settings**
+- Set image resolution and quantity
+- To speed up generation, set batch_size to 1
+  ![img.png](text2img3.png)
+
+**Step 5: Wait for Generation**
+- Patiently wait for image generation to complete
+
+</div>
+
+### 🔌 ComfyUI API Integration
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+**Get Token**
+- Click the top-right button to open the bottom panel and get the token
+  ![img_1.png](img_3.png)
+
+**Get Server Address**
+- Refer to COMFYUI_SERVER acquisition guide
+  ![img_2.png](img_2.png)
+
+</div>
+
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+📋 Click to Expand ComfyUI API Python Code
 </summary>
 
 ```python
 import requests, json, uuid, time, random, os
 
-COMFYUI_SERVER, COMFYUI_TOKEN = "#在此填入您的服务器地址", "在此填入您的token"  
+COMFYUI_SERVER, COMFYUI_TOKEN = "#Fill in your server address here", "Fill in your token here"  
 UNET_MODEL, VAE_MODEL, CLIP1_MODEL, CLIP2_MODEL = "flux1-dev.safetensors", "ae.safetensors", "t5xxl_fp16.safetensors", "clip_l.safetensors"
-PROMPT = "一个美丽的动漫女孩，长发飘逸，穿着优雅的裙子，站在魔法花园中，发光的花朵，柔和的光线，高质量，细节丰富"
+PROMPT = "A beautiful anime girl with long flowing hair, wearing elegant dress, standing in a magical garden with glowing flowers, soft lighting, high quality, detailed"
 
 class FluxClient:
     def __init__(self):
@@ -181,99 +222,119 @@ class FluxClient:
 
 def main():
     client = FluxClient()
-    print(f"🎨 正在生成: {PROMPT}")
+    print(f"🎨 Generating: {PROMPT}")
     task_id = client.generate(PROMPT)
-    print(f"🆔 任务ID: {task_id}")
+    print(f"🆔 Task ID: {task_id}")
     while True:
         status = client.status(task_id)
-        print(f"📊 状态: {status}")
+        print(f"📊 Status: {status}")
         if status == "completed": break
         time.sleep(5)
     files = client.download(task_id)
-    print(f"🎉 完成！生成了 {len(files)} 张图片: {files}")
+    print(f"🎉 Complete! Generated {len(files)} images: {files}")
 
 if __name__ == "__main__": main()
 ```
+
 </details>
 
 ---
 
-## 🌐 Web UI 使用方法
+## 🌐 Web UI Usage
 
-### 🖱️ 界面操作
+### 🖱️ Interface Operations
 
-<div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-#### 🔧 配置步骤
+**1. Model Selection**
+- Select Flux1-Dev (HyFY-8-Step-Hybrid-v1.0.safetensors) model in the Checkpoint model selector
 
-1. **模型切换**: 在 Checkpoint 模型选择器中选择 Flux1-Dev (HyFY-8-Step-Hybrid-v1.0.safetensors) 模型
+**2. VAE and CLIP Model Selection**
+- Select: `Clip_l.safetensors`, `t5xxl_fp16.safetensors`, `flux-ae.safetensors`
+  ![img_1.png](img_1.png)
 
-2. **VAE 和 CLIP 模型选择**: 选择 Clip_l.safetensors, t5xxl_fp16.safetensors, flux-ae.safetensors
-   ![模型选择](img_1.png)
+**3. Prompt Input**
+- **Positive Prompt**: Detailed description of the desired image
+- **Negative Prompt**: Description of unwanted elements (Flux model is less sensitive to negative prompts)
 
-3. **提示词输入**:
-    - **正向提示词**: 详细描述期望的图像
-    - **负向提示词**: 描述不想要的元素（Flux 模型对负向提示词不敏感）
+**4. Parameter Settings**
+- **Steps**: Recommended 8-20 steps
+- **CFG**: Recommended 1.0-3.5 (lower values work better)
+- **Sampler**: Recommended Euler or DPM++ 2M
+- **Resolution**: 1024×1024 or other supported dimensions
 
-4. **参数设置**:
-    - **步数**: 推荐 8-20 步
-    - **CFG**: 推荐 1.0-3.5（较低值效果更好）
-    - **采样器**: 推荐 Euler 或 DPM++ 2M
-    - **分辨率**: 1024×1024 或其他支持的尺寸
+**5. Generate Image**
+- Click the "Generate" button to start generation
 
-5. **生成图像**: 点击"生成"按钮开始生成
-
-6. **结果处理**: 查看、保存或进一步编辑生成的图像
-
-</div>
-
-### 🎨 提示词示例
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
-
-<div style="border-left: 4px solid #4CAF50; padding: 15px; background: #f8fff8;">
-<h4>📸 写实风格</h4>
-<code>"一位年轻女性的专业肖像，自然光线，高分辨率，详细的皮肤纹理，照片写实"</code>
-</div>
-
-<div style="border-left: 4px solid #2196F3; padding: 15px; background: #f8fbff;">
-<h4>🎨 艺术风格</h4>
-<code>"春天花园的印象派绘画，柔和的笔触，鲜艳的色彩，艺术杰作"</code>
-</div>
-
-<div style="border-left: 4px solid #FF9800; padding: 15px; background: #fff8f0;">
-<h4>🚀 概念设计</h4>
-<code>"未来机器人设计，光滑的金属表面，发光的蓝色装饰，概念艺术，高度详细"</code>
-</div>
-
-<div style="border-left: 4px solid #9C27B0; padding: 15px; background: #faf8ff;">
-<h4>🏔️ 风景摄影</h4>
-<code>"黄金时刻的山景，戏剧性的云彩，专业摄影，超广角，HDR"</code>
-</div>
+**6. Result Processing**
+- View, save, or further edit the generated images
 
 </div>
 
-**UI 界面使用示例**
-![UI界面](img.png)
+### 🎨 Prompt Examples
 
-<details style="border: 2px solid #ff6b6b; border-radius: 8px; padding: 15px; margin: 10px 0; background-color: #fff5f5;">
-<summary style="font-weight: bold; font-size: 18px; color: #ff6b6b; cursor: pointer;">
-🔌 点击展开 API 调用 Python 代码
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">📸 Photorealistic Style</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"a professional portrait of a young woman, natural lighting, high resolution, detailed skin texture, photorealistic"
+</code>
+</div>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">🎨 Artistic Style</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"an impressionist painting of a garden in spring, soft brushstrokes, vibrant colors, artistic masterpiece"
+</code>
+</div>
+</div>
+
+<div style="background: #ecfeff; border-left: 4px solid #06b6d4; padding: 16px; border-radius: 4px;">
+<h4 style="color: #06b6d4; margin: 0 0 8px 0;">🤖 Concept Design</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"futuristic robot design, sleek metallic surface, glowing blue accents, concept art, highly detailed"
+</code>
+</div>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🏔️ Landscape Photography</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"mountain landscape at golden hour, dramatic clouds, professional photography, ultra-wide angle, HDR"
+</code>
+</div>
+</div>
+
+</div>
+
+### 🖼️ UI Interface Usage Example
+
+![img.png](img.png)
+
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+🐍 Click to Expand WebUI API Python Code
 </summary>
 
 ```python
-import requests
 import base64
 import time
 import uuid
+import requests
 
-# 配置
+# Configuration
 base_url = "http://127.0.0.1:7680"
 auth = ("admin", "${APIKEY}")
 session_hash = str(uuid.uuid4())[:12]
 
-# 设置 VAE/文本编码器
-print("设置 VAE/文本编码器...")
+# Set VAE/Text Encoder
+print("Setting VAE/Text Encoder...")
 requests.post(f"{base_url}/run/predict", json={
     "data": [["flux-ae.safetensors", "t5xxl_fp16.safetensors", "clip_l.safetensors", "clip_g.safetensors"]],
     "event_data": None,
@@ -283,8 +344,8 @@ requests.post(f"{base_url}/run/predict", json={
 }, auth=auth)
 time.sleep(3)
 
-# 切换 FLUX 模型
-print("切换 FLUX 模型...")
+# Switch FLUX model
+print("Switching FLUX model...")
 requests.post(f"{base_url}/queue/join", json={
     "data": ["HyFY-8-Step-Hybrid-v1.0.safetensors"],
     "event_data": None,
@@ -294,10 +355,10 @@ requests.post(f"{base_url}/queue/join", json={
 }, auth=auth)
 time.sleep(15)
 
-# 生成图像
-print("生成图像...")
+# Generate image
+print("Generating image...")
 result = requests.post(f"{base_url}/sdapi/v1/txt2img", json={
-    "prompt": "一只美丽的猫",
+    "prompt": "a beautiful cat",
     "steps": 8,
     "width": 1024,
     "height": 1024,
@@ -305,37 +366,33 @@ result = requests.post(f"{base_url}/sdapi/v1/txt2img", json={
     "sampler_name": "Euler"
 }, auth=auth).json()
 
-# 保存图像
+# Save image
 if "images" in result:
     with open("output.png", "wb") as f:
         f.write(base64.b64decode(result["images"][0]))
-    print("图像已保存为 output.png")
+    print("Image saved as output.png")
 else:
-    print("错误:", result)
+    print("Error:", result)
 ```
+
 </details>
 
 ---
 
-## 🔄 其他内置模型
+## 🔄 Other Built-in Models
 
-<div style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-目前在服务中，Flux 模型将部署到 ECS 实例。除了当前的 Flux-dev 模型外，还支持 SD1.5 和 SD3 模型，可以在 Webui Forge 界面中动态切换。
+**Model Support Information**
 
-### 支持的模型列表
-- **Flux1-Dev**: 最新的高质量文本到图像生成模型
-- **SD1.5**: 经典稳定扩散模型
-- **SD3**: 最新版本稳定扩散模型
+In the current service, **Flux models** are deployed on ECS instances. In addition to the current **Flux-dev model**, **SD1.5** and **SD3** models are also supported and can be dynamically switched in the **WebUI Forge interface**.
 
 </div>
 
 ---
 
-<div align="center" style="margin-top: 40px;">
-
-### 🎉 开始您的 AI 艺术创作之旅！
-
-![创作](images/创作_05d39064853d.svg)
-
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎨 <strong>Start Your AI Art Creation Journey!</strong> | Use Flux1-Dev model to turn imagination into reality
+  </p>
 </div>

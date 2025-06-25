@@ -1,83 +1,147 @@
-# 🎬 Wan2.1-I2V-14B Model Guide
-
-> Transform static images into dynamic videos with AI-powered generation!
-
----
+<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h1 style="font-size: 2.5em; margin: 0; font-weight: 600;">🎬 Wan2.1-I2V-14B Model Guide</h1>
+  <p style="font-size: 1.2em; margin: 16px 0 0 0; opacity: 0.9;">Transform static images into dynamic videos with AI-powered generation</p>
+</div>
 
 ## 🚀 Model Introduction
 
-**Wan2.1-I2V-14B** is a powerful image-to-video generation model that can generate high-quality video content based on input images and text prompts. The model maintains the main characteristics of the input image while adding dynamic effects and scene changes according to text descriptions.
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <p style="line-height: 1.6; margin: 0;">
+    <strong>Wan2.1-I2V-14B</strong> is a powerful image-to-video generation model that can generate high-quality video content based on input images and text prompts. The model maintains the main characteristics of the input image while adding dynamic effects and scene changes according to text descriptions.
+  </p>
+</div>
 
 ### ✨ Core Features
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-<h4>🧠 Parameter Scale</h4>
-14B parameters providing powerful image understanding and video generation capabilities
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #2563eb;">🧠</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Parameter Scale</h4>
+  <p style="margin: 0; color: #64748b;">14B parameters providing powerful image understanding and video generation capabilities</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-<h4>🖼️ Image-Driven</h4>
-Generates coherent video sequences based on input images
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #059669;">🖼️</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Image-Driven</h4>
+  <p style="margin: 0; color: #64748b;">Generates coherent video sequences based on input images</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-<h4>🌍 Multi-language Support</h4>
-Supports Chinese and English text prompts
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #ea580c;">🌍</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Multi-language Support</h4>
+  <p style="margin: 0; color: #64748b;">Supports Chinese and English text prompts</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-<h4>🎯 Image Consistency</h4>
-Maintains main features and style of the input image
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #2563eb;">🎯</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Image Consistency</h4>
+  <p style="margin: 0; color: #64748b;">Maintains main features and style of the input image</p>
 </div>
 
 </div>
 
 ### 🔧 Technical Specifications
 
-<div style="background: linear-gradient(145deg, #f0f8ff, #e6f3ff); border: 2px solid #2196F3; border-radius: 15px; padding: 25px; margin: 20px 0; box-shadow: 0 8px 16px rgba(33, 150, 243, 0.2);">
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-| Specification | Value |
-|---------------|-------|
-| 🤖 **Model Type** | Image-to-Video Generation |
-| ⚡ **Quantization** | FP8 quantized version |
-| 📺 **Supported Resolution** | 480p |
-| 🎞️ **Maximum Frames** | 81 frames |
-| 🎬 **Recommended Frame Rate** | 16fps |
-| 📁 **Input Format** | JPEG, PNG, WebP, etc. |
-
+<div style="overflow-x: auto;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden;">
+<thead>
+<tr style="background: #eff6ff;">
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Specification</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>🤖 Model Type</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Image-to-Video Generation</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>⚡ Quantization</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">FP8 quantized version</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>📺 Supported Resolution</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">480p</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>🎞️ Maximum Frames</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">81 frames</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>🎬 Recommended Frame Rate</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16fps</td>
+</tr>
+<tr>
+<td style="padding: 12px;"><strong>📁 Input Format</strong></td>
+<td style="padding: 12px;">JPEG, PNG, WebP, etc.</td>
+</tr>
+</tbody>
+</table>
 </div>
 
----
+</div>
 
 ## 📖 Usage Instructions
 
 ### 🌐 Web UI Usage
 
-<div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 15px; padding: 25px; margin: 20px 0;">
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
 #### Step 1: Access Interface
-Click the access link at the service instance
-![img_3.png](img_3.png)
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0 0 12px 0;">Click the access link at the service instance</p>
+  <div style="text-align: center; margin: 16px 0;">
+    <img src="img_3.png" alt="Access interface" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+    <p style="margin-top: 8px; color: #64748b; font-size: 14px;">Click access link to enter ComfyUI interface</p>
+  </div>
+</div>
 
 #### Step 2: Select Workflow
-Select `wanx-21.json` workflow and open it, choose the image-to-video function option
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0;">Select <code style="background: #eff6ff; color: #1e40af; padding: 2px 6px; border-radius: 4px;">wanx-21.json</code> workflow and open it, choose the image-to-video function option</p>
+</div>
 
 #### Step 3: Upload Image
-- Select sample image in LoadImage node
-- Or upload custom image from local computer
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <ul style="margin: 0; padding-left: 20px;">
+    <li style="margin-bottom: 6px;">Select sample image in <strong>LoadImage</strong> node</li>
+    <li style="margin-bottom: 0;">Or upload custom image from local computer</li>
+  </ul>
+</div>
 
 #### Step 4: Set Text Description
-- Fill in description words in TextEncode node
-- **Top**: Describe desired actions and scene changes
-- **Bottom**: Content you don't want to generate
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0 0 12px 0;">Fill in description words in <strong>TextEncode</strong> node:</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: #f0fdf4; padding: 12px; border-radius: 6px; border-left: 3px solid #059669;">
+      <h5 style="margin: 0 0 6px 0; color: #059669;">✅ Top Input</h5>
+      <p style="margin: 0; font-size: 14px; color: #64748b;">Describe desired actions and scene changes</p>
+    </div>
+    <div style="background: #fff7ed; padding: 12px; border-radius: 6px; border-left: 3px solid #ea580c;">
+      <h5 style="margin: 0 0 6px 0; color: #ea580c;">❌ Bottom Input</h5>
+      <p style="margin: 0; font-size: 14px; color: #64748b;">Content you don't want to generate</p>
+    </div>
+  </div>
+</div>
 
 #### Step 5: Configure Parameters
-Set resolution and frame count in ImageClip Encode
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0;">Set resolution and frame count in <strong>ImageClip Encode</strong></p>
+</div>
 
 #### Step 6: Execute Workflow
-Click execute button to start generation
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0;">Click execute button to start generation</p>
+</div>
 
 </div>
 
@@ -85,22 +149,40 @@ Click execute button to start generation
 
 #### 🔑 Authentication Setup
 
-<div style="background-color: #fff3cd; border: 2px solid #ffeaa7; border-radius: 12px; padding: 20px; margin: 20px 0;">
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-**🎫 Get Token:** Click the button in the upper right corner, open the bottom panel
-![img_1.png](img_1.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
-**🌐 Get Server Address:** For COMFYUI_SERVER acquisition, refer to:
-![img_3.png](img_3.png)
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 12px 0;">🎫 Get Token</h4>
+  <p style="margin: 0 0 12px 0;">Click the button in the upper right corner, open the bottom panel</p>
+  <div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+    <img src="img_1.png" alt="Get token interface" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+  </div>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 12px 0;">🌐 Get Server Address</h4>
+  <p style="margin: 0 0 12px 0;">For COMFYUI_SERVER acquisition, refer to:</p>
+  <div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+    <img src="img_3.png" alt="Get server address" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+  </div>
+</div>
+
+</div>
 
 </div>
 
 #### 💻 Python Implementation
 
-<details style="border: 3px solid #2196F3; border-radius: 15px; padding: 25px; margin: 25px 0; background: linear-gradient(145deg, #f0f8ff, #e3f2fd); box-shadow: 0 10px 20px rgba(33, 150, 243, 0.3);">
-<summary style="font-weight: bold; font-size: 22px; color: white; cursor: pointer; padding: 20px; background: linear-gradient(135deg, #2196F3, #1976D2); border-radius: 12px; margin: -25px -25px 25px -25px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;">
-🐍 Click to Expand Complete Python Code
+<details style="border: 1px solid #e2e8f0; border-radius: 8px; margin: 16px 0; background: #f8fafc;">
+<summary style="font-weight: 600; color: #1e40af; cursor: pointer; padding: 16px; background: #eff6ff; margin: 0; border-radius: 8px 8px 0 0;">
+  🐍 Click to Expand Complete Python Code
 </summary>
+
+<div style="padding: 20px; background: white; margin: 0;">
+
+<div style="background: #1e293b; border-radius: 6px; padding: 16px; margin: 16px 0;">
 
 ```python
 import requests, json, uuid, time, random, os
@@ -246,213 +328,399 @@ def main():
 if __name__ == "__main__": main()
 ```
 
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">💡 Code Features</h4>
+  <ul style="margin: 0; color: #059669;">
+    <li>Complete ComfyUI client implementation</li>
+    <li>Support for image upload, workflow submission, status monitoring</li>
+    <li>Automatic video file download</li>
+    <li>Detailed error handling and logging</li>
+  </ul>
+</div>
+
+</div>
+
 </details>
 
 #### 🔗 ComfyUI API Endpoints
 
-<div style="background: linear-gradient(145deg, #f8f9fa, #e9ecef); border-radius: 12px; padding: 20px; margin: 20px 0; border: 2px solid #dee2e6;">
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-| Endpoint | Method | Function | Description |
-|----------|--------|----------|-------------|
-| 🔍 `/queue` | GET | Get queue status | View current task queue |
-| 🚀 `/prompt` | POST | Submit workflow | Execute generation task |
-| 📊 `/history/{prompt_id}` | GET | Get execution history | View task execution results |
-| 📤 `/upload/image` | POST | Upload image | Upload input image file |
-| 📥 `/view` | GET | Download output file | Get generated result files |
-
+<div style="overflow-x: auto;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden;">
+<thead>
+<tr style="background: #eff6ff;">
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Endpoint</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Method</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Function</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/queue</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Get queue status</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">View current task queue</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/prompt</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Submit workflow</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Execute generation task</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/history/{prompt_id}</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Get execution history</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">View task execution results</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/upload/image</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Upload image</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Upload input image file</td>
+</tr>
+<tr>
+<td style="padding: 12px;"><code>/view</code></td>
+<td style="padding: 12px;">GET</td>
+<td style="padding: 12px;">Download output file</td>
+<td style="padding: 12px;">Get generated result files</td>
+</tr>
+</tbody>
+</table>
 </div>
 
----
+</div>
 
 ## ⚙️ Parameter Configuration
 
 ### 🎛️ Generation Parameters
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 20px 0;">
 
-<div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 25px; border-radius: 15px; color: #333; box-shadow: 0 8px 16px rgba(255, 154, 158, 0.3);">
-
-**🔢 Steps**  
-Inference steps (recommended 20-30)
-
-**🎯 CFG**  
-CFG guidance strength (recommended 6-8)
-
-**📊 Shift**  
-Noise schedule offset (recommended 5)
-
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <h4 style="margin: 0 0 16px 0; color: #1e40af;">🔢 Core Parameters</h4>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 8px;">
+    <strong>Steps</strong><br>
+    <small style="color: #64748b;">Inference steps (recommended 20-30)</small>
+  </div>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 8px;">
+    <strong>CFG</strong><br>
+    <small style="color: #64748b;">CFG guidance strength (recommended 6-8)</small>
+  </div>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px;">
+    <strong>Shift</strong><br>
+    <small style="color: #64748b;">Noise schedule offset (recommended 5)</small>
+  </div>
 </div>
 
-<div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 25px; border-radius: 15px; color: #333; box-shadow: 0 8px 16px rgba(168, 237, 234, 0.3);">
-
-**🎲 Seed**  
-Random seed (controls randomness)
-
-**🎨 Denoise Strength**  
-Denoising strength (0.6-0.9)
-
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <h4 style="margin: 0 0 16px 0; color: #1e40af;">🎲 Randomness Control</h4>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 8px;">
+    <strong>Seed</strong><br>
+    <small style="color: #64748b;">Random seed (controls randomness)</small>
+  </div>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px;">
+    <strong>Denoise Strength</strong><br>
+    <small style="color: #64748b;">Denoising strength (0.6-0.9)</small>
+  </div>
 </div>
 
 </div>
 
 ### 🖼️ Image Requirements
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin: 20px 0;">
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
 > **💡 Pro Tip:** High-quality input images are the key to excellent video generation!
 
-- **📐 Resolution**: Recommended 512×512 or higher
-- **📄 Format**: JPEG, PNG, WebP, etc.
-- **🎯 Content**: Clear main subject, avoid overly complex backgrounds
-- **✨ Quality**: High-quality images yield better video effects
+**📐 Resolution**: Recommended 512×512 or higher  
+**📄 Format**: JPEG, PNG, WebP, etc.  
+**🎯 Content**: Clear main subject, avoid overly complex backgrounds  
+**✨ Quality**: High-quality images yield better video effects
 
 </div>
-
----
 
 ## 💡 Prompt Engineering
 
 ### ✅ Positive Prompt Examples
 
-<div style="background-color: #d4edda; border: 2px solid #c3e6cb; border-radius: 12px; padding: 20px; margin: 20px 0;">
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-- 🚶 **"The person in the image is walking slowly through a garden"**
-- 🐱 **"The cat in the photo is playing with a ball of yarn"**
-- 🚗 **"The car in the image is driving down a winding mountain road"**
-- 💃 **"The dancer in the picture is performing elegant ballet movements"**
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">🚶 Character Actions</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The person in the image is walking slowly through a garden"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">🐱 Animal Behavior</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The cat in the photo is playing with a ball of yarn"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">🚗 Vehicle Movement</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The car in the image is driving down a winding mountain road"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">💃 Artistic Performance</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The dancer in the picture is performing elegant ballet movements"</p>
+</div>
+
+</div>
 
 </div>
 
 ### ❌ Negative Prompt Examples
 
-<div style="background-color: #f8d7da; border: 2px solid #f5c6cb; border-radius: 12px; padding: 20px; margin: 20px 0;">
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-- 🚫 **"static, motionless, frozen, distorted, blurry"**
-- ⚠️ **"unnatural movement, jerky motion, inconsistent"**
-- 📉 **"low quality, artifacts, noise, compression"**
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0;">🚫 Static Issues</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"static, motionless, frozen, distorted, blurry"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0;">⚠️ Motion Problems</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"unnatural movement, jerky motion, inconsistent"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0;">📉 Quality Issues</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"low quality, artifacts, noise, compression"</p>
+</div>
 
 </div>
 
----
+</div>
 
 ## 🏆 Best Practices
 
 ### 📸 Input Image Selection
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
 
-<div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); padding: 20px; border-radius: 12px; border-left: 5px solid #2196F3;">
-<strong>🔍 Clarity</strong><br>
-Choose high-definition images
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🔍</span> Clarity Priority
+  </h4>
+  <p style="margin: 0; color: #64748b;">Choose high-definition images, avoid blurry or noisy pictures</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #f3e5f5, #e1bee7); padding: 20px; border-radius: 12px; border-left: 5px solid #9c27b0;">
-<strong>🎯 Clear Subject</strong><br>
-Ensure main objects are clearly visible
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎯</span> Clear Subject
+  </h4>
+  <p style="margin: 0; color: #64748b;">Ensure main objects are clearly visible and occupy appropriate proportion</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c9); padding: 20px; border-radius: 12px; border-left: 5px solid #4caf50;">
-<strong>🖼️ Composition</strong><br>
-Avoid overly complex backgrounds
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #ea580c;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🖼️</span> Reasonable Composition
+  </h4>
+  <p style="margin: 0; color: #64748b;">Avoid overly complex backgrounds, keep composition clean</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); padding: 20px; border-radius: 12px; border-left: 5px solid #ff9800;">
-<strong>💡 Lighting</strong><br>
-Images with even lighting work better
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>💡</span> Good Lighting
+  </h4>
+  <p style="margin: 0; color: #64748b;">Images with even lighting work better, avoid too dark or overexposed</p>
 </div>
 
 </div>
 
 ### ✍️ Prompt Writing Guidelines
 
-<div style="background: linear-gradient(145deg, #f0f8ff, #e6f3ff); border: 2px solid #2196F3; border-radius: 15px; padding: 25px; margin: 20px 0;">
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-1. **📝 Specific Description**: Describe desired actions and scenes in detail
-2. **🔄 Maintain Consistency**: Ensure descriptions match image content
-3. **⚖️ Reasonable Actions**: Describe actions that follow physical laws
-4. **🎨 Unified Style**: Maintain descriptions consistent with original image style
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 12px 0;">📝 Specific Description</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Describe desired actions and scenes in detail, the more specific the better</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 12px 0;">🔄 Maintain Consistency</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Ensure descriptions match image content, avoid contradictions</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #ea580c;">
+  <h4 style="color: #ea580c; margin: 0 0 12px 0;">⚖️ Reasonable Actions</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Describe actions that follow physical laws, avoid impossible movements</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 12px 0;">🎨 Unified Style</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Maintain descriptions consistent with original image style</p>
+</div>
+
+</div>
 
 </div>
 
 ### 🔧 Parameter Tuning Guide
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 15px; color: white; margin: 20px 0;">
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-**🎨 Denoising Strength**
-- `0.6-0.7`: Preserve more original image features
-- `0.8-0.9`: Allow more changes and dynamic effects
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
 
-**🎯 CFG Value**
-- `6-7`: Balanced guidance strength
-- `8-10`: Stronger text guidance
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="margin: 0 0 12px 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+    <span>🎨</span> Denoising Strength
+  </h4>
+  <div style="margin-bottom: 8px; color: #64748b;">
+    <strong>0.6-0.7:</strong> Preserve more original image features
+  </div>
+  <div style="color: #64748b;">
+    <strong>0.8-0.9:</strong> Allow more changes and dynamic effects
+  </div>
+</div>
 
-**⏱️ Steps**
-- `20-25`: Fast generation
-- `25-30`: Higher quality
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="margin: 0 0 12px 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+    <span>🎯</span> CFG Value
+  </h4>
+  <div style="margin-bottom: 8px; color: #64748b;">
+    <strong>6-7:</strong> Balanced guidance strength
+  </div>
+  <div style="color: #64748b;">
+    <strong>8-10:</strong> Stronger text guidance
+  </div>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="margin: 0 0 12px 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+    <span>⏱️</span> Steps
+  </h4>
+  <div style="margin-bottom: 8px; color: #64748b;">
+    <strong>20-25:</strong> Fast generation
+  </div>
+  <div style="color: #64748b;">
+    <strong>25-30:</strong> Higher quality
+  </div>
+</div>
 
 </div>
 
----
+</div>
 
 ## ⚠️ Important Considerations
 
-<div style="background-color: #fff3cd; border: 2px solid #ffeaa7; border-radius: 12px; padding: 25px; margin: 25px 0;">
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
 
-1. **💾 Memory Management**: Image-to-video requires more VRAM than text-to-video
-2. **🔧 Image Preprocessing**: Ensure input image size is appropriate
-3. **🎯 Consistency Preservation**: Denoising strength should not be too high
-4. **🎭 Action Reasonableness**: Described actions should match object characteristics
-5. **⚡ Batch Processing**: Recommend processing one task at a time
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>💾</span> Memory Management
+  </h4>
+  <p style="margin: 0; color: #64748b;">Image-to-video requires more VRAM than text-to-video</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🔧</span> Image Preprocessing
+  </h4>
+  <p style="margin: 0; color: #64748b;">Ensure input image size is appropriate</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎯</span> Consistency Preservation
+  </h4>
+  <p style="margin: 0; color: #64748b;">Denoising strength should not be too high</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎭</span> Action Reasonableness
+  </h4>
+  <p style="margin: 0; color: #64748b;">Described actions should match object characteristics</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>⚡</span> Batch Processing
+  </h4>
+  <p style="margin: 0; color: #64748b;">Recommend processing one task at a time</p>
+</div>
 
 </div>
 
----
+</div>
 
 ## 🎯 Application Scenarios
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
 
-<div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(255, 154, 158, 0.3);">
-<h3>👤 Character Animation</h3>
-Bring static character photos to life
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">👤</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Character Animation</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Bring static character photos to life with dynamic movements</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(168, 237, 234, 0.3);">
-<h3>🛍️ Product Showcase</h3>
-Add dynamic effects to product images
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🛍️</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Product Showcase</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Add dynamic effects to product images for enhanced marketing</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(255, 236, 210, 0.3);">
-<h3>🎨 Artistic Creation</h3>
-Convert paintings into dynamic videos
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🎨</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Artistic Creation</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Convert paintings into dynamic videos for enhanced artistic expression</p>
 </div>
 
-<div style="background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%); padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 8px 16px rgba(168, 230, 207, 0.3);">
-<h3>📚 Educational Demo</h3>
-Make teaching images have dynamic effects
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">📚</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Educational Demo</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Make teaching images have dynamic effects for improved learning experience</p>
 </div>
 
 </div>
-
----
 
 ## 📚 Resources & Documentation
 
-<div style="background: linear-gradient(145deg, #f8f9fa, #e9ecef); border-radius: 12px; padding: 25px; margin: 25px 0; border: 2px solid #dee2e6;">
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-- 📖 [ComfyUI Official Documentation](https://comfyui-wiki.com/zh/interface/node-options)
-- 🎥 [WanVideo Plugin Documentation](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md)
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+    <span>📖</span> ComfyUI Official Documentation
+  </h4>
+  <p style="margin: 0 0 12px 0; color: #64748b;">Detailed ComfyUI usage instructions and node descriptions</p>
+  <a href="https://comfyui-wiki.com/zh/interface/node-options" style="color: #2563eb; text-decoration: none; font-weight: 500;">Visit Documentation →</a>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎥</span> WanVideo Plugin Documentation
+  </h4>
+  <p style="margin: 0 0 12px 0; color: #64748b;">Detailed usage instructions for WanVideo plugin</p>
+  <a href="https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md" style="color: #059669; text-decoration: none; font-weight: 500;">View GitHub →</a>
+</div>
+
+</div>
 
 </div>
 
 ---
 
-<div style="text-align: center; padding: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; color: white; margin: 40px 0; box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);">
-
-## 🎉 Start Your Creative Journey!
-
-**Transform your static images into captivating videos with Wan2.1-I2V-14B!**
-
-*Unleash the power of AI-driven video generation*
-
+<div style="text-align: center; padding: 32px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; color: white; margin: 24px 0;">
+  <div style="font-size: 3em; margin-bottom: 16px;">🎉</div>
+  <h2 style="font-size: 2em; margin: 0 0 16px 0; font-weight: 600;">Start Your Creative Journey!</h2>
+  <p style="font-size: 1.1em; margin: 0 0 20px 0; opacity: 0.9; line-height: 1.5;">
+    <strong>Transform your static images into captivating videos with Wan2.1-I2V-14B!</strong>
+  </p>
+  <p style="font-style: italic; opacity: 0.8; margin: 0;">Unleash the power of AI-driven video generation</p>
 </div>
