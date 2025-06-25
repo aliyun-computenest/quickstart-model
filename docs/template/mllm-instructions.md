@@ -1,19 +1,43 @@
-## 使用说明
-在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址（开启公网访问后会有）和Api_Key，下面会分别介绍如何访问使用。
+## 📖 使用说明
 
-![img.png](../image-cn/img-llm-use-desc.png)
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 部署完成后</strong><br>
+  在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址（开启公网访问后会有）和 Api_Key。
+</div>
 
-### API调用
-#### Curl命令调用
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+  <div style="text-align: center; margin-bottom: 16px;">
+    <img src="../image-cn/img-llm-use-desc.png" alt="模型使用说明界面" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </div>
+</div>
 
-![img.png](../image-cn/img-api-call.png)
+## 🔌 API 调用方式
 
-Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：
+### 🖥️ Curl 命令调用
 
-${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-其中的image_url参数既可以使用http url进行指定，如https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png，也可以使用base64编码格式的图片内容，下面示例中使用了base64编码格式的图片内容。
-```shell
+<div style="text-align: center; margin-bottom: 16px;">
+  <img src="../image-cn/img-api-call.png" alt="API调用示例" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📋 参数说明</strong><br>
+  • <code>${ServerIP}</code>：内网地址或公网地址中的 IP 地址<br>
+  • <code>${ApiKey}</code>：页面提供的 ApiKey<br>
+  • <code>${ModelName}</code>：模型名称
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🖼️ 图片格式支持</strong><br>
+  <code>image_url</code> 参数支持两种格式：<br>
+  • <strong>HTTP URL</strong>：如 <code>https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png</code><br>
+  • <strong>Base64 编码</strong>：<code>data:image/jpeg;base64,&lt;图片的 base64 编码格式&gt;</code>
+</div>
+
+Curl 命令调用可以直接使用服务实例概览页面中的 API 调用示例，调用模型 API 的具体结构如下：
+
+```bash
 curl -X Post http://${ServerIP}:8000/v1/chat/completions \
     -H "Content-Type: application/json" \
     -H "Authorization: ${ApiKey}" \
@@ -30,8 +54,8 @@ curl -X Post http://${ServerIP}:8000/v1/chat/completions \
                 {
                     "type": "image_url",
                     "image_url": {
-                        "url": f"data:image/jpeg;base64,<图片的 base64 编码格式>"
-                    },
+                        "url": "data:image/jpeg;base64,<图片的 base64 编码格式>"
+                    }
                 },
                 {
                     "type": "text",
@@ -43,11 +67,22 @@ curl -X Post http://${ServerIP}:8000/v1/chat/completions \
     }'
 ```
 
-#### Python调用
-以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。
+</div>
+
+### 🐍 Python SDK 调用
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚙️ 配置说明</strong><br>
+  • <code>${ApiKey}</code>：填写页面上的 ApiKey<br>
+  • <code>${ServerUrl}</code>：填写页面上的公网地址或内网地址，需要带上 <code>/v1</code>
+</div>
+
+以下为 Python 示例代码，支持图像和视频处理：
+
 ```python
 import base64
-
 import requests
 from openai import OpenAI
 
@@ -66,21 +101,21 @@ model = models.data[0].id
 
 def encode_base64_content_from_url(content_url: str) -> str:
     """Encode a content retrieved from a remote url to base64 format."""
-
+    
     with requests.get(content_url) as response:
         response.raise_for_status()
         result = base64.b64encode(response.content).decode("utf-8")
-
+    
     return result
 
 
 def infer_image():
     image_url = "https://qianwen-res.oss-cn-beijing.aliyuncs.com/QVQ/demo.png"
-
+    
     stream = True
-
+    
     image_base64 = encode_base64_content_from_url(image_url)
-
+    
     chat_completion_from_base64 = client.chat.completions.create(
         messages=[
             {
@@ -101,7 +136,7 @@ def infer_image():
         max_completion_tokens=1024,
         stream=stream,
     )
-
+    
     if stream:
         for chunk in chat_completion_from_base64:
             print(chunk.choices[0].delta.content, end="")
@@ -112,11 +147,11 @@ def infer_image():
 
 def infer_video():
     video_url = "https://pai-quickstart-predeploy-hangzhou.oss-cn-hangzhou.aliyuncs.com/modelscope/algorithms/ms-swift/video_demo.mp4"
-
+    
     stream = True
-
+    
     video_base64 = encode_base64_content_from_url(video_url)
-
+    
     chat_completion_from_base64 = client.chat.completions.create(
         messages=[
             {
@@ -134,7 +169,7 @@ def infer_video():
         max_completion_tokens=512,
         stream=stream,
     )
-
+    
     if stream:
         for chunk in chat_completion_from_base64:
             print(chunk.choices[0].delta.content, end="")
@@ -147,3 +182,8 @@ if __name__ == "__main__":
     infer_image()
     infer_video()
 ```
+
+</div>
+
+
+
