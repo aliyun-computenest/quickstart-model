@@ -1,4 +1,4 @@
-<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+<div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
 <h1>🤖 Qwen3 大语言模型使用指南</h1>
 </div>
 
