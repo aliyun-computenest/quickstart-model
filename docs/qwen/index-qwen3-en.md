@@ -16,20 +16,39 @@ Qwen3 is the latest generation of large language models in the Qwen series, offe
 
 235B model requires a minimum configuration of 8* 96GB VRAM for deployment
 
-## Usage Instructions
-After completing the model deployment, you can view the usage methods on the service instance overview page in Compute Nest. It provides API call examples, intranet access addresses, public network access addresses, and ApiKey. The following sections will explain how to access and use these.
+## 📖 User Guide
 
-![img-llm-use-desc.png](../image-en/img-llm-use-desc.png)
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 Quick Start</strong><br>
+  After completing the model deployment, you can view the model usage instructions on the Computing Nest service instance overview page, which provides API call examples, internal network access addresses, public network access addresses, and ApiKey.
+</div>
 
-### API Calls
-#### Curl Command Call
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+  <div style="text-align: center; margin-bottom: 16px;">
+    <img src="../image-en/img-llm-use-desc.png" alt="Model usage instructions interface" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </div>
+</div>
 
-![img.png](../image-en/img-api-call.png)
+### 🔌 API Call Methods
 
-You can directly use the API call example from the service instance overview page for Curl command calls. The specific structure for calling the model API is as follows:
+#### 🖥️ Curl Command Call
 
-Where ${ServerIP} can be filled with the IP address from either the intranet or public network address, ${ApiKey} is the ApiKey, and ${ModelName} is the model name.
-```shell
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="text-align: center; margin-bottom: 16px;">
+  <img src="../image-en/img-api-call.png" alt="API call example" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📋 Parameter Description</strong><br>
+  • <code>${ServerIP}</code>: IP address from internal or public network address<br>
+  • <code>${ApiKey}</code>: ApiKey provided on the page<br>
+  • <code>${ModelName}</code>: Model name
+</div>
+
+Curl command calls can directly use the API call examples from the service instance overview page. The specific structure for calling the model API is as follows:
+
+```bash
 curl -X Post http://${ServerIP}:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${ApiKey}" \
@@ -38,14 +57,26 @@ curl -X Post http://${ServerIP}:8000/v1/chat/completions \
     "messages": [
       {
         "role": "user",
-        "content": "Write a letter to my daughter from the future 2035, telling her to study technology well, be the master of technology, and promote technological and economic development; she is currently in 3rd grade"
+        "content": "Write a letter to my daughter from the future year 2035, telling her to study technology well, become the master of technology, and promote technological and economic development; she is currently in 3rd grade"
       }
     ]
   }'
 ```
 
-#### Python Call
-Here's a Python example code: Where ${ApiKey} needs to be filled with the ApiKey from the page; ${ServerUrl} needs to be filled with the public or intranet address from the page, including /v1.
+</div>
+
+#### 🐍 Python SDK Call
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚙️ Configuration Instructions</strong><br>
+  • <code>${ApiKey}</code>: Fill in the ApiKey from the page<br>
+  • <code>${ServerUrl}</code>: Fill in the public or internal network address from the page, must include <code>/v1</code>
+</div>
+
+The following is Python example code:
+
 ```python
 from openai import OpenAI
 
@@ -64,7 +95,6 @@ print(model)
 
 
 def main():
-
     stream = True
 
     chat_completion = client.chat.completions.create(
@@ -74,7 +104,7 @@ def main():
                 "content": [
                     {
                         "type": "text",
-                        "text": "Hello, introduce yourself, the more detailed the better.",
+                        "text": "Hello, please introduce yourself in as much detail as possible.",
                     }
                 ],
             }
@@ -95,3 +125,5 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+</div>

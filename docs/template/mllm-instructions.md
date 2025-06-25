@@ -11,9 +11,9 @@
   </div>
 </div>
 
-## 🔌 API 调用方式
+### 🔌 API 调用方式
 
-### 🖥️ Curl 命令调用
+#### 🖥️ Curl 命令调用
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
@@ -69,7 +69,7 @@ curl -X Post http://${ServerIP}:8000/v1/chat/completions \
 
 </div>
 
-### 🐍 Python SDK 调用
+#### 🐍 Python SDK 调用
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
