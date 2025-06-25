@@ -1,66 +1,34 @@
-<div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
-<h1>🤖 Qwen3 大语言模型使用指南</h1>
-</div>
+## 简介
+Qwen3 是 Qwen 系列最新一代的大语言模型，提供了一系列密集（Dense）和混合专家(MOE）模型。基于广泛的训练，Qwen3 在推理、指令跟随、代理能力和多语言支持方面取得了突破性的进展，具有以下关键特性：
 
+- 独特支持在思考模式（用于复杂逻辑推理、数学和编码）和 非思考模式（用于高效通用对话）之间无缝切换，确保在各种场景下的最佳性能。
+- 显著增强的推理能力，在数学、代码生成和常识逻辑推理方面超越了之前的 QwQ （在思考模式下）和 Qwen2.5 指令模型（在非思考模式下）。
+- 卓越的人类偏好对齐，在创意写作、角色扮演、多轮对话和指令跟随方面表现出色，提供更自然、更吸引人和更具沉浸感的对话体验。
+- 擅长 Agent 能力，可以在思考和非思考模式下精确集成外部工具，在复杂的基于代理的任务中在开源模型中表现领先。
+- 支持 100 多种语言和方言，具有强大的多语言理解、推理、指令跟随和生成能力。
 
-## 📚 简介
+## 部署配置
+0.6B、1.7B、4B、8B 模型部署需要最低配置为 24G 显存
 
-Qwen3 是 Qwen 系列的最新一代大语言模型，提供密集（Dense）和混合专家（MOE）模型。它在多个方面取得了突破性进展：
+14B 模型部署需要最低配置为 48G 显存
 
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+30B、32B 模型部署需要最低配置为 96G 显存
 
-- 🔄 独特的思考模式切换
-- 🧠 显著增强的推理能力
-- 🎭 卓越的人类偏好对齐
-- 🛠️ 强大的 Agent 能力
-- 🌍 支持 100+ 种语言和方言
+235B 模型部署需要最低配置为 8* 96G 显存
 
-</div>
+## 使用说明
+在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。
 
-## 💻 部署配置
+![img-llm-use-desc.png](../image-cn/img-llm-use-desc.png)
 
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead>
-    <tr style="background: #eff6ff;">
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">模型规模</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">最低显存需求</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">0.6B, 1.7B, 4B, 8B</td>
-      <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">24G</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">14B</td>
-      <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">48G</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">30B, 32B</td>
-      <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">96G</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px;">235B</td>
-      <td style="padding: 12px;">8 * 96G</td>
-    </tr>
-  </tbody>
-</table>
+### API调用
+#### Curl命令调用
 
-## 🚀 使用说明
+![img.png](../image-cn/img-api-call.png)
 
-完成模型部署后，您可以在计算巢服务实例概览页面查看模型使用方式：
+Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="../image-cn/img-llm-use-desc.png" alt="使用说明概览" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
-  <p style="margin-top: 8px; color: #64748b; font-size: 14px;">服务实例概览页面</p>
-</div>
-
-### API 调用
-
-#### Curl 命令调用
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
+其中${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。
 ```shell
 curl -X Post http://${ServerIP}:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -76,21 +44,12 @@ curl -X Post http://${ServerIP}:8000/v1/chat/completions \
   }'
 ```
 
-<p><strong>参数说明：</strong></p>
-<ul>
-  <li><code>${ServerIP}</code>: 内网地址或公网地址中的 IP</li>
-  <li><code>${ApiKey}</code>: 页面提供的 ApiKey</li>
-  <li><code>${ModelName}</code>: 模型名称</li>
-</ul>
-</div>
-
-#### Python 调用
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
+#### Python调用
+以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。
 ```python
 from openai import OpenAI
 
+##### API 配置 #####
 openai_api_key = "${ApiKey}"
 openai_api_base = "${ServerUrl}"
 
@@ -103,8 +62,11 @@ models = client.models.list()
 model = models.data[0].id
 print(model)
 
+
 def main():
+
     stream = True
+
     chat_completion = client.chat.completions.create(
         messages=[
             {
@@ -129,17 +91,10 @@ def main():
         result = chat_completion.choices[0].message.content
         print(result)
 
+
 if __name__ == "__main__":
     main()
 ```
 
-<p><strong>注意事项：</strong></p>
-<ul>
-  <li><code>${ApiKey}</code>: 填写页面上的 ApiKey</li>
-  <li><code>${ServerUrl}</code>: 填写页面上的公网地址或内网地址，需要带上 <code>/v1</code></li>
-</ul>
-</div>
 
-<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
-<strong>💡 提示：</strong> 在使用 API 时，请确保正确填写所有必要参数，包括 ServerIP、ApiKey 和 ModelName。这些信息对于成功调用模型至关重要。
-</div>
+
