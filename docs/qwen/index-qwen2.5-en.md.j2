@@ -1,14 +1,100 @@
-## Introduction
-On September 19th, at the Yunqi Conference, Alibaba Cloud released Qwen2.5, the new generation of open-source models in the Tongyi Qianwen series. The flagship model, Qwen2.5-72B, outperforms Llama-405B in performance. All models in the Qwen2.5 series have been pre-trained on 18T tokens of data, showing an overall performance improvement of over 18% compared to Qwen2, with more knowledge and stronger programming and mathematical abilities. The Qwen2.5-72B model scores as high as 86.8, 88.2, and 83.1 on the MMLU-rudex benchmark (testing general knowledge), MBPP benchmark (testing coding ability), and MATH benchmark (testing mathematical ability) respectively.
+<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🌟 Qwen2.5 Open Source Model</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Tongyi Qianwen Next-Generation Open Source Model - Breakthrough Performance Surpassing Llama-405B</p>
+</div>
 
-Qwen2.5 supports a context length of up to 128K and can generate content up to 8K in length. The model possesses powerful multilingual capabilities, supporting over 29 languages including Chinese, English, French, Spanish, Russian, Japanese, Vietnamese, and Arabic. It can smoothly respond to diverse system prompts, enabling tasks such as role-playing and chatbot functionalities. Qwen2.5 shows notable improvements in instruction following, understanding structured data (like tables), and generating structured output (especially JSON).
+## 🎯 Product Overview
 
-In terms of language models, Qwen2.5 has open-sourced 7 sizes: 0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B. Tongyi Qianwen 2.5-32B-Instruct (Qwen2.5-32B-Instruct) is a version obtained by fine-tuning Tongyi Qianwen 2.5-32B (Qwen2.5-32B) for instruction following, capable of generating text that complies with instructions based on given prompts and conversation history.
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-This model can be deployed directly. The directly deployed model uses Qwen2.5-32B-Instruct as the pre-trained model and can continue writing based on any text provided by the user.
+At the Yunqi Conference on September 19th, Alibaba Cloud released Tongyi Qianwen's next-generation open source model Qwen2.5, with the flagship model Qwen2.5-72B surpassing Llama-405B in performance. All Qwen2.5 series models are pre-trained on 18T tokens of data, achieving an overall performance improvement of over 18% compared to Qwen2, with more knowledge and stronger programming and mathematical capabilities.
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🏆 Performance Breakthrough</strong><br>
+  The Qwen2.5-72B model demonstrates excellence in multiple authoritative benchmark tests, achieving industry-leading levels in general knowledge, coding capabilities, and mathematical abilities.
+</div>
+
+</div>
+
+## ✨ Core Features
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>📚 Extended Context Support</strong><br>
+  Supports context lengths up to 128K and can generate up to 8K content, meeting the needs for long document processing and complex conversations.
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🌍 Powerful Multilingual Capabilities</strong><br>
+  Supports over 29 languages including Chinese, English, French, Spanish, Russian, Japanese, Vietnamese, and Arabic.
+</div>
+
+<div style="background: #fef7ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>🎭 Flexible Role-Playing</strong><br>
+  Can smoothly respond to diverse system prompts, enabling role-playing and chatbot tasks.
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+  <strong>📊 Structured Data Processing</strong><br>
+  Shows significant improvement in instruction following, understanding structured data (such as tables), and generating structured output (especially JSON).
+</div>
+
+</div>
+
+## 🔧 Model Specifications
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h3 style="margin-top: 0; color: #1e40af;">📦 Complete Model Series</h3>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
+
+<div style="background: white; border: 2px solid #dbeafe; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #dbeafe; color: #1e40af; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">0.5B</div>
+  <div style="color: #64748b; font-size: 14px;">Lightweight Deployment</div>
+</div>
+
+<div style="background: white; border: 2px solid #dbeafe; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #dbeafe; color: #1e40af; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">1.5B</div>
+  <div style="color: #64748b; font-size: 14px;">Mobile Optimization</div>
+</div>
+
+<div style="background: white; border: 2px solid #dcfce7; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #dcfce7; color: #059669; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">3B</div>
+  <div style="color: #64748b; font-size: 14px;">Edge Computing</div>
+</div>
+
+<div style="background: white; border: 2px solid #dcfce7; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #dcfce7; color: #059669; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">7B</div>
+  <div style="color: #64748b; font-size: 14px;">General Applications</div>
+</div>
+
+<div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #fed7aa; color: #ea580c; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">14B</div>
+  <div style="color: #64748b; font-size: 14px;">Enterprise Applications</div>
+</div>
+
+<div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #fed7aa; color: #ea580c; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">32B</div>
+  <div style="color: #64748b; font-size: 14px;">High-Performance Services</div>
+</div>
+
+<div style="background: white; border: 2px solid #fecaca; border-radius: 8px; padding: 16px; text-align: center;">
+  <div style="background: #fecaca; color: #dc2626; padding: 8px 16px; border-radius: 6px; font-weight: 600; margin-bottom: 8px;">72B</div>
+  <div style="color: #64748b; font-size: 14px;">Flagship Performance</div>
+</div>
+
+</div>
+
+</div>
 
 {% include './docs/template/llm-instructions-en.md' %}
 
+---
 
-
-
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🌟 <strong>Qwen2.5 Open Source Model</strong> | Performance Surpassing Llama-405B, New Benchmark for Open Source AI
+  </p>
+</div>
