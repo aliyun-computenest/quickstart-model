@@ -1,5 +1,160 @@
-## Introduction
-DeepSeek-V3 is a powerful Mixture of Experts (MoE) language model with a total of 671 billion parameters, of which 37 billion are activated for each token. To achieve efficient inference and economical training costs, DeepSeek-V3 employs Multi-head Latent Attention (MLA) and the DeepSeekMoE architecture, both thoroughly validated in DeepSeek-V2. Additionally, DeepSeek-V3 pioneers a load balancing strategy without auxiliary loss and sets a multi-token prediction training objective to enhance performance. DeepSeek pre-trained DeepSeek-V3 on 14.8 trillion diverse and high-quality tokens, followed by supervised fine-tuning and reinforcement learning phases to fully unleash its capabilities. Comprehensive evaluations indicate that DeepSeek-V3 outperforms other open-source models and achieves performance comparable to leading closed-source models. Moreover, DeepSeek-V3 requires only 2.788 million H800 GPU hours to complete the entire training process. Furthermore, its training process is remarkably stable. Throughout the entire training, no unrecoverable loss spikes were encountered, and no rollback operations were necessary.
+<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🚀 DeepSeek-V3 Large Language Model</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">671 Billion Parameter Mixture of Experts Model - New Milestone for Open Source AI</p>
+</div>
+
+## 🎯 Product Overview
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+DeepSeek-V3 is a powerful Mixture of Experts (MoE) language model with a total of **671 billion parameters**, of which **37 billion parameters** are activated per token. To achieve efficient inference and economical training costs, DeepSeek-V3 adopts Multi-Head Latent Attention (MLA) and DeepSeekMoE architectures, which have been thoroughly validated in DeepSeek-V2.
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🏆 Breakthrough Achievement</strong><br>
+  DeepSeek-V3 outperforms other open source models and achieves performance comparable to leading closed source models, marking a major breakthrough in open source AI technology.
+</div>
+
+</div>
+
+## 📊 Core Parameters
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Parameter Type</th>
+      <th style="padding: 12px; text-align: center; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Value</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Total Parameters</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; text-align: center;">
+        <span style="background: #fecaca; color: #dc2626; padding: 6px 12px; border-radius: 6px; font-weight: 600;">671 Billion</span>
+      </td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Ultra-large scale parameters</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Activated Parameters</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; text-align: center;">
+        <span style="background: #dcfce7; color: #059669; padding: 6px 12px; border-radius: 6px; font-weight: 600;">37 Billion/token</span>
+      </td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Efficient inference design</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Training Data</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; text-align: center;">
+        <span style="background: #dbeafe; color: #2563eb; padding: 6px 12px; border-radius: 6px; font-weight: 600;">14.8 Trillion tokens</span>
+      </td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Diverse and high-quality data</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">Training Cost</td>
+      <td style="padding: 12px; text-align: center;">
+        <span style="background: #fed7aa; color: #ea580c; padding: 6px 12px; border-radius: 6px; font-weight: 600;">2.788M H800 hours</span>
+      </td>
+      <td style="padding: 12px;">Cost-effective training</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+## 🏗️ Technical Architecture
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>🧠 Multi-Head Latent Attention (MLA)</strong><br>
+  Adopts advanced MLA architecture, thoroughly validated in DeepSeek-V2, providing efficient attention mechanisms and excellent performance.
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>⚡ DeepSeekMoE Architecture</strong><br>
+  Mixture of experts model architecture that achieves efficient parameter utilization while maintaining powerful capabilities and significantly reducing inference costs.
+</div>
+
+<div style="background: #fef7ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>⚖️ Auxiliary-Loss-Free Load Balancing</strong><br>
+  Pioneering innovative load balancing strategy that achieves balanced load distribution among experts without auxiliary losses.
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+  <strong>🎯 Multi-Token Prediction Training</strong><br>
+  Sets multi-token prediction training objectives, significantly improving model prediction accuracy and generation quality.
+</div>
+
+</div>
+
+## 📈 Performance Results
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h3 style="margin-top: 0; color: #1e40af;">🏆 Competitive Comparison</h3>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🥇 Leading Open Source Models</strong><br>
+  <div style="margin-top: 8px; color: #065f46;">
+    Best performance among all open source large language models, setting new performance benchmarks
+  </div>
+</div>
+
+<div style="background: #dbeafe; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>⚡ Matching Closed Source Models</strong><br>
+  <div style="margin-top: 8px; color: #1e3a8a;">
+    Performance comparable to leading closed source models, bridging the performance gap between open and closed source
+  </div>
+</div>
+
+<div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 4px;">
+  <strong>💡 Comprehensive Evaluation Validation</strong><br>
+  <div style="margin-top: 8px; color: #92400e;">
+    Excellent performance across multiple dimensions through comprehensive benchmark evaluations
+  </div>
+</div>
+
+<div style="background: #f3e8ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>🔧 High Inference Efficiency</strong><br>
+  <div style="margin-top: 8px; color: #6b21a8;">
+    MoE architecture ensures efficient inference, significantly reducing actual deployment costs
+  </div>
+</div>
+
+</div>
+
+</div>
+
+## 🎯 Application Value
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h3 style="margin-top: 0; color: #059669;">✅ Core Advantages</h3>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li><strong>Excellent Performance</strong>: Matches top-tier closed source models</li>
+  <li><strong>Controllable Costs</strong>: Reasonable training and inference costs</li>
+  <li><strong>Advanced Architecture</strong>: MoE + MLA dual optimization</li>
+  <li><strong>Stable Training</strong>: Zero-failure training completion</li>
+</ul>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h3 style="margin-top: 0; color: #2563eb;">🚀 Application Scenarios</h3>
+<ul style="margin: 0; padding-left: 20px; color: #1e3a8a;">
+  <li><strong>Enterprise AI Services</strong>: High-performance intelligent applications</li>
+  <li><strong>Research Institutions</strong>: Cutting-edge AI research platforms</li>
+  <li><strong>Developer Community</strong>: Open source AI infrastructure</li>
+  <li><strong>Commercial Deployment</strong>: Optimal cost-benefit solutions</li>
+</ul>
+</div>
+
+</div>
 
 ## 📖 User Guide
 
@@ -111,4 +266,12 @@ if __name__ == "__main__":
     main()
 ```
 
+</div>
+
+---
+
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🚀 <strong>DeepSeek-V3</strong> | 671 Billion Parameters, New Milestone for Open Source AI
+  </p>
 </div>

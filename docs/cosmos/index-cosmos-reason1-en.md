@@ -1,5 +1,97 @@
-## Introduction
-Cosmos-Reason1 is a fully customizable multimodal AI reasoning model, specifically built for understanding motion, object interactions, and spatiotemporal relationships. Based on Chain-of-Thought (CoT) reasoning, the Cosmos-Reason1 model can interpret visual inputs, predict outcomes based on given prompts, and reward optimal decisions. The model implements reasoning based on real-world physical laws, generating clear and context-aware natural language responses. Cosmos-Reason1 can enhance synthetic data curation capabilities by acting as a discriminator or by annotating vast amounts of visual data. Cosmos-Reason1 is post-trained on Qwen2.5-VL using physical common sense and embodied reasoning data, and employs Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL) techniques.
+<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🌌 Cosmos-Reason1 Multimodal Reasoning Model</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Fully Customizable Multimodal AI Reasoning Expert - Understanding Motion and Spatiotemporal Relationships</p>
+</div>
+
+## 🎯 Product Overview
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+Cosmos-Reason1 is a fully customizable multimodal AI reasoning model specifically built for understanding motion, object interactions, and spatiotemporal relationships. Based on Chain-of-thought (CoT) reasoning, the Cosmos-Reason1 model can interpret visual inputs, predict outcomes based on given prompts, and reward optimal decisions.
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔬 Core Innovation</strong><br>
+  This model implements reasoning based on real-world physical laws, generating clear and context-aware natural language responses, setting new benchmarks for multimodal AI reasoning.
+</div>
+
+</div>
+
+## ✨ Core Features
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🎬 Motion Understanding Expert</strong><br>
+  Specifically built for understanding motion, object interactions, and spatiotemporal relationships, capable of precisely analyzing complex physical phenomena in dynamic scenes.
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>🧠 Chain-of-Thought Reasoning</strong><br>
+  Based on Chain-of-thought (CoT) reasoning, can interpret visual inputs, predict outcomes based on given prompts, and reward optimal decisions.
+</div>
+
+<div style="background: #fef7ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>⚖️ Physics-Based Reasoning</strong><br>
+  Implements reasoning based on real-world physical laws, generating clear and context-aware natural language responses.
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+  <strong>🔧 Fully Customizable</strong><br>
+  Fully customizable architecture design supporting deep optimization and personalized adjustments for specific application scenarios.
+</div>
+
+<div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; border-radius: 4px;">
+  <strong>📊 Data Enhancement Capabilities</strong><br>
+  Can enhance synthetic data curation capabilities by acting as a discriminator or annotating massive visual data.
+</div>
+
+</div>
+
+## 🚀 Application Scenarios
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>🤖 Robot Control</strong><br>
+  <div style="margin-top: 8px; color: #1e3a8a;">
+    • Embodied intelligence navigation<br>
+    • Object manipulation planning<br>
+    • Environmental interaction understanding<br>
+    • Action sequence optimization
+  </div>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🎮 Game AI</strong><br>
+  <div style="margin-top: 8px; color: #065f46;">
+    • Physics engine optimization<br>
+    • Intelligent NPC behavior<br>
+    • Scene interaction design<br>
+    • Dynamic event prediction
+  </div>
+</div>
+
+<div style="background: #fef7ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>🎬 Video Analysis</strong><br>
+  <div style="margin-top: 8px; color: #6b21a8;">
+    • Action recognition and classification<br>
+    • Event detection and localization<br>
+    • Behavior prediction analysis<br>
+    • Content understanding annotation
+  </div>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+  <strong>🔬 Scientific Research</strong><br>
+  <div style="margin-top: 8px; color: #92400e;">
+    • Physics experiment analysis<br>
+    • Phenomenon mechanism explanation<br>
+    • Data pattern discovery<br>
+    • Hypothesis validation support
+  </div>
+</div>
+
+</div>
 
 ## 📖 User Guide
 
@@ -186,4 +278,12 @@ if __name__ == "__main__":
     infer_video()
 ```
 
+</div>
+
+---
+
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🌌 <strong>Cosmos-Reason1</strong> | Multimodal Reasoning Expert, AI Pioneer in Understanding Motion and Spacetime
+  </p>
 </div>

@@ -1,15 +1,218 @@
-## Introduction
-Qwen2.5-VL is a more useful visual language model built by the Alibaba Cloud Qwen team based on Qwen2-VL, incorporating valuable feedback from numerous developers. Its main enhanced features include:
+<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">👁️ Qwen2.5-VL Vision-Language Model</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">More Useful Vision-Language Model - AI Expert for Understanding Images, Videos, and Documents</p>
+</div>
 
-- **Visual understanding of objects**: Qwen2.5-VL can not only skillfully recognize common objects like flowers, birds, fish, and insects, but also analyze text, charts, icons, graphics, and layouts in images.
+## 🎯 Product Overview
 
-- **Agency**: Qwen2.5-VL directly plays the role of a visual agent, with the ability to reason and dynamically direct tools, applicable for both computers and mobile phones.
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-- **Understanding long videos and capturing events**: Qwen2.5-VL can understand videos over 1 hour long, and now has the new ability to capture events by precisely locating relevant video segments.
+Qwen2.5-VL is a more useful vision-language model built by Alibaba Cloud's Qwen team based on Qwen2-VL and incorporating valuable feedback from numerous developers. This model has achieved significant improvements in visual understanding, agent capabilities, video analysis, visual localization, and structured output.
 
-- **Capable of visual localization in different formats**: Qwen2.5-VL can accurately locate objects in images by generating bounding boxes or points, and can provide stable JSON output for coordinates and attributes.
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🚀 Core Upgrades</strong><br>
+  Continuously optimized based on developer feedback, Qwen2.5-VL has achieved major breakthroughs in practicality and functional completeness, becoming a more practical vision-language AI assistant.
+</div>
 
-- **Generating structured output**: For scanned data such as invoices, forms, and tables, Qwen2.5-VL supports structured output of their content, beneficial for applications in fields like finance and business.
+</div>
+
+## ✨ Core Features
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>👁️ Visual Understanding of Objects</strong><br>
+  Not only can skillfully recognize common objects such as flowers, birds, fish, and insects, but can also analyze text, charts, icons, graphics, and layouts in images.
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>🤖 Intelligent Agency</strong><br>
+  Directly acts as a visual agent with reasoning and dynamic tool command functions, applicable for computer and mobile device operation control.
+</div>
+
+<div style="background: #fef7ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>🎬 Long Video Understanding</strong><br>
+  Can understand videos longer than 1 hour, with new functionality to capture events through precise localization of relevant video segments.
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+  <strong>🎯 Visual Localization Capability</strong><br>
+  Can accurately locate objects in images by generating bounding boxes or points, and can provide stable JSON output for coordinates and attributes.
+</div>
+
+<div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; border-radius: 4px;">
+  <strong>📊 Structured Output</strong><br>
+  For scanned data such as invoices, tables, and forms, supports structured output of their content, beneficial for applications in finance, business, and other fields.
+</div>
+
+</div>
+
+## 🔍 Visual Understanding Capabilities
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h3 style="margin-top: 0; color: #1e40af;">🌟 Comprehensive Visual Recognition</h3>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: white; border: 2px solid #dcfce7; border-radius: 8px; padding: 16px;">
+  <h4 style="margin-top: 0; color: #059669; text-align: center;">🌺 Natural Object Recognition</h4>
+  <div style="background: #f0fdf4; padding: 12px; border-radius: 6px; margin: 8px 0;">
+    <strong>Recognition Scope:</strong><br>
+    • Flower and plant classification<br>
+    • Bird and animal identification<br>
+    • Fish and aquatic life<br>
+    • Insect and microorganism detection
+  </div>
+  <div style="text-align: center; margin-top: 12px;">
+    <span style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px;">Professional-grade Accuracy</span>
+  </div>
+</div>
+
+<div style="background: white; border: 2px solid #dbeafe; border-radius: 8px; padding: 16px;">
+  <h4 style="margin-top: 0; color: #2563eb; text-align: center;">📝 Text and Chart Analysis</h4>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin: 8px 0;">
+    <strong>Analysis Capabilities:</strong><br>
+    • Image text extraction<br>
+    • Chart data interpretation<br>
+    • Icon and symbol recognition<br>
+    • Layout structure analysis
+  </div>
+  <div style="text-align: center; margin-top: 12px;">
+    <span style="background: #dbeafe; color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 12px;">Multimodal Understanding</span>
+  </div>
+</div>
+
+<div style="background: white; border: 2px solid #f3e8ff; border-radius: 8px; padding: 16px;">
+  <h4 style="margin-top: 0; color: #a855f7; text-align: center;">🎨 Graphic Design Understanding</h4>
+  <div style="background: #fef7ff; padding: 12px; border-radius: 6px; margin: 8px 0;">
+    <strong>Design Analysis:</strong><br>
+    • Graphic element recognition<br>
+    • Design style analysis<br>
+    • Color scheme understanding<br>
+    • Visual hierarchy deconstruction
+  </div>
+  <div style="text-align: center; margin-top: 12px;">
+    <span style="background: #f3e8ff; color: #a855f7; padding: 4px 12px; border-radius: 12px; font-size: 12px;">Aesthetic Perception</span>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+## 🎬 Long Video Understanding
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h3 style="margin-top: 0; color: #1e40af;">⏰ Extended Duration Video Analysis</h3>
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Video Length</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Analysis Capabilities</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Application Scenarios</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">
+        <span style="background: #dcfce7; color: #059669; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500;">Short Videos (< 10 minutes)</span>
+      </td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Fine-grained action recognition, emotion analysis</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Social media content analysis</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">
+        <span style="background: #dbeafe; color: #2563eb; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500;">Medium Videos (10-30 minutes)</span>
+      </td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Event sequence understanding, topic extraction</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Educational training video analysis</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px;">
+        <span style="background: #fed7aa; color: #ea580c; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500;">Long Videos (> 1 hour)</span>
+      </td>
+      <td style="padding: 12px;">Global understanding, event localization, segment retrieval</td>
+      <td style="padding: 12px;">Movie analysis, meeting records</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🎯 Event Capture</strong><br>
+  <div style="margin-top: 8px; color: #065f46;">
+    • Automatic key event recognition<br>
+    • Precise timestamp localization<br>
+    • Intelligent related segment retrieval<br>
+    • Event correlation analysis
+  </div>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>📊 Content Understanding</strong><br>
+  <div style="margin-top: 8px; color: #1e3a8a;">
+    • Video topic extraction<br>
+    • Plot development tracking<br>
+    • Character behavior analysis<br>
+    • Scene change detection
+  </div>
+</div>
+
+</div>
+
+</div>
+
+## 🚀 Application Scenarios
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>💼 Business Office</strong><br>
+  <div style="margin-top: 8px; color: #1e3a8a;">
+    • Document automation processing<br>
+    • Invoice and receipt recognition<br>
+    • Table data extraction<br>
+    • Office workflow automation
+  </div>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🎓 Education and Training</strong><br>
+  <div style="margin-top: 8px; color: #065f46;">
+    • Educational video analysis<br>
+    • Learning content extraction<br>
+    • Knowledge point localization<br>
+    • Interactive teaching assistance
+  </div>
+</div>
+
+<div style="background: #fef7ff; border-left: 4px solid #a855f7; padding: 16px; border-radius: 4px;">
+  <strong>🎬 Media Entertainment</strong><br>
+  <div style="margin-top: 8px; color: #6b21a8;">
+    • Video content analysis<br>
+    • Highlight segment extraction<br>
+    • Subtitle generation optimization<br>
+    • Content recommendation systems
+  </div>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+  <strong>🏥 Healthcare</strong><br>
+  <div style="margin-top: 8px; color: #92400e;">
+    • Medical image analysis<br>
+    • Medical record document processing<br>
+    • Examination report interpretation<br>
+    • Diagnostic assistance support
+  </div>
+</div>
+
+</div>
 
 ## 📖 User Guide
 
@@ -198,4 +401,10 @@ if __name__ == "__main__":
 
 </div>
 
+---
 
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    👁️ <strong>Qwen2.5-VL</strong> | More Useful Vision-Language Model, AI's Eye for Understanding the World
+  </p>
+</div>
