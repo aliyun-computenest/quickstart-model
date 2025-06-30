@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">📋 模型简介</a></li>
+              
+          
+              <li><a href="#_2">✨ 核心特性</a></li>
+              
+          
+              <li><a href="#_3">🔧 技术规格</a></li>
+              
+          
+              <li><a href="#_4">🚀 使用说明</a></li>
+              
+                  <li><a href="#web-ui">🌐 Web UI 使用教程</a></li>
+                  
+              
+                  <li><a href="#api">🔌 API 调用方式</a></li>
+                  
+                      <li class="li-h3"><a href="#_5">🔑 获取认证信息</a></li>
+                  
+                      <li class="li-h3"><a href="#python">💻 Python 代码示例</a></li>
+                  
+                      <li class="li-h3"><a href="#comfyui-api">🔗 ComfyUI API 端点说明</a></li>
+                  
+              
+          
+              <li><a href="#_6">⚙️ 参数详细说明</a></li>
+              
+                  <li><a href="#_7">🎛️ 生成参数配置</a></li>
+                  
+              
+                  <li><a href="#_8">🖼️ 图像要求详解</a></li>
+                  
+              
+          
+              <li><a href="#_9">💡 提示词编写指南</a></li>
+              
+                  <li><a href="#_10">✅ 正向提示词示例</a></li>
+                  
+              
+                  <li><a href="#_11">❌ 负向提示词建议</a></li>
+                  
+              
+          
+              <li><a href="#_12">🏆 最佳实践指南</a></li>
+              
+                  <li><a href="#_13">📸 输入图像选择策略</a></li>
+                  
+              
+                  <li><a href="#_14">✍️ 提示词编写技巧</a></li>
+                  
+              
+          
+              <li><a href="#_15">⚠️ 重要注意事项</a></li>
+              
+          
+              <li><a href="#_16">🎯 应用场景展示</a></li>
+              
+          
+              <li><a href="#_17">📚 相关资源链接</a></li>
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h1 style="font-size: 2.5em; margin: 0; font-weight: 600;">🎬 Wan2.1-I2V-14B 模型使用指南</h1>
+  <p style="font-size: 1.2em; margin: 16px 0 0 0; opacity: 0.9;">强大的图像到视频生成模型，让静态图片动起来</p>
+  <div style="margin-top: 20px;">
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🚀 14B参数</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🎯 高质量</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">⚡ 快速生成</span>
+  </div>
+</div>
+
+<h2 id="_1">📋 模型简介</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Wan2.1-I2V-14B** 是一个革命性的图像到视频生成模型，拥有140亿参数的强大架构。它能够基于输入图像和文本提示生成高质量的视频内容，在保持输入图像主体特征的同时，根据文本描述添加逼真的动态效果和场景变化。
+
+</div>
+
+<h2 id="_2">✨ 核心特性</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #1e40af; margin: 0 0 8px 0;">🧠 强大参数规模</h4>
+<p style="margin: 0; color: #1e40af;">14B参数，提供强大的图像理解和视频生成能力</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🖼️ 图像驱动生成</h4>
+<p style="margin: 0; color: #065f46;">以输入图像为基础，生成连贯的视频序列</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🌍 多语言支持</h4>
+<p style="margin: 0; color: #9a3412;">支持中文和英文文本提示</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🎯 图像一致性</h4>
+<p style="margin: 0; color: #5b21b6;">保持输入图像的主要特征和风格</p>
+</div>
+
+</div>
+
+<h2 id="_3">🔧 技术规格</h2>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">规格项目</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">详细信息</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">模型类型</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">图像到视频生成（I2V）</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">参数规模</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">14B</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">量化方式</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">FP8量化版本</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">支持分辨率</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">480p</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">最大帧数</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">81帧</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">推荐帧率</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16fps</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">输入格式</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">JPEG、PNG、WebP</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">输出格式</td>
+      <td style="padding: 12px;">MP4 (H.264)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<hr />
+<h1 id="_4">🚀 使用说明</h1>
+<h2 id="web-ui">🌐 Web UI 使用教程</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 📍 步骤一：访问界面
+
+单击服务实例处的访问链接
+
+<div style="text-align: center; margin: 16px 0;">
+  <img src="img.png" alt="访问界面示例" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <p style="margin-top: 8px; color: #64748b; font-size: 14px;">点击访问链接进入 ComfyUI 界面</p>
+</div>
+
+### 🔧 步骤二：选择工作流
+
+选择 `wanx-21.json` 工作流并打开，选择图生视频功能选项
+
+### 📤 步骤三：上传图像
+
+- 在 **LoadImage** 节点选择示例图片
+- 或从本机电脑上传自定义图像
+
+<div style="text-align: center; margin: 16px 0;">
+  <img src="app3.png" alt="上传图像界面" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <p style="margin-top: 8px; color: #64748b; font-size: 14px;">LoadImage 节点操作界面</p>
+</div>
+
+### ✍️ 步骤四：设置文本描述
+
+在 **TextEncode** 节点填写描述词：
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">✅ 正向提示词</h4>
+<p style="margin: 0; color: #065f46;">描述希望的动作和场景变化</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">❌ 负向提示词</h4>
+<p style="margin: 0; color: #9a3412;">不想要生成的内容</p>
+</div>
+
+</div>
+
+### ⚙️ 步骤五：配置参数
+
+在 **ImageClip Encode** 设置分辨率和帧数
+
+### 🎬 步骤六：执行工作流
+
+点击执行按钮开始生成
+
+</div>
+
+<hr />
+<h2 id="api">🔌 API 调用方式</h2>
+<h3 id="_5">🔑 获取认证信息</h3>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🔐 获取 Token</h4>
+<p style="margin: 0 0 12px 0;">点击右上方按钮，打开底部面板</p>
+<div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+  <img src="img_1.png" alt="获取Token界面" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+</div>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🌐 获取服务器地址</h4>
+<p style="margin: 0 0 12px 0;">COMFYUI_SERVER 的获取参考</p>
+<div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+  <img src="img_2.png" alt="获取服务器地址" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+</div>
+</div>
+
+</div>
+
+<h3 id="python">💻 Python 代码示例</h3>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+🐍 点击展开完整 Python 代码实现
+</summary>
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random, os
+
+# 🔧 配置参数
+COMFYUI_SERVER, COMFYUI_TOKEN = &quot;输入您的服务器地址&quot;, &quot;输入您的token&quot;
+T5_MODEL = &quot;wan2.1/umt5-xxl-enc-bf16.safetensors&quot;
+VIDEO_MODEL = &quot;Wan2_1-I2V-14B-480P_fp8_e4m3fn.safetensors&quot;
+VAE_MODEL = &quot;wan2.1/Wan2_1_VAE_bf16.safetensors&quot;
+CLIP_MODEL = &quot;wan2.1/open-clip-xlm-roberta-large-vit-huge-14_visual_fp16.safetensors&quot;
+
+# 🎯 预设参数
+IMAGE_PATH = &quot;girl.png&quot;
+PROMPT = &quot;A beautiful anime girl with long flowing hair, graceful movements, smooth animation, cinematic lighting, high quality&quot;
+NEG_PROMPT = &quot;bad quality video, low quality, blurry, distorted, choppy animation, static, bad anatomy&quot;
+
+class ComfyUIClient:
+    def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+        self.base_url, self.token, self.client_id = f&quot;http://{server}&quot;, token, str(uuid.uuid4())
+        self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;, **({&quot;Authorization&quot;: f&quot;Bearer {token}&quot;} if token else {})}
+
+    def upload_image(self, image_path):
+        &quot;&quot;&quot;📤 上传图片到ComfyUI&quot;&quot;&quot;
+        if not os.path.exists(image_path):
+            raise Exception(f&quot;图片文件不存在: {image_path}&quot;)
+
+        try:
+            with open(image_path, 'rb') as f:
+                files = {'image': (os.path.basename(image_path), f, 'image/png')}
+                headers = {}
+                if self.token:
+                    headers[&quot;Authorization&quot;] = f&quot;Bearer {self.token}&quot;
+
+                response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files, headers=headers)
+                print(f&quot;Upload response: {response.text}&quot;)
+
+                if response.status_code != 200:
+                    raise Exception(f&quot;上传失败，状态码: {response.status_code}&quot;)
+
+                result = response.json()
+                if 'name' not in result:
+                    raise Exception(f&quot;上传响应中没有文件名: {result}&quot;)
+
+                return result['name']
+        except Exception as e:
+            raise Exception(f&quot;图片上传失败: {e}&quot;)
+
+    def generate_i2v(self, image_path, prompt, neg_prompt, steps=10, cfg=6, width=512, height=512, frames=81):
+        &quot;&quot;&quot;🎬 图生视频生成&quot;&quot;&quot;
+        print(&quot;📤 正在上传图片...&quot;)
+        image_name = self.upload_image(image_path)
+        print(f&quot;✅ 图片上传成功: {image_name}&quot;)
+
+        workflow = {
+            &quot;42&quot;: {&quot;inputs&quot;: {&quot;image&quot;: image_name, &quot;upload&quot;: &quot;image&quot;}, &quot;class_type&quot;: &quot;LoadImage&quot;},
+            &quot;43&quot;: {&quot;inputs&quot;: {&quot;model_name&quot;: VAE_MODEL, &quot;precision&quot;: &quot;bf16&quot;}, &quot;class_type&quot;: &quot;WanVideoVAELoader&quot;},
+            &quot;44&quot;: {&quot;inputs&quot;: {&quot;model_name&quot;: CLIP_MODEL, &quot;precision&quot;: &quot;fp16&quot;, &quot;load_device&quot;: &quot;offload_device&quot;}, &quot;class_type&quot;: &quot;LoadWanVideoClipTextEncoder&quot;},
+            &quot;45&quot;: {&quot;inputs&quot;: {&quot;model_name&quot;: T5_MODEL, &quot;precision&quot;: &quot;bf16&quot;, &quot;load_device&quot;: &quot;offload_device&quot;, &quot;quantization&quot;: &quot;disabled&quot;}, &quot;class_type&quot;: &quot;LoadWanVideoT5TextEncoder&quot;},
+            &quot;46&quot;: {&quot;inputs&quot;: {&quot;blocks_to_swap&quot;: 10, &quot;offload_img_emb&quot;: False, &quot;offload_txt_emb&quot;: False, &quot;use_non_blocking&quot;: True, &quot;vace_blocks_to_swap&quot;: 0}, &quot;class_type&quot;: &quot;WanVideoBlockSwap&quot;},
+            &quot;47&quot;: {&quot;inputs&quot;: {&quot;backend&quot;: &quot;inductor&quot;, &quot;fullgraph&quot;: False, &quot;mode&quot;: &quot;default&quot;, &quot;dynamic&quot;: False, &quot;dynamo_cache_size_limit&quot;: 64, &quot;compile_transformer_blocks_only&quot;: True, &quot;dynamo_recompile_limit&quot;: 128}, &quot;class_type&quot;: &quot;WanVideoTorchCompileSettings&quot;},
+            &quot;48&quot;: {&quot;inputs&quot;: {&quot;model&quot;: VIDEO_MODEL, &quot;base_precision&quot;: &quot;bf16&quot;, &quot;quantization&quot;: &quot;fp8_e4m3fn&quot;, &quot;load_device&quot;: &quot;offload_device&quot;, &quot;attention_mode&quot;: &quot;sageattn&quot;, &quot;block_swap_args&quot;: [&quot;46&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoModelLoader&quot;},
+            &quot;49&quot;: {&quot;inputs&quot;: {&quot;positive_prompt&quot;: prompt, &quot;negative_prompt&quot;: neg_prompt, &quot;force_offload&quot;: True, &quot;t5&quot;: [&quot;45&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoTextEncode&quot;},
+            &quot;50&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;generation_width&quot;: width,
+                    &quot;generation_height&quot;: height,
+                    &quot;num_frames&quot;: frames,
+                    &quot;force_offload&quot;: True,
+                    &quot;noise_aug_strength&quot;: 0,
+                    &quot;latent_strength&quot;: 1,
+                    &quot;clip_embed_strength&quot;: 1,
+                    &quot;adjust_resolution&quot;: True,
+                    &quot;image&quot;: [&quot;42&quot;, 0],
+                    &quot;vae&quot;: [&quot;43&quot;, 0],
+                    &quot;clip_vision&quot;: [&quot;44&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;WanVideoImageClipEncode&quot;
+            },
+            &quot;52&quot;: {&quot;inputs&quot;: {&quot;steps&quot;: steps, &quot;cfg&quot;: cfg, &quot;shift&quot;: 5, &quot;seed&quot;: random.randint(1, 1000000), &quot;force_offload&quot;: True, &quot;scheduler&quot;: &quot;dpm++&quot;, &quot;riflex_freq_index&quot;: 0, &quot;denoise_strength&quot;: 1, &quot;batched_cfg&quot;: False, &quot;rope_function&quot;: &quot;comfy&quot;, &quot;model&quot;: [&quot;48&quot;, 0], &quot;text_embeds&quot;: [&quot;49&quot;, 0], &quot;image_embeds&quot;: [&quot;50&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoSampler&quot;},
+            &quot;53&quot;: {&quot;inputs&quot;: {&quot;enable_vae_tiling&quot;: True, &quot;tile_x&quot;: 272, &quot;tile_y&quot;: 272, &quot;tile_stride_x&quot;: 144, &quot;tile_stride_y&quot;: 128, &quot;vae&quot;: [&quot;43&quot;, 0], &quot;samples&quot;: [&quot;52&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoDecode&quot;},
+            &quot;54&quot;: {&quot;inputs&quot;: {&quot;frame_rate&quot;: 16, &quot;loop_count&quot;: 0, &quot;filename_prefix&quot;: &quot;WanVideo2_1&quot;, &quot;format&quot;: &quot;video/h264-mp4&quot;, &quot;pix_fmt&quot;: &quot;yuv420p&quot;, &quot;crf&quot;: 19, &quot;save_metadata&quot;: True, &quot;trim_to_audio&quot;: False, &quot;pingpong&quot;: False, &quot;save_output&quot;: True, &quot;images&quot;: [&quot;53&quot;, 0]}, &quot;class_type&quot;: &quot;VHS_VideoCombine&quot;}
+        }
+
+        print(&quot;📤 提交工作流...&quot;)
+        response = requests.post(f&quot;{self.base_url}/prompt&quot;, headers=self.headers, json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id})
+        print(f&quot;API Response: {response.text}&quot;)
+        result = response.json()
+        if &quot;error&quot; in result: 
+            raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+        if &quot;prompt_id&quot; not in result: 
+            raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+        return result[&quot;prompt_id&quot;]
+
+    def get_status(self, task_id):
+        &quot;&quot;&quot;📊 获取任务状态&quot;&quot;&quot;
+        try:
+            queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])): 
+                return &quot;processing&quot;
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])): 
+                return &quot;pending&quot;
+            history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            return &quot;completed&quot; if history_response.status_code == 200 and task_id in history_response.json() else &quot;processing&quot;
+        except: 
+            return &quot;processing&quot;
+
+    def download_video(self, task_id, output_path=&quot;i2v_output.mp4&quot;):
+        &quot;&quot;&quot;📥 下载生成的视频&quot;&quot;&quot;
+        try:
+            response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            history = response.json()
+            if task_id in history:
+                for output in history[task_id]['outputs'].values():
+                    if 'gifs' in output:
+                        filename = output['gifs'][0]['filename']
+                        video_response = requests.get(f&quot;{self.base_url}/view?filename={filename}&quot;, headers=self.headers)
+                        with open(output_path, &quot;wb&quot;) as f: 
+                            f.write(video_response.content)
+                        return output_path
+        except Exception as e: 
+            print(f&quot;Download error: {e}&quot;)
+        return None
+
+def main():
+    &quot;&quot;&quot;🚀 主函数 - 执行图生视频任务&quot;&quot;&quot;
+    client = ComfyUIClient()
+    try:
+        print(f&quot;🎬 开始图生视频任务...&quot;)
+        print(f&quot;📷 输入图片: {IMAGE_PATH}&quot;)
+        print(f&quot;📝 提示词: {PROMPT}&quot;)
+
+        if not os.path.exists(IMAGE_PATH):
+            print(f&quot;❌ 图片文件不存在: {IMAGE_PATH}&quot;)
+            print(&quot;请确保当前目录下有 girl.png 文件&quot;)
+            return
+
+        task_id = client.generate_i2v(IMAGE_PATH, PROMPT, NEG_PROMPT, 10, 6, 512, 512, 81)
+        print(f&quot;🆔 Task ID: {task_id}&quot;)
+
+        while True:
+            status = client.get_status(task_id)
+            print(f&quot;📊 Current status: {status}&quot;)
+            if status == &quot;completed&quot;: 
+                print(&quot;✅ Video ready!&quot;); 
+                break
+            elif status == &quot;failed&quot;: 
+                print(&quot;❌ Generation failed!&quot;); 
+                exit(1)
+            time.sleep(10)
+
+        output_file = client.download_video(task_id, &quot;i2v_output.mp4&quot;)
+        print(&quot;🎉 Video downloaded successfully!&quot; if output_file else &quot;❌ Failed to download video&quot;)
+        if output_file: 
+            print(f&quot;📁 Saved as: {output_file}&quot;)
+
+    except Exception as e: 
+        print(f&quot;❌ Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;: 
+    main()
+</code></pre>
+
+
+</details>
+
+<h3 id="comfyui-api">🔗 ComfyUI API 端点说明</h3>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">端点</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">方法</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">功能</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/queue</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">获取队列状态</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">查看当前任务队列和运行状态</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/prompt</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">提交工作流</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">执行图生视频任务</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/history/{prompt_id}</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">获取执行历史</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">查看任务执行结果和输出</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/upload/image</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">上传图片</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">上传输入图片文件</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-family: monospace; background: #f8fafc;">/view</td>
+      <td style="padding: 12px;">GET</td>
+      <td style="padding: 12px;">下载输出文件</td>
+      <td style="padding: 12px;">获取生成的结果文件</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<hr />
+<h1 id="_6">⚙️ 参数详细说明</h1>
+<h2 id="_7">🎛️ 生成参数配置</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #1e40af; margin: 0 0 8px 0;">🔢 核心参数</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af;">
+  <li><strong>steps</strong>: 推理步数（建议20-30）</li>
+  <li><strong>cfg</strong>: CFG引导强度（建议6-8）</li>
+  <li><strong>shift</strong>: 噪声调度偏移（建议5）</li>
+</ul>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🎲 随机性控制</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li><strong>seed</strong>: 随机种子（控制生成结果的随机性）</li>
+  <li><strong>denoise_strength</strong>: 去噪强度（0.6-0.9，控制对原图的保持程度）</li>
+</ul>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">📐 视频规格</h4>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6;">
+  <li><strong>width × height</strong>: 视频分辨率（建议512×512）</li>
+  <li><strong>frames</strong>: 视频帧数（最大81帧）</li>
+  <li><strong>frame_rate</strong>: 帧率（推荐16fps）</li>
+</ul>
+</div>
+
+</div>
+
+<h2 id="_8">🖼️ 图像要求详解</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 图像输入要求</strong><br>
+  <strong>分辨率要求</strong>: 建议512×512以上，确保图像清晰度<br>
+  <strong>支持格式</strong>: JPEG、PNG、WebP等主流格式<br>
+  <strong>内容要求</strong>: 清晰的主体对象，避免过于复杂的背景<br>
+  <strong>质量标准</strong>: 高质量图像能获得更好的视频效果
+</div>
+
+<hr />
+<h1 id="_9">💡 提示词编写指南</h1>
+<h2 id="_10">✅ 正向提示词示例</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🚶 人物动作</h4>
+<p style="margin: 0; font-style: italic; color: #065f46;">"The person in the image is walking slowly through a garden"</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🐱 动物行为</h4>
+<p style="margin: 0; font-style: italic; color: #065f46;">"The cat in the photo is playing with a ball of yarn"</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🚗 交通工具</h4>
+<p style="margin: 0; font-style: italic; color: #065f46;">"The car in the image is driving down a winding mountain road"</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">💃 艺术表演</h4>
+<p style="margin: 0; font-style: italic; color: #065f46;">"The dancer in the picture is performing elegant ballet movements"</p>
+</div>
+
+</div>
+
+<h2 id="_11">❌ 负向提示词建议</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🚫 静态问题</h4>
+<p style="margin: 0; font-style: italic; color: #9a3412;">"static, motionless, frozen, distorted, blurry"</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">⚠️ 动作问题</h4>
+<p style="margin: 0; font-style: italic; color: #9a3412;">"unnatural movement, jerky motion, inconsistent"</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">📉 质量问题</h4>
+<p style="margin: 0; font-style: italic; color: #9a3412;">"low quality, artifacts, noise, compression"</p>
+</div>
+
+</div>
+
+<hr />
+<h1 id="_12">🏆 最佳实践指南</h1>
+<h2 id="_13">📸 输入图像选择策略</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #1e40af; margin: 0 0 8px 0;">🔍 清晰度优先</h4>
+<p style="margin: 0; color: #1e40af;">选择高清晰度的图像，避免模糊或噪点过多的图片</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🎯 主体明确</h4>
+<p style="margin: 0; color: #065f46;">确保主要对象清晰可见，占据画面合适比例</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🖼️ 构图合理</h4>
+<p style="margin: 0; color: #9a3412;">避免过于复杂的背景，保持构图简洁明了</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">💡 光照良好</h4>
+<p style="margin: 0; color: #5b21b6;">光照均匀的图像效果更佳，避免过暗或过曝</p>
+</div>
+
+</div>
+
+<h2 id="_14">✍️ 提示词编写技巧</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">📝 编写要点</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li><strong>具体描述</strong>: 详细描述希望的动作和场景，越具体越好</li>
+  <li><strong>保持一致</strong>: 确保描述与图像内容相符，避免矛盾</li>
+  <li><strong>动作合理</strong>: 描述符合物理规律的动作，避免不可能的运动</li>
+  <li><strong>风格统一</strong>: 保持与原图风格一致的描述</li>
+</ul>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">⚙️ 参数调优策略</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af;">
+  <li><strong>去噪强度</strong>: 0.6-0.7保持原图特征，0.8-0.9允许更多变化</li>
+  <li><strong>CFG值设置</strong>: 6-7平衡引导，8-10更强文本引导</li>
+  <li><strong>步数选择</strong>: 20-25快速生成，25-30更高质量</li>
+</ul>
+</div>
+
+</div>
+
+<hr />
+<h1 id="_15">⚠️ 重要注意事项</h1>
+<details style="border: 2px solid #ea580c; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #fff7ed, #fed7aa); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #ea580c; cursor: pointer;">💾 内存管理注意事项</summary>
+<div style="margin-top: 15px; color: #9a3412;">
+<p><strong>重要提醒：</strong></p>
+<ul>
+<li>图生视频比文生视频需要更多显存，建议关闭其他占用显存的程序</li>
+<li>确保输入图像尺寸合适，避免过大或过小的图片</li>
+<li>去噪强度不宜过高，以保持图像一致性</li>
+<li>描述的动作应符合图像中对象的特征</li>
+</ul>
+</div>
+</details>
+
+<hr />
+<h1 id="_16">🎯 应用场景展示</h1>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">👤</div>
+<h4 style="margin: 0 0 8px 0; color: #1e40af;">人物动画</h4>
+<p style="margin: 0; color: #1e40af;">让静态人物照片动起来，创造生动的人物视频</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🛍️</div>
+<h4 style="margin: 0 0 8px 0; color: #059669;">产品展示</h4>
+<p style="margin: 0; color: #065f46;">为产品图片添加动态效果，提升营销效果</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🎨</div>
+<h4 style="margin: 0 0 8px 0; color: #ea580c;">艺术创作</h4>
+<p style="margin: 0; color: #9a3412;">将绘画作品转换为动态视频，增强艺术表现力</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #7c3aed;">📚</div>
+<h4 style="margin: 0 0 8px 0; color: #7c3aed;">教育演示</h4>
+<p style="margin: 0; color: #5b21b6;">让教学图片具有动态效果，提升学习体验</p>
+</div>
+
+</div>
+
+<hr />
+<h1 id="_17">📚 相关资源链接</h1>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">📖 ComfyUI 官方文档</h4>
+<a href="https://comfyui-wiki.com/zh/interface/node-options" style="color: #2563eb; text-decoration: none; font-weight: 500;">ComfyUI 使用指南 →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">详细的 ComfyUI 使用说明和节点介绍</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🎥 WanVideo 插件文档</h4>
+<a href="https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md" style="color: #2563eb; text-decoration: none; font-weight: 500;">GitHub 项目页面 →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">WanVideo 插件的详细使用说明</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🔧 ComfyUI 技术文档</h4>
+<a href="https://docs.comfy.org/essentials/image_preprocessing" style="color: #2563eb; text-decoration: none; font-weight: 500;">图像预处理指南 →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">图像预处理和高级功能说明</p>
+</div>
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎬 <strong>开始您的创作之旅！</strong> | Wan2.1-I2V-14B 让您的静态图片焕发生机，创造无限可能
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-06-30 11:15:01.560990+00:00
+  -->
+</body>
+</html>
