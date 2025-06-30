@@ -109,3 +109,49 @@ if __name__ == "__main__":
 ```
 
 </div>
+
+## 🌐 Web 应用访问
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 📱 访问步骤
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #1e40af;">🔗 步骤一：获取访问链接</h4>
+<p style="margin: 0;">在服务实例概览页面中，点击 Web 应用对应的链接，即可直接进行模型服务 Web 访问。</p>
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #059669;">💬 步骤二：开始对话</h4>
+<p style="margin: 0;">在模型服务 Web 页面输入框中输入问题，就可以和大模型进行对话了。</p>
+</div>
+
+</div>
+
+### 🖼️ 界面展示
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-cn/img-web.png" alt="Web应用访问入口" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 访问提示</strong><br>
+  在服务实例概览页面中找到 Web 应用对应的链接，点击即可直接访问模型服务的 Web 界面。
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-cn/img-appflow.png" alt="模型对话界面" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ 使用说明</strong><br>
+  在输入框中输入您的问题或需求，系统将实时响应并提供相应的模型服务。
+</div>
+
+</div>
+
+
+
+
