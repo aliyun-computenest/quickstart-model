@@ -1,7 +1,7 @@
 ## 简介
 CosyVoice是阿里云推出的一款语音合成服务，它能够将文本转换成自然流畅的语音。这项服务支持多种语言和方言，可以满足不同场景下的需求，如新闻播报、有声读物制作、智能客服等。通过使用先进的深度学习技术，CosyVoice能够生成接近真人发声效果的声音，为用户提供更加丰富和人性化的交互体验。
 
-多语言 
+多语言
 - 支持的语言: 中文、英文、日文、韩文、中文方言（粤语、四川话、上海话、天津话、武汉话等）
 - 跨语言及混合语言：支持零样本的跨语言和代码转换场景的语音克隆。
 
@@ -25,22 +25,12 @@ CosyVoice是阿里云推出的一款语音合成服务，它能够将文本转�
 
 
 ## 使用说明
-### 通过web使用
+在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。
 
-如果您使用的是CosyVoice-300M-Instruct模型，则可以使用预训练音色生成语音，如图![6.png](6.png)输入您需要生成的文案，选择预训练音色，点击生成即可。音频生成完成后即可点击下载查看生成效果。
-<br>
-<br>
-![7.png](7.png)如果您选择的是3秒极速复刻。您需要先录一段音频，可以读一段话，也可随便说点什么，不超过30秒，注意录音效果不能噪音很多。上传完成后，将您录音中的文案输入到prompt文本中
-最后，输入合成文本后点击生成音频即可。最终生成的音频是根据生成文本，依靠您输入音频的音色生成的。
-<br>
-<br>
-![8.png](8.png)如果您使用的是跨语言复制，则需要输入prompt音频和文字。需要注意的是，需要确保合成文本和prompt文本为不同语言。
-<br>
-<br>
-![9.png](9.png)如果您使用的是自然语音控制，您可以在instruct填写控制文本，用于控制语气语速等。
-
-### 通过API访问
-如果您想通过api访问服务，您可以使用下面的python代码通过sdk访问。请注意，需要将访问的ip更换为您服务器的公网ip，端口为80端口。另外需将your_valid_token更新为服务实例详情页，立即使用中的ApiKey
+![1.png](1.png)
+### API调用
+#### Python调用
+以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址。
 ``` python
 import argparse
 import logging
@@ -53,7 +43,7 @@ import numpy as np
 def main():
     url = "http://{}:{}/inference_{}".format(args.host, args.port, args.mode)
     headers = {
-        "X-API-TOKEN": "your_valid_token"  # 添加自定义 Header
+        "X-API-TOKEN": "${ApiKey}"  # 添加自定义 Header
     }
     if args.mode == 'sft':
         payload = {
@@ -94,7 +84,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--host',
                         type=str,
-                        default='116.62.86.145')
+                        default='${ServerUrl}')
     parser.add_argument('--port',
                         type=int,
                         default='80')
@@ -126,3 +116,6 @@ if __name__ == "__main__":
     main()
 
 ```
+
+### Web应用
+点击安全代理访问，跳转到对应的页面就可以直接进行模型服务在线访问了。
