@@ -438,7 +438,7 @@ if __name__ == "__main__":
 
 <div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
   <strong>✅ 使用说明</strong><br>
-  在输入框中输入您的问题或需求，系统将实时响应并提供相应的模型服务，对于。
+  在输入框中输入您的问题或需求，系统将实时响应并提供相应的模型服务，对于多模态需要输入图片的场景，可以在输入框右下角选择图片进行上传。
 </div>
 
 </div>
