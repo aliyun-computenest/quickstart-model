@@ -127,7 +127,7 @@
 <h3 style="margin-top: 0; color: #1e40af;">🎛️ ComfyUI 环境</h3>
 
 **主模型**
-- `Flux1-dev.safetensors`
+- `flux1-dev.safetensors`
 
 **VAE**
 - `flux-ae.safetensors`
