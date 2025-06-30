@@ -2,7 +2,7 @@
 
 <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
   <strong>💡 快速开始</strong><br>
-  在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址和 ApiKey。
+  在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址、Web应用地址和 ApiKey。
 </div>
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
@@ -110,11 +110,11 @@ if __name__ == "__main__":
 
 </div>
 
-## 🌐 Web 应用访问
+### 🌐 Web 应用访问
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-### 📱 访问步骤
+#### 📱 访问步骤
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
 
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
 </div>
 
-### 🖼️ 界面展示
+#### 🖼️ 界面展示
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="../image-cn/img-web.png" alt="Web应用访问入口" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">

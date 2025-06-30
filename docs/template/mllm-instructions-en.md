@@ -184,3 +184,45 @@ if __name__ == "__main__":
 ```
 
 </div>
+
+### 🌐 Web Application Access
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### 📱 Access Steps
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #1e40af;">🔗 Step 1: Get Access Link</h4>
+<p style="margin: 0;">On the service instance overview page, click the link corresponding to the Web application to directly access the model service Web interface.</p>
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #059669;">💬 Step 2: Start Conversation</h4>
+<p style="margin: 0;">Enter your question in the input box on the model service Web page to start conversing with the large language model.</p>
+</div>
+
+</div>
+
+#### 🖼️ Interface Display
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-en/img-web.png" alt="Web Application Access Entry" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 Access Tips</strong><br>
+  Find the link corresponding to the Web application on the service instance overview page and click it to directly access the model service Web interface.
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-en/img-appflow.png" alt="Model Conversation Interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Usage Instructions</strong><br>
+  Enter your questions or requirements in the input box, and the system will respond in real-time and provide corresponding model services.
+</div>
+
+</div>
