@@ -1,201 +1,229 @@
 <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
   <h2 style="margin: 0; color: white;">🤖 NVIDIA Isaac Lab User Guide</h2>
-  <p style="margin: 8px 0 0 0; opacity: 0.9;">Open-source Unified Framework for Robot Learning - High-Fidelity Physics Simulation and Intelligent Training Platform</p>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Complete Tutorial for Isaac Sim-based Unified Robotics Learning Framework</p>
 </div>
 
 ## 🎯 Product Overview
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-**NVIDIA Isaac™ Lab** is an open-source unified framework specifically designed for robot learning, dedicated to helping developers efficiently train robot policies.
+**NVIDIA Isaac™ Lab** is an open-source unified framework for robotics learning, designed to help train robot policies.
+
+Isaac Lab is built on **NVIDIA Isaac Sim™**, utilizing **NVIDIA® PhysX®** and physics-based **NVIDIA RTX™** rendering to provide high-fidelity physics simulation. It bridges the gap between high-fidelity simulation and perception-based robot training, helping developers and researchers build more robots more efficiently.
+
+</div>
 
 <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>🔧 Core Technology Stack</strong><br>
-  <div style="margin-top: 8px;">
-    <span style="background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px;">NVIDIA Isaac Sim™</span>
-    <span style="background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px;">NVIDIA PhysX®</span>
-    <span style="background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 12px; font-size: 12px;">NVIDIA RTX™ Rendering</span>
-  </div>
+  <strong>🎯 Core Features</strong><br>
+  Isaac Lab service instances come with a complete Isaac Sim application built-in, supporting two training modes: standalone Isaac Sim simulation training and reinforcement learning training based on the Isaac Lab framework.
 </div>
 
-### ✨ Core Advantages
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
-  <div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-    <strong>🎯 High-Fidelity Simulation</strong><br>
-    Physics-based RTX rendering providing realistic physical environments
-  </div>
-
-  <div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
-    <strong>🔗 Seamless Integration</strong><br>
-    Bridging the gap between high-fidelity simulation and perception-based training
-  </div>
-
-  <div style="background: #ede9fe; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
-    <strong>⚡ Efficient Development</strong><br>
-    Helping researchers build robot applications faster
-  </div>
-</div>
-
-</div>
-
-## 🚀 Usage Instructions
-
-<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 After Deployment</strong><br>
-  View model usage methods on the Computing Nest service instance overview page. The server IP is the public IP of the corresponding ECS instance, supporting remote client access connections.
-</div>
-
-![img_1.png](img_1.png)
-
-### 🎮 Method 1: Omniverse Streaming Client Graphical Development
+## 🖥️ Environment Access Configuration
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+<h3 style="margin-top: 0; color: #1e40af;">💻 System Environment</h3>
 
-Isaac Lab service automatically starts Isaac Sim upon launch. You can remotely connect to Isaac Sim through Omniverse Streaming Client and use the graphical interface for rapid development and debugging.
-
-#### 📥 Step 1: Download and Install Streaming Client
-
-<details style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0; background: #fafafa;">
-<summary style="font-weight: bold; color: #1e40af; cursor: pointer;">💻 System Requirements and Preparation</summary>
-
-<div style="background: #fed7aa; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>⚠️ Hardware Requirements</strong><br>
-  Requires a Windows computer with GPU and GPU Grid driver installation
-</div>
-
-<div style="background: #dbeafe; border-left: 4px solid #3b82f6; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>☁️ Cloud Solution</strong><br>
-  If you don't have a Windows GPU device, you can purchase a GPU-enabled Windows cloud computer through Alibaba Cloud Wuying service<br>
-  <strong>Minimum Configuration:</strong> 4 vCPU / 10 GiB / 2GiB VRAM<br>
-  <a href="https://help.aliyun.com/zh/wuying-workspace/user-guide/create-a-cloud-computer-3" style="color: #2563eb;">📖 Wuying Cloud Computer Purchase Guide</a>
-</div>
-
-</details>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
-
-<div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-<h4 style="margin-top: 0; color: #1e40af;">📦 Download Client</h4>
-<p>Visit the <a href="https://docs.isaacsim.omniverse.nvidia.com/latest/installation/download.html#isaac-sim-latest-release" style="color: #2563eb;">Isaac Sim Official Download Page</a> and select the Windows version</p>
-
-![img.png](img.png)
+The corresponding ECS instance is installed with Ubuntu graphical interface, supporting direct use through VNC in the ECS console.
 
 </div>
 
-<div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-<h4 style="margin-top: 0; color: #1e40af;">🔧 Installation and Launch</h4>
-<p>Extract the downloaded file, navigate to the directory, and double-click <code>omniverse-streaming-client.exe</code> to launch</p>
-
-![img_2.png](img_2.png)
-![img_3.png](img_3.png)
-
-</div>
-
-</div>
-
-#### 🔗 Step 2: Connect to Isaac Sim for Development
-
-<div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-##### Connection Steps
-
-1. **Launch Connection Interface**: Open Omniverse Streaming Client
-2. **Enter Server Address**: Input the Isaac Lab service instance IP address in the Server field
-3. **Establish Connection**: Click the Connect button to connect to Isaac Sim
-
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>✅ Successful Connection Example</strong><br>
-  Refer to the <a href="https://docs.isaacsim.omniverse.nvidia.com/latest/introduction/quickstart_isaacsim.html" style="color: #059669;">Isaac Sim Getting Started Tutorial</a> to create canvas planes and cubes for basic operations
-</div>
-
-![img_6.png](img_6.png)
-
-</div>
-
-</div>
-
-### 💻 Method 2: SSH Remote Python Script Training
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-Isaac Lab service is deployed through Docker images, using official standard images plus the plugin cache required for Isaac Sim startup, supporting training script execution within containers.
-
-#### 🔧 Operation Steps
+### 🔗 Accessing ECS Instance via VNC
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 16px; margin: 16px 0;">
 
-<div style="background: white; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
-<h4 style="margin-top: 0; color: #1e40af;">1️⃣ Remote Login to Server</h4>
-<p>In the service instance details page resources section, click "Remote Connection" to log into the ECS server</p>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">Step 1: Enter ECS Console</h4>
+<p>In the resources section of the service instance details page, find the corresponding ECS instance and click to go to the ECS console.</p>
 
-![img_7.png](img_7.png)
-
-</div>
-
-<div style="background: white; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
-<h4 style="margin-top: 0; color: #1e40af;">2️⃣ Check Container Status</h4>
-<p>Execute command to check isaac-lab container running status:</p>
-<div style="background: #1e293b; border-radius: 6px; padding: 12px; margin: 8px 0;">
-<code style="color: #e2e8f0; font-family: 'Courier New', monospace;">docker ps -a</code>
-</div>
-
-![img_8.png](img_8.png)
+![img_17.png](img_17.png)
 
 </div>
 
-<div style="background: white; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
-<h4 style="margin-top: 0; color: #1e40af;">3️⃣ Enter Container Environment</h4>
-<p>Execute command to enter isaac-lab container:</p>
-<div style="background: #1e293b; border-radius: 6px; padding: 12px; margin: 8px 0;">
-<code style="color: #e2e8f0; font-family: 'Courier New', monospace;">docker exec -it isaac-lab bash</code>
-</div>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">Step 2: Select VNC Login</h4>
+<p>Click on the remote connection in the upper right corner, select VNC login method to enter the Ubuntu system's graphical interface.</p>
 
-![img_9.png](img_9.png)
+![img_18.png](img_18.png)
 
 </div>
 
-<div style="background: white; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
-<h4 style="margin-top: 0; color: #1e40af;">4️⃣ Execute Training Script</h4>
-<p>Refer to the <a href="https://docs.robotsfan.com/isaaclab/source/deployment/docker.html" style="color: #2563eb;">official tutorial</a> and execute the example script:</p>
-<div style="background: #1e293b; border-radius: 6px; padding: 12px; margin: 8px 0;">
-<code style="color: #e2e8f0; font-family: 'Courier New', monospace;">./isaaclab.sh -p scripts/tutorials/00_sim/log_time.py --headless</code>
-</div>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">Step 3: Enter Login Password</h4>
+<p>Here you need to enter the login password for the isaac-sim account. The password is the same as the ECS instance password, which can be viewed on the service instance overview page.</p>
 
-![img_10.png](img_10.png)
+![img_19.png](img_19.png)
 
 </div>
+
+</div>
+
+## 🎮 Isaac Sim User Guide
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+<h3 style="margin-top: 0; color: #1e40af;">📁 Directory Structure</h3>
+
+After logging into the ECS instance using the above method, open Terminal and you can see two important directories under the isaac-sim account:
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+  <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+    <strong>📂 isaacsim</strong><br>
+    Isaac Sim installation directory, containing related startup and training scripts
+  </div>
+  <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+    <strong>📦 isaacsim_assets</strong><br>
+    Isaac Sim assets directory, pre-downloaded resources for convenient training use
+  </div>
+</div>
+
+![img_21.png](img_21.png)
+
+</div>
+
+### 🔬 Example 1: Headless Mode Scene-based Synthetic Dataset Generation
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h4 style="margin-top: 0; color: #1e40af;">📋 Feature Description</h4>
+This example demonstrates the process of generating synthetic datasets using the omni.replicator extension. The generated data will be stored offline (on disk), making it available for training deep neural networks. The example can run in Isaac Sim's Python standalone environment and utilizes Isaac Sim and Replicator to create offline synthetic datasets for training machine learning models.
+
+<div style="background: #fed7aa; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚠️ Important Note</strong><br>
+  It is recommended to copy the official example code to the user directory for modification and use.
+</div>
+
+</div>
+
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff);">
+<summary style="font-weight: bold; font-size: 16px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px;">
+💻 Click to View Complete Execution Code
+</summary>
+
+```bash
+cd /home/isaac-sim
+mkdir -p isaacsim_test
+cd /home/isaac-sim/isaacsim_test
+mkdir -p scene_based_sdg
+cp -rf /home/isaac-sim/isaacsim/standalone_examples/replicator/scene_based_sdg/* /home/isaac-sim/isaacsim_test/scene_based_sdg/
+
+# Render synthesis
+# --config specifies configuration file path with headless=true setting
+# --/persistent/isaac/asset_root/default specifies 3D asset storage path
+/home/isaac-sim/isaacsim/python.sh ./scene_based_sdg/scene_based_sdg.py \
+  --config="/home/isaac-sim/isaacsim_test/scene_based_sdg/config/config_coco_writer.yaml" \
+  --/persistent/isaac/asset_root/default="/home/isaac-sim/isaacsim_assets/Assets/Isaac/4.5"
+```
+
+</details>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Execution Results</strong><br>
+  Generated results are stored in "./isaacsim_test/_out_coco", visualization effects are as follows:
+</div>
+
+![img_23.png](img_23.png)![img_22.png](img_22.png)
+
+### 🖼️ Example 2: Using Isaac Sim in GUI Mode
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h4 style="margin-top: 0; color: #1e40af;">🚀 Launch Command</h4>
+Execute the following command in Terminal to enter Isaac Sim's GUI interface:
+
+```bash
+cd /home/isaac-sim/isaacsim
+./isaac-sim.sh
+```
+
+<div style="background: #fed7aa; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚠️ Important Notes</strong><br>
+  Isaac Sim startup is relatively slow and will show a waiting window. No action is required, just wait for some time.
+</div>
+
+![img_24.png](img_24.png)
 
 </div>
 
 <div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>✅ Execution Success</strong><br>
-  The script executes successfully. You can also run custom training scripts for robot learning experiments
+  <strong>✅ Operation Example</strong><br>
+  Below is a cube created following the steps in the <a href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/introduction/quickstart_isaacsim.html" style="color: #2563eb;">Getting Started Tutorial</a>.
+</div>
+
+![img_25.png](img_25.png)
+
+## 🧠 Isaac Lab User Guide
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+<h3 style="margin-top: 0; color: #1e40af;">📍 Installation Location</h3>
+
+Isaac Lab service installation directory is located at `/home/isaac-sim/IsaacLab`, containing Isaac Lab's installation directory and startup scripts.
+
+</div>
+
+### 🎯 Example 1: Headless Mode Agent Training
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h4 style="margin-top: 0; color: #1e40af;">🎮 Training Task Description</h4>
+This case uses the **Stable-Baselines3** reinforcement learning (RL) framework to solve the Cartpole balance control agent task.
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🎯 Training Objective</strong><br>
+  Train the agent to learn how to control the cart's left and right movement to keep the pole upright.
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔧 Technical Framework</strong><br>
+  Stable-Baselines3 is a PyTorch-based reinforcement learning library that provides various stable and easy-to-use RL algorithms such as PPO, SAC, DQN, etc.
 </div>
 
 </div>
 
-## 📚 Related Resources
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff);">
+<summary style="font-weight: bold; font-size: 16px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px;">
+💻 Click to View Training Code
+</summary>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+```bash
+cd /home/isaac-sim
+mkdir -p isaaclab_test
+cd /home/isaac-sim/isaaclab_test
+mkdir -p sb3
+cp -rf /home/isaac-sim/IsaacLab/scripts/reinforcement_learning/sb3/* /home/isaac-sim/isaaclab_test/sb3/
 
-<div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-<h4 style="margin-top: 0; color: #1e40af;">📖 Official Documentation</h4>
-<ul style="margin: 0; padding-left: 20px;">
-  <li><a href="https://docs.isaacsim.omniverse.nvidia.com/latest/introduction/quickstart_isaacsim.html" style="color: #2563eb;">Isaac Sim Quick Start</a></li>
-  <li><a href="https://docs.robotsfan.com/isaaclab/source/deployment/docker.html" style="color: #2563eb;">Isaac Lab Docker Deployment Guide</a></li>
-</ul>
+# Start training
+# --task specifies training task
+# --num_envs specifies number of parallel environments
+# --headless GUI-less mode
+# --video generates training video
+/home/isaac-sim/IsaacLab/isaaclab.sh -p ./sb3/train.py \
+  --task Isaac-Cartpole-v0 \
+  --num_envs 64 \
+  --headless \
+  --video
+```
+
+</details>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Training Results</strong><br>
+  Training results are saved to <code>./logs/sb3/Isaac-Cartpole-v0</code>, visualization results are as follows:
 </div>
 
-<div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-<h4 style="margin-top: 0; color: #1e40af;">☁️ Cloud Service Support</h4>
-<ul style="margin: 0; padding-left: 20px;">
-  <li><a href="https://help.aliyun.com/zh/wuying-workspace/user-guide/create-a-cloud-computer-3" style="color: #2563eb;">Alibaba Cloud Wuying Cloud Computer</a></li>
-</ul>
-</div>
+![img_26.png](img_26.png)
+
+### 🎨 Example 2: GUI Mode Basic Object Generation
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<h4 style="margin-top: 0; color: #1e40af;">🚀 Launch Command</h4>
+Execute the following command in Terminal to enter Isaac Lab's GUI interface:
+
+```bash
+cd /home/isaac-sim/IsaacLab
+./isaaclab.sh -p scripts/tutorials/00_sim/spawn_prims.py
+```
+
+![img_27.png](img_27.png)
 
 </div>
 
