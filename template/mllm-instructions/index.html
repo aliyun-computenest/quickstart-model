@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Mllm instructions - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">📖 使用说明</a></li>
+              
+                  <li><a href="#api">🔌 API 调用方式</a></li>
+                  
+                      <li class="li-h3"><a href="#curl">🖥️ Curl 命令调用</a></li>
+                  
+                      <li class="li-h3"><a href="#python-sdk">🐍 Python SDK 调用</a></li>
+                  
+              
+                  <li><a href="#web">🌐 Web 应用访问</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">📖 使用说明</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 部署完成后</strong><br>
+  在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址（开启公网访问后会有）和 Api_Key。
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+  <div style="text-align: center; margin-bottom: 16px;">
+    <img src="../image-cn/img-llm-use-desc.png" alt="模型使用说明界面" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<h3 id="api">🔌 API 调用方式</h3>
+<h4 id="curl">🖥️ Curl 命令调用</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="text-align: center; margin-bottom: 16px;">
+  <img src="../image-cn/img-api-call.png" alt="API调用示例" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📋 参数说明</strong><br>
+  • <code>${ServerIP}</code>：内网地址或公网地址中的 IP 地址<br>
+  • <code>${ApiKey}</code>：页面提供的 ApiKey<br>
+  • <code>${ModelName}</code>：模型名称
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🖼️ 图片格式支持</strong><br>
+  <code>image_url</code> 参数支持两种格式：<br>
+  • <strong>HTTP URL</strong>：如 <code>https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png</code><br>
+  • <strong>Base64 编码</strong>：<code>data:image/jpeg;base64,&lt;图片的 base64 编码格式&gt;</code>
+</div>
+
+Curl 命令调用可以直接使用服务实例概览页面中的 API 调用示例，调用模型 API 的具体结构如下：
+
+
+<pre><code class="language-bash">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -H &quot;Authorization: ${ApiKey}&quot; \
+    -d '{
+        &quot;model&quot;: &quot;${ModelName}&quot;,
+        &quot;messages&quot;: [
+        {
+            &quot;role&quot;: &quot;system&quot;,
+            &quot;content&quot;: &quot;You are a helpful assistant.&quot;
+        },
+        {
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: [
+                {
+                    &quot;type&quot;: &quot;image_url&quot;,
+                    &quot;image_url&quot;: {
+                        &quot;url&quot;: &quot;data:image/jpeg;base64,&lt;图片的 base64 编码格式&gt;&quot;
+                    }
+                },
+                {
+                    &quot;type&quot;: &quot;text&quot;,
+                    &quot;text&quot;: &quot;How many sheep are there in the picture?&quot;
+                }
+            ]
+        }
+        ]
+    }'
+</code></pre>
+
+
+</div>
+
+<h4 id="python-sdk">🐍 Python SDK 调用</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚙️ 配置说明</strong><br>
+  • <code>${ApiKey}</code>：填写页面上的 ApiKey<br>
+  • <code>${ServerUrl}</code>：填写页面上的公网地址或内网地址，需要带上 <code>/v1</code>
+</div>
+
+以下为 Python 示例代码，支持图像和视频处理：
+
+
+<pre><code class="language-python">import base64
+import requests
+from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+
+
+def encode_base64_content_from_url(content_url: str) -&gt; str:
+    &quot;&quot;&quot;Encode a content retrieved from a remote url to base64 format.&quot;&quot;&quot;
+
+    with requests.get(content_url) as response:
+        response.raise_for_status()
+        result = base64.b64encode(response.content).decode(&quot;utf-8&quot;)
+
+    return result
+
+
+def infer_image():
+    image_url = &quot;https://qianwen-res.oss-cn-beijing.aliyuncs.com/QVQ/demo.png&quot;
+
+    stream = True
+
+    image_base64 = encode_base64_content_from_url(image_url)
+
+    chat_completion_from_base64 = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;使用中文回答，图中方框处应该是数字多少?&quot;,
+                    },
+                    {
+                        &quot;type&quot;: &quot;image_url&quot;,
+                        &quot;image_url&quot;: {&quot;url&quot;: f&quot;data:image/jpeg;base64,{image_base64}&quot;},
+                    },
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion_from_base64:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion_from_base64.choices[0].message.content
+        print(result)
+
+
+def infer_video():
+    video_url = &quot;https://pai-quickstart-predeploy-hangzhou.oss-cn-hangzhou.aliyuncs.com/modelscope/algorithms/ms-swift/video_demo.mp4&quot;
+
+    stream = True
+
+    video_base64 = encode_base64_content_from_url(video_url)
+
+    chat_completion_from_base64 = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;请描述下视频内容&quot;},
+                    {
+                        &quot;type&quot;: &quot;video_url&quot;,
+                        &quot;video_url&quot;: {&quot;url&quot;: f&quot;data:video/mp4;base64,{video_base64}&quot;},
+                    },
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=512,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion_from_base64:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion_from_base64.choices[0].message.content
+        print(result)
+
+
+if __name__ == &quot;__main__&quot;:
+    infer_image()
+    infer_video()
+</code></pre>
+
+
+</div>
+
+<h3 id="web">🌐 Web 应用访问</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### 📱 访问步骤
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #1e40af;">🔗 步骤一：获取访问链接</h4>
+<p style="margin: 0;">在服务实例概览页面中，点击 Web 应用对应的链接，即可直接进行模型服务 Web 访问。</p>
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #059669;">💬 步骤二：开始对话</h4>
+<p style="margin: 0;">在模型服务 Web 页面输入框中输入问题，就可以和大模型进行对话了。</p>
+</div>
+
+</div>
+
+#### 🖼️ 界面展示
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-cn/img-web.png" alt="Web应用访问入口" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 访问提示</strong><br>
+  在服务实例概览页面中找到 Web 应用对应的链接，点击即可直接访问模型服务的 Web 界面。
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-cn/img-appflow.png" alt="模型对话界面" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ 使用说明</strong><br>
+  在输入框中输入您的问题或需求，系统将实时响应并提供相应的模型服务，对于多模态需要输入图片的场景，可以在输入框右下角选择图片进行上传。
+</div>
+
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-08-07 03:24:53.782604+00:00
+  -->
+</body>
+</html>
