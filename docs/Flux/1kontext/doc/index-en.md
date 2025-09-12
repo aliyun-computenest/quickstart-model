@@ -8,17 +8,6 @@
   </div>
 </div>
 
-## 🎥 ComfyOrg Flux Kontext Dev Live Stream Replay
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-Watch the official live stream replay to learn detailed usage methods and best practices for Flux Kontext Dev in ComfyUI.
-
-<div style="text-align: center; margin: 20px 0;">
-  <iframe style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="//player.bilibili.com/player.html?isOutside=true&aid=114750419636159&bvid=BV14MKfzCELz&cid=30712923473&p=1&autoplay=0" title="ComfyUI Selection Toolbox New Features" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-</div>
 
 ## 📋 FLUX.1 Kontext Dev Model Overview
 
