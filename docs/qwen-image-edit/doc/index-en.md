@@ -144,7 +144,7 @@ After updating ComfyUI, you can find the workflow files in templates, or drag th
 
 </div>
 
-### 🔗 Step 2: Download Model Files
+### 🔗 Step 2: Model Files
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
@@ -165,55 +165,14 @@ All model files can be found at <a href="https://huggingface.co/Comfy-Org/Qwen-I
 │       └── qwen_2.5_vl_7b_fp8_scaled.safetensors</code></pre>
 </div>
 
-#### 🔽 Model Download Links
 
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Model Type</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">File Name</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🧠 Diffusion Model</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_fp8_e4m3fn.safetensors" target="_blank" style="color: #2563eb;">qwen_image_edit_fp8_e4m3fn.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Main image editing diffusion model</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">⚡ LoRA</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V1.0.safetensors" target="_blank" style="color: #2563eb;">Qwen-Image-Lightning-4steps-V1.0.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">4-step acceleration LoRA (optional)</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">📝 Text Encoder</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors" target="_blank" style="color: #2563eb;">qwen_2.5_vl_7b_fp8_scaled.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Qwen2.5-VL text encoder</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">🎨 VAE</td>
-      <td style="padding: 12px; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors" target="_blank" style="color: #2563eb;">qwen_image_vae.safetensors</a>
-      </td>
-      <td style="padding: 12px;">Variational autoencoder</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-</div>
 
 ### 🔧 Step 3: Workflow Configuration Operations
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+you can find the template from ComfyUI's workflow templates
+
+![img_1.png](img_1.png)
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="https://mintcdn.com/dripart/SIDaLac8vBogzwm7/images/tutorial/image/qwen/qwen_image_edit.jpg?fit=max&auto=format&n=SIDaLac8vBogzwm7&q=85&s=98a706bfa8f1578a4dfd7f2a0a415926" alt="Qwen-Image-Edit Workflow Configuration Steps" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">

@@ -44,75 +44,10 @@
 
 </div>
 
-## 🎥 ComfyOrg Wan2.2 Fun InP Live Stream Replay
 
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-A dedicated live demonstration has been conducted for ComfyUI Wan2.2 usage. You can learn detailed usage methods and techniques through the following replay.
 
-<div style="text-align: center; margin: 20px 0;">
-  <iframe style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="//player.bilibili.com/player.html?isOutside=true&aid=115027747082114&bvid=BV1DVbrzdEFR&cid=31697013072&p=1&autoplay=0" title="ComfyUI Wan2.2 Fun InP Tutorial" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 
-</div>
-
-## 🚀 Wan2.2 Fun Inp Workflow Example
-
-### ⚠️ Environment Requirements
-
-<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 Pre-usage Checklist</strong><br>
-  • Ensure ComfyUI is updated to the latest version<br>
-  • Recommend using the latest development version (nightly) for full functionality<br>
-  • The workflow in this guide can be found in ComfyUI's workflow templates<br>
-  • If nodes are missing when loading the workflow, check ComfyUI version or node import status
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">📥 Download Links</h4>
-<ul style="margin: 0; padding-left: 20px; color: #065f46;">
-  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI Download</a></li>
-  <li><a href="/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI Update Tutorial</a></li>
-  <li><a href="/interface/features/template" target="_blank" style="color: #059669;">Workflow Templates</a></li>
-</ul>
-</div>
-
-<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
-<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 Common Issues</h4>
-<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
-  <li>Missing nodes: Version too old or import failed</li>
-  <li>Incomplete features: Using stable version instead of dev version</li>
-  <li>Loading failure: Node import exception during startup</li>
-</ul>
-</div>
-
-</div>
-
-### 🔧 Workflow Version Description
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-Two workflow versions are provided for selection:
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
-<h4 style="color: #2563eb; margin: 0 0 8px 0;">⚡ Lightning Accelerated Version</h4>
-<p style="margin: 0 0 8px 0; color: #1e40af; font-size: 14px;">Uses <a href="https://huggingface.co/lightx2v/Wan2.2-Lightning" target="_blank" style="color: #2563eb;">Wan2.2-Lightning</a> 4-step LoRA</p>
-<div style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block; margin-right: 8px;">✅ Faster Speed</div>
-<div style="background: #fed7aa; color: #ea580c; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block;">⚠️ Dynamic Loss</div>
-</div>
-
-<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">🎯 Standard Quality Version</h4>
-<p style="margin: 0 0 8px 0; color: #065f46; font-size: 14px;">Uses fp8_scaled version without acceleration LoRA</p>
-<div style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block; margin-right: 8px;">✅ Higher Quality</div>
-<div style="background: #fed7aa; color: #ea580c; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block;">⏱️ Longer Time</div>
-</div>
-
-</div>
 
 #### 📊 Performance Comparison Test
 
@@ -155,12 +90,14 @@ Two workflow versions are provided for selection:
   Due to the significant speed improvement of the accelerated LoRA version and its friendliness to low-VRAM users, the accelerated version is enabled by default. To switch to the standard version, select the corresponding workflow and use <strong>Ctrl+B</strong> to enable it.
 </div>
 
-</div>
+
 
 ### 📥 Step 1: Download Workflow Files
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+you can use the template from comfyui.
 
+![img.png](img.png)
 <div style="text-align: center; margin: 20px 0;">
   <video controls style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/wan2.2_fun_inp/wan2.2_14B_fun_inp.mp4"></video>
 </div>

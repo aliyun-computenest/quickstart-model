@@ -160,7 +160,9 @@ Download the following image or JSON file and drag it into ComfyUI to load the c
 ### 🔧 Step 3: Workflow Configuration Operations
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+open the comfyui template:
 
+![img_1.png](img_1.png)
 <div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
   <strong>⚠️ Low VRAM User Notice</strong><br>
   For low VRAM users, this model may not run smoothly on your device. Consider waiting for community-optimized versions or use the FP8 quantized version.

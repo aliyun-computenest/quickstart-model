@@ -160,7 +160,8 @@ Two workflow versions are provided for selection:
 ### 📥 Step 1: Download Workflow Files
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
+you can find the workflow from comfyui template repository.
+![img.png](img.png)
 <div style="text-align: center; margin: 20px 0;">
   <video controls style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/wan2.2_fun_inp/wan2.2_14B_fun_inp.mp4"></video>
 </div>

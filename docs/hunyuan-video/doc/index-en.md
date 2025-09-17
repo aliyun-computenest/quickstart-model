@@ -117,7 +117,11 @@ Hunyuan text-to-video was open-sourced in December 2024, supporting generation o
 
 ### 📥 Step 1: Download Workflow
 
+
 <div style="text-align: center; margin: 20px 0;">
+
+you can open the template from the ComfyUI workflow templates.
+![img.png](img.png)
   <img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/hunyuan-video/t2v/kitchen.webp" alt="ComfyUI Workflow - Hunyuan Text-to-Video" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <p style="margin: 8px 0 0 0; color: #64748b; font-size: 14px;">Click image to download, drag into ComfyUI to load workflow</p>
 </div>

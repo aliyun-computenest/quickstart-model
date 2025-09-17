@@ -44,17 +44,6 @@
 
 </div>
 
-## 🎥 ComfyOrg Wan2.2 Fun Control Live Stream Replay
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-A dedicated live demonstration has been conducted for ComfyUI Wan2.2 usage. You can learn detailed usage methods and control techniques through the following replay.
-
-<div style="text-align: center; margin: 20px 0;">
-  <iframe style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="//player.bilibili.com/player.html?isOutside=true&aid=115027747082114&bvid=BV1DVbrzdEFR&cid=31697013072&p=1&autoplay=0" title="ComfyUI Wan2.2 Fun Control Tutorial" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-</div>
 
 ## 🚀 Wan2.2 Fun Control Workflow Example
 
@@ -160,6 +149,9 @@ Two workflow versions are provided for selection:
 ### 📥 Step 1: Download Workflow and Materials
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+you can find the workflow file in the following figure
+
+![img_1.png](img_1.png)
 
 Download the following video or JSON file and drag it into ComfyUI to load the corresponding workflow.
 

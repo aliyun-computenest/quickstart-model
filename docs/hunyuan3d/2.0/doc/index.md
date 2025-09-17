@@ -80,6 +80,8 @@
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
 本示例包含三个完整的工作流，涵盖不同的使用场景：
+均可从模版找到
+![img.png](img.png)
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
 
@@ -168,37 +170,8 @@ Hunyuan3D-2mv 工作流支持使用多视角图片生成 3D 模型。多个视�
   示例中的输入图片已预处理去除背景。实际使用中，可借助 <a href="https://github.com/cubiq/ComfyUI_essentials" target="_blank" style="color: #2563eb;">ComfyUI_essentials</a> 等自定义节点自动去除背景。
 </div>
 
-### 🔗 步骤二：模型下载
 
-<div style="background: #1e293b; border-radius: 6px; padding: 16px; margin: 16px 0;">
-<pre style="margin: 0; color: #e2e8f0; font-family: 'Courier New', monospace; font-size: 14px;"><code>ComfyUI/
-├── models/
-│   ├── checkpoints/
-│   │   └── hunyuan3d-dit-v2-mv.safetensors  // 重命名后的文件</code></pre>
-</div>
-
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">模型名称</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">下载链接</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">重命名为</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">hunyuan3d-dit-v2-mv</td>
-      <td style="padding: 12px;">
-        <a href="https://huggingface.co/tencent/Hunyuan3D-2mv/resolve/main/hunyuan3d-dit-v2-mv/model.fp16.safetensors?download=true" target="_blank" style="color: #2563eb;">model.fp16.safetensors</a>
-      </td>
-      <td style="padding: 12px; font-family: monospace; font-size: 12px;">hunyuan3d-dit-v2-mv.safetensors</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-### 🔧 步骤三：工作流配置
+### 🔧 步骤二：工作流配置
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="https://mintcdn.com/dripart/NmGUk_QSXQXRVtZP/images/tutorial/3d/hunyuan3d-2mv/hunyuan3d_2mv.jpg?fit=max&auto=format&n=NmGUk_QSXQXRVtZP&q=85&s=17e6ac738f0e0133536bceb6e3ea1b56" alt="ComfyUI hunyuan3d_2mv" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
@@ -306,6 +279,7 @@ Hunyuan3D-2 工作流使用单视图输入生成 3D 模型。在此工作流中�
 
 
 ### 🔧 步骤二：工作流配置
+
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="https://mintcdn.com/dripart/NmGUk_QSXQXRVtZP/images/tutorial/3d/hunyuan3d-2mv/hunyuan3d_2_non_multiview.jpg?fit=max&auto=format&n=NmGUk_QSXQXRVtZP&q=85&s=33c158fcfb133560674aa56bfdb5087d" alt="ComfyUI hunyuan3d_2" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">

@@ -115,8 +115,10 @@
 混元文生视频开源于 2024 年 12 月，支持通过自然语言描述生成 5 秒的短视频，支持中英文输入。
 
 ### 📥 步骤一：下载工作流
-
 <div style="text-align: center; margin: 20px 0;">
+
+或者直接通过官方模版打开
+![img_1.png](img_1.png)
   <img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/hunyuan-video/t2v/kitchen.webp" alt="ComfyUI 工作流 - 混元文生视频" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <p style="margin: 8px 0 0 0; color: #64748b; font-size: 14px;">点击图片下载，拖入 ComfyUI 加载工作流</p>
 </div>

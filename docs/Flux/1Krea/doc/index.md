@@ -90,8 +90,11 @@
 ### 📥 步骤一：工作流文件下载
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+从模版打开：
 
-下载以下图片或 JSON 文件，并拖入 ComfyUI 以加载对应工作流。
+![img.png](img.png)
+
+或下载以下图片或 JSON 文件，并拖入 ComfyUI 以加载对应工作流。
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/krea/flux1_krea_dev.png" alt="Flux Krea Dev 工作流" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
@@ -158,6 +161,7 @@
 </div>
 
 ### 🔧 步骤三：工作流配置操作
+
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 

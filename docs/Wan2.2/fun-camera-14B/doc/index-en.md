@@ -46,37 +46,6 @@
 
 ## 🚀 Wan2.2 Fun Camera Control Workflow Example
 
-### ⚠️ Environment Requirements
-
-<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 Pre-usage Checklist</strong><br>
-  • Ensure ComfyUI is updated to the latest version<br>
-  • Recommend using the latest development version (nightly) for full functionality<br>
-  • The workflow in this guide can be found in ComfyUI's workflow templates<br>
-  • If nodes are missing when loading the workflow, check ComfyUI version or node import status
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">📥 Download Links</h4>
-<ul style="margin: 0; padding-left: 20px; color: #065f46;">
-  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI Download</a></li>
-  <li><a href="/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI Update Tutorial</a></li>
-  <li><a href="/interface/features/template" target="_blank" style="color: #059669;">Workflow Templates</a></li>
-</ul>
-</div>
-
-<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
-<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 Common Issues</h4>
-<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
-  <li>Missing nodes: Version too old or import failed</li>
-  <li>Incomplete features: Using stable version instead of dev version</li>
-  <li>Loading failure: Node import exception during startup</li>
-</ul>
-</div>
-
-</div>
 
 ### 🔧 Workflow Version Description
 
@@ -148,7 +117,9 @@ Two workflow versions are provided for selection:
 ### 📥 Step 1: Download Workflow and Materials
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+you can find open the template from comfyui repository.
 
+![img.png](img.png)
 Download the following video or JSON file and drag it into ComfyUI to load the corresponding workflow. The workflow will prompt to download models.
 
 <div style="text-align: center; margin: 20px 0;">
@@ -173,11 +144,8 @@ Download the following video or JSON file and drag it into ComfyUI to load the c
 
 </div>
 
-### 🔗 Step 2: Download Model Files
+### 🔗 Step 2: Model Files
 
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-All model files can be found in the <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged" target="_blank" style="color: #2563eb;">Wan_2.2_ComfyUI_Repackaged</a> repository.
 
 #### 📂 Model File Structure
 
@@ -196,53 +164,7 @@ All model files can be found in the <a href="https://huggingface.co/Comfy-Org/Wa
 │       └── wan_2.1_vae.safetensors</code></pre>
 </div>
 
-#### 🔽 Model Download Links
 
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Model Type</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">File Name</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🧠 Diffusion Models</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors" target="_blank" style="color: #2563eb;">wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors</a><br>
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors" target="_blank" style="color: #2563eb;">wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">High-noise and low-noise camera control models</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">⚡ Wan2.2-Lightning LoRA</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors" target="_blank" style="color: #2563eb;">wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors</a><br>
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors" target="_blank" style="color: #2563eb;">wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Acceleration LoRA (optional)</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🎨 VAE</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" target="_blank" style="color: #2563eb;">wan_2.1_vae.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Variational autoencoder</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">📝 Text Encoder</td>
-      <td style="padding: 12px; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" target="_blank" style="color: #2563eb;">umt5_xxl_fp8_e4m3fn_scaled.safetensors</a>
-      </td>
-      <td style="padding: 12px;">Text encoder</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-</div>
 
 ### 🔧 Step 3: Workflow Configuration Operations
 

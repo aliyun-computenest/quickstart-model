@@ -44,123 +44,17 @@
 
 </div>
 
-## 🎥 ComfyOrg Wan2.2 Fun InP 直播回放
 
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-针对 ComfyUI Wan2.2 的使用，已进行了专门的直播演示，可以通过以下回放了解详细的使用方法和技巧。
-
-<div style="text-align: center; margin: 20px 0;">
-  <iframe style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="//player.bilibili.com/player.html?isOutside=true&aid=115027747082114&bvid=BV1DVbrzdEFR&cid=31697013072&p=1&autoplay=0" title="ComfyUI Wan2.2 Fun InP 使用教程" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-</div>
 
 ## 🚀 Wan2.2 Fun Inp 工作流示例
 
-### ⚠️ 环境要求
-
-<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 使用前请确认</strong><br>
-  • 确保 ComfyUI 已更新到最新版本<br>
-  • 推荐使用最新开发版（nightly）获得完整功能<br>
-  • 本指南的工作流可在 ComfyUI 的工作流模板中找到<br>
-  • 如果加载工作流时有节点缺失，请检查 ComfyUI 版本或节点导入状态
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">📥 下载链接</h4>
-<ul style="margin: 0; padding-left: 20px; color: #065f46;">
-  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI 下载</a></li>
-  <li><a href="/zh-CN/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI 更新教程</a></li>
-  <li><a href="/zh-CN/interface/features/template" target="_blank" style="color: #059669;">工作流模板</a></li>
-</ul>
-</div>
-
-<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
-<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 常见问题</h4>
-<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
-  <li>节点缺失：版本过旧或导入失败</li>
-  <li>功能不全：使用稳定版而非开发版</li>
-  <li>加载失败：启动时节点导入异常</li>
-</ul>
-</div>
-
-</div>
-
-### 🔧 工作流版本说明
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-提供两个版本的工作流供选择：
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
-<h4 style="color: #2563eb; margin: 0 0 8px 0;">⚡ Lightning 加速版</h4>
-<p style="margin: 0 0 8px 0; color: #1e40af; font-size: 14px;">使用 <a href="https://huggingface.co/lightx2v/Wan2.2-Lightning" target="_blank" style="color: #2563eb;">Wan2.2-Lightning</a> 4步 LoRA</p>
-<div style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block; margin-right: 8px;">✅ 速度更快</div>
-<div style="background: #fed7aa; color: #ea580c; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block;">⚠️ 动态损失</div>
-</div>
-
-<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">🎯 标准质量版</h4>
-<p style="margin: 0 0 8px 0; color: #065f46; font-size: 14px;">使用 fp8_scaled 版本，无加速 LoRA</p>
-<div style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block; margin-right: 8px;">✅ 质量更高</div>
-<div style="background: #fed7aa; color: #ea580c; padding: 4px 12px; border-radius: 12px; font-size: 12px; display: inline-block;">⏱️ 耗时更长</div>
-</div>
-
-</div>
-
-#### 📊 性能对比测试
-
-<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>🧪 测试环境</strong>：RTX 4090D 24GB 显存，640×640 分辨率，81 帧长度
-</div>
-
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">模型类型</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">分辨率</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">显存占用</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">首次生成</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">第二次生成</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">fp8_scaled</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">640×640</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">83%</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">≈ 524秒</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">≈ 520秒</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">fp8_scaled + 4步LoRA</td>
-      <td style="padding: 12px;">640×640</td>
-      <td style="padding: 12px;">89%</td>
-      <td style="padding: 12px;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">≈ 138秒</span></td>
-      <td style="padding: 12px;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">≈ 79秒</span></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>💡 版本切换说明</strong><br>
-  由于加速 LoRA 版本提速明显且对低显存用户友好，默认启用加速版本。如需切换到标准版本，框选对应工作流后使用 <strong>Ctrl+B</strong> 即可启用。
-</div>
-
-</div>
 
 ### 📥 步骤一：工作流文件下载
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+或者你可以直接通过Comfyui自带的模版仓库打开：
 
+![img_1.png](img_1.png)
 <div style="text-align: center; margin: 20px 0;">
   <video controls style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/wan2.2_fun_inp/wan2.2_14B_fun_inp.mp4"></video>
 </div>

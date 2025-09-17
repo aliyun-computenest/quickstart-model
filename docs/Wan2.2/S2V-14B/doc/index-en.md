@@ -49,7 +49,9 @@ We are excited to announce that the advanced audio-driven video generation model
 ### 📥 Step 1: Download Workflow Files
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+you can find the workflow by comfyui template repository.
 
+![img_1.png](img_1.png)
 Download the following workflow file and drag it into ComfyUI to load the workflow.
 
 <div style="text-align: center; margin: 20px 0;">
@@ -86,11 +88,10 @@ Download the following workflow file and drag it into ComfyUI to load the workfl
 
 </div>
 
-### 🔗 Step 2: Download Model Files
+### 🔗 Step 2: Model Files
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-You can find all model files in <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged" target="_blank" style="color: #2563eb;">our repository</a>.
 
 #### 📂 Model File Structure
 
@@ -108,50 +109,7 @@ You can find all model files in <a href="https://huggingface.co/Comfy-Org/Wan_2.
 │       └──── wan_2.1_vae.safetensors</code></pre>
 </div>
 
-#### 🔽 Model Download Links
 
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Model Type</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">File Name</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🧠 Diffusion Models</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_s2v_14B_fp8_scaled.safetensors" target="_blank" style="color: #2563eb;">wan2.2_s2v_14B_fp8_scaled.safetensors</a><br>
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_s2v_14B_bf16.safetensors" target="_blank" style="color: #2563eb;">wan2.2_s2v_14B_bf16.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Main generation models</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🎵 Audio Encoders</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/audio_encoders/wav2vec2_large_english_fp16.safetensors" target="_blank" style="color: #2563eb;">wav2vec2_large_english_fp16.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Audio encoder</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🎨 VAE</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" target="_blank" style="color: #2563eb;">wan_2.1_vae.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Variational autoencoder</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">📝 Text Encoders</td>
-      <td style="padding: 12px; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" target="_blank" style="color: #2563eb;">umt5_xxl_fp8_e4m3fn_scaled.safetensors</a>
-      </td>
-      <td style="padding: 12px;">Text encoder</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 </div>
 

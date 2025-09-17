@@ -219,7 +219,9 @@ Download the following video or JSON file and drag it into ComfyUI to load the c
 ### 🔧 Step 3: Workflow Configuration Operations
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+you can find the workflow steps in the following figure
 
+![img.png](img.png)
 <div style="text-align: center; margin: 20px 0;">
   <img src="https://mintcdn.com/dripart/SIDaLac8vBogzwm7/images/tutorial/video/wan/wan2_2/wan_2.2_14b_fun_control.jpg?fit=max&auto=format&n=SIDaLac8vBogzwm7&q=85&s=1c5d26bea52f7f790ac6059e7a195c8d" alt="Wan2.2 Fun Control Workflow Steps" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>

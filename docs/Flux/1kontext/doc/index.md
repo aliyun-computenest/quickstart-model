@@ -43,48 +43,6 @@
 
 </div>
 
-### 🔄 版本对比
-
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">版本</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">类型</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">特点</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">使用方式</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">FLUX.1 Kontext [pro]</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">商业版本</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">专注快速迭代编辑</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">API 调用</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">FLUX.1 Kontext [max]</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">实验版本</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">更强的提示遵循能力</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">API 调用</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">FLUX.1 Kontext [dev]</td>
-      <td style="padding: 12px;">开源版本</td>
-      <td style="padding: 12px;">12B 参数，主要用于研究</td>
-      <td style="padding: 12px;">本地部署</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>💡 版本选择建议</strong><br>
-  • <strong>Pro/Max 版本</strong>：通过 <a href="/zh-CN/tutorials/api-nodes/black-forest-labs/flux-1-kontext" target="_blank" style="color: #2563eb;">API 节点</a> 调用，适合商业应用<br>
-  • <strong>Dev 版本</strong>：本地部署，适合研究和实验，完全开源
-</div>
-
-</div>
 
 ## 🛠️ 工作流类型说明
 
@@ -129,37 +87,8 @@
 
 </div>
 
-### ⚠️ 环境要求
 
-<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 使用前请确认</strong><br>
-  • 确保 ComfyUI 已更新到最新版本<br>
-  • 推荐使用最新开发版（nightly）获得完整功能<br>
-  • 本指南的工作流可在 ComfyUI 的工作流模板中找到<br>
-  • 如果加载工作流时有节点缺失，请检查 ComfyUI 版本或节点导入状态
-</div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">📥 下载链接</h4>
-<ul style="margin: 0; padding-left: 20px; color: #065f46;">
-  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI 下载</a></li>
-  <li><a href="/zh-CN/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI 更新教程</a></li>
-  <li><a href="/zh-CN/interface/features/template" target="_blank" style="color: #059669;">工作流模板</a></li>
-</ul>
-</div>
-
-<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
-<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 常见问题</h4>
-<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
-  <li>节点缺失：版本过旧或导入失败</li>
-  <li>功能不全：使用稳定版而非开发版</li>
-  <li>加载失败：启动时节点导入异常</li>
-</ul>
-</div>
-
-</div>
 
 ## 🔗 模型文件
 
@@ -184,6 +113,9 @@
 ## 🚀 Flux.1 Kontext Dev 工作流示例
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+打开Comfyui模版工作流，参考下图选择：
+![img_1.png](img_1.png)
 
 这个工作流使用了 `Load Image(from output)` 节点来加载需要编辑的图像，可以让你更方便地获取到编辑后的图像，从而进行多轮次编辑。
 

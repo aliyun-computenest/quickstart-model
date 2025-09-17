@@ -114,32 +114,10 @@
 ### 📥 步骤一：工作流文件下载
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-<div style="text-align: center; margin: 20px 0;">
-  <div style="background: #eff6ff; border: 1px solid #2563eb; border-radius: 8px; padding: 20px; margin: 16px 0;">
-    <h3 style="color: #1e40af; margin: 0 0 12px 0;">🎯 Hunyuan3D 2.1 ComfyUI 工作流</h3>
-    <p style="color: #2563eb; margin: 0 0 16px 0;">专业3D资产创建 | 完全可操作的工作流程</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
-      <div style="background: rgba(37, 99, 235, 0.1); padding: 8px; border-radius: 4px;">
-        <span style="font-size: 12px; color: #1e40af;">✅ 无缺失节点或模型</span>
-      </div>
-      <div style="background: rgba(37, 99, 235, 0.1); padding: 8px; border-radius: 4px;">
-        <span style="font-size: 12px; color: #1e40af;">⚡ 无需手动设置</span>
-      </div>
-      <div style="background: rgba(37, 99, 235, 0.1); padding: 8px; border-radius: 4px;">
-        <span style="font-size: 12px; color: #1e40af;">🎨 惊艳的视觉效果</span>
-      </div>
-    </div>
-  </div>
+点击该链接下载混元2.1工作流 
+<a href="https://service-info-public.oss-cn-hangzhou.aliyuncs.com/model/workflows/%E6%B7%B7%E5%85%833d%E5%BB%BA%E6%A8%A1%20%E7%99%BD%E8%86%9C%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9C%E6%B5%81%20%281%29.json" download>链接</a>
 </div>
 
-<div style="text-align: center; margin: 20px 0;">
-  <a href="#" target="https://www.liblib.art/modelinfo/82534e4dabd547828d6e58b44712c84e?from=search&versionUuid=210c8871b24c46e2906e8df477de3cb8" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
-    🚀 免费开始使用工作流
-  </a>
-</div>
-
-</div>
 
 ### 🔗 步骤二：模型文件
 

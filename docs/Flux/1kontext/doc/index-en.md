@@ -192,6 +192,9 @@ This workflow uses the `Load Image(from output)` node to load images that need e
 ### 📥 Step 1: Download Workflow and Input Images
 
 <div style="text-align: center; margin: 20px 0;">
+open Comfyui workflow template
+
+![img.png](img.png)
   <img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/kontext/dev/flux_1_kontext_dev_basic.png" alt="ComfyUI Flux.1 Kontext Dev Workflow" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <p style="margin: 8px 0 0 0; color: #64748b; font-size: 14px;">Click image to download, drag into ComfyUI to load workflow</p>
 </div>
@@ -205,6 +208,7 @@ This workflow uses the `Load Image(from output)` node to load images that need e
 </div>
 
 ### 🔧 Step 2: Workflow Configuration Operations
+
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/flux/flux_1_kontext_dev_basic_step_guide.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=90995e36fa39a53693aeff3b560c60ef" alt="Workflow Step Guide" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">

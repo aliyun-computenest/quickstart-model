@@ -46,42 +46,12 @@
 
 ## 🚀 Wan2.2 Fun Camera Control 工作流示例
 
-### ⚠️ 环境要求
-
-<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 使用前请确认</strong><br>
-  • 确保 ComfyUI 已更新到最新版本<br>
-  • 推荐使用最新开发版（nightly）获得完整功能<br>
-  • 本指南的工作流可在 ComfyUI 的工作流模板中找到<br>
-  • 如果加载工作流时有节点缺失，请检查 ComfyUI 版本或节点导入状态
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">📥 下载链接</h4>
-<ul style="margin: 0; padding-left: 20px; color: #065f46;">
-  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI 下载</a></li>
-  <li><a href="/zh-CN/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI 更新教程</a></li>
-  <li><a href="/zh-CN/interface/features/template" target="_blank" style="color: #059669;">工作流模板</a></li>
-</ul>
-</div>
-
-<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
-<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 常见问题</h4>
-<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
-  <li>节点缺失：版本过旧或导入失败</li>
-  <li>功能不全：使用稳定版而非开发版</li>
-  <li>加载失败：启动时节点导入异常</li>
-</ul>
-</div>
-
-</div>
 
 ### 🔧 工作流版本说明
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
+你可以直接从Comfyui的模版仓库中打开：
+![img.png](img.png)
 提供两个版本的工作流供选择：
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
@@ -149,7 +119,10 @@
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-下载以下视频或 JSON 文件并拖入 ComfyUI 中以加载对应的工作流，工作流会提示下载模型。
+直接通过comfyui 模版仓库打开工作流
+
+![img.png](img.png)
+或下载以下视频或 JSON 文件并拖入 ComfyUI 中以加载对应的工作流，工作流会提示下载模型。
 
 <div style="text-align: center; margin: 20px 0;">
   <video controls style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/wan2.2_fun_camera/wan2.2_14B_fun_camera.mp4"></video>
@@ -173,11 +146,10 @@
 
 </div>
 
-### 🔗 步骤二：模型文件下载
+### 🔗 步骤二：模型文件说明
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
 
-所有模型文件可在 <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged" target="_blank" style="color: #2563eb;">Wan_2.2_ComfyUI_Repackaged</a> 仓库中找到。
 
 #### 📂 模型文件结构
 
@@ -196,51 +168,7 @@
 │       └── wan_2.1_vae.safetensors</code></pre>
 </div>
 
-#### 🔽 模型下载链接
 
-<div style="overflow-x: auto; margin: 16px 0;">
-<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <thead style="background: #f8fafc;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">模型类型</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">文件名</th>
-      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🧠 Diffusion Models</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors" target="_blank" style="color: #2563eb;">wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors</a><br>
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors" target="_blank" style="color: #2563eb;">wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">高噪声和低噪声相机控制模型</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">⚡ Wan2.2-Lightning LoRA</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors" target="_blank" style="color: #2563eb;">wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors</a><br>
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors" target="_blank" style="color: #2563eb;">wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">加速 LoRA（可选）</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">🎨 VAE</td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" target="_blank" style="color: #2563eb;">wan_2.1_vae.safetensors</a>
-      </td>
-      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">变分自编码器</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; font-weight: 500;">📝 Text Encoder</td>
-      <td style="padding: 12px; font-family: monospace; font-size: 12px;">
-        <a href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" target="_blank" style="color: #2563eb;">umt5_xxl_fp8_e4m3fn_scaled.safetensors</a>
-      </td>
-      <td style="padding: 12px;">文本编码器</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 </div>
 

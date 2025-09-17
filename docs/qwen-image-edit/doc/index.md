@@ -71,55 +71,16 @@
 
 </div>
 
-## 🎥 ComfyOrg Qwen-Image-Edit 直播回放
-
-<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
-
-观看官方直播回放，了解 Qwen-Image-Edit 在 ComfyUI 中的详细使用方法和最佳实践。
-
-<div style="text-align: center; margin: 20px 0;">
-  <iframe style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" src="https://www.youtube.com/embed/TZIijn-tvoc?si=Vb-ZNwTvJC67_UEE" title="Qwen-Image Edit in ComfyUI - Image Editing Model / August 19th, 2025" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-</div>
 
 ## 🚀 Qwen-Image-Edit ComfyUI 原生工作流
 
-### ⚠️ 环境要求
-
-<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
-  <strong>📋 使用前请确认</strong><br>
-  • 确保 ComfyUI 已更新到最新版本<br>
-  • 推荐使用最新开发版（nightly）获得完整功能<br>
-  • 本指南的工作流可在 ComfyUI 的工作流模板中找到<br>
-  • 如果加载工作流时有节点缺失，请检查 ComfyUI 版本或节点导入状态
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
-
-<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
-<h4 style="color: #059669; margin: 0 0 8px 0;">📥 下载链接</h4>
-<ul style="margin: 0; padding-left: 20px; color: #065f46;">
-  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI 下载</a></li>
-  <li><a href="/zh-CN/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI 更新教程</a></li>
-  <li><a href="/zh-CN/interface/features/template" target="_blank" style="color: #059669;">工作流模板</a></li>
-</ul>
-</div>
-
-<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
-<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 常见问题</h4>
-<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
-  <li>节点缺失：版本过旧或导入失败</li>
-  <li>功能不全：使用稳定版而非开发版</li>
-  <li>加载失败：启动时节点导入异常</li>
-</ul>
-</div>
-
-</div>
 
 ### 📥 步骤一：工作流文件下载
 
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+或直接从官方模版打开：
+
+![img.png](img.png)
 
 更新 ComfyUI 后可以从模板中找到工作流文件，或者将下面的工作流拖入 ComfyUI 中加载。
 
