@@ -14,7 +14,7 @@ DeepSeek-OCR is an advanced Optical Character Recognition (OCR) model developed 
 ## Usage Instructions
 
 After completing model deployment, you can see the model usage methods in the ComputeNest service instance overview page, which provides API call examples, internal network access addresses, public network access addresses, and ApiKey information.
-![img.png](https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png)
+![img.png](deepseek-ocr.png)
 
 ### API Calling Methods
 

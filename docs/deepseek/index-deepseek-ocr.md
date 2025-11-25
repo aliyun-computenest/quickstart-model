@@ -14,6 +14,7 @@ DeepSeek-OCR 是由 DeepSeek 公司开发的先进光学字符识别（OCR）模
 ## 使用说明
 
 在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址和 ApiKey。
+![img.png](deepseek-ocr.png)
 
 ### API 调用方式
 
