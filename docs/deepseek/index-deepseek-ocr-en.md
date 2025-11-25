@@ -1,0 +1,134 @@
+## Introduction
+
+DeepSeek-OCR is an advanced Optical Character Recognition (OCR) model developed by DeepSeek, specifically designed for extracting and recognizing text content from images. Based on deep learning technology, the model supports multiple languages and text formats, and can accurately recognize text in images and convert it to editable text format.
+
+## Official Links
+
+- **ComputeNest Deployment**: [https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR](https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR)
+- **GitHub Repository**: [https://github.com/deepseek-ai/DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR)
+- **Official Website**: [https://deepseek-ocr.io/](https://deepseek-ocr.io/)
+- **Model Download**: [https://huggingface.co/deepseek-ai/DeepSeek-OCR](https://huggingface.co/deepseek-ai/DeepSeek-OCR)
+- **Technical Documentation**: [https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html)
+- **Paper Link**: [https://arxiv.org/html/2510.18234v1](https://arxiv.org/html/2510.18234v1)
+
+## Usage Instructions
+
+After completing model deployment, you can see the model usage methods in the ComputeNest service instance overview page, which provides API call examples, internal network access addresses, public network access addresses, and ApiKey information.
+![img.png](https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png)
+
+### API Calling Methods
+
+#### Curl Command
+
+The basic structure of API calls is as follows:
+
+**Parameter Description:**
+- `${ServerIP}`: IP address from internal or public network address
+- `${ApiKey}`: ApiKey provided on the page 
+- `${ModelName}`: Model name
+
+**Image Format Support:**
+- **HTTP URL**: e.g., `https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png`
+- **Base64 Encoding**: `data:image/jpeg;base64,<base64 encoded image>`
+
+```bash
+curl -X POST http://${ServerIP}:8000/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer ${ApiKey}" \
+    -d '{
+        "model": "${ModelName}",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": "data:image/jpeg;base64,<base64 encoded image>"
+                        }
+                    },
+                    {
+                        "type": "text",
+                        "text": "Please recognize the text content in the image"
+                    }
+                ]
+            }
+        ]
+    }'
+```
+
+#### Python SDK
+
+**Configuration Instructions:**
+- `${ApiKey}`: Fill in the ApiKey from the page
+- `${ServerUrl}`: Fill in the public or internal network address from the page, need to add `/v1`
+
+```python
+import base64
+import requests
+from openai import OpenAI
+
+##### API Configuration #####
+openai_api_key = "${ApiKey}"
+openai_api_base = "${ServerUrl}"
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+
+def encode_image_to_base64(image_url: str) -> str:
+    """Convert image URL to base64 encoding"""
+    response = requests.get(image_url)
+    return base64.b64encode(response.content).decode('utf-8')
+
+def ocr_image(image_url: str, prompt: str = "Please recognize the text content in the image"):
+    """OCR image recognition"""
+    image_base64 = encode_image_to_base64(image_url)
+
+    completion = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": prompt
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{image_base64}"
+                        }
+                    }
+                ]
+            }
+        ],
+        max_tokens=1000
+    )
+
+    return completion.choices[0].message.content
+
+# Usage example
+if __name__ == "__main__":
+    image_url = "https://example.com/document.jpg"
+    result = ocr_image(image_url)
+    print("Recognition result:", result)
+```
+
+### Web Application Access【Coming Soon】
+
+1. **Get Access Link**: Click on the Web application link in the service instance overview page
+2. **Start Using**: Upload images in the model service Web page, and the system will automatically recognize text content in the images
+3. **Get Results**: After recognition is complete, you can copy or download the recognition results
+
+### Usage Recommendations
+
+- **Image Quality**: Recommend using clear, well-lit images for optimal recognition results
+- **Image Format**: Supports common formats like JPG, PNG, PDF
+- **Text Size**: Recommend moderate text size, avoid too small or too large text
+- **Background Interference**: Use images with simple backgrounds to avoid complex background interference with recognition

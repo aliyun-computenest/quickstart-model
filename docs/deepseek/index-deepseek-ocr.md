@@ -4,18 +4,16 @@ DeepSeek-OCR 是由 DeepSeek 公司开发的先进光学字符识别（OCR）模
 
 ## 官方链接
 
-- **计算巢部署**: [https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR](https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR)
 - **GitHub仓库**: [https://github.com/deepseek-ai/DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR)
 - **官方网站**: [https://deepseek-ocr.io/](https://deepseek-ocr.io/)
+- **计算巢部署**: [https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR](https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR)
 - **模型下载**: [https://huggingface.co/deepseek-ai/DeepSeek-OCR](https://huggingface.co/deepseek-ai/DeepSeek-OCR)
 - **技术文档**: [https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html)
 - **论文链接**: [https://arxiv.org/html/2510.18234v1](https://arxiv.org/html/2510.18234v1)
 
 ## 使用说明
 
-在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址和 ApiKey等信息。
-![img.png](deepseek-ocr.png)
-
+在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址和 ApiKey。
 
 ### API 调用方式
 
@@ -25,11 +23,11 @@ API 调用的基本结构如下：
 
 **参数说明：**
 - `${ServerIP}`：内网地址或公网地址中的 IP 地址
-- `${ApiKey}`：页面提供的 ApiKey 
+- `${ApiKey}`：页面提供的 ApiKey
 - `${ModelName}`：模型名称
 
 **图片格式支持：**
-- **HTTP URL**：如 `https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png`
+- **HTTP URL**：如 `https://example.com/image.jpg`
 - **Base64 编码**：`data:image/jpeg;base64,<图片的base64编码>`
 
 ```bash
@@ -121,7 +119,7 @@ if __name__ == "__main__":
     print("识别结果:", result)
 ```
 
-### Web 应用访问【后续支持】
+### Web 应用访问
 
 1. **获取访问链接**：在服务实例概览页面中，点击 Web 应用对应的链接
 2. **开始使用**：在模型服务 Web 页面中上传图片，系统将自动识别图片中的文字内容
