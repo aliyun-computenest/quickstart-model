@@ -1,0 +1,135 @@
+## 简介
+
+DeepSeek-OCR 是由 DeepSeek 公司开发的先进光学字符识别（OCR）模型，专门用于从图像中提取和识别文本内容。该模型基于深度学习技术，支持多种语言和文本格式，能够准确识别图片中的文字并转换为可编辑的文本格式。
+
+## 官方链接
+
+- **计算巢部署**: [https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR](https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR)
+- **GitHub仓库**: [https://github.com/deepseek-ai/DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR)
+- **官方网站**: [https://deepseek-ocr.io/](https://deepseek-ocr.io/)
+- **模型下载**: [https://huggingface.co/deepseek-ai/DeepSeek-OCR](https://huggingface.co/deepseek-ai/DeepSeek-OCR)
+- **技术文档**: [https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html)
+- **论文链接**: [https://arxiv.org/html/2510.18234v1](https://arxiv.org/html/2510.18234v1)
+
+## 使用说明
+
+在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址和 ApiKey等信息。
+![img.png](deepseek-ocr.png)
+
+
+### API 调用方式
+
+#### Curl 命令调用
+
+API 调用的基本结构如下：
+
+**参数说明：**
+- `${ServerIP}`：内网地址或公网地址中的 IP 地址
+- `${ApiKey}`：页面提供的 ApiKey
+- `${ModelName}`：模型名称
+
+**图片格式支持：**
+- **HTTP URL**：如 `https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png`
+- **Base64 编码**：`data:image/jpeg;base64,<图片的base64编码>`
+
+```bash
+curl -X POST http://${ServerIP}:8000/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer ${ApiKey}" \
+    -d '{
+        "model": "${ModelName}",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": "data:image/jpeg;base64,<图片的base64编码>"
+                        }
+                    },
+                    {
+                        "type": "text",
+                        "text": "请识别图片中的文字内容"
+                    }
+                ]
+            }
+        ]
+    }'
+```
+
+#### Python SDK 调用
+
+**配置说明：**
+- `${ApiKey}`：填写页面上的 ApiKey
+- `${ServerUrl}`：填写页面上的公网地址或内网地址，需要带上 `/v1`
+
+```python
+import base64
+import requests
+from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = "${ApiKey}"
+openai_api_base = "${ServerUrl}"
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+
+def encode_image_to_base64(image_url: str) -> str:
+    """将图片URL转换为base64编码"""
+    response = requests.get(image_url)
+    return base64.b64encode(response.content).decode('utf-8')
+
+def ocr_image(image_url: str, prompt: str = "请识别图片中的文字内容"):
+    """OCR图片识别"""
+    image_base64 = encode_image_to_base64(image_url)
+
+    completion = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": prompt
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{image_base64}"
+                        }
+                    }
+                ]
+            }
+        ],
+        max_tokens=1000
+    )
+
+    return completion.choices[0].message.content
+
+# 使用示例
+if __name__ == "__main__":
+    image_url = "https://example.com/document.jpg"
+    result = ocr_image(image_url)
+    print("识别结果:", result)
+```
+
+### Web 应用访问【后续支持】
+
+1. **获取访问链接**：在服务实例概览页面中，点击 Web 应用对应的链接
+2. **开始使用**：在模型服务 Web 页面中上传图片，系统将自动识别图片中的文字内容
+3. **结果获取**：识别完成后，可以复制或下载识别结果
+
+### 使用建议
+
+- **图片质量**：建议使用清晰、光照良好的图片以获得最佳识别效果
+- **图片格式**：支持 JPG、PNG、PDF 等常见格式
+- **文字大小**：建议文字大小适中，避免过小或过大的文字
+- **背景干扰**：尽量使用背景简洁的图片，避免复杂背景干扰识别
