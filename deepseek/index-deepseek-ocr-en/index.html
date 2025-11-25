@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index deepseek ocr en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#introduction">Introduction</a></li>
+              
+          
+              <li><a href="#official-links">Official Links</a></li>
+              
+          
+              <li><a href="#usage-instructions">Usage Instructions</a></li>
+              
+                  <li><a href="#api-calling-methods">API Calling Methods</a></li>
+                  
+                      <li class="li-h3"><a href="#curl-command">Curl Command</a></li>
+                  
+                      <li class="li-h3"><a href="#python-sdk">Python SDK</a></li>
+                  
+              
+                  <li><a href="#web-application-accesscoming-soon">Web Application Access【Coming Soon】</a></li>
+                  
+              
+                  <li><a href="#usage-recommendations">Usage Recommendations</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="introduction">Introduction</h2>
+<p>DeepSeek-OCR is an advanced Optical Character Recognition (OCR) model developed by DeepSeek, specifically designed for extracting and recognizing text content from images. Based on deep learning technology, the model supports multiple languages and text formats, and can accurately recognize text in images and convert it to editable text format.</p>
+<h2 id="official-links">Official Links</h2>
+<ul>
+<li><strong>ComputeNest Deployment</strong>: <a href="https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR">https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR</a></li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/deepseek-ai/DeepSeek-OCR">https://github.com/deepseek-ai/DeepSeek-OCR</a></li>
+<li><strong>Official Website</strong>: <a href="https://deepseek-ocr.io/">https://deepseek-ocr.io/</a></li>
+<li><strong>Model Download</strong>: <a href="https://huggingface.co/deepseek-ai/DeepSeek-OCR">https://huggingface.co/deepseek-ai/DeepSeek-OCR</a></li>
+<li><strong>Technical Documentation</strong>: <a href="https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html">https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html</a></li>
+<li><strong>Paper Link</strong>: <a href="https://arxiv.org/html/2510.18234v1">https://arxiv.org/html/2510.18234v1</a></li>
+</ul>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<p>After completing model deployment, you can see the model usage methods in the ComputeNest service instance overview page, which provides API call examples, internal network access addresses, public network access addresses, and ApiKey information.
+<img alt="img.png" src="../deepseek-ocr.png" /></p>
+<h3 id="api-calling-methods">API Calling Methods</h3>
+<h4 id="curl-command">Curl Command</h4>
+<p>The basic structure of API calls is as follows:</p>
+<p><strong>Parameter Description:</strong>
+- <code>${ServerIP}</code>: IP address from internal or public network address
+- <code>${ApiKey}</code>: ApiKey provided on the page 
+- <code>${ModelName}</code>: Model name</p>
+<p><strong>Image Format Support:</strong>
+- <strong>HTTP URL</strong>: e.g., <code>https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png</code>
+- <strong>Base64 Encoding</strong>: <code>data:image/jpeg;base64,&lt;base64 encoded image&gt;</code></p>
+<pre><code class="language-bash">curl -X POST http://${ServerIP}:8000/v1/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+    -d '{
+        &quot;model&quot;: &quot;${ModelName}&quot;,
+        &quot;messages&quot;: [
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;image_url&quot;,
+                        &quot;image_url&quot;: {
+                            &quot;url&quot;: &quot;data:image/jpeg;base64,&lt;base64 encoded image&gt;&quot;
+                        }
+                    },
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;Please recognize the text content in the image&quot;
+                    }
+                ]
+            }
+        ]
+    }'
+</code></pre>
+<h4 id="python-sdk">Python SDK</h4>
+<p><strong>Configuration Instructions:</strong>
+- <code>${ApiKey}</code>: Fill in the ApiKey from the page
+- <code>${ServerUrl}</code>: Fill in the public or internal network address from the page, need to add <code>/v1</code></p>
+<pre><code class="language-python">import base64
+import requests
+from openai import OpenAI
+
+##### API Configuration #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+
+def encode_image_to_base64(image_url: str) -&gt; str:
+    &quot;&quot;&quot;Convert image URL to base64 encoding&quot;&quot;&quot;
+    response = requests.get(image_url)
+    return base64.b64encode(response.content).decode('utf-8')
+
+def ocr_image(image_url: str, prompt: str = &quot;Please recognize the text content in the image&quot;):
+    &quot;&quot;&quot;OCR image recognition&quot;&quot;&quot;
+    image_base64 = encode_image_to_base64(image_url)
+
+    completion = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: prompt
+                    },
+                    {
+                        &quot;type&quot;: &quot;image_url&quot;,
+                        &quot;image_url&quot;: {
+                            &quot;url&quot;: f&quot;data:image/jpeg;base64,{image_base64}&quot;
+                        }
+                    }
+                ]
+            }
+        ],
+        max_tokens=1000
+    )
+
+    return completion.choices[0].message.content
+
+# Usage example
+if __name__ == &quot;__main__&quot;:
+    image_url = &quot;https://example.com/document.jpg&quot;
+    result = ocr_image(image_url)
+    print(&quot;Recognition result:&quot;, result)
+</code></pre>
+<h3 id="web-application-accesscoming-soon">Web Application Access【Coming Soon】</h3>
+<ol>
+<li><strong>Get Access Link</strong>: Click on the Web application link in the service instance overview page</li>
+<li><strong>Start Using</strong>: Upload images in the model service Web page, and the system will automatically recognize text content in the images</li>
+<li><strong>Get Results</strong>: After recognition is complete, you can copy or download the recognition results</li>
+</ol>
+<h3 id="usage-recommendations">Usage Recommendations</h3>
+<ul>
+<li><strong>Image Quality</strong>: Recommend using clear, well-lit images for optimal recognition results</li>
+<li><strong>Image Format</strong>: Supports common formats like JPG, PNG, PDF</li>
+<li><strong>Text Size</strong>: Recommend moderate text size, avoid too small or too large text</li>
+<li><strong>Background Interference</strong>: Use images with simple backgrounds to avoid complex background interference with recognition</li>
+</ul>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.476338+00:00
+  -->
+</body>
+</html>

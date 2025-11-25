@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Original index - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">简介</a></li>
+              
+          
+              <li><a href="#isaaclab">IsaacLab 单机版使用教程</a></li>
+              
+                  <li><a href="#vncecs">VNC方式访问ECS实例</a></li>
+                  
+                      <li class="li-h3"><a href="#vncservervncrealviewer">VncServer+VncRealViewer方式访问 （推荐）</a></li>
+                  
+                      <li class="li-h3"><a href="#ecsvnc">Ecs控制台自带原生的VNC登录方式</a></li>
+                  
+              
+                  <li><a href="#isaac-sim">Isaac Sim使用方式</a></li>
+                  
+                      <li class="li-h3"><a href="#1-gui">示例1: 以无GUI的方式进行场景合成数据集生成</a></li>
+                  
+                      <li class="li-h3"><a href="#2-guiisaac-sim">示例2: 以GUI的方式使用Isaac Sim</a></li>
+                  
+              
+                  <li><a href="#isaac-lab">Isaac Lab的使用方式</a></li>
+                  
+                      <li class="li-h3"><a href="#1-gui_1">示例1： 使用无GUI模式训练智能体</a></li>
+                  
+                      <li class="li-h3"><a href="#2-gui">示例2： 使用GUI模式生成基本物体到场景中</a></li>
+                  
+              
+          
+              <li><a href="#isaaclab_1">IsaacLab 集群版使用教程</a></li>
+              
+                  <li><a href="#_2">环境准备</a></li>
+                  
+              
+                  <li><a href="#job">在日志中打印执行结果的测试job</a></li>
+                  
+              
+                  <li><a href="#isaac-lab_1">执行Isaac Lab训练任务</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">简介</h2>
+<p>NVIDIA Isaac™ Lab 是一个用于机器人学习的开源统一框架，旨在帮助训练机器人策略。</p>
+<p>Isaac Lab 基于 NVIDIA Isaac Sim™ 开发，使用 NVIDIA®PhysX® 以及基于物理性质的 NVIDIA RTX™ 渲染提供高保真物理模拟。它弥合了高保真模拟和基于感知的机器人训练之间的差距，帮助开发者和研究人员更高效地构建更多机器人。</p>
+<h2 id="isaaclab">IsaacLab 单机版使用教程</h2>
+<p>Isaac Lab服务实例内置完整的Isaac Sim应用，支持两种训练模式：既可独立使用Isaac Sim进行仿真训练，也可基于Isaac Lab框架进行强化学习训练。</p>
+<p>对应的ECS实例安装了Ubuntu图形界面，支持在ECS控制台通过VNC的方式直接使用。</p>
+<h3 id="vncecs">VNC方式访问ECS实例</h3>
+<p>目前提供了两种方式去访问Ubuntu实例，这里推荐使用VncServer+VncRealViewer方式访问，可以比较方便的调整分辨率，整体使用也更加流畅。</p>
+<h4 id="vncservervncrealviewer">VncServer+VncRealViewer方式访问 （推荐）</h4>
+<ol>
+<li>在服务实例详情页的资源中，找到对应的ECS实例，点击远程连接进行登录。</li>
+</ol>
+<p><img alt="img_1.png" src="../img_1.png" /></p>
+<ol>
+<li>登录到ECS实例后执行以下命令：</li>
+</ol>
+<pre><code class="language-shell"># 切换到root账户
+sudo su root
+# 设置VNC服务密码，注意密码长度最大为8位
+/opt/TurboVNC/bin/vncpasswd
+# 启动VNC Server服务,服务会listen 5901端口,安装组已预先设置为开放
+/opt/TurboVNC/bin/vncserver :1 -geometry 1920x1080 -depth 24 -xstartup ~/.vnc/xstartup
+</code></pre>
+<ol>
+<li>下载<a href="https://www.realvnc.com/en/connect/download/viewer/">VncRealViewer客户端</a>，连接输入&lt;服务器公网IP&gt;:5901, 即可连接服务器。</li>
+</ol>
+<p><img alt="img_2.png" src="../img_2.png" /></p>
+<p><img alt="img_3.png" src="../img_3.png" /></p>
+<ol>
+<li>在/home/isaac-sim/isaacsim路径下，执行./isaac-sim.sh --allow-root命令，即可打开Isaac Sim界面。</li>
+</ol>
+<p><img alt="img_4.png" src="../img_4.png" /></p>
+<h4 id="ecsvnc">Ecs控制台自带原生的VNC登录方式</h4>
+<ol>
+<li>在服务实例详情页的资源中，找到对应的ECS实例，点击去到ECS控制台。</li>
+</ol>
+<p><img alt="img_17.png" src="../img_17.png" /></p>
+<ol>
+<li>点击右上角的远程连接，选择VNC登录方式，即可进入到Ubuntu系统的图形界面。</li>
+</ol>
+<p><img alt="img_18.png" src="../img_18.png" /></p>
+<ol>
+<li>这里需要输入isaac-sim账户对应登录密码，对应的密码和ECS实例密码一致，可以去服务实例概览页面查看。</li>
+</ol>
+<p><img alt="img_19.png" src="../img_19.png" /></p>
+<h3 id="isaac-sim">Isaac Sim使用方式</h3>
+<p>通过上面的方式登录到ECS实例后，打开Terminal，可以看到isaac-sim账户下有isaacsim和isaacsim_assets两个目录。
+- isaacsim目录为Isaac Sim的安装目录，里面有Isaac Sim相关的启动和训练脚本。
+- isaacsim_assets目录为Isaac Sim的资源目录，这里做了提前下载，方便后面训练使用。</p>
+<p><img alt="img_21.png" src="../img_21.png" /></p>
+<h4 id="1-gui">示例1: 以无GUI的方式进行场景合成数据集生成</h4>
+<p>该示例展示使用omni.replicator扩展生成合成数据集的过程。生成的数据将离线存储（在磁盘上），使其可用于深度神经网络的训练。示例可以在Isaac Sim的Python独立环境中运行，并利用Isaac Sim和Replicator创建离线合成数据集，用于训练机器学习模型。建议将官方示例代码拷贝到用户目录下进行修改及使用。</p>
+<pre><code class="language-shell">cd /home/isaac-sim
+mkdir -p isaacsim_test
+cd /home/isaac-sim/isaacsim_test
+mkdir -p scene_based_sdg
+cp -rf /home/isaac-sim/isaacsim/standalone_examples/replicator/scene_based_sdg/* /home/isaac-sim/isaacsim_test/scene_based_sdg/
+## 渲染合成(--config指定配置文件路径，其中设置了headless=true；--/persistent/isaac/asset_root/default指定3D资产存储路径)
+/home/isaac-sim/isaacsim/python.sh ./scene_based_sdg/scene_based_sdg.py --config=&quot;/home/isaac-sim/isaacsim_test/scene_based_sdg/config/config_coco_writer.yaml&quot; --/persistent/isaac/asset_root/default=&quot;/home/isaac-sim/isaacsim_assets/Assets/Isaac/4.5&quot;
+</code></pre>
+<p>生成结果存储在”./isaacsim_test/_out_coco“中，可视化效果如下：
+<img alt="img_23.png" src="../img_23.png" /><img alt="img_22.png" src="../img_22.png" /></p>
+<h4 id="2-guiisaac-sim">示例2: 以GUI的方式使用Isaac Sim</h4>
+<p>在termial中执行以下命令，即可进入Isaac Sim的GUI界面。</p>
+<pre><code class="language-shell">cd /home/isaac-sim/isaacsim
+./isaac-sim.sh
+</code></pre>
+<p>这里要注意的是，Isaac Sim启动的时候会比较慢，会弹出等待的窗口，不用进行操作，等待一段时间即可。</p>
+<p><img alt="img_24.png" src="../img_24.png" /></p>
+<p>下面是按<a href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/introduction/quickstart_isaacsim.html">入门教程</a>中的步骤创建了个正方体。</p>
+<p><img alt="img_25.png" src="../img_25.png" /></p>
+<h3 id="isaac-lab">Isaac Lab的使用方式</h3>
+<p>Isaac Lab服务安装目录在/home/isaac-sim/IsaacLab中，里面有Isaac Lab的安装目录和启动脚本。</p>
+<h4 id="1-gui_1">示例1： 使用无GUI模式训练智能体</h4>
+<p>本案例，我们将使用Stable-Baselines3强化学习（RL）框架，以解决Cartpole平衡控制的智能体任务。Stable-Baselines3是一个基于 PyTorch 的强化学习库，提供了多种稳定且易用的 RL 算法，如 PPO、SAC、DQN等。训练目标是，让智能体学习如何控制小车的左右移动，保持摆杆直立不倒。建议将示例代码拷贝到个人目录进行修改和调试。</p>
+<pre><code class="language-shell">cd /home/isaac-sim
+mkdir -p isaaclab_test
+cd /home/isaac-sim/isaaclab_test
+mkdir -p sb3
+cp -rf /home/isaac-sim/IsaacLab/scripts/reinforcement_learning/sb3/* /home/isaac-sim/isaaclab_test/sb3/
+## 渲染合成(--config指定配置文件路径，其中设置了headless=true；--/persistent/isaac/asset_root/default指定3D资产存储路径)
+/home/isaac-sim/IsaacLab/isaaclab.sh -p ./sb3/train.py --task Isaac-Cartpole-v0 --num_envs 64 --headless --video
+</code></pre>
+<p>训练结果保存到./logs/sb3/Isaac-Cartpole-v0中；可视化结果如下
+<img alt="img_26.png" src="../img_26.png" /></p>
+<h4 id="2-gui">示例2： 使用GUI模式生成基本物体到场景中</h4>
+<p>在Terminal中执行以下命令，即可进入Isaac Lab的GUI界面。</p>
+<pre><code class="language-shell">cd /home/isaac-sim/IsaacLab
+./isaaclab.sh -p scripts/tutorials/00_sim/spawn_prims.py
+</code></pre>
+<p><img alt="img_27.png" src="../img_27.png" /></p>
+<h2 id="isaaclab_1">IsaacLab 集群版使用教程</h2>
+<p>Isaac Lab 支持 Ray ，用于简化多个训练任务的调度（包括并行和串行），以及超参数调优，适用于本地和远程配置。</p>
+<p>Isaac Lab服务Ray作业调度和调优官方文档为Ray Job Dispatch and Tuning。</p>
+<h3 id="_2">环境准备</h3>
+<ol>
+<li>在本地电脑配置远程Ray集群信息，具体命令如下：</li>
+</ol>
+<pre><code class="language-shell"># 这里的&lt;ISAACRAY_ADDRESS&gt;为ray集群的url，可以从服务实例概览页中获取
+echo &quot;name: isaacray address: &lt;ISAACRAY_ADDRESS&gt;&quot; &gt; ~/.cluster_config
+export RAY_ADDRESS=&quot;&lt;ISAACRAY_ADDRESS&gt;&quot;
+</code></pre>
+<ol>
+<li>从git上下载<a href="https://github.com/isaac-sim/IsaacLab">Isaac Lab源码</a>, 用来做后续的作业提交。</li>
+<li>在本地电脑安装ray客户端，命令如下：</li>
+</ol>
+<pre><code class="language-shell">pip install &quot;ray[default]&quot;
+</code></pre>
+<h3 id="job">在日志中打印执行结果的测试job</h3>
+<ol>
+<li>在Isaac Lab源码目录scripts/reinforcement_learning/ray下新建
+   个测试用的python文件test.py，内容如下：</li>
+</ol>
+<pre><code class="language-python">import ray
+import os
+
+# 连接本地或者远程ray cluster
+ray.init()
+
+@ray.remote(num_cpus=1)
+class Counter:
+    def __init__(self):
+        self.name = &quot;test_counter&quot;
+        self.counter = 0
+
+    def increment(self):
+        self.counter += 1
+
+    def get_counter(self):
+        return &quot;{} got {}&quot;.format(self.name, self.counter)
+
+counter = Counter.remote()
+
+for _ in range(10):
+    counter.increment.remote()
+    print(ray.get(counter.get_counter.remote()))
+</code></pre>
+<ol>
+<li>在Isaac Lab源代码目录下，使用ray提交作业，具体命令如下：</li>
+</ol>
+<pre><code class="language-shell">python3 scripts/reinforcement_learning/ray/submit_job.py --aggregate_jobs wrap_resources.py --sub_jobs &quot;/workspace/isaaclab/isaaclab.sh -p test.py&quot;
+</code></pre>
+<ol>
+<li>提交成功后，可以从日志里看到以下信息：</li>
+<li>
+<p>提交作业时，会把scripts/reinforcement_learning/ray目录当作工作目录进行打包，上传到集群中，所以我们的test.py也会被上传。
+     <img alt="img_5.png" src="../img_5.png" /></p>
+</li>
+<li>
+<p>job运行完成后，可以看到输出的运行信息：
+     <img alt="img_6.png" src="../img_6.png" /></p>
+</li>
+</ol>
+<h3 id="isaac-lab_1">执行Isaac Lab训练任务</h3>
+<ol>
+<li>在Isaac Lab源代码目录下，执行命令提交作业，具体命令如下：</li>
+</ol>
+<pre><code class="language-shell">python3 scripts/reinforcement_learning/ray/submit_job.py --aggregate_jobs wrap_resources.py --sub_jobs &quot;/workspace/isaaclab/isaaclab.sh -p /workspace/isaaclab/scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Ant-v0 --headless&quot;
+</code></pre>
+<ol>
+<li>提交成功后，可以看到日志里输出的信息，这里主要可以看到job在集群上的工作目录，本例上为_ray_pkg_18b3cac8e32d6f62。</li>
+</ol>
+<p><img alt="img_7.png" src="../img_7.png" /></p>
+<ol>
+<li>点击ray集群url, 可以到集群的web ui中查看job运行情况。</li>
+</ol>
+<p><img alt="img_8.png" src="../img_8.png" /></p>
+<ol>
+<li>点击正在运行的这个job，可以看到job的调度日志，本例是调度到了c9db26a6c016fb4394991190f132afe99cd4a2b0a696f14185001650节点，
+   对应的训练结果也要到这个节点上查看。</li>
+</ol>
+<p><img alt="img_9.png" src="../img_9.png" /></p>
+<ol>
+<li>切到Cluster Tab下，输入node id进行搜索，可以找到容器集群中对应的Pod。</li>
+</ol>
+<p><img alt="img_10.png" src="../img_10.png" /></p>
+<ol>
+<li>从服务实例资源中找到对应的容器集群，去容器集群中找到上面对应的Pod，并登录到Pod中。</li>
+</ol>
+<p><img alt="img_11.png" src="../img_11.png" /></p>
+<ol>
+<li>登录到Pod中，可以看到训练结果，本例训练的Ant环境，训练的结果保存在下面的临时目录中：</li>
+</ol>
+<pre><code class="language-shell"># 执行job的临时目录，其中_ray_pkg_18b3cac8e32d6f62取决于上传文件的目录，2025-08-21_08-08-24 是具体运行时间
+cd /tmp/ray/session_latest/runtime_resources/working_dir_files/_ray_pkg_18b3cac8e32d6f62/logs/rsl_rl/ant/2025-08-21_08-08-24 
+</code></pre>
+<p><img alt="img_12.png" src="../img_12.png" /></p>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.517388+00:00
+  -->
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../search/main.js"></script>
+  
+
+  
+
+  <script src="../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">简介</a></li>
+              
+          
+              <li><a href="#_2">使用说明</a></li>
+              
+                  <li><a href="#api">API调用</a></li>
+                  
+                      <li class="li-h3"><a href="#curl">Curl命令调用</a></li>
+                  
+                      <li class="li-h3"><a href="#python">Python调用</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">简介</h2>
+<p>Qwen3 Embedding 模型系列是 Qwen 家族的最新专有模型，专门设计用于文本嵌入和排序任务。基于 Qwen3 系列的密集基础模型，它提供了各种大小（0.6B、4B 和 8B）的全面文本嵌入和重排序模型。该系列继承了其基础模型卓越的多语言能力、长文本理解和推理技能。Qwen3 Embedding 系列表现出了在多种文本嵌入和排序任务中的显著进步，包括文本检索、代码检索、文本分类、文本聚类和双语文本挖掘。</p>
+<h2 id="_2">使用说明</h2>
+<p>在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。</p>
+<p><img alt="img.png" src="img.png" /></p>
+<h3 id="api">API调用</h3>
+<h4 id="curl">Curl命令调用</h4>
+<p><img alt="img_1.png" src="img_1.png" /></p>
+<p>Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：</p>
+<p>其中${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。</p>
+<pre><code class="language-shell">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+  -d '{
+    &quot;model&quot;: &quot;${ModelName}&quot;,
+    &quot;input&quot;: [
+      &quot;中国首都是北京。&quot;,
+      &quot;美国首都是华盛顿。&quot;,
+      &quot;今天是星期五。&quot;
+    ]
+  }'
+</code></pre>
+<h4 id="python">Python调用</h4>
+<p>以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，不需要带上/v1。</p>
+<pre><code class="language-python">import requests
+import json
+import math
+
+url = '${ServerUrl}/v1/embeddings'
+token = '${ApiKey}'
+
+def cosine_similarity(v1, v2):
+    dot_product = sum(x * y for x, y in zip(v1, v2))
+    norm_v1 = math.sqrt(sum(x**2 for x in v1))
+    norm_v2 = math.sqrt(sum(y**2 for y in v2))
+    if norm_v1 == 0 or norm_v2 == 0:
+        return 0.0
+    return dot_product / (norm_v1 * norm_v2)
+
+request_body = {
+    &quot;input&quot;: [
+        &quot;中国首都是北京。&quot;,
+        &quot;美国首都是华盛顿。&quot;,
+        &quot;今天是星期五。&quot;
+    ],
+    &quot;model&quot;: &quot;Qwen3-Embedding-8B&quot;,
+    # &quot;dimensions&quot;: 4096
+}
+
+headers = {&quot;Authorization&quot;: token}
+resp = requests.post(url=url, headers=headers, json=request_body)
+
+embeddings_data = json.loads(resp.content.decode())[&quot;data&quot;]
+
+embeddings_0 = embeddings_data[0][&quot;embedding&quot;]
+embeddings_1 = embeddings_data[1][&quot;embedding&quot;]
+embeddings_2 = embeddings_data[2][&quot;embedding&quot;]
+
+sim_0_1 = cosine_similarity(embeddings_0, embeddings_1)
+sim_0_2 = cosine_similarity(embeddings_0, embeddings_2)
+sim_1_2 = cosine_similarity(embeddings_1, embeddings_2)
+
+print(f&quot;similarity({embeddings_data[0][&quot;index&quot;]},{embeddings_data[1][&quot;index&quot;]}): {sim_0_1:.6f}&quot;)
+print(f&quot;similarity({embeddings_data[0][&quot;index&quot;]},{embeddings_data[2][&quot;index&quot;]}): {sim_0_2:.6f}&quot;)
+print(f&quot;similarity({embeddings_data[1][&quot;index&quot;]},{embeddings_data[2][&quot;index&quot;]}): {sim_1_2:.6f}&quot;)
+</code></pre>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.556715+00:00
+  -->
+</body>
+</html>

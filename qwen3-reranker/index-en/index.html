@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Qwen3 Reranker Model Usage Guide - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#qwen3-reranker-model-usage-guide">Qwen3 Reranker Model Usage Guide</a></li>
+              
+                  <li><a href="#introduction">Introduction</a></li>
+                  
+              
+                  <li><a href="#usage-instructions">Usage Instructions</a></li>
+                  
+                      <li class="li-h3"><a href="#api-calls">API Calls</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h1 id="qwen3-reranker-model-usage-guide">Qwen3 Reranker Model Usage Guide</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Qwen3 Embedding model series is the latest proprietary model from the Qwen family, specifically designed for text embedding and ranking tasks. Built upon the dense foundation models of the Qwen3 series, it offers comprehensive text embedding and reranking models in various sizes (0.6B, 4B, and 8B). The series inherits the exceptional multilingual capabilities, long-text understanding, and reasoning skills of its base models. The Qwen3 Embedding series represents significant advancements across multiple text embedding and ranking tasks, including text retrieval, code retrieval, text classification, text clustering, and bilingual text mining.</p>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<p>After completing the model deployment, you can view the usage methods on the ComputeNest service instance overview page, which provides private network access address, public network access address, and ApiKey. The following sections will introduce how to access and use the service.</p>
+<p><img alt="img.png" src="../img.png" /></p>
+<h3 id="api-calls">API Calls</h3>
+<h4 id="python-call">Python Call</h4>
+<p>Below is a Python example code:</p>
+<p>Where <code>${ApiKey}</code> needs to be filled with the ApiKey from the page; <code>${ServerUrl}</code> needs to be filled with the public or private network address from the page, without the <code>/v1</code> suffix.</p>
+<pre><code class="language-python">import json
+
+import requests
+
+url = &quot;${ServerUrl}/v1/rerank&quot;
+token = &quot;${ApiKey}&quot;
+headers = {&quot;Authorization&quot;: token}
+
+prefix = '&lt;|im_start|&gt;system\nJudge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be &quot;yes&quot; or &quot;no&quot;.&lt;|im_end|&gt;\n&lt;|im_start|&gt;user\n'
+suffix = &quot;&lt;|im_end|&gt;\n&lt;|im_start|&gt;assistant\n&lt;think&gt;\n\n&lt;/think&gt;\n\n&quot;
+
+query_template = &quot;{prefix}&lt;Instruct&gt;: {instruction}\n&lt;Query&gt;: {query}\n&quot;
+document_template = &quot;&lt;Document&gt;: {doc}{suffix}&quot;
+instruction = &quot;Given a web search query, retrieve relevant passages that answer the query&quot;
+
+data = {
+    &quot;model&quot;: &quot;Qwen3-Reranker-8B&quot;,
+    &quot;query&quot;: query_template.format(prefix=prefix, instruction=instruction, query=&quot;中国首都是哪儿?&quot;),
+    &quot;documents&quot;: [
+        document_template.format(doc=&quot;中国首都是北京。&quot;, suffix=suffix),
+        document_template.format(doc=&quot;美国首都是华盛顿。&quot;, suffix=suffix),
+        document_template.format(doc=&quot;今天是星期五。&quot;, suffix=suffix)
+    ],
+}
+
+
+def main():
+    response = requests.post(url, headers=headers, json=data)
+
+    # Check the response
+    if response.status_code == 200:
+        print(&quot;Request successful!&quot;)
+        print(json.dumps(response.json(), indent=2))
+    else:
+        print(f&quot;Request failed with status code: {response.status_code}&quot;)
+        print(response.text)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.559044+00:00
+  -->
+</body>
+</html>

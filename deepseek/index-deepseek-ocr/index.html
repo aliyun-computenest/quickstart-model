@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index deepseek ocr - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">简介</a></li>
+              
+          
+              <li><a href="#_2">官方链接</a></li>
+              
+          
+              <li><a href="#_3">使用说明</a></li>
+              
+                  <li><a href="#api">API 调用方式</a></li>
+                  
+                      <li class="li-h3"><a href="#curl">Curl 命令调用</a></li>
+                  
+                      <li class="li-h3"><a href="#python-sdk">Python SDK 调用</a></li>
+                  
+              
+                  <li><a href="#web">Web 应用访问</a></li>
+                  
+              
+                  <li><a href="#_4">使用建议</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">简介</h2>
+<p>DeepSeek-OCR 是由 DeepSeek 公司开发的先进光学字符识别（OCR）模型，专门用于从图像中提取和识别文本内容。该模型基于深度学习技术，支持多种语言和文本格式，能够准确识别图片中的文字并转换为可编辑的文本格式。</p>
+<h2 id="_2">官方链接</h2>
+<ul>
+<li><strong>GitHub仓库</strong>: <a href="https://github.com/deepseek-ai/DeepSeek-OCR">https://github.com/deepseek-ai/DeepSeek-OCR</a></li>
+<li><strong>官方网站</strong>: <a href="https://deepseek-ocr.io/">https://deepseek-ocr.io/</a></li>
+<li><strong>计算巢部署</strong>: <a href="https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR">https://computenest.console.aliyun.com/ai-lab/model/cn-hangzhou/DeepSeek-OCR</a></li>
+<li><strong>模型下载</strong>: <a href="https://huggingface.co/deepseek-ai/DeepSeek-OCR">https://huggingface.co/deepseek-ai/DeepSeek-OCR</a></li>
+<li><strong>技术文档</strong>: <a href="https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html">https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html</a></li>
+<li><strong>论文链接</strong>: <a href="https://arxiv.org/html/2510.18234v1">https://arxiv.org/html/2510.18234v1</a></li>
+</ul>
+<h2 id="_3">使用说明</h2>
+<p>在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址和 ApiKey。
+<img alt="img.png" src="../deepseek-ocr.png" /></p>
+<h3 id="api">API 调用方式</h3>
+<h4 id="curl">Curl 命令调用</h4>
+<p>API 调用的基本结构如下：</p>
+<p><strong>参数说明：</strong>
+- <code>${ServerIP}</code>：内网地址或公网地址中的 IP 地址
+- <code>${ApiKey}</code>：页面提供的 ApiKey
+- <code>${ModelName}</code>：模型名称</p>
+<p><strong>图片格式支持：</strong>
+- <strong>HTTP URL</strong>：如 <code>https://example.com/image.jpg</code>
+- <strong>Base64 编码</strong>：<code>data:image/jpeg;base64,&lt;图片的base64编码&gt;</code></p>
+<pre><code class="language-bash">curl -X POST http://${ServerIP}:8000/v1/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+    -d '{
+        &quot;model&quot;: &quot;${ModelName}&quot;,
+        &quot;messages&quot;: [
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;image_url&quot;,
+                        &quot;image_url&quot;: {
+                            &quot;url&quot;: &quot;data:image/jpeg;base64,&lt;图片的base64编码&gt;&quot;
+                        }
+                    },
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;请识别图片中的文字内容&quot;
+                    }
+                ]
+            }
+        ]
+    }'
+</code></pre>
+<h4 id="python-sdk">Python SDK 调用</h4>
+<p><strong>配置说明：</strong>
+- <code>${ApiKey}</code>：填写页面上的 ApiKey
+- <code>${ServerUrl}</code>：填写页面上的公网地址或内网地址，需要带上 <code>/v1</code></p>
+<pre><code class="language-python">import base64
+import requests
+from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+
+def encode_image_to_base64(image_url: str) -&gt; str:
+    &quot;&quot;&quot;将图片URL转换为base64编码&quot;&quot;&quot;
+    response = requests.get(image_url)
+    return base64.b64encode(response.content).decode('utf-8')
+
+def ocr_image(image_url: str, prompt: str = &quot;请识别图片中的文字内容&quot;):
+    &quot;&quot;&quot;OCR图片识别&quot;&quot;&quot;
+    image_base64 = encode_image_to_base64(image_url)
+
+    completion = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: prompt
+                    },
+                    {
+                        &quot;type&quot;: &quot;image_url&quot;,
+                        &quot;image_url&quot;: {
+                            &quot;url&quot;: f&quot;data:image/jpeg;base64,{image_base64}&quot;
+                        }
+                    }
+                ]
+            }
+        ],
+        max_tokens=1000
+    )
+
+    return completion.choices[0].message.content
+
+# 使用示例
+if __name__ == &quot;__main__&quot;:
+    image_url = &quot;https://example.com/document.jpg&quot;
+    result = ocr_image(image_url)
+    print(&quot;识别结果:&quot;, result)
+</code></pre>
+<h3 id="web">Web 应用访问</h3>
+<ol>
+<li><strong>获取访问链接</strong>：在服务实例概览页面中，点击 Web 应用对应的链接</li>
+<li><strong>开始使用</strong>：在模型服务 Web 页面中上传图片，系统将自动识别图片中的文字内容</li>
+<li><strong>结果获取</strong>：识别完成后，可以复制或下载识别结果</li>
+</ol>
+<h3 id="_4">使用建议</h3>
+<ul>
+<li><strong>图片质量</strong>：建议使用清晰、光照良好的图片以获得最佳识别效果</li>
+<li><strong>图片格式</strong>：支持 JPG、PNG、PDF 等常见格式</li>
+<li><strong>文字大小</strong>：建议文字大小适中，避免过小或过大的文字</li>
+<li><strong>背景干扰</strong>：尽量使用背景简洁的图片，避免复杂背景干扰识别</li>
+</ul>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.477677+00:00
+  -->
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#model-introduction">🌟 Model Introduction</a></li>
+              
+          
+              <li><a href="#core-features">✨ Core Features</a></li>
+              
+          
+              <li><a href="#technical-specifications">📊 Technical Specifications</a></li>
+              
+          
+              <li><a href="#editing-capabilities">🎨 Editing Capabilities</a></li>
+              
+          
+              <li><a href="#deployment-methods">🚀 Deployment Methods</a></li>
+              
+                  <li><a href="#deployment-architecture-recommended">🏗️ Deployment Architecture (Recommended)</a></li>
+                  
+              
+                  <li><a href="#q6_k-quantization-advantages">📦 Q6_K Quantization Advantages</a></li>
+                  
+              
+          
+              <li><a href="#usage-guide">🎯 Usage Guide</a></li>
+              
+                  <li><a href="#comfyui-usage">🌐 ComfyUI Usage</a></li>
+                  
+              
+                  <li><a href="#api-integration">🔌 API Integration</a></li>
+                  
+                      <li class="li-h3"><a href="#authentication-setup">🔑 Authentication Setup</a></li>
+                  
+                      <li class="li-h3"><a href="#python-code-example">💻 Python Code Example</a></li>
+                  
+              
+          
+              <li><a href="#best-practices">💡 Best Practices</a></li>
+              
+          
+              <li><a href="#troubleshooting-solutions">🔧 Troubleshooting &amp; Solutions</a></li>
+              
+          
+              <li><a href="#related-resources">📚 Related Resources</a></li>
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h1 style="font-size: 2.5em; margin: 0; font-weight: 600;">🎬 Wan2.1-VACE-14B-Q6_K Complete Video Editing Guide</h1>
+  <p style="font-size: 1.2em; margin: 16px 0 0 0; opacity: 0.9;">Intelligent Video Content Editing with VACE (Video Adaptive Content Editing) Technology</p>
+  <div style="margin-top: 20px;">
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">⚡ 14B Parameters</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🎯 Q6_K Quantized</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🚀 Efficient Deployment</span>
+  </div>
+</div>
+
+<h2 id="model-introduction">🌟 Model Introduction</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Wan2.1-VACE-14B-Q6_K** is a large-scale quantized model specifically designed for video content editing and processing. VACE (Video Adaptive Content Editing) technology focuses on intelligent editing of existing videos, including style conversion, content modification, scene enhancement, and other functions. This model uses Q6_K quantization technology, which significantly reduces memory usage and computational resource requirements while maintaining the powerful performance of 14B parameters, making it more suitable for deployment in resource-constrained environments.
+
+</div>
+
+<h2 id="core-features">✨ Core Features</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #1e40af; margin: 0 0 8px 0;">⚡ Q6_K Quantization Optimization</h4>
+<p style="margin: 0; color: #1e40af;">14B parameters with Q6_K quantization, reducing memory usage by ~40%</p>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">🎥 Video Editing Specialized</h4>
+<p style="margin: 0; color: #991b1b;">Specifically optimized for video editing tasks with complex editing operations support</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">⏰ Temporal Consistency</h4>
+<p style="margin: 0; color: #065f46;">Maintains coherence and consistency between video frames</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🛠️ Multiple Editing Functions</h4>
+<p style="margin: 0; color: #5b21b6;">Supports style conversion, content modification, scene enhancement, etc.</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🚀 Efficient Deployment</h4>
+<p style="margin: 0; color: #9a3412;">Quantization optimization for lower hardware requirements and faster inference</p>
+</div>
+
+<div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; border-radius: 4px;">
+<h4 style="color: #10b981; margin: 0 0 8px 0;">🌐 Multi-language Support</h4>
+<p style="margin: 0; color: #047857;">Supports Chinese and English editing instructions</p>
+</div>
+
+</div>
+
+<h2 id="technical-specifications">📊 Technical Specifications</h2>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Specification</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Model Type</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Video Editing</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Parameter Scale</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">14B</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Quantization</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Q6_K quantization (GGUF format)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Model File</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Wan2.1_14B_VACE-Q6_K.gguf</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Deployment Architecture</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">ECS single-machine deployment/ACS cluster deployment</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Memory Requirements</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">~8-12GB VRAM (40% reduction compared to original)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Supported Resolution</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">720P/1080P</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Input Format</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Common video formats like MP4, AVI, MOV</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">Output Format</td>
+      <td style="padding: 12px;">MP4 (H.264 encoding)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="editing-capabilities">🎨 Editing Capabilities</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; padding: 12px; border-radius: 6px; border-left: 3px solid #059669;">
+<strong style="color: #059669;">🎭 Style Conversion</strong><br>
+<small style="color: #065f46;">Convert videos to different artistic styles</small>
+</div>
+
+<div style="background: #eff6ff; padding: 12px; border-radius: 6px; border-left: 3px solid #2563eb;">
+<strong style="color: #2563eb;">🌈 Color Adjustment</strong><br>
+<small style="color: #1e40af;">Adjust video tone, saturation, brightness</small>
+</div>
+
+<div style="background: #fef2f2; padding: 12px; border-radius: 6px; border-left: 3px solid #dc2626;">
+<strong style="color: #dc2626;">🏞️ Scene Modification</strong><br>
+<small style="color: #991b1b;">Change video background or add new elements</small>
+</div>
+
+<div style="background: #f5f3ff; padding: 12px; border-radius: 6px; border-left: 3px solid #7c3aed;">
+<strong style="color: #7c3aed;">🎯 Object Editing</strong><br>
+<small style="color: #5b21b6;">Modify or replace specific objects in videos</small>
+</div>
+
+<div style="background: #fff7ed; padding: 12px; border-radius: 6px; border-left: 3px solid #ea580c;">
+<strong style="color: #ea580c;">✨ Effect Addition</strong><br>
+<small style="color: #9a3412;">Add various visual effects to videos</small>
+</div>
+
+<div style="background: #ecfdf5; padding: 12px; border-radius: 6px; border-left: 3px solid #10b981;">
+<strong style="color: #10b981;">📈 Quality Enhancement</strong><br>
+<small style="color: #047857;">Improve video clarity and quality</small>
+</div>
+
+</div>
+
+<hr />
+<h1 id="deployment-methods">🚀 Deployment Methods</h1>
+<h2 id="deployment-architecture-recommended">🏗️ Deployment Architecture (Recommended)</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 Deployment Configuration</strong><br>
+  <strong>Deployment Architecture</strong>: ECS single-machine deployment (recommended) or ACS cluster deployment<br>
+  <strong>Memory Requirements</strong>: 8-12GB VRAM, 40% reduction compared to original<br>
+  <strong>Scalability</strong>: Supports both single-machine and cluster deployment, quantized version better suited for single-machine deployment
+</div>
+
+<h2 id="q6_k-quantization-advantages">📦 Q6_K Quantization Advantages</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">💾 Memory Optimization</h4>
+<p style="margin: 0; color: #065f46;">VRAM usage reduced by ~40%, better suited for mid-range hardware</p>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">⚡ Inference Acceleration</h4>
+<p style="margin: 0; color: #1e40af;">Quantization optimization improves inference speed, reducing wait times</p>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">🎯 Quality Preservation</h4>
+<p style="margin: 0; color: #991b1b;">Q6_K quantization maintains high-quality output with minimal performance loss</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">💰 Cost Savings</h4>
+<p style="margin: 0; color: #9a3412;">Lower hardware requirements, reducing deployment and operational costs</p>
+</div>
+
+</div>
+
+<hr />
+<h1 id="usage-guide">🎯 Usage Guide</h1>
+<h2 id="comfyui-usage">🌐 ComfyUI Usage</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 🔧 Step-by-Step Instructions
+
+**1. Access Interface**
+- Click the access link at the service instance
+
+<div style="text-align: center; margin: 16px 0;">
+  <img src="img.png" alt="Access Interface" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+</div>
+
+**2. Load Workflow**
+- Use workflow `vace14b.json`
+- Import the workflow into ComfyUI
+
+**3. Generate Content**
+- Input prompts for the video or image you want to generate
+- Click generate to start processing
+
+</div>
+
+<h2 id="api-integration">🔌 API Integration</h2>
+<h3 id="authentication-setup">🔑 Authentication Setup</h3>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🎫 Get Token</h4>
+<p style="margin: 0 0 12px 0;">Click the button in the upper right corner, open the bottom panel, and get the token</p>
+<div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+  <img src="img_1.png" alt="Get Token" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+</div>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🌐 Get Server Address</h4>
+<p style="margin: 0 0 12px 0;">For COMFYUI_SERVER acquisition, refer to:</p>
+<div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+  <img src="img_2.png" alt="Get Server Address" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+</div>
+</div>
+
+</div>
+
+<h3 id="python-code-example">💻 Python Code Example</h3>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+📋 Click to expand API call Python code
+</summary>
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random, os
+
+# 🔧 Configuration parameters
+COMFYUI_SERVER, COMFYUI_TOKEN = &quot;Enter your server address&quot;, &quot;Enter your token&quot;
+UNET_MODEL = &quot;Wan2.1_14B_VACE-Q6_K.gguf&quot;  # Q6_K quantized version
+CLIP_MODEL = &quot;umt5_xxl_fp8_e4m3fn.safetensors&quot;
+VAE_MODEL = &quot;wan21_vace_vae.safetensors&quot;
+
+# 🎯 Preset parameters
+IMAGE_PATH = &quot;example.png&quot;
+PROMPT = &quot;A girl secretly takes a bite of an apple&quot;
+NEG_PROMPT = &quot;vivid colors, overexposed, static, blurry details, subtitles, style, artwork, painting, picture, still, overall gray, worst quality, low quality, JPEG compression artifacts, ugly, incomplete&quot;
+
+class VACEClient:
+    def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+        self.base_url, self.token, self.client_id = f&quot;http://{server}&quot;, token, str(uuid.uuid4())
+        self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;, **({&quot;Authorization&quot;: f&quot;Bearer {token}&quot;} if token else {})}
+
+    def upload_image(self, image_path):
+        &quot;&quot;&quot;📤 Upload image to ComfyUI&quot;&quot;&quot;
+        if not os.path.exists(image_path):
+            raise Exception(f&quot;Image file does not exist: {image_path}&quot;)
+
+        try:
+            with open(image_path, 'rb') as f:
+                files = {'image': (os.path.basename(image_path), f, 'image/png')}
+                headers = {}
+                if self.token:
+                    headers[&quot;Authorization&quot;] = f&quot;Bearer {self.token}&quot;
+
+                response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files, headers=headers)
+                print(f&quot;Upload response: {response.text}&quot;)
+
+                if response.status_code != 200:
+                    raise Exception(f&quot;Upload failed, status code: {response.status_code}&quot;)
+
+                result = response.json()
+                if 'name' not in result:
+                    raise Exception(f&quot;No filename in upload response: {result}&quot;)
+
+                return result['name']
+        except Exception as e:
+            raise Exception(f&quot;Image upload failed: {e}&quot;)
+
+    def generate_vace(self, image_path, prompt, neg_prompt, steps=25, cfg=5, frames=49, width=720, height=720):
+        &quot;&quot;&quot;🎬 VACE video editing - Q6_K quantized version&quot;&quot;&quot;
+        print(&quot;📤 Uploading image...&quot;)
+        image_name = self.upload_image(image_path)
+        print(f&quot;✅ Image uploaded successfully: {image_name}&quot;)
+
+        workflow = {
+            &quot;11&quot;: {&quot;inputs&quot;: {&quot;unet_name&quot;: UNET_MODEL, &quot;weight_dtype&quot;: &quot;default&quot;}, &quot;class_type&quot;: &quot;UNETLoader&quot;},  # Q6_K quantized version
+            &quot;13&quot;: {&quot;inputs&quot;: {&quot;clip_name&quot;: CLIP_MODEL, &quot;type&quot;: &quot;wan&quot;, &quot;device&quot;: &quot;default&quot;}, &quot;class_type&quot;: &quot;CLIPLoader&quot;},
+            &quot;14&quot;: {&quot;inputs&quot;: {&quot;vae_name&quot;: VAE_MODEL}, &quot;class_type&quot;: &quot;VAELoader&quot;},
+            &quot;15&quot;: {&quot;inputs&quot;: {&quot;text&quot;: prompt, &quot;clip&quot;: [&quot;13&quot;, 0]}, &quot;class_type&quot;: &quot;CLIPTextEncode&quot;},
+            &quot;16&quot;: {&quot;inputs&quot;: {&quot;text&quot;: neg_prompt, &quot;clip&quot;: [&quot;13&quot;, 0]}, &quot;class_type&quot;: &quot;CLIPTextEncode&quot;},
+            &quot;17&quot;: {&quot;inputs&quot;: {&quot;width&quot;: width, &quot;height&quot;: height, &quot;length&quot;: [&quot;21&quot;, 0], &quot;batch_size&quot;: 1, &quot;strength&quot;: 1.0, &quot;positive&quot;: [&quot;15&quot;, 0], &quot;negative&quot;: [&quot;16&quot;, 0], &quot;vae&quot;: [&quot;14&quot;, 0]}, &quot;class_type&quot;: &quot;WanVaceToVideo&quot;},
+            &quot;18&quot;: {&quot;inputs&quot;: {&quot;image&quot;: image_name, &quot;upload&quot;: &quot;image&quot;}, &quot;class_type&quot;: &quot;LoadImage&quot;},
+            &quot;21&quot;: {&quot;inputs&quot;: {&quot;value&quot;: frames}, &quot;class_type&quot;: &quot;INTConstant&quot;},
+            &quot;22&quot;: {&quot;inputs&quot;: {&quot;width&quot;: width, &quot;height&quot;: height, &quot;upscale_method&quot;: &quot;nearest-exact&quot;, &quot;keep_proportion&quot;: &quot;crop&quot;, &quot;pad_color&quot;: &quot;0, 0, 0&quot;, &quot;crop_position&quot;: &quot;center&quot;, &quot;divisible_by&quot;: 2, &quot;device&quot;: &quot;gpu&quot;, &quot;image&quot;: [&quot;18&quot;, 0]}, &quot;class_type&quot;: &quot;ImageResizeKJv2&quot;},
+            &quot;23&quot;: {&quot;inputs&quot;: {&quot;images&quot;: [&quot;22&quot;, 0]}, &quot;class_type&quot;: &quot;PreviewImage&quot;},
+            &quot;24&quot;: {&quot;inputs&quot;: {&quot;seed&quot;: random.randint(1, 1000000000000000), &quot;steps&quot;: steps, &quot;cfg&quot;: cfg, &quot;sampler_name&quot;: &quot;uni_pc&quot;, &quot;scheduler&quot;: &quot;simple&quot;, &quot;denoise&quot;: 1, &quot;model&quot;: [&quot;27&quot;, 0], &quot;positive&quot;: [&quot;17&quot;, 0], &quot;negative&quot;: [&quot;17&quot;, 1], &quot;latent_image&quot;: [&quot;17&quot;, 2]}, &quot;class_type&quot;: &quot;KSampler&quot;},
+            &quot;27&quot;: {&quot;inputs&quot;: {&quot;shift&quot;: 8.0, &quot;model&quot;: [&quot;11&quot;, 0]}, &quot;class_type&quot;: &quot;ModelSamplingSD3&quot;},
+            &quot;30&quot;: {&quot;inputs&quot;: {&quot;trim_amount&quot;: [&quot;17&quot;, 3], &quot;samples&quot;: [&quot;24&quot;, 0]}, &quot;class_type&quot;: &quot;TrimVideoLatent&quot;},
+            &quot;31&quot;: {&quot;inputs&quot;: {&quot;samples&quot;: [&quot;30&quot;, 0], &quot;vae&quot;: [&quot;14&quot;, 0]}, &quot;class_type&quot;: &quot;VAEDecode&quot;},
+            &quot;32&quot;: {&quot;inputs&quot;: {&quot;frame_rate&quot;: 16, &quot;loop_count&quot;: 0, &quot;filename_prefix&quot;: &quot;VACE_Q6K_video&quot;, &quot;format&quot;: &quot;video/h264-mp4&quot;, &quot;pix_fmt&quot;: &quot;yuv420p&quot;, &quot;crf&quot;: 19, &quot;save_metadata&quot;: True, &quot;trim_to_audio&quot;: False, &quot;pingpong&quot;: False, &quot;save_output&quot;: True, &quot;images&quot;: [&quot;31&quot;, 0]}, &quot;class_type&quot;: &quot;VHS_VideoCombine&quot;}
+        }
+
+        print(&quot;📤 Submitting VACE Q6_K workflow...&quot;)
+        response = requests.post(f&quot;{self.base_url}/prompt&quot;, headers=self.headers, json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id})
+        print(f&quot;API Response: {response.text}&quot;)
+        result = response.json()
+        if &quot;error&quot; in result: 
+            raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+        if &quot;prompt_id&quot; not in result: 
+            raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+        return result[&quot;prompt_id&quot;]
+
+    def get_status(self, task_id):
+        &quot;&quot;&quot;📊 Get task status&quot;&quot;&quot;
+        try:
+            queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])): 
+                return &quot;processing&quot;
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])): 
+                return &quot;pending&quot;
+            history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            return &quot;completed&quot; if history_response.status_code == 200 and task_id in history_response.json() else &quot;processing&quot;
+        except: 
+            return &quot;processing&quot;
+
+    def download_video(self, task_id, output_path=&quot;vace_q6k_output.mp4&quot;):
+        &quot;&quot;&quot;📥 Download generated video&quot;&quot;&quot;
+        try:
+            response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            history = response.json()
+            if task_id in history:
+                for output in history[task_id]['outputs'].values():
+                    if 'gifs' in output:
+                        filename = output['gifs'][0]['filename']
+                        video_response = requests.get(f&quot;{self.base_url}/view?filename={filename}&quot;, headers=self.headers)
+                        with open(output_path, &quot;wb&quot;) as f: 
+                            f.write(video_response.content)
+                        return output_path
+        except Exception as e: 
+            print(f&quot;Download error: {e}&quot;)
+        return None
+
+def main():
+    &quot;&quot;&quot;🚀 Main function - Execute VACE Q6_K video editing task&quot;&quot;&quot;
+    client = VACEClient()
+    try:
+        print(f&quot;🎬 Starting VACE Q6_K video editing task...&quot;)
+        print(f&quot;📷 Input image: {IMAGE_PATH}&quot;)
+        print(f&quot;📝 Edit prompt: {PROMPT}&quot;)
+        print(f&quot;🔧 Using model: {UNET_MODEL}&quot;)
+
+        if not os.path.exists(IMAGE_PATH):
+            print(f&quot;❌ Image file does not exist: {IMAGE_PATH}&quot;)
+            print(&quot;Please ensure there is an example.png file in the current directory&quot;)
+            return
+
+        task_id = client.generate_vace(IMAGE_PATH, PROMPT, NEG_PROMPT, 25, 5, 49, 720, 720)
+        print(f&quot;🆔 Task ID: {task_id}&quot;)
+
+        while True:
+            status = client.get_status(task_id)
+            print(f&quot;📊 Current status: {status}&quot;)
+            if status == &quot;completed&quot;: 
+                print(&quot;✅ Video ready!&quot;); 
+                break
+            elif status == &quot;failed&quot;: 
+                print(&quot;❌ Generation failed!&quot;); 
+                exit(1)
+            time.sleep(10)
+
+        output_file = client.download_video(task_id, &quot;vace_q6k_output.mp4&quot;)
+        print(&quot;🎉 Video downloaded successfully!&quot; if output_file else &quot;❌ Failed to download video&quot;)
+        if output_file: 
+            print(f&quot;📁 Saved as: {output_file}&quot;)
+
+    except Exception as e: 
+        print(f&quot;❌ Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;: 
+    main()
+</code></pre>
+
+
+</details>
+
+<hr />
+<h1 id="best-practices">💡 Best Practices</h1>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🎯 Prompt Optimization</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li>Use clear and specific descriptions</li>
+  <li>Include style and mood keywords</li>
+  <li>Specify temporal elements for consistency</li>
+  <li>Q6_K quantized version maintains strong understanding capabilities</li>
+</ul>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">⚙️ Parameter Tuning</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af;">
+  <li>Start with default settings (25 steps, CFG 5)</li>
+  <li>Supports higher resolutions (720P/1080P)</li>
+  <li>Quantized version enables faster inference, can increase steps appropriately</li>
+  <li>Monitor VRAM usage, Q6_K version is more memory-efficient</li>
+</ul>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">🎬 Video Quality</h4>
+<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
+  <li>Use high-quality input images</li>
+  <li>Ensure proper aspect ratios</li>
+  <li>Test with shorter clips first</li>
+  <li>Q6_K quantization maintains high-quality output</li>
+</ul>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">💾 Quantization Benefits</h4>
+<ul style="margin: 0; padding-left: 20px; color: #9a3412;">
+  <li>VRAM usage reduced by ~40%</li>
+  <li>Improved inference speed</li>
+  <li>Suitable for mid-range hardware</li>
+  <li>Better cost-effectiveness</li>
+</ul>
+</div>
+
+</div>
+
+<hr />
+<h1 id="troubleshooting-solutions">🔧 Troubleshooting &amp; Solutions</h1>
+<details style="border: 2px solid #dc2626; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #fef2f2, #fee2e2); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #dc2626; cursor: pointer;">🎨 Generation Quality Issues</summary>
+<div style="margin-top: 15px; color: #991b1b;">
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Insufficient prompt details</strong>: Add more specific descriptions, Q6_K version maintains strong understanding capabilities</li>
+<li><strong>Improper parameter settings</strong>: Adjust steps and CFG values, recommended 25 steps, CFG 5</li>
+<li><strong>Low input image quality</strong>: Use higher quality source images</li>
+<li><strong>Quantization impact</strong>: Q6_K quantization has minimal quality impact, try adjusting parameters if issues occur</li>
+</ul>
+</div>
+</details>
+
+<details style="border: 2px solid #ea580c; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #fff7ed, #fed7aa); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #ea580c; cursor: pointer;">⚡ Performance Issues</summary>
+<div style="margin-top: 15px; color: #9a3412;">
+<p><strong>Optimization Tips:</strong></p>
+<ul>
+<li><strong>Insufficient VRAM</strong>: Q6_K version requires 40% less VRAM, 8-12GB is sufficient</li>
+<li><strong>Slow loading</strong>: GGUF format loads faster, but still requires patience</li>
+<li><strong>Inference speed</strong>: Quantized version infers faster, can increase steps to improve quality</li>
+<li><strong>Hardware configuration</strong>: Q6_K version has lower hardware requirements, suitable for mid-range configurations</li>
+</ul>
+</div>
+</details>
+
+<details style="border: 2px solid #059669; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #f0fdf4, #dcfce7); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #059669; cursor: pointer;">🔧 Compatibility Issues</summary>
+<div style="margin-top: 15px; color: #065f46;">
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li><strong>GGUF format support</strong>: Ensure ComfyUI supports GGUF format models</li>
+<li><strong>Plugin compatibility</strong>: Some plugins may not be compatible with quantized versions</li>
+<li><strong>Parameter ranges</strong>: Pay attention to Q6_K version's recommended parameter ranges</li>
+<li><strong>Model path</strong>: Ensure correct GGUF file path specification</li>
+</ul>
+</div>
+</details>
+
+<hr />
+<h1 id="related-resources">📚 Related Resources</h1>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">📄 Technical Documentation</h4>
+<a href="https://arxiv.org/pdf/2503.07598" style="color: #2563eb; text-decoration: none; font-weight: 500;">VACE Technical Paper →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Learn about VACE technology's theoretical foundation and implementation principles</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🛠️ Tools & Guides</h4>
+<a href="https://docs.comfy.org/zh-CN/tutorials/video/wan/vace" style="color: #2563eb; text-decoration: none; font-weight: 500;">ComfyUI Video Editing Guide →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Detailed instructions for ComfyUI video editing features</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🎥 Best Practices</h4>
+<a href="https://ali-vilab.github.io/VACE-Page/" style="color: #2563eb; text-decoration: none; font-weight: 500;">Video Editing Best Practices →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Professional video editing tips and experience sharing</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🔌 Plugin Documentation</h4>
+<a href="https://github.com/kijai/ComfyUI-WanVideoWrapper" style="color: #2563eb; text-decoration: none; font-weight: 500;">VACE Plugin Documentation →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">VACE ComfyUI plugin installation and usage instructions</p>
+</div>
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎬 <strong>Start creating amazing videos with VACE-14B-Q6_K quantized version!</strong> | Intelligent video editing, efficient and energy-saving, for limitless creativity
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.374126+00:00
+  -->
+</body>
+</html>

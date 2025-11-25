@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#hunyuan3d-21">📋 Hunyuan3D 2.1 模型概览</a></li>
+              
+          
+              <li><a href="#hunyuan3d-21-comfyui">🚀 Hunyuan3D 2.1 ComfyUI 工作流</a></li>
+              
+                  <li><a href="#_1">⚠️ 环境要求</a></li>
+                  
+              
+                  <li><a href="#_2">📥 步骤一：工作流文件下载</a></li>
+                  
+              
+                  <li><a href="#_3">🔗 步骤二：模型文件</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h1 style="font-size: 2.5em; margin: 0; font-weight: 600;">🎯 Hunyuan3D 2.1 图像转3D模型</h1>
+  <p style="font-size: 1.2em; margin: 16px 0 0 0; opacity: 0.9;">ComfyUI 原生工作流 - 突破性3D资产生成，超越2.0版本的专业级PBR材质</p>
+  <div style="margin-top: 20px;">
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🎨 增强纹理质量</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🏗️ 卓越3D深度</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">⚡ 生产就绪</span>
+  </div>
+</div>
+
+<h2 id="hunyuan3d-21">📋 Hunyuan3D 2.1 模型概览</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Hunyuan3D 2.1** 是腾讯推出的突破性3D资产生成系统，能将单一图像转换为具备物理基础渲染 (PBR) 材质的生产就绪3D模型。基于 Hunyuan3D 2.0 的坚实基础，这个最新的 Hunyuan3D-2.1 版本显著提高了纹理质量，具有更精细的表面细节和增强的三维深度感知。
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">🎨</div>
+<h4 style="margin: 0 0 8px 0; color: #1e40af;">增强的纹理质量</h4>
+<p style="margin: 0; color: #1e40af;">相比2.0有显著提升，拥有更精细的表面细节和更逼真的材质表现</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🏗️</div>
+<h4 style="margin: 0 0 8px 0; color: #059669;">卓越的3D深度</h4>
+<p style="margin: 0; color: #065f46;">更好的空间理解创造更具说服力的三维形态</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">⚡</div>
+<h4 style="margin: 0 0 8px 0; color: #ea580c;">真正的PBR材质</h4>
+<p style="margin: 0; color: #9a3412;">生成反照率、金属和粗糙度贴图，适合专业流水线中使用</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #7c3aed;">🎯</div>
+<h4 style="margin: 0 0 8px 0; color: #7c3aed;">生产就绪输出</h4>
+<p style="margin: 0; color: #5b21b6;">创建紧密的网格和正确的UV映射，即可在项目中立即使用</p>
+</div>
+
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔗 相关资源</strong><br>
+  • <strong>原始模型</strong>：由腾讯 Hunyuan3D 团队开发<br>
+  • <strong>ComfyUI 包装器</strong>：由社区创建，特别感谢 kijai 的基础包装器工作<br>
+  • <strong>前代版本</strong>：查看 <a href="#" target="_blank" style="color: #2563eb;">Hunyuan3D 2.0 工作流程</a> 了解进步程度
+</div>
+
+### 🆚 与2.0版本对比优势
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
+<h4 style="color: #d97706; margin: 0 0 8px 0;">🎯 质量提升</h4>
+<ul style="margin: 0; padding-left: 20px; color: #9a3412;">
+  <li>令人难以置信的细节捕捉</li>
+  <li>保存精细特征如按钮、织物纹理</li>
+  <li>零纹理缝隙，无缝纹理</li>
+  <li>商业级PBR材质</li>
+</ul>
+</div>
+
+<div style="background: #f3e8ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🔧 技术改进</h4>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6;">
+  <li>3D感知定位确保视角一致性</li>
+  <li>真实光照响应材质</li>
+  <li>金属逼真闪耀，织物自然吸光</li>
+  <li>完美的触感质量</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<h2 id="hunyuan3d-21-comfyui">🚀 Hunyuan3D 2.1 ComfyUI 工作流</h2>
+<h3 id="_1">⚠️ 环境要求</h3>
+<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📋 使用前请确认</strong><br>
+  • 确保 ComfyUI 已更新到最新版本<br>
+  • 需要安装 ComfyUI-Hunyuan3DWrapper 自定义节点<br>
+  • 推荐使用最新开发版（nightly）获得完整功能<br>
+  • 确保有足够的显存运行模型（推荐16GB+）
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">📥 下载链接</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li><a href="https://www.comfy.org/download" target="_blank" style="color: #059669;">ComfyUI 下载</a></li>
+  <li><a href="/zh-CN/installation/update_comfyui" target="_blank" style="color: #059669;">ComfyUI 更新教程</a></li>
+  <li><a href="https://github.com/kijai/ComfyUI-Hunyuan3DWrapper" target="_blank" style="color: #059669;">Hunyuan3D 包装器</a></li>
+</ul>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">🔧 常见问题</h4>
+<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
+  <li>节点缺失：未安装自定义节点包</li>
+  <li>显存不足：模型需要较大显存</li>
+  <li>加载失败：模型文件下载不完整</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="_2">📥 步骤一：工作流文件下载</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+点击该链接下载混元2.1工作流 
+<a href="https://service-info-public.oss-cn-hangzhou.aliyuncs.com/model/workflows/%E6%B7%B7%E5%85%833d%E5%BB%BA%E6%A8%A1%20%E7%99%BD%E8%86%9C%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9C%E6%B5%81%20%281%29.json" download>链接</a>
+</div>
+
+<h3 id="_3">🔗 步骤二：模型文件</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+
+#### 📂 模型文件结构
+
+<div style="background: #1e293b; border-radius: 6px; padding: 16px; margin: 16px 0;">
+<pre style="margin: 0; color: #e2e8f0; font-family: 'Courier New', monospace; font-size: 14px;"><code>ComfyUI/
+├── models/
+│   ├── checkpoints/
+│   │   ├── hunyuan3d-dit-v2-1.safetensors
+│   │   └── hunyuan3d-paint-v2-1.safetensors
+│   ├── vae/
+│   │   └── hunyuan3d_vae.safetensors
+│   └── text_encoders/
+│       └── qwen_2.5_vl_7b_fp8_scaled.safetensors</code></pre>
+</div>
+
+
+
+### 🔧 步骤三：工作流配置操作
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### 📋 基本工作流程
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">1️⃣ 图像准备</h4>
+<p style="margin: 0 0 8px 0; color: #1e40af; font-size: 14px;">确保背景干净且主题清晰——这对 Hunyuan3D-2.1 的最佳效果至关重要</p>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af; font-size: 13px;">
+  <li>移除背景，将主题置中</li>
+  <li>确保主要物体上的良好光照</li>
+</ul>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">2️⃣ 图像加载</h4>
+<p style="margin: 0; color: #065f46; font-size: 14px;">使用 <strong>Hunyuan 3D 2.1 Load Image with Transparency</strong> 加载您的参考图像</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">3️⃣ 预览结果</h4>
+<p style="margin: 0; color: #9a3412; font-size: 14px;">在3D查看器中预览您的 Hunyuan3D-2.1 结果</p>
+</div>
+
+</div>
+
+#### ⚙️ 重要参数设置
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
+<h4 style="color: #d97706; margin: 0 0 8px 0;">🏗️ 形状生成参数</h4>
+<ul style="margin: 0; padding-left: 20px; color: #9a3412; font-size: 14px;">
+  <li><strong>steps</strong>: 25（质量与速度的最佳平衡点）</li>
+  <li><strong>guidance_scale</strong>: 7.5（如何紧密地遵循您的图像）</li>
+  <li><strong>control_after_generate</strong>: "fixed"（保持一致性）</li>
+</ul>
+</div>
+
+<div style="background: #f3e8ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🎨 纹理化参数</h4>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6; font-size: 14px;">
+  <li><strong>view_size</strong>: 768（良好质量且不会耗尽VRAM）</li>
+  <li><strong>texture_size</strong>: 1024（高分辨率纹理）</li>
+  <li><strong>guidance_scale</strong>: 3.0（纹理对齐强度）</li>
+</ul>
+</div>
+
+</div>
+
+#### 🚀 执行生成
+
+<div style="text-align: center; margin: 20px 0;">
+  <div style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 16px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3);">
+    <strong>⌨️ 点击 Queue 按钮或使用快捷键 Ctrl(Cmd) + Enter 运行工作流</strong>
+  </div>
+</div>
+
+</div>
+
+## API调用
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+📋 点击展开ComfyUI API调用Python代码
+</summary>
+
+
+<pre><code class="language-python">
+import requests
+import json
+import uuid
+import time
+import random
+import os
+
+# Configuration Parameters - Hunyuan 3D 2.1 Specific
+COMFYUI_SERVER = &quot;127.0.0.1:8188&quot;  # Local server
+COMFYUI_TOKEN = &quot;&quot;  # Usually no token needed for local
+HY3D_MODEL = &quot;model.fp16.ckpt&quot;
+
+# Default Parameters
+DEFAULT_IMAGE = &quot;fun_control.jpg&quot;
+
+class ComfyUIHunyuan3DClient:
+    def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+        self.base_url = f&quot;http://{server}&quot;
+        self.token = token
+        self.client_id = str(uuid.uuid4())
+        self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;}
+        if token:
+            self.headers[&quot;Authorization&quot;] = f&quot;Bearer {token}&quot;
+
+    def upload_image(self, image_path):
+        &quot;&quot;&quot;Upload image to ComfyUI server&quot;&quot;&quot;
+        try:
+            with open(image_path, 'rb') as f:
+                files = {'image': f}
+                response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files)
+                if response.status_code == 200:
+                    result = response.json()
+                    return result.get('name', os.path.basename(image_path))
+                else:
+                    raise Exception(f&quot;Failed to upload image: {response.text}&quot;)
+        except Exception as e:
+            print(f&quot;Image upload error: {e}&quot;)
+            return None
+
+    def generate_3d_mesh(self, image_path=None, image_name=None, 
+                        steps=25, guidance_scale=5, seed=None,
+                        box_v=1.01, octree_resolution=256, num_chunks=64000,
+                        mc_level=0, mc_algo=&quot;mc&quot;, enable_flash_vdm=True,
+                        force_offload=False, attention_mode=&quot;sdpa&quot;,
+                        remove_floaters=True, remove_degenerate_faces=True,
+                        reduce_faces=True, max_facenum=200000, smooth_normals=False,
+                        file_format=&quot;glb&quot;, filename_prefix=&quot;Hy21_Mesh&quot;):
+        &quot;&quot;&quot;Generate 3D mesh using Hunyuan 3D 2.1 based on original JSON workflow&quot;&quot;&quot;
+        print(&quot;Starting Hunyuan 3D 2.1 mesh generation...&quot;)
+
+        # Generate random seed if not provided
+        if seed is None:
+            seed = random.randint(1, 1000000000000000)
+
+        # Handle input image
+        if image_path and not image_name:
+            image_name = self.upload_image(image_path)
+            if not image_name:
+                raise Exception(&quot;Failed to upload input image&quot;)
+        elif not image_name:
+            image_name = DEFAULT_IMAGE
+
+        # Workflow based on your provided JSON
+        workflow = {
+            &quot;4&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;model_name&quot;: HY3D_MODEL
+                },
+                &quot;class_type&quot;: &quot;Hy3D21VAELoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Hunyuan 3D 2.1 VAE Loader&quot;}
+            },
+            &quot;9&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;box_v&quot;: box_v,
+                    &quot;octree_resolution&quot;: octree_resolution,
+                    &quot;num_chunks&quot;: num_chunks,
+                    &quot;mc_level&quot;: mc_level,
+                    &quot;mc_algo&quot;: mc_algo,
+                    &quot;enable_flash_vdm&quot;: enable_flash_vdm,
+                    &quot;force_offload&quot;: force_offload,
+                    &quot;vae&quot;: [&quot;4&quot;, 0],
+                    &quot;latents&quot;: [&quot;10&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;Hy3D21VAEDecode&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Hunyuan 3D 2.1 VAE Decoder&quot;}
+            },
+            &quot;10&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;model&quot;: HY3D_MODEL,
+                    &quot;steps&quot;: steps,
+                    &quot;guidance_scale&quot;: guidance_scale,
+                    &quot;seed&quot;: seed,
+                    &quot;attention_mode&quot;: attention_mode,
+                    &quot;image&quot;: [&quot;14&quot;, 2]
+                },
+                &quot;class_type&quot;: &quot;Hy3DMeshGenerator&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Hunyuan 3D 2.1 Mesh Generator&quot;}
+            },
+            &quot;11&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;model_file&quot;: [&quot;20&quot;, 0],
+                    &quot;image&quot;: &quot;&quot;
+                },
+                &quot;class_type&quot;: &quot;Preview3D&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Preview 3D&quot;}
+            },
+            &quot;14&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;image&quot;: image_name
+                },
+                &quot;class_type&quot;: &quot;Hy3D21LoadImageWithTransparency&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Hunyuan 3D 2.1 Load Image with Transparency&quot;}
+            },
+            &quot;19&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;remove_floaters&quot;: remove_floaters,
+                    &quot;remove_degenerate_faces&quot;: remove_degenerate_faces,
+                    &quot;reduce_faces&quot;: reduce_faces,
+                    &quot;max_facenum&quot;: max_facenum,
+                    &quot;smooth_normals&quot;: smooth_normals,
+                    &quot;trimesh&quot;: [&quot;9&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;Hy3D21PostprocessMesh&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Hunyuan 3D 2.1 Post Process Trimesh&quot;}
+            },
+            &quot;20&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;filename_prefix&quot;: filename_prefix,
+                    &quot;file_format&quot;: file_format,
+                    &quot;save_file&quot;: True,
+                    &quot;trimesh&quot;: [&quot;19&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;Hy3D21ExportMesh&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Hunyuan 3D 2.1 Export Mesh&quot;}
+            }
+        }
+
+        print(&quot;Submitting Hunyuan 3D 2.1 mesh generation workflow...&quot;)
+        print(f&quot;Input Image: {image_name}&quot;)
+        print(f&quot;Steps: {steps}&quot;)
+        print(f&quot;Guidance Scale: {guidance_scale}&quot;)
+        print(f&quot;Random Seed: {seed}&quot;)
+        print(f&quot;Output Format: {file_format}&quot;)
+
+        response = requests.post(
+            f&quot;{self.base_url}/prompt&quot;, 
+            headers=self.headers, 
+            json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id}
+        )
+
+        print(f&quot;API Response: {response.text}&quot;)
+
+        if response.status_code != 200:
+            raise Exception(f&quot;API request failed with status code: {response.status_code}&quot;)
+
+        result = response.json()
+        if &quot;error&quot; in result:
+            raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+        if &quot;prompt_id&quot; not in result:
+            raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+
+        return result[&quot;prompt_id&quot;], seed
+
+    def get_status(self, task_id):
+        &quot;&quot;&quot;Get task status&quot;&quot;&quot;
+        try:
+            # Check queue status
+            queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+
+            # Check if in running queue
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])):
+                return &quot;processing&quot;
+
+            # Check if in pending queue
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])):
+                return &quot;pending&quot;
+
+            # Check history
+            history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            if history_response.status_code == 200:
+                history = history_response.json()
+                if task_id in history:
+                    return &quot;completed&quot;
+
+            return &quot;processing&quot;
+        except Exception as e:
+            print(f&quot;Status check error: {e}&quot;)
+            return &quot;processing&quot;
+
+    def download_mesh(self, task_id, output_dir=&quot;outputs&quot;):
+        &quot;&quot;&quot;Download generated 3D mesh files&quot;&quot;&quot;
+        try:
+            # Ensure output directory exists
+            os.makedirs(output_dir, exist_ok=True)
+
+            response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            history = response.json()
+
+            if task_id in history:
+                outputs = history[task_id]['outputs']
+                downloaded_files = []
+
+                for node_id, output in outputs.items():
+                    # Check for 3D model files
+                    if 'gltf' in output:
+                        for model_info in output['gltf']:
+                            filename = model_info['filename']
+                            # Download 3D model
+                            model_response = requests.get(
+                                f&quot;{self.base_url}/view?filename={filename}&quot;, 
+                                headers=self.headers
+                            )
+
+                            if model_response.status_code == 200:
+                                output_path = os.path.join(output_dir, filename)
+                                with open(output_path, &quot;wb&quot;) as f:
+                                    f.write(model_response.content)
+                                downloaded_files.append(output_path)
+                                print(f&quot;3D model saved: {output_path}&quot;)
+
+                    # Check for preview images
+                    if 'images' in output:
+                        for img_info in output['images']:
+                            filename = img_info['filename']
+                            # Download preview image
+                            img_response = requests.get(
+                                f&quot;{self.base_url}/view?filename={filename}&quot;, 
+                                headers=self.headers
+                            )
+
+                            if img_response.status_code == 200:
+                                output_path = os.path.join(output_dir, filename)
+                                with open(output_path, &quot;wb&quot;) as f:
+                                    f.write(img_response.content)
+                                downloaded_files.append(output_path)
+                                print(f&quot;Preview image saved: {output_path}&quot;)
+
+                return downloaded_files
+
+        except Exception as e:
+            print(f&quot;Download error: {e}&quot;)
+
+        return []
+
+    def generate_batch(self, image_paths, **kwargs):
+        &quot;&quot;&quot;Batch generate 3D meshes from multiple images&quot;&quot;&quot;
+        results = []
+
+        for i, image_path in enumerate(image_paths):
+            print(f&quot;\nStarting 3D generation task {i+1}/{len(image_paths)}...&quot;)
+
+            try:
+                task_id, seed = self.generate_3d_mesh(image_path=image_path, **kwargs)
+
+                # Wait for completion
+                while True:
+                    status = self.get_status(task_id)
+                    print(f&quot;Task {i+1} status: {status}&quot;)
+
+                    if status == &quot;completed&quot;:
+                        files = self.download_mesh(task_id)
+                        results.append({
+                            'task_id': task_id,
+                            'seed': seed,
+                            'files': files,
+                            'input_image': image_path
+                        })
+                        break
+                    elif status == &quot;failed&quot;:
+                        print(f&quot;Task {i+1} failed&quot;)
+                        break
+
+                    time.sleep(10)  # 3D generation takes longer
+
+            except Exception as e:
+                print(f&quot;Task {i+1} error: {e}&quot;)
+
+        return results
+
+    def generate_with_quality_settings(self, image_path, quality_preset=&quot;high&quot;):
+        &quot;&quot;&quot;Generate 3D mesh with predefined quality settings&quot;&quot;&quot;
+        quality_presets = {
+            &quot;low&quot;: {
+                &quot;steps&quot;: 15,
+                &quot;octree_resolution&quot;: 128,
+                &quot;num_chunks&quot;: 32000,
+                &quot;max_facenum&quot;: 50000
+            },
+            &quot;medium&quot;: {
+                &quot;steps&quot;: 20,
+                &quot;octree_resolution&quot;: 256,
+                &quot;num_chunks&quot;: 64000,
+                &quot;max_facenum&quot;: 100000
+            },
+            &quot;high&quot;: {
+                &quot;steps&quot;: 25,
+                &quot;octree_resolution&quot;: 512,
+                &quot;num_chunks&quot;: 128000,
+                &quot;max_facenum&quot;: 200000
+            },
+            &quot;ultra&quot;: {
+                &quot;steps&quot;: 30,
+                &quot;octree_resolution&quot;: 1024,
+                &quot;num_chunks&quot;: 256000,
+                &quot;max_facenum&quot;: 500000
+            }
+        }
+
+        settings = quality_presets.get(quality_preset, quality_presets[&quot;high&quot;])
+        return self.generate_3d_mesh(image_path=image_path, **settings)
+
+def main():
+    &quot;&quot;&quot;Main function - Execute Hunyuan 3D 2.1 mesh generation&quot;&quot;&quot;
+    client = ComfyUIHunyuan3DClient()
+
+    try:
+        print(&quot;Hunyuan 3D 2.1 mesh generation client started...&quot;)
+
+        # Single 3D mesh generation example
+        print(&quot;\n=== Single 3D Mesh Generation ===&quot;)
+
+        # You can either provide a local image path or use an existing image name
+        input_image_path = None  # Set to your image path, e.g., &quot;input_image.jpg&quot;
+        input_image_name = DEFAULT_IMAGE  # Or use existing image name
+
+        task_id, seed = client.generate_3d_mesh(
+            image_path=input_image_path,
+            image_name=input_image_name,
+            steps=25,
+            guidance_scale=5,
+            octree_resolution=256,
+            max_facenum=200000,
+            file_format=&quot;glb&quot;
+        )
+
+        print(f&quot;Task ID: {task_id}&quot;)
+        print(f&quot;Seed: {seed}&quot;)
+
+        # Wait for task completion (3D generation takes longer)
+        while True:
+            status = client.get_status(task_id)
+            print(f&quot;Current status: {status}&quot;)
+
+            if status == &quot;completed&quot;:
+                print(&quot;3D mesh generation completed!&quot;)
+                break
+            elif status == &quot;failed&quot;:
+                print(&quot;Generation failed!&quot;)
+                return
+
+            time.sleep(10)
+
+        # Download 3D mesh and preview files
+        downloaded_files = client.download_mesh(task_id)
+        if downloaded_files:
+            print(f&quot;Successfully downloaded {len(downloaded_files)} files!&quot;)
+            for file in downloaded_files:
+                print(f&quot;File path: {file}&quot;)
+        else:
+            print(&quot;Download failed&quot;)
+
+        # Quality preset example
+        print(&quot;\n=== Quality Preset Example ===&quot;)
+        # Uncomment to test different quality settings
+        # if input_image_path:
+        #     for quality in [&quot;low&quot;, &quot;medium&quot;, &quot;high&quot;]:
+        #         print(f&quot;Generating with {quality} quality...&quot;)
+        #         task_id, seed = client.generate_with_quality_settings(input_image_path, quality)
+        #         # Wait and download logic here...
+
+        # Batch generation example
+        print(&quot;\n=== Batch Generation Example ===&quot;)
+        batch_images = [
+            # &quot;image1.jpg&quot;,
+            # &quot;image2.png&quot;, 
+            # &quot;image3.jpeg&quot;
+        ]
+
+        # Uncomment to run batch generation
+        # if batch_images:
+        #     batch_results = client.generate_batch(
+        #         batch_images, 
+        #         steps=20, 
+        #         guidance_scale=5,
+        #         file_format=&quot;glb&quot;
+        #     )
+        #     print(f&quot;Batch generation completed, generated {len(batch_results)} 3D models&quot;)
+
+    except Exception as e:
+        print(f&quot;Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+</code></pre>
+
+
+</details>
+
+
+## 💡 Hunyuan3D 2.1 高级技巧
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 🎯 图像准备至关重要
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📸 输入图像优化</strong><br>
+  干净的背景和清晰的主题对于 Hunyuan3D-2.1 的最佳性能至关重要。模型在经过良好准备的输入图像下表现显著更佳——移除背景，将主题置中，并确保主要物体上的良好光照。
+</div>
+
+### 🔧 网格质量控制
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🛠️ Post Process Trimesh</h4>
+<p style="margin: 0 0 8px 0; color: #065f46; font-size: 14px;">这是您在 Hunyuan3D-2.1 中的好朋友</p>
+<ul style="margin: 0; padding-left: 20px; color: #065f46; font-size: 13px;">
+  <li>启用 <code>remove_floaters</code> 移除浮动顶点</li>
+  <li>启用 <code>reduce_faces</code> 获得更干净的结果</li>
+  <li>调整 <code>max_facenum</code> 控制面数</li>
+</ul>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🎨 纹理分辨率平衡</h4>
+<p style="margin: 0 0 8px 0; color: #9a3412; font-size: 14px;">VAE Decoder 中的参数控制</p>
+<ul style="margin: 0; padding-left: 20px; color: #9a3412; font-size: 13px;">
+  <li><code>octree_resolution</code>: 256（默认值）</li>
+  <li>更高值 = 更多几何细节</li>
+  <li>需要更多计算能力</li>
+</ul>
+</div>
+
+</div>
+
+### 🎛️ 参数优化策略
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">用途</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">max_facenum 设置</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">即时应用</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">5000-10000</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">快速预览，较低面数</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">游戏资产</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">15000-25000</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">平衡质量与性能</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">高质量渲染</td>
+      <td style="padding: 12px;">50000+</td>
+      <td style="padding: 12px;">最高质量，需要更多计算资源</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+## 🎯 Hunyuan3D 2.1 应用场景
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">🎮</div>
+<h4 style="margin: 0 0 8px 0; color: #1e40af;">游戏开发</h4>
+<p style="margin: 0; color: #1e40af;">创建游戏资产、道具模型、环境物体，具备完整的PBR材质</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🥽</div>
+<h4 style="margin: 0 0 8px 0; color: #059669;">虚拟现实</h4>
+<p style="margin: 0; color: #065f46;">构建VR体验所需的高质量3D模型和交互物体</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🏭</div>
+<h4 style="margin: 0 0 8px 0; color: #ea580c;">工业设计</h4>
+<p style="margin: 0; color: #9a3412;">产品原型设计、工业建模、设计可视化</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #7c3aed;">🎬</div>
+<h4 style="margin: 0 0 8px 0; color: #7c3aed;">影视制作</h4>
+<p style="margin: 0; color: #5b21b6;">电影道具、场景建模、视觉效果制作</p>
+</div>
+
+</div>
+
+## 🔧 技术规格
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 💻 系统要求
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">配置项</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">最低要求</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">推荐配置</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">GPU 显存</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16GB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">24GB+</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">系统内存</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">32GB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">64GB+</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">存储空间</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">50GB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">100GB+ SSD</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">推荐 GPU</td>
+      <td style="padding: 12px;">RTX 4080</td>
+      <td style="padding: 12px;">RTX 4090 / A100</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+### 🎨 输出格式与质量
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #2563eb; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">.glb 格式</span>
+  </div>
+  <div style="background: #f0fdf4; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #059669; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">PBR 材质</span>
+  </div>
+  <div style="background: #fff7ed; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #ea580c; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">反照率贴图</span>
+  </div>
+  <div style="background: #f3e8ff; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #7c3aed; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">金属度贴图</span>
+  </div>
+  <div style="background: #fef3c7; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #d97706; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">粗糙度贴图</span>
+  </div>
+  <div style="background: #fef2f2; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #dc2626; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">UV 映射</span>
+  </div>
+</div>
+
+### 📊 性能基准
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<strong>⏱️ 生成时间</strong><br>
+<p style="margin: 8px 0 0 0; color: #1e40af; font-size: 14px;">形状生成：2-5分钟 | 纹理生成：3-8分钟（取决于分辨率设置）</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<strong>🎯 质量提升</strong><br>
+<p style="margin: 8px 0 0 0; color: #065f46; font-size: 14px;">相比2.0版本，纹理细节提升40%，几何精度提升25%</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<strong>💾 文件大小</strong><br>
+<p style="margin: 8px 0 0 0; color: #9a3412; font-size: 14px;">典型输出：5-20MB .glb文件（包含完整PBR材质）</p>
+</div>
+
+</div>
+
+</div>
+
+## 💡 使用技巧与建议
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">✅ 最佳实践</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li>使用高质量、清晰的输入图像</li>
+  <li>确保主体在图像中居中且完整</li>
+  <li>移除复杂背景，保持主体突出</li>
+  <li>根据用途调整网格面数和纹理分辨率</li>
+  <li>利用Post Process节点优化最终结果</li>
+</ul>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">⚠️ 注意事项</h4>
+<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
+  <li>确保有足够的显存运行完整流程</li>
+  <li>复杂物体可能需要多次尝试优化参数</li>
+  <li>透明或反射材质可能需要特殊处理</li>
+  <li>首次运行需要下载大量模型文件</li>
+  <li>生成时间较长，建议合理安排工作流程</li>
+</ul>
+</div>
+
+</div>
+
+---
+
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎯 <strong>Hunyuan3D 2.1 图像转3D模型</strong> | 突破性3D资产生成，专业级PBR材质的完美呈现
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.504992+00:00
+  -->
+</body>
+</html>

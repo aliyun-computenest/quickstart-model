@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index qwen2.5 original - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">简介</a></li>
+              
+          
+              <li><a href="#_2">使用说明</a></li>
+              
+                  <li><a href="#api">API调用</a></li>
+                  
+                      <li class="li-h3"><a href="#curl">Curl命令调用</a></li>
+                  
+                      <li class="li-h3"><a href="#python">Python调用</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">简介</h2>
+<p>9 月 19 日云栖大会，阿里云发布通义千问新一代开源模型 Qwen2.5，旗舰模型 Qwen2.5-72B 性能超越 Llama-405B。Qwen2.5 全系列模型都在 18T tokens 数据上进行预训练，相比 Qwen2，整体性能提升 18%以上，拥有更多的知识、更强的编程和数学能力。Qwen2.5-72B 模型在 MMLU-rudex 基准（考察通用知识）、MBPP 基准（考察代码能力）和 MATH 基准（考察数学能力）的得分高达 86.8、88.2、83.1。</p>
+<p>Qwen2.5 支持高达 128K 的上下文长度，可生成最多 8K 内容。模型拥有强大的多语言能力，支持中文、英文、法文、西班牙文、俄文、日文、越南文、阿拉伯文等 29 种以上语言。模型能够丝滑响应多样化的系统提示，实现角色扮演和聊天机器人等任务。在指令跟随、理解结构化数据（如表格）、生成结构化输出（尤其是 JSON）等方面 Qwen2.5 都进步明显。</p>
+<p>语言模型方面，Qwen2.5 开源了 7 个尺寸，0.5B、1.5B、3B、7B、14B、32B、72B。通义千问 2.5-32B-Instruct（Qwen2.5-32B-Instruct）是由通义千问 2.5-32B（Qwen2.5-32B）经过指令跟随微调后得到的版本，能够根据指令和历史对话，生成符合指令的文本。</p>
+<h2 id="_2">使用说明</h2>
+<p>在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了Api调用示例、内网访问地址、公网访问地址和ApiKey，下面会分别介绍如何访问使用。</p>
+<p><img alt="img-llm-use-desc.png" src="../../image-cn/img-llm-use-desc.png" /></p>
+<h3 id="api">API调用</h3>
+<h4 id="curl">Curl命令调用</h4>
+<p><img alt="img.png" src="../../image-cn/img-api-call.png" /></p>
+<p>Curl命令调用可以直接使用服务实例概览页面中的Api调用示例，调用模型API的具体结构如下：</p>
+<p>其中${ServerIP}可以填写内网地址或公网地址中的IP地址，${ApiKey}为ApiKey，${ModelName}为模型名称。</p>
+<pre><code class="language-shell">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+  -d '{
+    &quot;model&quot;: &quot;${ModelName}&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级&quot;
+      }
+    ]
+  }'
+</code></pre>
+<h4 id="python">Python调用</h4>
+<p>以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，需要带上/v1。</p>
+<pre><code class="language-python">from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+print(model)
+
+
+def main():
+
+    stream = True
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;你好，介绍一下你自己，越详细越好。&quot;,
+                    }
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.528044+00:00
+  -->
+</body>
+</html>

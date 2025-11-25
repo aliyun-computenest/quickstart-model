@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Mllm instructions en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#user-guide">📖 User Guide</a></li>
+              
+                  <li><a href="#api-call-methods">🔌 API Call Methods</a></li>
+                  
+                      <li class="li-h3"><a href="#curl-command-call">🖥️ Curl Command Call</a></li>
+                  
+                      <li class="li-h3"><a href="#python-sdk-call">🐍 Python SDK Call</a></li>
+                  
+              
+                  <li><a href="#web-application-access">🌐 Web Application Access</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="user-guide">📖 User Guide</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 After Deployment</strong><br>
+  After completing the model deployment, you can view the model usage instructions on the Computing Nest service instance overview page, which provides API call examples, internal network access addresses, public network access addresses (available after enabling public network access), and Api_Key.
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+  <div style="text-align: center; margin-bottom: 16px;">
+    <img src="../image-en/img-llm-use-desc.png" alt="Model usage instructions interface" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<h3 id="api-call-methods">🔌 API Call Methods</h3>
+<h4 id="curl-command-call">🖥️ Curl Command Call</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="text-align: center; margin-bottom: 16px;">
+  <img src="../image-en/img-api-call.png" alt="API call example" style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📋 Parameter Description</strong><br>
+  • <code>${ServerIP}</code>: IP address from internal or public network address<br>
+  • <code>${ApiKey}</code>: ApiKey provided on the page<br>
+  • <code>${ModelName}</code>: Model name
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🖼️ Image Format Support</strong><br>
+  The <code>image_url</code> parameter supports two formats:<br>
+  • <strong>HTTP URL</strong>: e.g., <code>https://modelscope.oss-cn-beijing.aliyuncs.com/resource/qwen.png</code><br>
+  • <strong>Base64 Encoding</strong>: <code>data:image/jpeg;base64,&lt;base64 encoded image format&gt;</code>
+</div>
+
+Curl command calls can directly use the API call examples from the service instance overview page. The specific structure for calling the model API is as follows:
+
+
+<pre><code class="language-bash">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -H &quot;Authorization: ${ApiKey}&quot; \
+    -d '{
+        &quot;model&quot;: &quot;${ModelName}&quot;,
+        &quot;messages&quot;: [
+        {
+            &quot;role&quot;: &quot;system&quot;,
+            &quot;content&quot;: &quot;You are a helpful assistant.&quot;
+        },
+        {
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: [
+                {
+                    &quot;type&quot;: &quot;image_url&quot;,
+                    &quot;image_url&quot;: {
+                        &quot;url&quot;: &quot;data:image/jpeg;base64,&lt;base64 encoded image format&gt;&quot;
+                    }
+                },
+                {
+                    &quot;type&quot;: &quot;text&quot;,
+                    &quot;text&quot;: &quot;How many sheep are there in the picture?&quot;
+                }
+            ]
+        }
+        ]
+    }'
+</code></pre>
+
+
+</div>
+
+<h4 id="python-sdk-call">🐍 Python SDK Call</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚙️ Configuration Instructions</strong><br>
+  • <code>${ApiKey}</code>: Fill in the ApiKey from the page<br>
+  • <code>${ServerUrl}</code>: Fill in the public or internal network address from the page, must include <code>/v1</code>
+</div>
+
+The following is Python example code that supports image and video processing:
+
+
+<pre><code class="language-python">import base64
+import requests
+from openai import OpenAI
+
+##### API Configuration #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+
+
+def encode_base64_content_from_url(content_url: str) -&gt; str:
+    &quot;&quot;&quot;Encode a content retrieved from a remote url to base64 format.&quot;&quot;&quot;
+
+    with requests.get(content_url) as response:
+        response.raise_for_status()
+        result = base64.b64encode(response.content).decode(&quot;utf-8&quot;)
+
+    return result
+
+
+def infer_image():
+    image_url = &quot;https://qianwen-res.oss-cn-beijing.aliyuncs.com/QVQ/demo.png&quot;
+
+    stream = True
+
+    image_base64 = encode_base64_content_from_url(image_url)
+
+    chat_completion_from_base64 = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;Answer in Chinese, what number should be in the box in the image?&quot;,
+                    },
+                    {
+                        &quot;type&quot;: &quot;image_url&quot;,
+                        &quot;image_url&quot;: {&quot;url&quot;: f&quot;data:image/jpeg;base64,{image_base64}&quot;},
+                    },
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion_from_base64:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion_from_base64.choices[0].message.content
+        print(result)
+
+
+def infer_video():
+    video_url = &quot;https://pai-quickstart-predeploy-hangzhou.oss-cn-hangzhou.aliyuncs.com/modelscope/algorithms/ms-swift/video_demo.mp4&quot;
+
+    stream = True
+
+    video_base64 = encode_base64_content_from_url(video_url)
+
+    chat_completion_from_base64 = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;Please describe the video content&quot;},
+                    {
+                        &quot;type&quot;: &quot;video_url&quot;,
+                        &quot;video_url&quot;: {&quot;url&quot;: f&quot;data:video/mp4;base64,{video_base64}&quot;},
+                    },
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=512,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion_from_base64:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion_from_base64.choices[0].message.content
+        print(result)
+
+
+if __name__ == &quot;__main__&quot;:
+    infer_image()
+    infer_video()
+</code></pre>
+
+
+</div>
+
+<h3 id="web-application-access">🌐 Web Application Access</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### 📱 Access Steps
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #1e40af;">🔗 Step 1: Get Access Link</h4>
+<p style="margin: 0;">On the service instance overview page, click the link corresponding to the Web application to directly access the model service Web interface.</p>
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="margin-top: 0; color: #059669;">💬 Step 2: Start Conversation</h4>
+<p style="margin: 0;">Enter your question in the input box on the model service Web page to start conversing with the large language model.</p>
+</div>
+
+</div>
+
+#### 🖼️ Interface Display
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-en/img-web.png" alt="Web Application Access Entry" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 Access Tips</strong><br>
+  Find the link corresponding to the Web application on the service instance overview page and click it to directly access the model service Web interface.
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../image-en/img-appflow.png" alt="Model Conversation Interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+</div>
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Usage Instructions</strong><br>
+  Enter your questions or requirements in the input box, and the system will respond in real-time and provide corresponding model services.
+</div>
+
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.566684+00:00
+  -->
+</body>
+</html>

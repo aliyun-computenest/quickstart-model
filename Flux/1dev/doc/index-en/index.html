@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#core-features">🚀 Core Features</a></li>
+              
+          
+              <li><a href="#technical-specifications">📊 Technical Specifications</a></li>
+              
+          
+              <li><a href="#model-advantages">🏆 Model Advantages</a></li>
+              
+          
+              <li><a href="#configuration-guide">⚙️ Configuration Guide</a></li>
+              
+                  <li><a href="#model-files">📁 Model Files</a></li>
+                  
+              
+          
+              <li><a href="#usage-guide">📖 Usage Guide</a></li>
+              
+                  <li><a href="#comfyui-usage">🎛️ ComfyUI Usage</a></li>
+                  
+                      <li class="li-h3"><a href="#interface-operations">🖱️ Interface Operations</a></li>
+                  
+                      <li class="li-h3"><a href="#comfyui-api-integration">🔌 ComfyUI API Integration</a></li>
+                  
+              
+                  <li><a href="#web-ui-usage">🌐 Web UI Usage</a></li>
+                  
+                      <li class="li-h3"><a href="#interface-operations_1">🖱️ Interface Operations</a></li>
+                  
+                      <li class="li-h3"><a href="#prompt-examples">🎨 Prompt Examples</a></li>
+                  
+                      <li class="li-h3"><a href="#ui-interface-usage-example">🖼️ UI Interface Usage Example</a></li>
+                  
+              
+                  <li><a href="#other-built-in-models">🔄 Other Built-in Models</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🎨 Flux1-Dev Model Usage Guide</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Advanced Text-to-Image Generation Model by Black Forest Labs</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Flux1-Dev** represents the pinnacle of open-source image generation technology, built on Flow Matching techniques with significant improvements in image quality, text understanding capabilities, and generation speed.
+
+</div>
+
+<h2 id="core-features">🚀 Core Features</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🏗️ Advanced Architecture</h4>
+<p style="margin: 0; color: #065f46;">Diffusion Transformer architecture based on Flow Matching technology</p>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🎯 Exceptional Quality</h4>
+<p style="margin: 0; color: #1e40af;">Generated image quality approaches commercial-grade model standards</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🧠 Powerful Text Understanding</h4>
+<p style="margin: 0; color: #5b21b6;">Integrated full FP16 CLIP-L and T5 text encoders</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">📐 High Resolution Support</h4>
+<p style="margin: 0; color: #9a3412;">Native support for 1024×1024 and higher resolutions</p>
+</div>
+
+<div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; border-radius: 4px;">
+<h4 style="color: #10b981; margin: 0 0 8px 0;">⚡ Fast Generation</h4>
+<p style="margin: 0; color: #047857;">Optimized inference speed with few-step generation support</p>
+</div>
+
+<div style="background: #fdf2f8; border-left: 4px solid #ec4899; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ec4899; margin: 0 0 8px 0;">🎨 Diverse Styles</h4>
+<p style="margin: 0; color: #be185d;">Supports photorealistic, artistic, concept design, and various styles</p>
+</div>
+
+</div>
+
+<h2 id="technical-specifications">📊 Technical Specifications</h2>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Specification</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Model Type</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Text-to-Image Generation</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Text Encoder</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">T5-XXL + CLIP-L</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">VAE</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Dedicated flux-ae Variational Autoencoder</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Native Resolution</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">1024×1024</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Supported Resolutions</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">512×512 to 2048×2048</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">Recommended Steps</td>
+      <td style="padding: 12px;">4-50 steps (8 steps for optimal balance)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="model-advantages">🏆 Model Advantages</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+**Core Advantages**
+
+- **🖼️ Image Quality**: Rich details, natural colors, reasonable composition
+- **📝 Text Following**: Precise understanding of complex text descriptions
+- **🎭 Style Diversity**: From photorealistic to abstract art
+- **🎯 Consistency**: Stable and controllable generation results
+- **⚡ Efficiency**: Faster inference speed compared to similar-level models
+
+</div>
+
+<hr />
+<h1 id="configuration-guide">⚙️ Configuration Guide</h1>
+<h2 id="model-files">📁 Model Files</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🌐 WebUI Environment</h3>
+
+**Main Model**
+- `flux.1_dev_8x8_e4m3fn.safetensors`
+
+**VAE**
+- `flux-ae.safetensors`
+
+**Text Encoders**
+- `t5xxl_fp16.safetensors`
+- `clip_l.safetensors`
+- `clip_g.safetensors`
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🎛️ ComfyUI Environment</h3>
+
+**Main Model**
+- `Flux1-dev.safetensors`
+
+**VAE**
+- `flux-ae.safetensors`
+
+**Text Encoders**
+- `t5xxl_fp16.safetensors`
+- `clip_l.safetensors`
+</div>
+
+</div>
+
+<hr />
+<h1 id="usage-guide">📖 Usage Guide</h1>
+<h2 id="comfyui-usage">🎛️ ComfyUI Usage</h2>
+<h3 id="interface-operations">🖱️ Interface Operations</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Step 1: Select Workflow**
+- Choose the workflow in the workflow selector
+  ![img.png](text2img.png)
+
+**Step 2: Input Prompts**
+- Enter your desired content description
+  ![img.png](text2img2.png)
+
+**Step 3: Creative Examples**
+- You can input interesting content, such as "Guan Yu fighting Snow White"
+
+**Step 4: Parameter Settings**
+- Set image resolution and quantity
+- To speed up generation, set batch_size to 1
+  ![img.png](text2img3.png)
+
+**Step 5: Wait for Generation**
+- Patiently wait for image generation to complete
+
+</div>
+
+<h3 id="comfyui-api-integration">🔌 ComfyUI API Integration</h3>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+**Get Token**
+- Click the top-right button to open the bottom panel and get the token
+  ![img_1.png](img_3.png)
+
+**Get Server Address**
+- Refer to COMFYUI_SERVER acquisition guide
+  ![img_2.png](img_2.png)
+
+</div>
+
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+📋 Click to Expand ComfyUI API Python Code
+</summary>
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random, os
+
+COMFYUI_SERVER, COMFYUI_TOKEN = &quot;#Fill in your server address here&quot;, &quot;Fill in your token here&quot;  
+UNET_MODEL, VAE_MODEL, CLIP1_MODEL, CLIP2_MODEL = &quot;flux1-dev.safetensors&quot;, &quot;ae.safetensors&quot;, &quot;t5xxl_fp16.safetensors&quot;, &quot;clip_l.safetensors&quot;
+PROMPT = &quot;A beautiful anime girl with long flowing hair, wearing elegant dress, standing in a magical garden with glowing flowers, soft lighting, high quality, detailed&quot;
+
+class FluxClient:
+    def __init__(self):
+        self.base_url, self.client_id = f&quot;http://{COMFYUI_SERVER}&quot;, str(uuid.uuid4())
+        self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;, **({&quot;Authorization&quot;: f&quot;Bearer {COMFYUI_TOKEN}&quot;} if COMFYUI_TOKEN else {})}
+
+    def generate(self, prompt, aspect=&quot;1:1 square 1024x1024&quot;, steps=35, guidance=3.5, batch=1):
+        workflow = {&quot;6&quot;: {&quot;inputs&quot;: {&quot;text&quot;: prompt, &quot;clip&quot;: [&quot;11&quot;, 0]}, &quot;class_type&quot;: &quot;CLIPTextEncode&quot;}, &quot;8&quot;: {&quot;inputs&quot;: {&quot;samples&quot;: [&quot;13&quot;, 0], &quot;vae&quot;: [&quot;10&quot;, 0]}, &quot;class_type&quot;: &quot;VAEDecode&quot;}, &quot;9&quot;: {&quot;inputs&quot;: {&quot;filename_prefix&quot;: &quot;Flux&quot;, &quot;images&quot;: [&quot;8&quot;, 0]}, &quot;class_type&quot;: &quot;SaveImage&quot;}, &quot;10&quot;: {&quot;inputs&quot;: {&quot;vae_name&quot;: VAE_MODEL}, &quot;class_type&quot;: &quot;VAELoader&quot;}, &quot;11&quot;: {&quot;inputs&quot;: {&quot;clip_name1&quot;: CLIP1_MODEL, &quot;clip_name2&quot;: CLIP2_MODEL, &quot;type&quot;: &quot;flux&quot;, &quot;device&quot;: &quot;default&quot;}, &quot;class_type&quot;: &quot;DualCLIPLoader&quot;}, &quot;12&quot;: {&quot;inputs&quot;: {&quot;unet_name&quot;: UNET_MODEL, &quot;weight_dtype&quot;: &quot;fp8_e4m3fn&quot;}, &quot;class_type&quot;: &quot;UNETLoader&quot;}, &quot;13&quot;: {&quot;inputs&quot;: {&quot;noise&quot;: [&quot;25&quot;, 0], &quot;guider&quot;: [&quot;22&quot;, 0], &quot;sampler&quot;: [&quot;16&quot;, 0], &quot;sigmas&quot;: [&quot;17&quot;, 0], &quot;latent_image&quot;: [&quot;85&quot;, 4]}, &quot;class_type&quot;: &quot;SamplerCustomAdvanced&quot;}, &quot;16&quot;: {&quot;inputs&quot;: {&quot;sampler_name&quot;: &quot;dpmpp_2m&quot;}, &quot;class_type&quot;: &quot;KSamplerSelect&quot;}, &quot;17&quot;: {&quot;inputs&quot;: {&quot;scheduler&quot;: &quot;sgm_uniform&quot;, &quot;steps&quot;: steps, &quot;denoise&quot;: 1, &quot;model&quot;: [&quot;61&quot;, 0]}, &quot;class_type&quot;: &quot;BasicScheduler&quot;}, &quot;22&quot;: {&quot;inputs&quot;: {&quot;model&quot;: [&quot;61&quot;, 0], &quot;conditioning&quot;: [&quot;60&quot;, 0]}, &quot;class_type&quot;: &quot;BasicGuider&quot;}, &quot;25&quot;: {&quot;inputs&quot;: {&quot;noise_seed&quot;: random.randint(1, 1000000000000000)}, &quot;class_type&quot;: &quot;RandomNoise&quot;}, &quot;60&quot;: {&quot;inputs&quot;: {&quot;guidance&quot;: guidance, &quot;conditioning&quot;: [&quot;6&quot;, 0]}, &quot;class_type&quot;: &quot;FluxGuidance&quot;}, &quot;61&quot;: {&quot;inputs&quot;: {&quot;max_shift&quot;: 1.15, &quot;base_shift&quot;: 0.5, &quot;width&quot;: [&quot;85&quot;, 0], &quot;height&quot;: [&quot;85&quot;, 1], &quot;model&quot;: [&quot;12&quot;, 0]}, &quot;class_type&quot;: &quot;ModelSamplingFlux&quot;}, &quot;85&quot;: {&quot;inputs&quot;: {&quot;width&quot;: 1024, &quot;height&quot;: 1024, &quot;aspect_ratio&quot;: aspect, &quot;swap_dimensions&quot;: &quot;Off&quot;, &quot;upscale_factor&quot;: 1, &quot;batch_size&quot;: batch}, &quot;class_type&quot;: &quot;CR SDXL Aspect Ratio&quot;}}
+        return requests.post(f&quot;{self.base_url}/prompt&quot;, headers=self.headers, json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id}).json()[&quot;prompt_id&quot;]
+
+    def status(self, task_id):
+        queue = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+        return &quot;processing&quot; if any(item[1] == task_id for item in queue.get(&quot;queue_running&quot;, [])) else &quot;pending&quot; if any(item[1] == task_id for item in queue.get(&quot;queue_pending&quot;, [])) else &quot;completed&quot; if task_id in requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers).json() else &quot;processing&quot;
+
+    def download(self, task_id, output_dir=&quot;./flux_output/&quot;):
+        history = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers).json()
+        files = []
+        if task_id in history:
+            for output in history[task_id]['outputs'].values():
+                if 'images' in output:
+                    os.makedirs(output_dir, exist_ok=True)
+                    for img in output['images']:
+                        path = os.path.join(output_dir, img['filename'])
+                        with open(path, &quot;wb&quot;) as f: f.write(requests.get(f&quot;{self.base_url}/view?filename={img['filename']}&quot;, headers=self.headers).content)
+                        files.append(path)
+        return files
+
+def main():
+    client = FluxClient()
+    print(f&quot;🎨 Generating: {PROMPT}&quot;)
+    task_id = client.generate(PROMPT)
+    print(f&quot;🆔 Task ID: {task_id}&quot;)
+    while True:
+        status = client.status(task_id)
+        print(f&quot;📊 Status: {status}&quot;)
+        if status == &quot;completed&quot;: break
+        time.sleep(5)
+    files = client.download(task_id)
+    print(f&quot;🎉 Complete! Generated {len(files)} images: {files}&quot;)
+
+if __name__ == &quot;__main__&quot;: main()
+</code></pre>
+
+
+</details>
+
+<hr />
+<h2 id="web-ui-usage">🌐 Web UI Usage</h2>
+<h3 id="interface-operations_1">🖱️ Interface Operations</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**1. Model Selection**
+- Select Flux1-Dev (HyFY-8-Step-Hybrid-v1.0.safetensors) model in the Checkpoint model selector
+
+**2. VAE and CLIP Model Selection**
+- Select: `Clip_l.safetensors`, `t5xxl_fp16.safetensors`, `flux-ae.safetensors`
+  ![img_1.png](img_1.png)
+
+**3. Prompt Input**
+- **Positive Prompt**: Detailed description of the desired image
+- **Negative Prompt**: Description of unwanted elements (Flux model is less sensitive to negative prompts)
+
+**4. Parameter Settings**
+- **Steps**: Recommended 8-20 steps
+- **CFG**: Recommended 1.0-3.5 (lower values work better)
+- **Sampler**: Recommended Euler or DPM++ 2M
+- **Resolution**: 1024×1024 or other supported dimensions
+
+**5. Generate Image**
+- Click the "Generate" button to start generation
+
+**6. Result Processing**
+- View, save, or further edit the generated images
+
+</div>
+
+<h3 id="prompt-examples">🎨 Prompt Examples</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">📸 Photorealistic Style</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"a professional portrait of a young woman, natural lighting, high resolution, detailed skin texture, photorealistic"
+</code>
+</div>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">🎨 Artistic Style</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"an impressionist painting of a garden in spring, soft brushstrokes, vibrant colors, artistic masterpiece"
+</code>
+</div>
+</div>
+
+<div style="background: #ecfeff; border-left: 4px solid #06b6d4; padding: 16px; border-radius: 4px;">
+<h4 style="color: #06b6d4; margin: 0 0 8px 0;">🤖 Concept Design</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"futuristic robot design, sleek metallic surface, glowing blue accents, concept art, highly detailed"
+</code>
+</div>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🏔️ Landscape Photography</h4>
+<div style="background: #1e293b; border-radius: 4px; padding: 12px; margin-top: 8px;">
+<code style="color: #e2e8f0; font-size: 12px; line-height: 1.4;">
+"mountain landscape at golden hour, dramatic clouds, professional photography, ultra-wide angle, HDR"
+</code>
+</div>
+</div>
+
+</div>
+
+<h3 id="ui-interface-usage-example">🖼️ UI Interface Usage Example</h3>
+<p><img alt="img.png" src="../img.png" /></p>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+🐍 Click to Expand WebUI API Python Code
+</summary>
+
+
+<pre><code class="language-python">import base64
+import time
+import uuid
+import requests
+
+# Configuration
+base_url = &quot;http://127.0.0.1:7680&quot;
+auth = (&quot;admin&quot;, &quot;${APIKEY}&quot;)
+session_hash = str(uuid.uuid4())[:12]
+
+# Set VAE/Text Encoder
+print(&quot;Setting VAE/Text Encoder...&quot;)
+requests.post(f&quot;{base_url}/run/predict&quot;, json={
+    &quot;data&quot;: [[&quot;flux-ae.safetensors&quot;, &quot;t5xxl_fp16.safetensors&quot;, &quot;clip_l.safetensors&quot;, &quot;clip_g.safetensors&quot;]],
+    &quot;event_data&quot;: None,
+    &quot;fn_index&quot;: 9,
+    &quot;trigger_id&quot;: 1001,
+    &quot;session_hash&quot;: session_hash
+}, auth=auth)
+time.sleep(3)
+
+# Switch FLUX model
+print(&quot;Switching FLUX model...&quot;)
+requests.post(f&quot;{base_url}/queue/join&quot;, json={
+    &quot;data&quot;: [&quot;HyFY-8-Step-Hybrid-v1.0.safetensors&quot;],
+    &quot;event_data&quot;: None,
+    &quot;fn_index&quot;: 8,
+    &quot;trigger_id&quot;: 1002,
+    &quot;session_hash&quot;: session_hash
+}, auth=auth)
+time.sleep(15)
+
+# Generate image
+print(&quot;Generating image...&quot;)
+result = requests.post(f&quot;{base_url}/sdapi/v1/txt2img&quot;, json={
+    &quot;prompt&quot;: &quot;a beautiful cat&quot;,
+    &quot;steps&quot;: 8,
+    &quot;width&quot;: 1024,
+    &quot;height&quot;: 1024,
+    &quot;cfg_scale&quot;: 1.0,
+    &quot;sampler_name&quot;: &quot;Euler&quot;
+}, auth=auth).json()
+
+# Save image
+if &quot;images&quot; in result:
+    with open(&quot;output.png&quot;, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(result[&quot;images&quot;][0]))
+    print(&quot;Image saved as output.png&quot;)
+else:
+    print(&quot;Error:&quot;, result)
+</code></pre>
+
+
+</details>
+
+<hr />
+<h2 id="other-built-in-models">🔄 Other Built-in Models</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+**Model Support Information**
+
+In the current service, **Flux models** are deployed on ECS instances. In addition to the current **Flux-dev model**, **SD1.5** and **SD3** models are also supported and can be dynamically switched in the **WebUI Forge interface**.
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎨 <strong>Start Your AI Art Creation Journey!</strong> | Use Flux1-Dev model to turn imagination into reality
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.311978+00:00
+  -->
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#framework-overview">🎯 Framework Overview</a></li>
+              
+          
+              <li><a href="#isaaclab-standalone-version-tutorial">🖥️ IsaacLab Standalone Version Tutorial</a></li>
+              
+                  <li><a href="#vnc-access-to-ecs-instance">🔗 VNC Access to ECS Instance</a></li>
+                  
+              
+                  <li><a href="#isaac-sim-usage">🎮 Isaac Sim Usage</a></li>
+                  
+                      <li class="li-h3"><a href="#example-1-headless-scene-synthetic-dataset-generation">🔬 Example 1: Headless Scene Synthetic Dataset Generation</a></li>
+                  
+                      <li class="li-h3"><a href="#example-2-using-isaac-sim-with-gui">🖼️ Example 2: Using Isaac Sim with GUI</a></li>
+                  
+              
+                  <li><a href="#isaac-lab-usage">🤖 Isaac Lab Usage</a></li>
+                  
+                      <li class="li-h3"><a href="#example-1-headless-mode-agent-training">🎯 Example 1: Headless Mode Agent Training</a></li>
+                  
+                      <li class="li-h3"><a href="#example-2-gui-mode-scene-generation">🎮 Example 2: GUI Mode Scene Generation</a></li>
+                  
+              
+          
+              <li><a href="#isaaclab-cluster-version-tutorial">☁️ IsaacLab Cluster Version Tutorial</a></li>
+              
+                  <li><a href="#environment-setup">🛠️ Environment Setup</a></li>
+                  
+              
+                  <li><a href="#test-job-log-output-example">🧪 Test Job: Log Output Example</a></li>
+                  
+              
+                  <li><a href="#isaac-lab-training-task-execution">🚀 Isaac Lab Training Task Execution</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🤖 NVIDIA Isaac Lab User Guide</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Open-source Unified Framework for Robot Learning - Complete Tutorial for Standalone and Cluster Versions</p>
+</div>
+
+<h2 id="framework-overview">🎯 Framework Overview</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**NVIDIA Isaac™ Lab** is an open-source unified framework for robot learning, designed to help train robot policies.
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔧 Core Technology Stack</strong><br>
+  • Built on <strong>NVIDIA Isaac Sim™</strong><br>
+  • Uses <strong>NVIDIA® PhysX®</strong> physics engine<br>
+  • Integrates <strong>NVIDIA RTX™</strong> rendering technology<br>
+  • Provides high-fidelity physics simulation environment
+</div>
+
+**Core Value**: Bridges the gap between high-fidelity simulation and perception-based robot training, helping developers and researchers build more robot applications more efficiently.
+
+</div>
+
+<hr />
+<h2 id="isaaclab-standalone-version-tutorial">🖥️ IsaacLab Standalone Version Tutorial</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 🎮 Service Features
+
+Isaac Lab service instances come with complete Isaac Sim applications built-in, supporting two training modes:
+- **Independent Simulation Training**: Using Isaac Sim for simulation training
+- **Reinforcement Learning Training**: RL training based on Isaac Lab framework
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ System Configuration</strong><br>
+  ECS instances come pre-installed with Ubuntu graphical interface, supporting direct use through VNC in ECS console
+</div>
+
+</div>
+
+<h3 id="vnc-access-to-ecs-instance">🔗 VNC Access to ECS Instance</h3>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+🖥️ VncServer + VncRealViewer Method (Recommended)
+</summary>
+
+#### 📋 Operation Steps
+
+**Step 1: Login to ECS Instance**
+1. In the service instance details page resources, find the corresponding ECS instance
+2. Click **Remote Connection** to login
+
+![img_1.png](img_1.png)
+
+**Step 2: Configure VNC Service**
+
+<pre><code class="language-bash"># Switch to root account
+sudo su root
+
+# Set VNC service password (Note: password length maximum 8 characters)
+/opt/TurboVNC/bin/vncpasswd
+
+# Start VNC Server service (listening on port 5901)
+/opt/TurboVNC/bin/vncserver :1 -geometry 1920x1080 -depth 24 -xstartup ~/.vnc/xstartup
+</code></pre>
+
+
+**Step 3: Client Connection**
+1. Download [VncRealViewer client](https://www.realvnc.com/en/connect/download/viewer/)
+2. Connection address: `<Server Public IP>:5901`
+
+![img_2.png](img_2.png)
+
+![img_3.png](img_3.png)
+
+**Step 4: Launch Isaac Sim**
+
+<pre><code class="language-bash">cd /home/isaac-sim/isaacsim
+./isaac-sim.sh --allow-root
+</code></pre>
+
+
+![img_4.png](img_4.png)
+
+</details>
+
+<details style="border: 2px solid #64748b; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #f1f5f9); box-shadow: 0 8px 16px rgba(100, 116, 139, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #64748b, #475569); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(100, 116, 139, 0.3);">
+🖥️ ECS Console Native VNC Method
+</summary>
+
+#### 📋 Operation Steps
+
+**Step 1: Enter ECS Console**
+1. In the service instance details page resources, find the corresponding ECS instance
+2. Click **Go to ECS Console**
+
+![img_17.png](img_17.png)
+
+**Step 2: VNC Login**
+1. Click **Remote Connection** in the upper right corner
+2. Select **VNC Login Method**
+3. Enter isaac-sim account password (same as ECS instance password)
+
+![img_18.png](img_18.png)
+
+<div style="background: #fed7aa; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚠️ Notes</strong><br>
+  Password can be viewed on the service instance overview page
+</div>
+
+![img_19.png](img_19.png)
+
+</details>
+
+<h3 id="isaac-sim-usage">🎮 Isaac Sim Usage</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### 📁 Directory Structure
+
+After logging into the ECS instance, the isaac-sim account contains two important directories:
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<strong>📂 isaacsim</strong><br>
+Isaac Sim installation directory<br>
+Contains startup and training scripts
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<strong>📂 isaacsim_assets</strong><br>
+Isaac Sim assets directory<br>
+Pre-downloaded training resources
+</div>
+
+</div>
+
+![img_21.png](img_21.png)
+
+</div>
+
+<h4 id="example-1-headless-scene-synthetic-dataset-generation">🔬 Example 1: Headless Scene Synthetic Dataset Generation</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Function Description**: Use omni.replicator extension to generate synthetic datasets, with data stored offline for deep neural network training.
+
+
+<pre><code class="language-bash"># Create working directory
+cd /home/isaac-sim
+mkdir -p isaacsim_test
+cd /home/isaac-sim/isaacsim_test
+mkdir -p scene_based_sdg
+
+# Copy example code
+cp -rf /home/isaac-sim/isaacsim/standalone_examples/replicator/scene_based_sdg/* \
+       /home/isaac-sim/isaacsim_test/scene_based_sdg/
+
+# Execute rendering synthesis
+/home/isaac-sim/isaacsim/python.sh ./scene_based_sdg/scene_based_sdg.py \
+  --config=&quot;/home/isaac-sim/isaacsim_test/scene_based_sdg/config/config_coco_writer.yaml&quot; \
+  --/persistent/isaac/asset_root/default=&quot;/home/isaac-sim/isaacsim_assets/Assets/Isaac/4.5&quot;
+</code></pre>
+
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Output Results</strong><br>
+  Generated results are stored in the <code>./isaacsim_test/_out_coco</code> directory
+</div>
+
+Generated results are stored in "./isaacsim_test/_out_coco", visualization effects are as follows:
+
+![img_23.png](img_23.png)![img_22.png](img_22.png)
+
+</div>
+
+<h4 id="example-2-using-isaac-sim-with-gui">🖼️ Example 2: Using Isaac Sim with GUI</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+
+<pre><code class="language-bash">cd /home/isaac-sim/isaacsim
+./isaac-sim.sh
+</code></pre>
+
+
+<div style="background: #fed7aa; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>⚠️ Startup Notice</strong><br>
+  Isaac Sim starts slowly and will show a waiting window, please be patient and no operation is needed
+</div>
+
+![img_24.png](img_24.png)
+
+**Reference Resources**: You can create basic scenes following the [Official Getting Started Tutorial](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/introduction/quickstart_isaacsim.html)
+
+Below is a cube created following the steps in the getting started tutorial.
+
+![img_25.png](img_25.png)
+
+</div>
+
+<h3 id="isaac-lab-usage">🤖 Isaac Lab Usage</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Installation Path**: `/home/isaac-sim/IsaacLab`
+
+</div>
+
+<h4 id="example-1-headless-mode-agent-training">🎯 Example 1: Headless Mode Agent Training</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Training Objective**: Use Stable-Baselines3 reinforcement learning framework to solve Cartpole balance control task
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🎯 Task Description</strong><br>
+  Let the agent learn to control the cart's left-right movement to keep the pole upright
+</div>
+
+
+<pre><code class="language-bash"># Create working directory
+cd /home/isaac-sim
+mkdir -p isaaclab_test
+cd /home/isaac-sim/isaaclab_test
+mkdir -p sb3
+
+# Copy example code
+cp -rf /home/isaac-sim/IsaacLab/scripts/reinforcement_learning/sb3/* \
+       /home/isaac-sim/isaaclab_test/sb3/
+
+# Start training
+/home/isaac-sim/IsaacLab/isaaclab.sh -p ./sb3/train.py \
+  --task Isaac-Cartpole-v0 \
+  --num_envs 64 \
+  --headless \
+  --video
+</code></pre>
+
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Training Results</strong><br>
+  Results saved to: <code>./logs/sb3/Isaac-Cartpole-v0</code>
+</div>
+
+Training results are saved to ./logs/sb3/Isaac-Cartpole-v0; visualization results are as follows:
+
+![img_26.png](img_26.png)
+
+</div>
+
+<h4 id="example-2-gui-mode-scene-generation">🎮 Example 2: GUI Mode Scene Generation</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+
+<pre><code class="language-bash">cd /home/isaac-sim/IsaacLab
+./isaaclab.sh -p scripts/tutorials/00_sim/spawn_prims.py
+</code></pre>
+
+
+**Function**: Generate basic objects into the scene in GUI interface
+
+![img_27.png](img_27.png)
+
+</div>
+
+<hr />
+<h2 id="isaaclab-cluster-version-tutorial">☁️ IsaacLab Cluster Version Tutorial</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+Isaac Lab supports the **Ray** framework for simplifying the scheduling of multiple training tasks (including parallel and serial) and hyperparameter tuning, suitable for local and remote configurations.
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📚 Official Documentation</strong><br>
+  Isaac Lab service Ray job scheduling and tuning official documentation is Ray Job Dispatch and Tuning
+</div>
+
+</div>
+
+<h3 id="environment-setup">🛠️ Environment Setup</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### Step 1: Configure Remote Ray Cluster
+
+
+<pre><code class="language-bash"># Configure cluster information (ISAACRAY_ADDRESS obtained from service instance overview page)
+echo &quot;name: isaacray address: &lt;ISAACRAY_ADDRESS&gt;&quot; &gt; ~/.cluster_config
+export RAY_ADDRESS=&quot;&lt;ISAACRAY_ADDRESS&gt;&quot;
+</code></pre>
+
+
+#### Step 2: Download Source Code
+
+Download [Isaac Lab source code](https://github.com/isaac-sim/IsaacLab) from GitHub
+
+#### Step 3: Install Ray Client
+
+
+<pre><code class="language-bash">pip install &quot;ray[default]&quot;
+</code></pre>
+
+
+</div>
+
+<h3 id="test-job-log-output-example">🧪 Test Job: Log Output Example</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### Create Test File
+
+Create `test.py` in the `scripts/reinforcement_learning/ray/` directory:
+
+
+<pre><code class="language-python">import ray
+import os
+
+# Connect to local or remote ray cluster
+ray.init()
+
+@ray.remote(num_cpus=1)
+class Counter:
+    def __init__(self):
+        self.name = &quot;test_counter&quot;
+        self.counter = 0
+
+    def increment(self):
+        self.counter += 1
+
+    def get_counter(self):
+        return &quot;{} got {}&quot;.format(self.name, self.counter)
+
+counter = Counter.remote()
+
+for _ in range(10):
+    counter.increment.remote()
+    print(ray.get(counter.get_counter.remote()))
+</code></pre>
+
+
+#### Submit Job
+
+
+<pre><code class="language-bash">python3 scripts/reinforcement_learning/ray/submit_job.py \
+  --aggregate_jobs wrap_resources.py \
+  --sub_jobs &quot;/workspace/isaaclab/isaaclab.sh -p test.py&quot;
+</code></pre>
+
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>✅ Execution Results</strong><br>
+  • The <code>scripts/reinforcement_learning/ray</code> directory will be packaged during submission<br>
+  • Output information can be viewed in logs after completion
+</div>
+
+After successful submission, you can see the following information in the logs:
+- When submitting the job, the scripts/reinforcement_learning/ray directory will be packaged as the working directory and uploaded to the cluster, so our test.py will also be uploaded.
+
+![img_5.png](img_5.png)
+
+- After the job completes, you can see the output runtime information:
+
+![img_6.png](img_6.png)
+
+</div>
+
+<h3 id="isaac-lab-training-task-execution">🚀 Isaac Lab Training Task Execution</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+#### Submit Training Job
+
+
+<pre><code class="language-bash">python3 scripts/reinforcement_learning/ray/submit_job.py \
+  --aggregate_jobs wrap_resources.py \
+  --sub_jobs &quot;/workspace/isaaclab/isaaclab.sh -p /workspace/isaaclab/scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Ant-v0 --headless&quot;
+</code></pre>
+
+
+#### Monitor Job Execution
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<strong>🔍 Step 1: View Logs</strong><br>
+Check working directory after successful submission<br>
+Example: <code>_ray_pkg_18b3cac8e32d6f62</code>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<strong>🌐 Step 2: Web UI Monitoring</strong><br>
+Access Ray cluster URL<br>
+View Job running status
+</div>
+
+<div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 4px;">
+<strong>🔎 Step 3: Locate Node</strong><br>
+Record scheduled node ID<br>
+Example: <code>c9db26a6c016fb43...</code>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<strong>📊 Step 4: View Results</strong><br>
+Search for node in Cluster Tab<br>
+Login to corresponding Pod to view training results
+</div>
+
+</div>
+
+After successful submission, you can see the output information in the logs. Here you can mainly see the job's working directory on the cluster, which in this example is _ray_pkg_18b3cac8e32d6f62.
+
+![img_7.png](img_7.png)
+
+Click the ray cluster url to view job running status in the cluster's web ui.
+
+![img_8.png](img_8.png)
+
+Click on the running job to see the job's scheduling logs. In this example, it was scheduled to node c9db26a6c016fb4394991190f132afe99cd4a2b0a696f14185001650, and the corresponding training results should also be viewed on this node.
+
+![img_9.png](img_9.png)
+
+Switch to the Cluster Tab, enter the node id to search, and you can find the corresponding Pod in the container cluster.
+
+![img_10.png](img_10.png)
+
+Find the corresponding container cluster from the service instance resources, go to the container cluster to find the corresponding Pod above, and login to the Pod.
+
+![img_11.png](img_11.png)
+
+#### View Training Results
+
+After logging into the Pod, training results save path:
+
+
+<pre><code class="language-bash"># Temporary directory structure explanation
+# _ray_pkg_18b3cac8e32d6f62: Upload file directory (varies based on actual situation)
+# 2025-08-21_08-08-24: Specific runtime
+cd /tmp/ray/session_latest/runtime_resources/working_dir_files/_ray_pkg_18b3cac8e32d6f62/logs/rsl_rl/ant/2025-08-21_08-08-24
+</code></pre>
+
+
+After logging into the Pod, you can see the training results. In this example, the Ant environment was trained, and the training results are saved in the temporary directory below:
+
+![img_12.png](img_12.png)
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🤖 <strong>NVIDIA Isaac Lab</strong> | Making Robot Learning Simpler and More Efficient
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.515018+00:00
+  -->
+</body>
+</html>

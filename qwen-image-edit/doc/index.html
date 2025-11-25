@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#qwen-image-edit">📋 Qwen-Image-Edit 模型概览</a></li>
+              
+          
+              <li><a href="#qwen-image-edit-comfyui">🚀 Qwen-Image-Edit ComfyUI 原生工作流</a></li>
+              
+                  <li><a href="#_1">📥 步骤一：工作流文件下载</a></li>
+                  
+              
+                  <li><a href="#_2">🔗 步骤二：模型文件</a></li>
+                  
+                      <li class="li-h3"><a href="#_3">📂 模型文件结构</a></li>
+                  
+              
+                  <li><a href="#_4">🔧 步骤三：工作流配置操作</a></li>
+                  
+              
+          
+              <li><a href="#api">API调用</a></li>
+              
+          
+              <li><a href="#_5">🎯 编辑应用场景</a></li>
+              
+          
+              <li><a href="#_6">💡 使用技巧与建议</a></li>
+              
+          
+              <li><a href="#_7">🔧 技术规格</a></li>
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h1 style="font-size: 2.5em; margin: 0; font-weight: 600;">✏️ Qwen-Image-Edit 图像编辑</h1>
+  <p style="font-size: 1.2em; margin: 16px 0 0 0; opacity: 0.9;">ComfyUI 原生工作流 - 精准文字编辑与语义外观双重编辑能力</p>
+  <div style="margin-top: 20px;">
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">📝 精准文字编辑</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🎨 语义外观编辑</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🌐 中英双语</span>
+  </div>
+</div>
+
+<h2 id="qwen-image-edit">📋 Qwen-Image-Edit 模型概览</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Qwen-Image-Edit** 是 Qwen-Image 的图像编辑版本。它基于 20B 的 Qwen-Image 模型进一步训练，成功将 Qwen-Image 的文本渲染特色能力拓展到编辑任务上，以支持精准的文字编辑。此外，Qwen-Image-Edit 将输入图像同时输入到 Qwen2.5-VL（获取视觉语义控制）和 VAE Encoder（获得视觉外观控制），以同时获得语义/外观双重编辑能力。
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">📝</div>
+<h4 style="margin: 0 0 8px 0; color: #1e40af;">精准文字编辑</h4>
+<p style="margin: 0; color: #1e40af;">支持中英双语文字编辑，保留文字大小/字体/风格的前提下进行增删改</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🎨</div>
+<h4 style="margin: 0 0 8px 0; color: #059669;">语义/外观双重编辑</h4>
+<p style="margin: 0; color: #065f46;">支持 low-level 视觉外观编辑和 high-level 视觉语义编辑</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🏆</div>
+<h4 style="margin: 0 0 8px 0; color: #ea580c;">SOTA 性能表现</h4>
+<p style="margin: 0; color: #9a3412;">在多个公开基准测试中均获得 SOTA，强大的图像生成基础模型</p>
+</div>
+
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔗 官方资源</strong><br>
+  • <strong>GitHub 仓库</strong>：<a href="https://github.com/QwenLM/Qwen-Image" target="_blank" style="color: #2563eb;">QwenLM/Qwen-Image</a><br>
+  • <strong>Hugging Face</strong>：<a href="https://huggingface.co/Qwen/Qwen-Image-Edit" target="_blank" style="color: #2563eb;">🤗 Qwen/Qwen-Image-Edit</a><br>
+  • <strong>ModelScope</strong>：<a href="https://modelscope.cn/models/qwen/Qwen-Image-Edit" target="_blank" style="color: #2563eb;">ModelScope</a>
+</div>
+
+### 🎯 核心编辑能力
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
+<h4 style="color: #d97706; margin: 0 0 8px 0;">🔤 Low-Level 视觉外观编辑</h4>
+<ul style="margin: 0; padding-left: 20px; color: #9a3412;">
+  <li>风格迁移</li>
+  <li>图像增删改</li>
+  <li>色彩调整</li>
+  <li>纹理修改</li>
+</ul>
+</div>
+
+<div style="background: #f3e8ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🧠 High-Level 视觉语义编辑</h4>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6;">
+  <li>IP 制作</li>
+  <li>物体旋转</li>
+  <li>场景重构</li>
+  <li>概念替换</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<h2 id="qwen-image-edit-comfyui">🚀 Qwen-Image-Edit ComfyUI 原生工作流</h2>
+<h3 id="_1">📥 步骤一：工作流文件下载</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+或直接从官方模版打开：
+
+![img.png](img.png)
+
+更新 ComfyUI 后可以从模板中找到工作流文件，或者将下面的工作流拖入 ComfyUI 中加载。
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-edit/qwen_image_edit.png" alt="Qwen-Image-Edit 工作流" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <p style="margin: 8px 0 0 0; color: #64748b; font-size: 14px;">点击图片下载，拖入 ComfyUI 加载工作流</p>
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <a href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_qwen_image_edit.json" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+    📄 下载 JSON 格式工作流
+  </a>
+</div>
+
+### 📁 示例输入图片
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; margin: 16px 0; text-align: center;">
+<h4 style="color: #059669; margin: 0 0 12px 0;">🖼️ 示例输入图片</h4>
+<img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-edit/input.png" alt="示例输入图片" style="max-width: 400px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<p style="margin: 8px 0 0 0; color: #065f46; font-size: 13px;">右键保存图片，用于工作流测试</p>
+</div>
+
+</div>
+
+<h3 id="_2">🔗 步骤二：模型文件</h3>
+<h4 id="_3">📂 模型文件结构</h4>
+<div style="background: #1e293b; border-radius: 6px; padding: 16px; margin: 16px 0;">
+<pre style="margin: 0; color: #e2e8f0; font-family: 'Courier New', monospace; font-size: 14px;"><code>📂 ComfyUI/
+├── 📂 models/
+│   ├── 📂 diffusion_models/
+│   │   └── qwen_image_edit_fp8_e4m3fn.safetensors
+│   ├── 📂 loras/
+│   │   └── Qwen-Image-Lightning-4steps-V1.0.safetensors
+│   ├── 📂 vae/
+│   │   └── qwen_image_vae.safetensors
+│   └── 📂 text_encoders/
+│       └── qwen_2.5_vl_7b_fp8_scaled.safetensors</code></pre>
+</div>
+
+<h3 id="_4">🔧 步骤三：工作流配置操作</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="https://mintcdn.com/dripart/SIDaLac8vBogzwm7/images/tutorial/image/qwen/qwen_image_edit.jpg?fit=max&auto=format&n=SIDaLac8vBogzwm7&q=85&s=98a706bfa8f1578a4dfd7f2a0a415926" alt="Qwen-Image-Edit 工作流配置步骤" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+</div>
+
+#### 📋 详细配置步骤
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🔧 模型加载</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af; font-size: 14px;">
+  <li><strong>Load Diffusion Model</strong>：<br><code>qwen_image_edit_fp8_e4m3fn.safetensors</code></li>
+  <li><strong>Load CLIP</strong>：<br><code>qwen_2.5_vl_7b_fp8_scaled.safetensors</code></li>
+  <li><strong>Load VAE</strong>：<br><code>qwen_image_vae.safetensors</code></li>
+</ul>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">📁 图片加载</h4>
+<p style="margin: 0; color: #065f46; font-size: 14px;">在 <strong>Load Image</strong> 节点中上传用于编辑的图片</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">📝 提示词设置</h4>
+<p style="margin: 0; color: #9a3412; font-size: 14px;">在 <strong>CLIP Text Encoder</strong> 节点中设置编辑提示词</p>
+</div>
+
+</div>
+
+#### ⚙️ 高级配置选项
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
+<h4 style="color: #d97706; margin: 0 0 8px 0;">📐 图像尺寸处理</h4>
+<p style="margin: 0 0 8px 0; color: #9a3412; font-size: 14px;"><strong>Scale Image to Total Pixels</strong> 节点会将输入图片缩放到总像素为一百万像素</p>
+<ul style="margin: 0; padding-left: 20px; color: #9a3412; font-size: 13px;">
+  <li>避免输入图片尺寸过大（如 2048×2048）导致的输出图像质量损失</li>
+  <li>如果了解输入图片尺寸，可使用 <strong>Ctrl+B</strong> 绕过此节点</li>
+</ul>
+</div>
+
+<div style="background: #f3e8ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">⚡ Lightning LoRA 加速</h4>
+<p style="margin: 0 0 8px 0; color: #5b21b6; font-size: 14px;">使用 4 步 Lightning LoRA 实现图片生成提速</p>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6; font-size: 13px;">
+  <li>选中 <strong>LoraLoaderModelOnly</strong> 节点</li>
+  <li>按 <strong>Ctrl+B</strong> 启用该节点</li>
+</ul>
+</div>
+
+</div>
+
+#### 🎛️ KSampler 参数调优
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔧 KSampler 节点参数设置</strong><br>
+  对于 <code>steps</code> 和 <code>cfg</code> 设置，工作流在节点下方提供了参数建议笔记，可以测试最佳的参数设置：<br>
+  • <strong>Steps</strong>：推荐 20-50 步<br>
+  • <strong>CFG</strong>：推荐 3.5-7.5<br>
+  • <strong>Sampler</strong>：推荐 DPM++ 2M Karras
+</div>
+
+#### 🚀 执行生成
+
+<div style="text-align: center; margin: 20px 0;">
+  <div style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 16px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3);">
+    <strong>⌨️ 点击 Queue 按钮或使用快捷键 Ctrl(Cmd) + Enter 运行工作流</strong>
+  </div>
+</div>
+
+</div>
+
+<h2 id="api">API调用</h2>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+📋 点击展开ComfyUI API调用Python代码
+</summary>
+
+
+<pre><code class="language-python">
+import requests
+import json
+import uuid
+import time
+import random
+import os
+
+# Configuration Parameters - Qwen Image Edit Specific
+COMFYUI_SERVER = &quot;127.0.0.1:8188&quot;  # Local server
+COMFYUI_TOKEN = &quot;&quot;  # Usually no token needed for local
+
+# Model Configuration
+UNET_MODEL = &quot;qwen_image_edit_fp8_e4m3fn.safetensors&quot;
+CLIP_MODEL = &quot;qwen_2.5_vl_7b_fp8_scaled.safetensors&quot;
+VAE_MODEL = &quot;qwen_image_vae.safetensors&quot;
+
+# Default Parameters
+DEFAULT_EDIT_PROMPT = &quot;Remove all UI text elements from the image. Keep the feeling that the characters and scene are in water. Also, remove the green UI elements at the bottom.&quot;
+DEFAULT_NEGATIVE_PROMPT = &quot;&quot;
+DEFAULT_INPUT_IMAGE = &quot;Qwen-Image_00043_.png&quot;
+
+class ComfyUIQwenImageEditClient:
+    def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+        self.base_url = f&quot;http://{server}&quot;
+        self.token = token
+        self.client_id = str(uuid.uuid4())
+        self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;}
+        if token:
+            self.headers[&quot;Authorization&quot;] = f&quot;Bearer {token}&quot;
+
+    def upload_image(self, image_path):
+        &quot;&quot;&quot;Upload image to ComfyUI server&quot;&quot;&quot;
+        try:
+            with open(image_path, 'rb') as f:
+                files = {'image': f}
+                response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files)
+                if response.status_code == 200:
+                    result = response.json()
+                    return result.get('name', os.path.basename(image_path))
+                else:
+                    raise Exception(f&quot;Failed to upload image: {response.text}&quot;)
+        except Exception as e:
+            print(f&quot;Image upload error: {e}&quot;)
+            return None
+
+    def edit_image_with_qwen(self, edit_prompt, input_image_path=None, 
+                            input_image_name=None, negative_prompt=&quot;&quot;,
+                            steps=20, cfg=2.5, seed=None, shift=3.0,
+                            cfg_norm_strength=1.0, megapixels=1.0,
+                            upscale_method=&quot;lanczos&quot;):
+        &quot;&quot;&quot;Edit image using Qwen Image Edit model based on original JSON workflow&quot;&quot;&quot;
+        print(&quot;Starting Qwen Image Edit generation...&quot;)
+
+        # Generate random seed if not provided
+        if seed is None:
+            seed = random.randint(1, 1000000000000000)
+
+        # Handle input image
+        if input_image_path and not input_image_name:
+            input_image_name = self.upload_image(input_image_path)
+            if not input_image_name:
+                raise Exception(&quot;Failed to upload input image&quot;)
+        elif not input_image_name:
+            input_image_name = DEFAULT_INPUT_IMAGE
+
+        # Workflow based on your provided JSON
+        workflow = {
+            &quot;3&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;seed&quot;: seed,
+                    &quot;steps&quot;: steps,
+                    &quot;cfg&quot;: cfg,
+                    &quot;sampler_name&quot;: &quot;euler&quot;,
+                    &quot;scheduler&quot;: &quot;simple&quot;,
+                    &quot;denoise&quot;: 1,
+                    &quot;model&quot;: [&quot;75&quot;, 0],
+                    &quot;positive&quot;: [&quot;76&quot;, 0],
+                    &quot;negative&quot;: [&quot;77&quot;, 0],
+                    &quot;latent_image&quot;: [&quot;88&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;KSampler&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;K Sampler&quot;}
+            },
+            &quot;8&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;samples&quot;: [&quot;3&quot;, 0],
+                    &quot;vae&quot;: [&quot;39&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;VAEDecode&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;VAE Decode&quot;}
+            },
+            &quot;37&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;unet_name&quot;: UNET_MODEL,
+                    &quot;weight_dtype&quot;: &quot;default&quot;
+                },
+                &quot;class_type&quot;: &quot;UNETLoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;UNet Loader&quot;}
+            },
+            &quot;38&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;clip_name&quot;: CLIP_MODEL,
+                    &quot;type&quot;: &quot;qwen_image&quot;,
+                    &quot;device&quot;: &quot;default&quot;
+                },
+                &quot;class_type&quot;: &quot;CLIPLoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;CLIP Loader&quot;}
+            },
+            &quot;39&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;vae_name&quot;: VAE_MODEL
+                },
+                &quot;class_type&quot;: &quot;VAELoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;VAE Loader&quot;}
+            },
+            &quot;60&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;filename_prefix&quot;: &quot;qwen_image_edit&quot;,
+                    &quot;images&quot;: [&quot;8&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;SaveImage&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Save Image&quot;}
+            },
+            &quot;66&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;shift&quot;: shift,
+                    &quot;model&quot;: [&quot;37&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;ModelSamplingAuraFlow&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Model Sampling AuraFlow&quot;}
+            },
+            &quot;75&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;strength&quot;: cfg_norm_strength,
+                    &quot;model&quot;: [&quot;66&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;CFGNorm&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;CFG Norm&quot;}
+            },
+            &quot;76&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;prompt&quot;: edit_prompt,
+                    &quot;clip&quot;: [&quot;38&quot;, 0],
+                    &quot;vae&quot;: [&quot;39&quot;, 0],
+                    &quot;image&quot;: [&quot;93&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;TextEncodeQwenImageEdit&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Text Encode Qwen Image Edit (Positive)&quot;}
+            },
+            &quot;77&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;prompt&quot;: negative_prompt,
+                    &quot;clip&quot;: [&quot;38&quot;, 0],
+                    &quot;vae&quot;: [&quot;39&quot;, 0],
+                    &quot;image&quot;: [&quot;93&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;TextEncodeQwenImageEdit&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Text Encode Qwen Image Edit (Negative)&quot;}
+            },
+            &quot;78&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;image&quot;: input_image_name
+                },
+                &quot;class_type&quot;: &quot;LoadImage&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Load Input Image&quot;}
+            },
+            &quot;88&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;pixels&quot;: [&quot;93&quot;, 0],
+                    &quot;vae&quot;: [&quot;39&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;VAEEncode&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;VAE Encode&quot;}
+            },
+            &quot;93&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;upscale_method&quot;: upscale_method,
+                    &quot;megapixels&quot;: megapixels,
+                    &quot;image&quot;: [&quot;78&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;ImageScaleToTotalPixels&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Image Scale To Total Pixels&quot;}
+            }
+        }
+
+        print(&quot;Submitting Qwen Image Edit workflow...&quot;)
+        print(f&quot;Edit Prompt: {edit_prompt}&quot;)
+        print(f&quot;Input Image: {input_image_name}&quot;)
+        print(f&quot;Steps: {steps}&quot;)
+        print(f&quot;CFG: {cfg}&quot;)
+        print(f&quot;Seed: {seed}&quot;)
+        print(f&quot;Megapixels: {megapixels}&quot;)
+        print(f&quot;Upscale Method: {upscale_method}&quot;)
+
+        response = requests.post(
+            f&quot;{self.base_url}/prompt&quot;, 
+            headers=self.headers, 
+            json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id}
+        )
+
+        print(f&quot;API Response: {response.text}&quot;)
+
+        if response.status_code != 200:
+            raise Exception(f&quot;API request failed with status code: {response.status_code}&quot;)
+
+        result = response.json()
+        if &quot;error&quot; in result:
+            raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+        if &quot;prompt_id&quot; not in result:
+            raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+
+        return result[&quot;prompt_id&quot;], seed
+
+    def get_status(self, task_id):
+        &quot;&quot;&quot;Get task status&quot;&quot;&quot;
+        try:
+            # Check queue status
+            queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+
+            # Check if in running queue
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])):
+                return &quot;processing&quot;
+
+            # Check if in pending queue
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])):
+                return &quot;pending&quot;
+
+            # Check history
+            history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            if history_response.status_code == 200:
+                history = history_response.json()
+                if task_id in history:
+                    return &quot;completed&quot;
+
+            return &quot;processing&quot;
+        except Exception as e:
+            print(f&quot;Status check error: {e}&quot;)
+            return &quot;processing&quot;
+
+    def download_image(self, task_id, output_dir=&quot;outputs&quot;):
+        &quot;&quot;&quot;Download generated images&quot;&quot;&quot;
+        try:
+            # Ensure output directory exists
+            os.makedirs(output_dir, exist_ok=True)
+
+            response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            history = response.json()
+
+            if task_id in history:
+                outputs = history[task_id]['outputs']
+                downloaded_files = []
+
+                for node_id, output in outputs.items():
+                    if 'images' in output:
+                        for img_info in output['images']:
+                            filename = img_info['filename']
+                            # Download image
+                            img_response = requests.get(
+                                f&quot;{self.base_url}/view?filename={filename}&quot;, 
+                                headers=self.headers
+                            )
+
+                            if img_response.status_code == 200:
+                                output_path = os.path.join(output_dir, filename)
+                                with open(output_path, &quot;wb&quot;) as f:
+                                    f.write(img_response.content)
+                                downloaded_files.append(output_path)
+                                print(f&quot;Image saved: {output_path}&quot;)
+
+                return downloaded_files
+
+        except Exception as e:
+            print(f&quot;Download error: {e}&quot;)
+
+        return []
+
+    def generate_batch(self, edit_configs, **kwargs):
+        &quot;&quot;&quot;Batch edit images with different configurations&quot;&quot;&quot;
+        results = []
+
+        for i, config in enumerate(edit_configs):
+            print(f&quot;\nStarting image edit task {i+1}/{len(edit_configs)}...&quot;)
+
+            try:
+                task_id, seed = self.edit_image_with_qwen(**config, **kwargs)
+
+                # Wait for completion
+                while True:
+                    status = self.get_status(task_id)
+                    print(f&quot;Task {i+1} status: {status}&quot;)
+
+                    if status == &quot;completed&quot;:
+                        files = self.download_image(task_id)
+                        results.append({
+                            'task_id': task_id,
+                            'seed': seed,
+                            'files': files,
+                            'config': config
+                        })
+                        break
+                    elif status == &quot;failed&quot;:
+                        print(f&quot;Task {i+1} failed&quot;)
+                        break
+
+                    time.sleep(5)
+
+            except Exception as e:
+                print(f&quot;Task {i+1} error: {e}&quot;)
+
+        return results
+
+    def edit_with_quality_presets(self, edit_prompt, input_image_path, 
+                                 quality_preset=&quot;high&quot;):
+        &quot;&quot;&quot;Edit image with predefined quality settings&quot;&quot;&quot;
+        quality_presets = {
+            &quot;fast&quot;: {
+                &quot;steps&quot;: 10,
+                &quot;cfg&quot;: 2.0,
+                &quot;megapixels&quot;: 0.5,
+                &quot;upscale_method&quot;: &quot;nearest-exact&quot;
+            },
+            &quot;balanced&quot;: {
+                &quot;steps&quot;: 15,
+                &quot;cfg&quot;: 2.5,
+                &quot;megapixels&quot;: 1.0,
+                &quot;upscale_method&quot;: &quot;bilinear&quot;
+            },
+            &quot;high&quot;: {
+                &quot;steps&quot;: 20,
+                &quot;cfg&quot;: 3.0,
+                &quot;megapixels&quot;: 1.5,
+                &quot;upscale_method&quot;: &quot;lanczos&quot;
+            },
+            &quot;ultra&quot;: {
+                &quot;steps&quot;: 30,
+                &quot;cfg&quot;: 3.5,
+                &quot;megapixels&quot;: 2.0,
+                &quot;upscale_method&quot;: &quot;lanczos&quot;
+            }
+        }
+
+        settings = quality_presets.get(quality_preset, quality_presets[&quot;high&quot;])
+        return self.edit_image_with_qwen(
+            edit_prompt=edit_prompt,
+            input_image_path=input_image_path,
+            **settings
+        )
+
+    def generate_edit_variations(self, base_image_path, edit_prompts):
+        &quot;&quot;&quot;Generate multiple edit variations of the same image&quot;&quot;&quot;
+        results = []
+
+        for i, prompt in enumerate(edit_prompts):
+            print(f&quot;\nGenerating edit variation {i+1}: {prompt[:50]}...&quot;)
+
+            try:
+                task_id, seed = self.edit_image_with_qwen(
+                    edit_prompt=prompt,
+                    input_image_path=base_image_path
+                )
+
+                # Wait for completion
+                while True:
+                    status = self.get_status(task_id)
+                    if status == &quot;completed&quot;:
+                        files = self.download_image(task_id)
+                        results.append({
+                            'prompt': prompt,
+                            'files': files,
+                            'seed': seed
+                        })
+                        break
+                    elif status == &quot;failed&quot;:
+                        print(f&quot;Edit variation {i+1} failed&quot;)
+                        break
+                    time.sleep(5)
+
+            except Exception as e:
+                print(f&quot;Edit variation {i+1} error: {e}&quot;)
+
+        return results
+
+def main():
+    &quot;&quot;&quot;Main function - Execute Qwen Image Edit&quot;&quot;&quot;
+    client = ComfyUIQwenImageEditClient()
+
+    try:
+        print(&quot;Qwen Image Edit client started...&quot;)
+
+        # Single image edit example
+        print(&quot;\n=== Single Image Edit ===&quot;)
+
+        # You can provide a local image path or use existing image name
+        input_image_path = None  # Set to your image path, e.g., &quot;input.jpg&quot;
+
+        task_id, seed = client.edit_image_with_qwen(
+            edit_prompt=DEFAULT_EDIT_PROMPT,
+            input_image_path=input_image_path,
+            input_image_name=DEFAULT_INPUT_IMAGE,
+            negative_prompt=DEFAULT_NEGATIVE_PROMPT,
+            steps=20,
+            cfg=2.5,
+            shift=3.0,
+            megapixels=1.0,
+            upscale_method=&quot;lanczos&quot;
+        )
+
+        print(f&quot;Task ID: {task_id}&quot;)
+        print(f&quot;Seed: {seed}&quot;)
+
+        # Wait for task completion
+        while True:
+            status = client.get_status(task_id)
+            print(f&quot;Current status: {status}&quot;)
+
+            if status == &quot;completed&quot;:
+                print(&quot;Image edit completed!&quot;)
+                break
+            elif status == &quot;failed&quot;:
+                print(&quot;Edit failed!&quot;)
+                return
+
+            time.sleep(5)
+
+        # Download edited images
+        downloaded_files = client.download_image(task_id)
+        if downloaded_files:
+            print(f&quot;Successfully downloaded {len(downloaded_files)} files!&quot;)
+            for file in downloaded_files:
+                print(f&quot;File path: {file}&quot;)
+        else:
+            print(&quot;Download failed&quot;)
+
+        # Quality preset example
+        print(&quot;\n=== Quality Preset Example ===&quot;)
+        # Uncomment to test different quality settings
+        # if input_image_path:
+        #     for preset in [&quot;fast&quot;, &quot;balanced&quot;, &quot;high&quot;]:
+        #         print(f&quot;Editing with {preset} quality...&quot;)
+        #         task_id, seed = client.edit_with_quality_presets(
+        #             &quot;Remove background and make it white&quot;, input_image_path, preset
+        #         )
+        #         # Wait and download logic here...
+
+        # Edit variations example
+        print(&quot;\n=== Edit Variations Example ===&quot;)
+        edit_variations = [
+            &quot;Remove all text and UI elements from the image&quot;,
+            &quot;Change the background to a sunset sky&quot;,
+            &quot;Make the image black and white&quot;,
+            &quot;Add more vibrant colors to the scene&quot;,
+            &quot;Remove people from the image&quot;
+        ]
+
+        # Uncomment to run edit variations
+        # if input_image_path:
+        #     variation_results = client.generate_edit_variations(input_image_path, edit_variations)
+        #     print(f&quot;Generated {len(variation_results)} edit variations&quot;)
+
+        # Batch edit example
+        print(&quot;\n=== Batch Edit Example ===&quot;)
+        batch_configs = [
+            {
+                'edit_prompt': &quot;Remove all UI elements and make background transparent&quot;,
+                'input_image_name': DEFAULT_INPUT_IMAGE,
+                'steps': 15,
+                'cfg': 2.0
+            },
+            {
+                'edit_prompt': &quot;Change the lighting to golden hour&quot;,
+                'input_image_name': DEFAULT_INPUT_IMAGE,
+                'steps': 20,
+                'cfg': 2.5
+            }
+        ]
+
+        # Uncomment to run batch editing
+        # batch_results = client.generate_batch(batch_configs, megapixels=1.0)
+        # print(f&quot;Batch editing completed, processed {len(batch_results)} images&quot;)
+
+    except Exception as e:
+        print(f&quot;Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+
+</code></pre>
+
+
+</details>
+
+<h2 id="_5">🎯 编辑应用场景</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">📝</div>
+<h4 style="margin: 0 0 8px 0; color: #1e40af;">文字编辑</h4>
+<p style="margin: 0; color: #1e40af;">海报文字修改、标识更换、多语言本地化</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🎨</div>
+<h4 style="margin: 0 0 8px 0; color: #059669;">风格转换</h4>
+<p style="margin: 0; color: #065f46;">艺术风格迁移、色调调整、视觉效果增强</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🏢</div>
+<h4 style="margin: 0 0 8px 0; color: #ea580c;">商业应用</h4>
+<p style="margin: 0; color: #9a3412;">产品图片编辑、广告素材制作、品牌视觉统一</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #7c3aed;">🎭</div>
+<h4 style="margin: 0 0 8px 0; color: #7c3aed;">创意设计</h4>
+<p style="margin: 0; color: #5b21b6;">概念艺术创作、IP 角色设计、场景重构</p>
+</div>
+
+</div>
+
+<h2 id="_6">💡 使用技巧与建议</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #dcfce7; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">✅ 最佳实践</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li>使用清晰、具体的编辑指令</li>
+  <li>保持输入图像质量和分辨率适中</li>
+  <li>文字编辑时描述具体的字体和样式要求</li>
+  <li>利用 Lightning LoRA 进行快速预览</li>
+</ul>
+</div>
+
+<div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px; border-radius: 4px;">
+<h4 style="color: #dc2626; margin: 0 0 8px 0;">⚠️ 注意事项</h4>
+<ul style="margin: 0; padding-left: 20px; color: #991b1b;">
+  <li>避免输入图像尺寸过大影响生成质量</li>
+  <li>复杂编辑任务可能需要多次迭代</li>
+  <li>文字编辑效果与原图文字清晰度相关</li>
+  <li>合理设置 CFG 值避免过度拟合</li>
+</ul>
+</div>
+
+</div>
+
+<h2 id="_7">🔧 技术规格</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 💻 系统要求
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">配置项</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">最低要求</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">推荐配置</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">GPU 显存</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">12GB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16GB+</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">系统内存</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16GB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">32GB+</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">存储空间</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">20GB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">50GB+ SSD</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">推荐 GPU</td>
+      <td style="padding: 12px;">RTX 4060 Ti</td>
+      <td style="padding: 12px;">RTX 4080 / RTX 4090</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+### 🎨 支持的编辑类型
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #2563eb; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">文字编辑</span>
+  </div>
+  <div style="background: #f0fdf4; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #059669; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">风格迁移</span>
+  </div>
+  <div style="background: #fff7ed; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #ea580c; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">物体替换</span>
+  </div>
+  <div style="background: #f3e8ff; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #7c3aed; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">场景重构</span>
+  </div>
+  <div style="background: #fef3c7; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #d97706; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">色彩调整</span>
+  </div>
+  <div style="background: #fef2f2; padding: 12px; border-radius: 6px; text-align: center;">
+    <span style="background: #dc2626; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">纹理修改</span>
+  </div>
+</div>
+
+### 🌐 语言支持
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<strong>🔤 文字编辑支持</strong><br>
+<p style="margin: 8px 0 0 0; color: #1e40af; font-size: 14px;">中文、英文双语文字的精准编辑和替换</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<strong>💬 指令语言</strong><br>
+<p style="margin: 8px 0 0 0; color: #065f46; font-size: 14px;">支持中英文编辑指令，理解复杂的编辑需求</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    ✏️ <strong>Qwen-Image-Edit 图像编辑</strong> | 精准文字编辑与语义外观双重编辑的完美结合
+  </p>
+  <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 12px;">
+    © 2025 阿里巴巴通义千问团队 | 开源协议 | 让图像编辑变得智能高效
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.548209+00:00
+  -->
+</body>
+</html>

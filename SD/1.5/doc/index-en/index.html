@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#model-introduction">🌟 Model Introduction</a></li>
+              
+          
+              <li><a href="#core-features">✨ Core Features</a></li>
+              
+          
+              <li><a href="#technical-specifications">📊 Technical Specifications</a></li>
+              
+          
+              <li><a href="#configuration-setup">⚙️ Configuration Setup</a></li>
+              
+                  <li><a href="#system-requirements">💻 System Requirements</a></li>
+                  
+              
+                  <li><a href="#essential-model-files">📁 Essential Model Files</a></li>
+                  
+              
+          
+              <li><a href="#usage-guide">📖 Usage Guide</a></li>
+              
+                  <li><a href="#web-ui-interface">🌐 Web UI Interface</a></li>
+                  
+                      <li class="li-h3"><a href="#step-by-step-workflow">📋 Step-by-Step Workflow</a></li>
+                  
+                      <li class="li-h3"><a href="#optimized-parameter-presets">🎨 Optimized Parameter Presets</a></li>
+                  
+              
+                  <li><a href="#api-integration">🔌 API Integration</a></li>
+                  
+              
+                  <li><a href="#essential-resources-community">📚 Essential Resources &amp; Community</a></li>
+                  
+              
+                  <li><a href="#best-practices-pro-tips">🎯 Best Practices &amp; Pro Tips</a></li>
+                  
+              
+                  <li><a href="#troubleshooting-faq">❓ Troubleshooting &amp; FAQ</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🎨 Stable Diffusion 1.5 Complete Guide</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">The ultimate text-to-image generation model for creators and developers</p>
+</div>
+
+<h2 id="model-introduction">🌟 Model Introduction</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Stable Diffusion 1.5** is a revolutionary text-to-image generation model developed by **Stability AI**. As a groundbreaking milestone in the open-source AI image generation landscape, it continues to be one of the most beloved and extensively utilized models in the community. This model has earned its reputation through its **lightweight architecture**, **exceptional efficiency**, and **vibrant ecosystem**, making it the go-to choice for both AI newcomers and seasoned professionals.
+
+</div>
+
+<h2 id="core-features">✨ Core Features</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🚀 Performance Excellence</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li><strong>Lightweight & Efficient</strong>: Only 6GB VRAM required</li>
+  <li><strong>Lightning Fast</strong>: Optimized for batch and real-time generation</li>
+  <li><strong>Rock Solid</strong>: Battle-tested across millions of generations</li>
+</ul>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🎨 Creative Powerhouse</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af;">
+  <li><strong>Style Versatility</strong>: Photorealistic, anime, artistic styles</li>
+  <li><strong>Highly Customizable</strong>: LoRA, Textual Inversion support</li>
+  <li><strong>Thriving Ecosystem</strong>: Massive community & extensions</li>
+</ul>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🆓 Open Source Freedom</h4>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6;">
+  <li><strong>100% Open Source</strong>: Complete transparency</li>
+  <li><strong>Commercial Use Allowed</strong>: No licensing restrictions</li>
+  <li><strong>Community Driven</strong>: Continuous improvements</li>
+</ul>
+</div>
+
+</div>
+
+<h2 id="technical-specifications">📊 Technical Specifications</h2>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Specification</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Model Type</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Text-to-Image / Image-to-Image Generation</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Parameters</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">~860M parameters</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Text Encoder</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">CLIP ViT-L/14</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">VAE Resolution</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">512×512 (Native)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Optimal Steps</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">20-50 steps</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">License</td>
+      <td style="padding: 12px;">CreativeML Open RAIL-M</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<hr />
+<h1 id="configuration-setup">⚙️ Configuration Setup</h1>
+<h2 id="system-requirements">💻 System Requirements</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 Minimum Hardware Specifications</strong><br>
+  <strong>GPU Memory</strong>: 6GB VRAM or higher<br>
+  <small>Recommended: 8GB+ for optimal performance and larger resolutions</small>
+</div>
+
+<h2 id="essential-model-files">📁 Essential Model Files</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">🎯 Main Model</h4>
+<div style="background: #f8fafc; padding: 8px; border-radius: 4px; margin: 8px 0; font-family: monospace; font-size: 12px;">
+v1-5-pruned-emaonly.safetensors
+</div>
+<p style="margin: 8px 0 0 0; color: #065f46; font-size: 14px;">Core generation model file</p>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🎨 Enhanced VAE</h4>
+<div style="background: #f8fafc; padding: 8px; border-radius: 4px; margin: 8px 0; font-family: monospace; font-size: 12px;">
+vae-ft-mse-840000-ema-pruned.safetensors
+</div>
+<p style="margin: 8px 0 0 0; color: #1e40af; font-size: 14px;">Optional high-quality VAE</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">📝 Text Encoder</h4>
+<div style="background: #f8fafc; padding: 8px; border-radius: 4px; margin: 8px 0; text-align: center; font-style: italic; color: #64748b;">
+Built into main model
+</div>
+<p style="margin: 8px 0 0 0; color: #5b21b6; font-size: 14px;">CLIP ViT-L/14 integrated</p>
+</div>
+
+</div>
+
+<hr />
+<h1 id="usage-guide">📖 Usage Guide</h1>
+<h2 id="web-ui-interface">🌐 Web UI Interface</h2>
+<h3 id="step-by-step-workflow">📋 Step-by-Step Workflow</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**1. Model Selection**
+- Navigate to the upper-left model selector and choose your SD1.5 model
+
+![img.png](img.png)
+
+**2. Prompt Engineering**
+- **Positive Prompt**: Describe your desired image in vivid detail
+- **Negative Prompt**: Specify unwanted elements (SD1.5 excels here!)
+
+**3. Parameter Tuning**
+- **Steps**: 20-30 (balance of quality and speed)
+- **CFG Scale**: 7-12 (prompt adherence strength)
+- **Sampler**: DPM++ 2M Karras / Euler a
+- **Resolution**: 512×512 (native resolution)
+
+**4. Advanced Configuration**
+- **Seed**: Control randomness (-1 = random)
+- **Batch Size**: Multiple generations
+- **Hi-Res Fix**: Upscale for larger images
+
+</div>
+
+<h3 id="optimized-parameter-presets">🎨 Optimized Parameter Presets</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">⚡ Speed Mode</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li><strong>Steps</strong>: 20 | <strong>CFG</strong>: 7</li>
+  <li><strong>Sampler</strong>: Euler a</li>
+  <li><strong>Size</strong>: 512×512</li>
+</ul>
+<p style="margin: 8px 0 0 0; color: #065f46; font-size: 14px;">Perfect for rapid prototyping</p>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">💎 Quality Mode</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af;">
+  <li><strong>Steps</strong>: 30 | <strong>CFG</strong>: 9-11</li>
+  <li><strong>Sampler</strong>: DPM++ 2M Karras</li>
+  <li><strong>Size</strong>: 768×768</li>
+</ul>
+<p style="margin: 8px 0 0 0; color: #1e40af; font-size: 14px;">Maximum detail and fidelity</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+<h4 style="color: #7c3aed; margin: 0 0 8px 0;">🎨 Artistic Mode</h4>
+<ul style="margin: 0; padding-left: 20px; color: #5b21b6;">
+  <li><strong>Steps</strong>: 25 | <strong>CFG</strong>: 8-10</li>
+  <li><strong>Sampler</strong>: DDIM</li>
+  <li><strong>Size</strong>: 512×768</li>
+</ul>
+<p style="margin: 8px 0 0 0; color: #5b21b6; font-size: 14px;">Enhanced creative expression</p>
+</div>
+
+</div>
+
+<hr />
+<h2 id="api-integration">🔌 API Integration</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 Configuration Requirements</strong><br>
+  Replace <code style="background: #f8fafc; padding: 2px 6px; border-radius: 4px;">BASE_URL</code> and <code style="background: #f8fafc; padding: 2px 6px; border-radius: 4px;">APIKEY</code> with your actual deployment values. For public network access, use public IP:port.
+</div>
+
+<p><img alt="img_4.png" src="../img_4.png" /></p>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+🐍 Complete Python API Implementation
+</summary>
+
+
+<pre><code class="language-python">import requests
+import base64
+import json
+from typing import Optional, Dict, Any
+import time
+
+class StableDiffusionAPI:
+    &quot;&quot;&quot;
+    🎨 Stable Diffusion 1.5 API Client
+    A comprehensive wrapper for SD1.5 API interactions with advanced features
+    &quot;&quot;&quot;
+
+    def __init__(self, base_url: str, username: str = &quot;admin&quot;, apikey: Optional[str] = None):
+        &quot;&quot;&quot;Initialize the API client with connection details&quot;&quot;&quot;
+        self.base_url = base_url.rstrip('/')
+        self.auth = (username, apikey) if apikey else None
+        self.session = requests.Session()
+
+    def switch_model(self, model_name: str = &quot;v1-5-pruned-emaonly.safetensors&quot;) -&gt; bool:
+        &quot;&quot;&quot;🔄 Switch to SD1.5 model with error handling&quot;&quot;&quot;
+        model_data = {&quot;sd_model_checkpoint&quot;: model_name}
+
+        try:
+            print(&quot;🔄 Switching to Stable Diffusion 1.5...&quot;)
+            response = self.session.post(
+                f&quot;{self.base_url}/sdapi/v1/options&quot;, 
+                json=model_data, 
+                auth=self.auth,
+                timeout=30
+            )
+            response.raise_for_status()
+            print(&quot;✅ Model switch completed successfully!&quot;)
+            return True
+        except requests.RequestException as e:
+            print(f&quot;❌ Model switch failed: {e}&quot;)
+            return False
+
+    def generate_image(
+        self, 
+        prompt: str,
+        negative_prompt: str = &quot;blurry, low quality, distorted, ugly&quot;,
+        steps: int = 20,
+        cfg_scale: float = 7.0,
+        width: int = 512,
+        height: int = 512,
+        sampler_name: str = &quot;Euler a&quot;,
+        seed: int = -1,
+        batch_size: int = 1
+    ) -&gt; Optional[Dict[str, Any]]:
+        &quot;&quot;&quot;🎨 Generate image with SD1.5 - Enhanced version&quot;&quot;&quot;
+
+        generation_data = {
+            &quot;prompt&quot;: prompt,
+            &quot;negative_prompt&quot;: negative_prompt,
+            &quot;steps&quot;: steps,
+            &quot;cfg_scale&quot;: cfg_scale,
+            &quot;width&quot;: width,
+            &quot;height&quot;: height,
+            &quot;sampler_name&quot;: sampler_name,
+            &quot;seed&quot;: seed,
+            &quot;batch_size&quot;: batch_size,
+            &quot;restore_faces&quot;: False,
+            &quot;tiling&quot;: False,
+            &quot;enable_hr&quot;: False
+        }
+
+        try:
+            print(f&quot;🎨 Generating: '{prompt[:50]}...'&quot;)
+            start_time = time.time()
+
+            response = self.session.post(
+                f&quot;{self.base_url}/sdapi/v1/txt2img&quot;,
+                json=generation_data,
+                auth=self.auth,
+                timeout=300  # 5 minutes timeout
+            )
+            response.raise_for_status()
+            result = response.json()
+
+            generation_time = time.time() - start_time
+
+            if &quot;images&quot; in result and result[&quot;images&quot;]:
+                print(f&quot;✅ Image generated successfully in {generation_time:.2f}s!&quot;)
+                return {
+                    &quot;images&quot;: [base64.b64decode(img) for img in result[&quot;images&quot;]],
+                    &quot;info&quot;: result.get(&quot;info&quot;, {}),
+                    &quot;generation_time&quot;: generation_time
+                }
+            else:
+                print(&quot;❌ No image data received&quot;)
+                return None
+
+        except requests.RequestException as e:
+            print(f&quot;❌ Generation failed: {e}&quot;)
+            return None
+
+    def save_images(self, image_data_list: list, base_filename: str = &quot;sd15_output&quot;) -&gt; list:
+        &quot;&quot;&quot;💾 Save multiple generated images with timestamps&quot;&quot;&quot;
+        saved_files = []
+        timestamp = int(time.time())
+
+        for i, image_data in enumerate(image_data_list):
+            try:
+                if len(image_data_list) &gt; 1:
+                    filename = f&quot;{base_filename}_{timestamp}_{i+1}.png&quot;
+                else:
+                    filename = f&quot;{base_filename}_{timestamp}.png&quot;
+
+                with open(filename, &quot;wb&quot;) as f:
+                    f.write(image_data)
+                print(f&quot;💾 Image saved as: {filename}&quot;)
+                saved_files.append(filename)
+            except Exception as e:
+                print(f&quot;❌ Save failed for image {i+1}: {e}&quot;)
+
+        return saved_files
+
+# 🚀 Usage Example
+def main():
+    &quot;&quot;&quot;Comprehensive example with error handling&quot;&quot;&quot;
+
+    # Initialize API client
+    api = StableDiffusionAPI(
+        base_url=&quot;&lt;Your-Deployment-URL&gt;&quot;,
+        username=&quot;admin&quot;,
+        apikey=&quot;${APIKEY}&quot;  # Remove if no API key required
+    )
+
+    # Switch to SD1.5
+    if not api.switch_model():
+        print(&quot;❌ Failed to switch model. Exiting...&quot;)
+        return
+
+    # Generate image
+    result = api.generate_image(
+        prompt=&quot;a majestic cat sitting on a golden throne, royal crown, detailed fur, 4k, photorealistic&quot;,
+        negative_prompt=&quot;blurry, low quality, distorted, cartoon&quot;,
+        steps=25,
+        cfg_scale=8.0,
+        width=512,
+        height=512,
+        sampler_name=&quot;DPM++ 2M Karras&quot;
+    )
+
+    if result and result[&quot;images&quot;]:
+        saved_files = api.save_images(result[&quot;images&quot;], &quot;sd15_cat&quot;)
+        print(f&quot;✅ Generation completed! Files: {saved_files}&quot;)
+    else:
+        print(&quot;❌ Failed to generate image&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+
+</details>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>💡 No API Key Setup</strong><br>
+  If authentication is disabled, modify requests like this:<br>
+  <code style="background: #f8fafc; padding: 2px 6px; border-radius: 4px;">response = requests.post(f"{base_url}/sdapi/v1/options", json=model_data)</code>
+</div>
+
+<hr />
+<h2 id="essential-resources-community">📚 Essential Resources &amp; Community</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">📖 Official Documentation</h4>
+<a href="https://stability.ai/stable-diffusion" style="color: #2563eb; text-decoration: none; font-weight: 500;">Stability AI Docs →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Comprehensive guides and technical specifications</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🖥️ Web Interface</h4>
+<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" style="color: #2563eb; text-decoration: none; font-weight: 500;">Automatic1111 WebUI →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Most popular SD web interface with extensive features</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">🎨 Model Hub</h4>
+<a href="https://civitai.com/" style="color: #2563eb; text-decoration: none; font-weight: 500;">Civitai Community →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Thousands of custom models, LoRAs, and embeddings</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h4 style="margin-top: 0; color: #1e40af;">✍️ Prompt Mastery</h4>
+<a href="https://prompthero.com/stable-diffusion-prompts" style="color: #2563eb; text-decoration: none; font-weight: 500;">Prompt Engineering Guide →</a>
+<p style="margin-top: 8px; color: #64748b; font-size: 14px;">Master the art of crafting perfect prompts</p>
+</div>
+
+</div>
+
+<hr />
+<h2 id="best-practices-pro-tips">🎯 Best Practices &amp; Pro Tips</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">✍️ Prompt Engineering Mastery</h4>
+<ul style="margin: 0; padding-left: 20px; color: #065f46;">
+  <li>Use specific descriptive words instead of abstract concepts</li>
+  <li>Add artist names to define artistic styles</li>
+  <li>Use weight syntax (word:1.2) to emphasize key elements</li>
+  <li>Leverage negative prompts to exclude unwanted content</li>
+</ul>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">⚙️ Parameter Optimization</h4>
+<ul style="margin: 0; padding-left: 20px; color: #1e40af;">
+  <li>Start with low step counts, gradually increase for quality</li>
+  <li>High CFG values can cause over-saturation</li>
+  <li>Different samplers excel at different artistic styles</li>
+  <li>Use fixed seeds to reproduce satisfactory results</li>
+</ul>
+</div>
+
+</div>
+
+<hr />
+<h2 id="troubleshooting-faq">❓ Troubleshooting &amp; FAQ</h2>
+<details style="border: 2px solid #dc2626; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #fef2f2, #fee2e2); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #dc2626; cursor: pointer;">❓ Poor image quality - How to improve results?</summary>
+<div style="margin-top: 15px; color: #991b1b;">
+<p><strong>Solution Strategies:</strong></p>
+<ul>
+<li>Increase generation steps to 30-50 for higher quality</li>
+<li>Adjust CFG Scale to 8-12 for better prompt adherence</li>
+<li>Use more detailed prompts with specific descriptors</li>
+<li>Try different samplers (DPM++ 2M Karras recommended)</li>
+<li>Consider using a high-quality VAE for better colors</li>
+</ul>
+</div>
+</details>
+
+<details style="border: 2px solid #ea580c; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #fff7ed, #fed7aa); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #ea580c; cursor: pointer;">❓ Out of memory errors - How to optimize VRAM usage?</summary>
+<div style="margin-top: 15px; color: #9a3412;">
+<p><strong>Memory Optimization Tips:</strong></p>
+<ul>
+<li>Reduce resolution to 512×512 or lower</li>
+<li>Decrease batch size to 1 image at a time</li>
+<li>Enable low VRAM mode in settings</li>
+<li>Disable unnecessary extensions and features</li>
+<li>Use precision optimization (half precision/fp16)</li>
+<li>Restart the application to clear memory leaks</li>
+</ul>
+</div>
+</details>
+
+<details style="border: 2px solid #7c3aed; border-radius: 12px; padding: 20px; margin: 15px 0; background: linear-gradient(145deg, #faf5ff, #f3e8ff); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<summary style="font-weight: bold; font-size: 16px; color: #7c3aed; cursor: pointer;">❓ How to achieve specific artistic styles?</summary>
+<div style="margin-top: 15px; color: #5b21b6;">
+<p><strong>Style Control Methods:</strong></p>
+<ul>
+<li>Add artist names to prompts (e.g., "by Greg Rutkowski")</li>
+<li>Use style keywords ("oil painting", "anime style", "photorealistic")</li>
+<li>Download specialized LoRAs for specific styles from Civitai</li>
+<li>Reference community prompt templates for proven combinations</li>
+<li>Adjust CFG Scale to control style intensity (7-15 range)</li>
+<li>Experiment with different samplers for style variations</li>
+</ul>
+</div>
+</details>
+
+<hr />
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎨 <strong>Ready to Create Magic?</strong> | Transform your imagination into stunning visuals with Stable Diffusion 1.5
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.325698+00:00
+  -->
+</body>
+</html>

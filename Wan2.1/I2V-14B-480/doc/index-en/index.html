@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#model-introduction">🚀 Model Introduction</a></li>
+              
+                  <li><a href="#core-features">✨ Core Features</a></li>
+                  
+              
+                  <li><a href="#technical-specifications">🔧 Technical Specifications</a></li>
+                  
+              
+          
+              <li><a href="#usage-instructions">📖 Usage Instructions</a></li>
+              
+                  <li><a href="#web-ui-usage">🌐 Web UI Usage</a></li>
+                  
+              
+                  <li><a href="#api-integration">🔌 API Integration</a></li>
+                  
+                      <li class="li-h3"><a href="#authentication-setup">🔑 Authentication Setup</a></li>
+                  
+                      <li class="li-h3"><a href="#python-implementation">💻 Python Implementation</a></li>
+                  
+                      <li class="li-h3"><a href="#comfyui-api-endpoints">🔗 ComfyUI API Endpoints</a></li>
+                  
+              
+          
+              <li><a href="#parameter-configuration">⚙️ Parameter Configuration</a></li>
+              
+                  <li><a href="#generation-parameters">🎛️ Generation Parameters</a></li>
+                  
+              
+                  <li><a href="#image-requirements">🖼️ Image Requirements</a></li>
+                  
+              
+          
+              <li><a href="#prompt-engineering">💡 Prompt Engineering</a></li>
+              
+                  <li><a href="#positive-prompt-examples">✅ Positive Prompt Examples</a></li>
+                  
+              
+                  <li><a href="#negative-prompt-examples">❌ Negative Prompt Examples</a></li>
+                  
+              
+          
+              <li><a href="#best-practices">🏆 Best Practices</a></li>
+              
+                  <li><a href="#input-image-selection">📸 Input Image Selection</a></li>
+                  
+              
+                  <li><a href="#prompt-writing-guidelines">✍️ Prompt Writing Guidelines</a></li>
+                  
+              
+                  <li><a href="#parameter-tuning-guide">🔧 Parameter Tuning Guide</a></li>
+                  
+              
+          
+              <li><a href="#important-considerations">⚠️ Important Considerations</a></li>
+              
+          
+              <li><a href="#application-scenarios">🎯 Application Scenarios</a></li>
+              
+          
+              <li><a href="#resources-documentation">📚 Resources &amp; Documentation</a></li>
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h1 style="font-size: 2.5em; margin: 0; font-weight: 600;">🎬 Wan2.1-I2V-14B Model Guide</h1>
+  <p style="font-size: 1.2em; margin: 16px 0 0 0; opacity: 0.9;">Transform static images into dynamic videos with AI-powered generation</p>
+</div>
+
+<h2 id="model-introduction">🚀 Model Introduction</h2>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <p style="line-height: 1.6; margin: 0;">
+    <strong>Wan2.1-I2V-14B</strong> is a powerful image-to-video generation model that can generate high-quality video content based on input images and text prompts. The model maintains the main characteristics of the input image while adding dynamic effects and scene changes according to text descriptions.
+  </p>
+</div>
+
+<h3 id="core-features">✨ Core Features</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #2563eb;">🧠</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Parameter Scale</h4>
+  <p style="margin: 0; color: #64748b;">14B parameters providing powerful image understanding and video generation capabilities</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #059669;">🖼️</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Image-Driven</h4>
+  <p style="margin: 0; color: #64748b;">Generates coherent video sequences based on input images</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #ea580c;">🌍</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Multi-language Support</h4>
+  <p style="margin: 0; color: #64748b;">Supports Chinese and English text prompts</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <div style="font-size: 2em; margin-bottom: 12px; color: #2563eb;">🎯</div>
+  <h4 style="margin: 0 0 8px 0; color: #1e40af;">Image Consistency</h4>
+  <p style="margin: 0; color: #64748b;">Maintains main features and style of the input image</p>
+</div>
+
+</div>
+
+<h3 id="technical-specifications">🔧 Technical Specifications</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="overflow-x: auto;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden;">
+<thead>
+<tr style="background: #eff6ff;">
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Specification</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>🤖 Model Type</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Image-to-Video Generation</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>⚡ Quantization</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">FP8 quantized version</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>📺 Supported Resolution</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">480p</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>🎞️ Maximum Frames</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">81 frames</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>🎬 Recommended Frame Rate</strong></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16fps</td>
+</tr>
+<tr>
+<td style="padding: 12px;"><strong>📁 Input Format</strong></td>
+<td style="padding: 12px;">JPEG, PNG, WebP, etc.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<h2 id="usage-instructions">📖 Usage Instructions</h2>
+<h3 id="web-ui-usage">🌐 Web UI Usage</h3>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+#### Step 1: Access Interface
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0 0 12px 0;">Click the access link at the service instance</p>
+  <div style="text-align: center; margin: 16px 0;">
+    <img src="img_3.png" alt="Access interface" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+    <p style="margin-top: 8px; color: #64748b; font-size: 14px;">Click access link to enter ComfyUI interface</p>
+  </div>
+</div>
+
+#### Step 2: Select Workflow
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0;">Select <code style="background: #eff6ff; color: #1e40af; padding: 2px 6px; border-radius: 4px;">wanx-21.json</code> workflow and open it, choose the image-to-video function option</p>
+</div>
+
+#### Step 3: Upload Image
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <ul style="margin: 0; padding-left: 20px;">
+    <li style="margin-bottom: 6px;">Select sample image in <strong>LoadImage</strong> node</li>
+    <li style="margin-bottom: 0;">Or upload custom image from local computer</li>
+  </ul>
+</div>
+
+#### Step 4: Set Text Description
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0 0 12px 0;">Fill in description words in <strong>TextEncode</strong> node:</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: #f0fdf4; padding: 12px; border-radius: 6px; border-left: 3px solid #059669;">
+      <h5 style="margin: 0 0 6px 0; color: #059669;">✅ Top Input</h5>
+      <p style="margin: 0; font-size: 14px; color: #64748b;">Describe desired actions and scene changes</p>
+    </div>
+    <div style="background: #fff7ed; padding: 12px; border-radius: 6px; border-left: 3px solid #ea580c;">
+      <h5 style="margin: 0 0 6px 0; color: #ea580c;">❌ Bottom Input</h5>
+      <p style="margin: 0; font-size: 14px; color: #64748b;">Content you don't want to generate</p>
+    </div>
+  </div>
+</div>
+
+#### Step 5: Configure Parameters
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0;">Set resolution and frame count in <strong>ImageClip Encode</strong></p>
+</div>
+
+#### Step 6: Execute Workflow
+
+<div style="background: white; padding: 16px; border-radius: 6px; margin: 12px 0; border: 1px solid #e2e8f0;">
+  <p style="margin: 0;">Click execute button to start generation</p>
+</div>
+
+</div>
+
+<h3 id="api-integration">🔌 API Integration</h3>
+<h4 id="authentication-setup">🔑 Authentication Setup</h4>
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 12px 0;">🎫 Get Token</h4>
+  <p style="margin: 0 0 12px 0;">Click the button in the upper right corner, open the bottom panel</p>
+  <div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+    <img src="img_1.png" alt="Get token interface" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+  </div>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 12px 0;">🌐 Get Server Address</h4>
+  <p style="margin: 0 0 12px 0;">For COMFYUI_SERVER acquisition, refer to:</p>
+  <div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+    <img src="img_3.png" alt="Get server address" style="max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0;">
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<h4 id="python-implementation">💻 Python Implementation</h4>
+<details style="border: 1px solid #e2e8f0; border-radius: 8px; margin: 16px 0; background: #f8fafc;">
+<summary style="font-weight: 600; color: #1e40af; cursor: pointer; padding: 16px; background: #eff6ff; margin: 0; border-radius: 8px 8px 0 0;">
+  🐍 Click to Expand Complete Python Code
+</summary>
+
+<div style="padding: 20px; background: white; margin: 0;">
+
+<div style="background: #1e293b; border-radius: 6px; padding: 16px; margin: 16px 0;">
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random, os
+
+# Configuration parameters
+COMFYUI_SERVER, COMFYUI_TOKEN = &quot;Enter your server address&quot;, &quot;Enter your token&quot;
+T5_MODEL = &quot;wan2.1/umt5-xxl-enc-bf16.safetensors&quot;
+VIDEO_MODEL = &quot;Wan2_1-I2V-14B-480P_fp8_e4m3fn.safetensors&quot;
+VAE_MODEL = &quot;wan2.1/Wan2_1_VAE_bf16.safetensors&quot;
+CLIP_MODEL = &quot;wan2.1/open-clip-xlm-roberta-large-vit-huge-14_visual_fp16.safetensors&quot;
+
+# Preset parameters
+IMAGE_PATH = &quot;girl.png&quot;
+PROMPT = &quot;A beautiful anime girl with long flowing hair, graceful movements, smooth animation, cinematic lighting, high quality&quot;
+NEG_PROMPT = &quot;bad quality video, low quality, blurry, distorted, choppy animation, static, bad anatomy&quot;
+
+class ComfyUIClient:
+   def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+      self.base_url, self.token, self.client_id = f&quot;http://{server}&quot;, token, str(uuid.uuid4())
+      self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;, **({&quot;Authorization&quot;: f&quot;Bearer {token}&quot;} if token else {})}
+
+   def upload_image(self, image_path):
+      &quot;&quot;&quot;Upload image to ComfyUI&quot;&quot;&quot;
+      if not os.path.exists(image_path):
+         raise Exception(f&quot;Image file does not exist: {image_path}&quot;)
+
+      try:
+         with open(image_path, 'rb') as f:
+            files = {'image': (os.path.basename(image_path), f, 'image/png')}
+            headers = {}
+            if self.token:
+               headers[&quot;Authorization&quot;] = f&quot;Bearer {self.token}&quot;
+
+            response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files, headers=headers)
+            print(f&quot;Upload response: {response.text}&quot;)
+
+            if response.status_code != 200:
+               raise Exception(f&quot;Upload failed, status code: {response.status_code}&quot;)
+
+            result = response.json()
+            if 'name' not in result:
+               raise Exception(f&quot;No filename in upload response: {result}&quot;)
+
+            return result['name']
+      except Exception as e:
+         raise Exception(f&quot;Image upload failed: {e}&quot;)
+
+   def generate_i2v(self, image_path, prompt, neg_prompt, steps=10, cfg=6, width=512, height=512, frames=81):
+      &quot;&quot;&quot;Image-to-Video - Fixed clip_vision input&quot;&quot;&quot;
+      print(&quot;📤 Uploading image...&quot;)
+      image_name = self.upload_image(image_path)
+      print(f&quot;✅ Image uploaded successfully: {image_name}&quot;)
+
+      workflow = {
+         &quot;42&quot;: {&quot;inputs&quot;: {&quot;image&quot;: image_name, &quot;upload&quot;: &quot;image&quot;}, &quot;class_type&quot;: &quot;LoadImage&quot;},
+         &quot;43&quot;: {&quot;inputs&quot;: {&quot;model_name&quot;: VAE_MODEL, &quot;precision&quot;: &quot;bf16&quot;}, &quot;class_type&quot;: &quot;WanVideoVAELoader&quot;},
+         &quot;44&quot;: {&quot;inputs&quot;: {&quot;model_name&quot;: CLIP_MODEL, &quot;precision&quot;: &quot;fp16&quot;, &quot;load_device&quot;: &quot;offload_device&quot;}, &quot;class_type&quot;: &quot;LoadWanVideoClipTextEncoder&quot;},
+         &quot;45&quot;: {&quot;inputs&quot;: {&quot;model_name&quot;: T5_MODEL, &quot;precision&quot;: &quot;bf16&quot;, &quot;load_device&quot;: &quot;offload_device&quot;, &quot;quantization&quot;: &quot;disabled&quot;}, &quot;class_type&quot;: &quot;LoadWanVideoT5TextEncoder&quot;},
+         &quot;46&quot;: {&quot;inputs&quot;: {&quot;blocks_to_swap&quot;: 10, &quot;offload_img_emb&quot;: False, &quot;offload_txt_emb&quot;: False, &quot;use_non_blocking&quot;: True, &quot;vace_blocks_to_swap&quot;: 0}, &quot;class_type&quot;: &quot;WanVideoBlockSwap&quot;},
+         &quot;47&quot;: {&quot;inputs&quot;: {&quot;backend&quot;: &quot;inductor&quot;, &quot;fullgraph&quot;: False, &quot;mode&quot;: &quot;default&quot;, &quot;dynamic&quot;: False, &quot;dynamo_cache_size_limit&quot;: 64, &quot;compile_transformer_blocks_only&quot;: True, &quot;dynamo_recompile_limit&quot;: 128}, &quot;class_type&quot;: &quot;WanVideoTorchCompileSettings&quot;},
+         &quot;48&quot;: {&quot;inputs&quot;: {&quot;model&quot;: VIDEO_MODEL, &quot;base_precision&quot;: &quot;bf16&quot;, &quot;quantization&quot;: &quot;fp8_e4m3fn&quot;, &quot;load_device&quot;: &quot;offload_device&quot;, &quot;attention_mode&quot;: &quot;sageattn&quot;, &quot;block_swap_args&quot;: [&quot;46&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoModelLoader&quot;},
+         &quot;49&quot;: {&quot;inputs&quot;: {&quot;positive_prompt&quot;: prompt, &quot;negative_prompt&quot;: neg_prompt, &quot;force_offload&quot;: True, &quot;t5&quot;: [&quot;45&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoTextEncode&quot;},
+         &quot;50&quot;: {
+            &quot;inputs&quot;: {
+               &quot;generation_width&quot;: width,
+               &quot;generation_height&quot;: height,
+               &quot;num_frames&quot;: frames,
+               &quot;force_offload&quot;: True,
+               &quot;noise_aug_strength&quot;: 0,
+               &quot;latent_strength&quot;: 1,
+               &quot;clip_embed_strength&quot;: 1,
+               &quot;adjust_resolution&quot;: True,
+               &quot;image&quot;: [&quot;42&quot;, 0],
+               &quot;vae&quot;: [&quot;43&quot;, 0],
+               &quot;clip_vision&quot;: [&quot;44&quot;, 0]
+            },
+            &quot;class_type&quot;: &quot;WanVideoImageClipEncode&quot;
+         },
+         &quot;52&quot;: {&quot;inputs&quot;: {&quot;steps&quot;: steps, &quot;cfg&quot;: cfg, &quot;shift&quot;: 5, &quot;seed&quot;: random.randint(1, 1000000), &quot;force_offload&quot;: True, &quot;scheduler&quot;: &quot;dpm++&quot;, &quot;riflex_freq_index&quot;: 0, &quot;denoise_strength&quot;: 1, &quot;batched_cfg&quot;: False, &quot;rope_function&quot;: &quot;comfy&quot;, &quot;model&quot;: [&quot;48&quot;, 0], &quot;text_embeds&quot;: [&quot;49&quot;, 0], &quot;image_embeds&quot;: [&quot;50&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoSampler&quot;},
+         &quot;53&quot;: {&quot;inputs&quot;: {&quot;enable_vae_tiling&quot;: True, &quot;tile_x&quot;: 272, &quot;tile_y&quot;: 272, &quot;tile_stride_x&quot;: 144, &quot;tile_stride_y&quot;: 128, &quot;vae&quot;: [&quot;43&quot;, 0], &quot;samples&quot;: [&quot;52&quot;, 0]}, &quot;class_type&quot;: &quot;WanVideoDecode&quot;},
+         &quot;54&quot;: {&quot;inputs&quot;: {&quot;frame_rate&quot;: 16, &quot;loop_count&quot;: 0, &quot;filename_prefix&quot;: &quot;WanVideo2_1&quot;, &quot;format&quot;: &quot;video/h264-mp4&quot;, &quot;pix_fmt&quot;: &quot;yuv420p&quot;, &quot;crf&quot;: 19, &quot;save_metadata&quot;: True, &quot;trim_to_audio&quot;: False, &quot;pingpong&quot;: False, &quot;save_output&quot;: True, &quot;images&quot;: [&quot;53&quot;, 0]}, &quot;class_type&quot;: &quot;VHS_VideoCombine&quot;}
+      }
+
+      print(&quot;📤 Submitting workflow...&quot;)
+      response = requests.post(f&quot;{self.base_url}/prompt&quot;, headers=self.headers, json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id})
+      print(f&quot;API Response: {response.text}&quot;)
+      result = response.json()
+      if &quot;error&quot; in result: raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+      if &quot;prompt_id&quot; not in result: raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+      return result[&quot;prompt_id&quot;]
+
+   def get_status(self, task_id):
+      try:
+         queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+         if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])): return &quot;processing&quot;
+         if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])): return &quot;pending&quot;
+         history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+         return &quot;completed&quot; if history_response.status_code == 200 and task_id in history_response.json() else &quot;processing&quot;
+      except: return &quot;processing&quot;
+
+   def download_video(self, task_id, output_path=&quot;i2v_output.mp4&quot;):
+      try:
+         response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+         history = response.json()
+         if task_id in history:
+            for output in history[task_id]['outputs'].values():
+               if 'gifs' in output:
+                  filename = output['gifs'][0]['filename']
+                  video_response = requests.get(f&quot;{self.base_url}/view?filename={filename}&quot;, headers=self.headers)
+                  with open(output_path, &quot;wb&quot;) as f: f.write(video_response.content)
+                  return output_path
+      except Exception as e: print(f&quot;Download error: {e}&quot;)
+      return None
+
+def main():
+   client = ComfyUIClient()
+   try:
+      print(f&quot;🎬 Starting image-to-video task...&quot;)
+      print(f&quot;📷 Input image: {IMAGE_PATH}&quot;)
+      print(f&quot;📝 Prompt: {PROMPT}&quot;)
+
+      if not os.path.exists(IMAGE_PATH):
+         print(f&quot;❌ Image file does not exist: {IMAGE_PATH}&quot;)
+         print(&quot;Please ensure there is a girl.png file in the current directory&quot;)
+         return
+
+      task_id = client.generate_i2v(IMAGE_PATH, PROMPT, NEG_PROMPT, 10, 6, 512, 512, 81)
+      print(f&quot;🆔 Task ID: {task_id}&quot;)
+
+      while True:
+         status = client.get_status(task_id)
+         print(f&quot;📊 Current status: {status}&quot;)
+         if status == &quot;completed&quot;: print(&quot;✅ Video ready!&quot;); break
+         elif status == &quot;failed&quot;: print(&quot;❌ Generation failed!&quot;); exit(1)
+         time.sleep(10)
+
+      output_file = client.download_video(task_id, &quot;i2v_output.mp4&quot;)
+      print(&quot;🎉 Video downloaded successfully!&quot; if output_file else &quot;❌ Failed to download video&quot;)
+      if output_file: print(f&quot;📁 Saved as: {output_file}&quot;)
+
+   except Exception as e: print(f&quot;❌ Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;: main()
+</code></pre>
+
+
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">💡 Code Features</h4>
+  <ul style="margin: 0; color: #059669;">
+    <li>Complete ComfyUI client implementation</li>
+    <li>Support for image upload, workflow submission, status monitoring</li>
+    <li>Automatic video file download</li>
+    <li>Detailed error handling and logging</li>
+  </ul>
+</div>
+
+</div>
+
+</details>
+
+<h4 id="comfyui-api-endpoints">🔗 ComfyUI API Endpoints</h4>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="overflow-x: auto;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden;">
+<thead>
+<tr style="background: #eff6ff;">
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Endpoint</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Method</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Function</th>
+<th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/queue</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Get queue status</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">View current task queue</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/prompt</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Submit workflow</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Execute generation task</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/history/{prompt_id}</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Get execution history</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">View task execution results</td>
+</tr>
+<tr>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><code>/upload/image</code></td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Upload image</td>
+<td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Upload input image file</td>
+</tr>
+<tr>
+<td style="padding: 12px;"><code>/view</code></td>
+<td style="padding: 12px;">GET</td>
+<td style="padding: 12px;">Download output file</td>
+<td style="padding: 12px;">Get generated result files</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<h2 id="parameter-configuration">⚙️ Parameter Configuration</h2>
+<h3 id="generation-parameters">🎛️ Generation Parameters</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 20px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <h4 style="margin: 0 0 16px 0; color: #1e40af;">🔢 Core Parameters</h4>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 8px;">
+    <strong>Steps</strong><br>
+    <small style="color: #64748b;">Inference steps (recommended 20-30)</small>
+  </div>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 8px;">
+    <strong>CFG</strong><br>
+    <small style="color: #64748b;">CFG guidance strength (recommended 6-8)</small>
+  </div>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px;">
+    <strong>Shift</strong><br>
+    <small style="color: #64748b;">Noise schedule offset (recommended 5)</small>
+  </div>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+  <h4 style="margin: 0 0 16px 0; color: #1e40af;">🎲 Randomness Control</h4>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 8px;">
+    <strong>Seed</strong><br>
+    <small style="color: #64748b;">Random seed (controls randomness)</small>
+  </div>
+  <div style="background: #eff6ff; padding: 12px; border-radius: 6px;">
+    <strong>Denoise Strength</strong><br>
+    <small style="color: #64748b;">Denoising strength (0.6-0.9)</small>
+  </div>
+</div>
+
+</div>
+
+<h3 id="image-requirements">🖼️ Image Requirements</h3>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+> **💡 Pro Tip:** High-quality input images are the key to excellent video generation!
+
+**📐 Resolution**: Recommended 512×512 or higher  
+**📄 Format**: JPEG, PNG, WebP, etc.  
+**🎯 Content**: Clear main subject, avoid overly complex backgrounds  
+**✨ Quality**: High-quality images yield better video effects
+
+</div>
+
+<h2 id="prompt-engineering">💡 Prompt Engineering</h2>
+<h3 id="positive-prompt-examples">✅ Positive Prompt Examples</h3>
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">🚶 Character Actions</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The person in the image is walking slowly through a garden"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">🐱 Animal Behavior</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The cat in the photo is playing with a ball of yarn"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">🚗 Vehicle Movement</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The car in the image is driving down a winding mountain road"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #059669; margin: 0 0 8px 0;">💃 Artistic Performance</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"The dancer in the picture is performing elegant ballet movements"</p>
+</div>
+
+</div>
+
+</div>
+
+<h3 id="negative-prompt-examples">❌ Negative Prompt Examples</h3>
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0;">🚫 Static Issues</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"static, motionless, frozen, distorted, blurry"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0;">⚠️ Motion Problems</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"unnatural movement, jerky motion, inconsistent"</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0;">📉 Quality Issues</h4>
+  <p style="margin: 0; font-style: italic; color: #64748b;">"low quality, artifacts, noise, compression"</p>
+</div>
+
+</div>
+
+</div>
+
+<h2 id="best-practices">🏆 Best Practices</h2>
+<h3 id="input-image-selection">📸 Input Image Selection</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🔍</span> Clarity Priority
+  </h4>
+  <p style="margin: 0; color: #64748b;">Choose high-definition images, avoid blurry or noisy pictures</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎯</span> Clear Subject
+  </h4>
+  <p style="margin: 0; color: #64748b;">Ensure main objects are clearly visible and occupy appropriate proportion</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #ea580c;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🖼️</span> Reasonable Composition
+  </h4>
+  <p style="margin: 0; color: #64748b;">Avoid overly complex backgrounds, keep composition clean</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; border-left: 4px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>💡</span> Good Lighting
+  </h4>
+  <p style="margin: 0; color: #64748b;">Images with even lighting work better, avoid too dark or overexposed</p>
+</div>
+
+</div>
+
+<h3 id="prompt-writing-guidelines">✍️ Prompt Writing Guidelines</h3>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 12px 0;">📝 Specific Description</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Describe desired actions and scenes in detail, the more specific the better</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 12px 0;">🔄 Maintain Consistency</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Ensure descriptions match image content, avoid contradictions</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #ea580c;">
+  <h4 style="color: #ea580c; margin: 0 0 12px 0;">⚖️ Reasonable Actions</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Describe actions that follow physical laws, avoid impossible movements</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 12px 0;">🎨 Unified Style</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.6;">Maintain descriptions consistent with original image style</p>
+</div>
+
+</div>
+
+</div>
+
+<h3 id="parameter-tuning-guide">🔧 Parameter Tuning Guide</h3>
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="margin: 0 0 12px 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+    <span>🎨</span> Denoising Strength
+  </h4>
+  <div style="margin-bottom: 8px; color: #64748b;">
+    <strong>0.6-0.7:</strong> Preserve more original image features
+  </div>
+  <div style="color: #64748b;">
+    <strong>0.8-0.9:</strong> Allow more changes and dynamic effects
+  </div>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="margin: 0 0 12px 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+    <span>🎯</span> CFG Value
+  </h4>
+  <div style="margin-bottom: 8px; color: #64748b;">
+    <strong>6-7:</strong> Balanced guidance strength
+  </div>
+  <div style="color: #64748b;">
+    <strong>8-10:</strong> Stronger text guidance
+  </div>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="margin: 0 0 12px 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+    <span>⏱️</span> Steps
+  </h4>
+  <div style="margin-bottom: 8px; color: #64748b;">
+    <strong>20-25:</strong> Fast generation
+  </div>
+  <div style="color: #64748b;">
+    <strong>25-30:</strong> Higher quality
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<h2 id="important-considerations">⚠️ Important Considerations</h2>
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; margin: 16px 0; border-radius: 4px;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>💾</span> Memory Management
+  </h4>
+  <p style="margin: 0; color: #64748b;">Image-to-video requires more VRAM than text-to-video</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🔧</span> Image Preprocessing
+  </h4>
+  <p style="margin: 0; color: #64748b;">Ensure input image size is appropriate</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎯</span> Consistency Preservation
+  </h4>
+  <p style="margin: 0; color: #64748b;">Denoising strength should not be too high</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎭</span> Action Reasonableness
+  </h4>
+  <p style="margin: 0; color: #64748b;">Described actions should match object characteristics</p>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+  <h4 style="color: #ea580c; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+    <span>⚡</span> Batch Processing
+  </h4>
+  <p style="margin: 0; color: #64748b;">Recommend processing one task at a time</p>
+</div>
+
+</div>
+
+</div>
+
+<h2 id="application-scenarios">🎯 Application Scenarios</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">👤</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Character Animation</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Bring static character photos to life with dynamic movements</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🛍️</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Product Showcase</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Add dynamic effects to product images for enhanced marketing</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🎨</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Artistic Creation</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Convert paintings into dynamic videos for enhanced artistic expression</p>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+  <div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">📚</div>
+  <h4 style="margin: 0 0 12px 0; color: #1e40af;">Educational Demo</h4>
+  <p style="margin: 0; color: #64748b; line-height: 1.5;">Make teaching images have dynamic effects for improved learning experience</p>
+</div>
+
+</div>
+
+<h2 id="resources-documentation">📚 Resources &amp; Documentation</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #2563eb;">
+  <h4 style="color: #1e40af; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+    <span>📖</span> ComfyUI Official Documentation
+  </h4>
+  <p style="margin: 0 0 12px 0; color: #64748b;">Detailed ComfyUI usage instructions and node descriptions</p>
+  <a href="https://comfyui-wiki.com/zh/interface/node-options" style="color: #2563eb; text-decoration: none; font-weight: 500;">Visit Documentation →</a>
+</div>
+
+<div style="background: white; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 3px solid #059669;">
+  <h4 style="color: #059669; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🎥</span> WanVideo Plugin Documentation
+  </h4>
+  <p style="margin: 0 0 12px 0; color: #64748b;">Detailed usage instructions for WanVideo plugin</p>
+  <a href="https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/main/readme.md" style="color: #059669; text-decoration: none; font-weight: 500;">View GitHub →</a>
+</div>
+
+</div>
+
+</div>
+
+<hr />
+<div style="text-align: center; padding: 32px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; color: white; margin: 24px 0;">
+  <div style="font-size: 3em; margin-bottom: 16px;">🎉</div>
+  <h2 style="font-size: 2em; margin: 0 0 16px 0; font-weight: 600;">Start Your Creative Journey!</h2>
+  <p style="font-size: 1.1em; margin: 0 0 20px 0; opacity: 0.9; line-height: 1.5;">
+    <strong>Transform your static images into captivating videos with Wan2.1-I2V-14B!</strong>
+  </p>
+  <p style="font-style: italic; opacity: 0.8; margin: 0;">Unleash the power of AI-driven video generation</p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.340167+00:00
+  -->
+</body>
+</html>

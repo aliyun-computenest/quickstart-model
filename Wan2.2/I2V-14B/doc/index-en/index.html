@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#model-overview">📋 Model Overview</a></li>
+              
+          
+              <li><a href="#core-technical-breakthroughs">🚀 Core Technical Breakthroughs</a></li>
+              
+          
+              <li><a href="#technical-specifications-comparison">🔧 Technical Specifications Comparison</a></li>
+              
+          
+              <li><a href="#system-requirements">💻 System Requirements</a></li>
+              
+          
+              <li><a href="#usage-guide">🎯 Usage Guide</a></li>
+              
+          
+              <li><a href="#comfyui-integration-usage-guide">🌐 ComfyUI Integration Usage Guide</a></li>
+              
+                  <li><a href="#comfyui-web-ui-tutorial">📍 ComfyUI Web UI Tutorial</a></li>
+                  
+              
+                  <li><a href="#comfyui-api-calling-method">🔌 ComfyUI API Calling Method</a></li>
+                  
+                      <li class="li-h3"><a href="#get-authentication-information">🔑 Get Authentication Information</a></li>
+                  
+                      <li class="li-h3"><a href="#python-api-call-example">💻 Python API Call Example</a></li>
+                  
+                      <li class="li-h3"><a href="#comfyui-api-endpoint-description">🔗 ComfyUI API Endpoint Description</a></li>
+                  
+              
+                  <li><a href="#comfyui-node-detailed-description">⚙️ ComfyUI Node Detailed Description</a></li>
+                  
+              
+                  <li><a href="#performance-benchmarks">📊 Performance Benchmarks</a></li>
+                  
+              
+                  <li><a href="#prompt-writing-guide">💡 Prompt Writing Guide</a></li>
+                  
+              
+                  <li><a href="#integration-ecosystem">🔗 Integration Ecosystem</a></li>
+                  
+              
+                  <li><a href="#application-scenarios">🎯 Application Scenarios</a></li>
+                  
+              
+                  <li><a href="#license-and-citation">📄 License and Citation</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 24px; border-radius: 8px; color: white; text-align: center; margin-bottom: 24px;">
+  <h2 style="margin: 0; color: white;">🎬 Tongyi Wanxiang 2.2 - Image-to-Video - A14B</h2>
+  <p style="margin: 8px 0 0 0; opacity: 0.9;">Open and Advanced Large-Scale Video Generation Model - Image-to-Video Professional Edition</p>
+  <div style="margin-top: 20px;">
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🧠 27B Parameters MoE</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">🎯 480P & 720P</span>
+    <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; margin: 0 8px;">⚡ Cinematic Aesthetics</span>
+  </div>
+</div>
+
+<h2 id="model-overview">📋 Model Overview</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+**Tongyi Wanxiang 2.2 Image-to-Video A14B** is a revolutionary image-to-video generation model based on Mixture of Experts (MoE) architecture. Compared to the previous Wan2.1, this model achieves comprehensive upgrades in data scale, architectural design, and generation quality, supporting dual-resolution output at 480P and 720P with cinematic-grade aesthetic quality and more stable video synthesis capabilities.
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+  <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+    <strong>🏷️ Model Identifier</strong><br>
+    <div style="margin-top: 8px;">
+      <span style="background: #2563eb; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; margin-right: 8px;">Wan-AI/Wan2.2-I2V-A14B</span>
+    </div>
+  </div>
+
+  <div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+    <strong>📊 Architecture Scale</strong><br>
+    <div style="margin-top: 8px;">
+      <span style="background: #059669; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; margin-right: 8px;">27B Total Parameters</span>
+      <span style="background: #16a34a; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px;">14B Activated</span>
+    </div>
+  </div>
+
+  <div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
+    <strong>🎯 Core Functions</strong><br>
+    <div style="margin-top: 8px;">
+      <span style="background: #d97706; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; margin-right: 8px;">Image-to-Video</span>
+      <span style="background: #ea580c; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px;">Dual Resolution</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<h2 id="core-technical-breakthroughs">🚀 Core Technical Breakthroughs</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🧠 MoE Mixture of Experts Architecture</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>Dual Expert Design</strong>: High-noise expert + Low-noise expert</li>
+  <li><strong>Intelligent Switching</strong>: Automatic switching based on Signal-to-Noise Ratio (SNR)</li>
+  <li><strong>Efficient Inference</strong>: 27B parameters, 14B activated, same cost</li>
+  <li><strong>Optimized Denoising</strong>: Specifically optimized for diffusion models</li>
+</ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🎬 Cinematic-Grade Aesthetic Quality</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>Fine-grained Labels</strong>: Lighting, composition, contrast, tone</li>
+  <li><strong>Controllable Generation</strong>: Precise cinematic style control</li>
+  <li><strong>Aesthetic Preferences</strong>: Customizable visual styles</li>
+  <li><strong>Professional Quality</strong>: Commercial-grade video output</li>
+</ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">📈 Large-Scale Data Training</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>Data Expansion</strong>: Images +65.6%, Videos +83.2%</li>
+  <li><strong>Multi-dimensional Enhancement</strong>: Motion, semantics, aesthetics all improved</li>
+  <li><strong>Top Performance</strong>: Leading among open-source and closed-source models</li>
+  <li><strong>Generalization Ability</strong>: Significantly improved adaptability</li>
+</ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">⚡ Efficient Deployment Optimization</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>Consumer GPUs</strong>: Supports RTX 4090 and similar cards</li>
+  <li><strong>Multi-resolution</strong>: 480P & 720P dual support</li>
+  <li><strong>Stable Synthesis</strong>: Reduced unrealistic camera movements</li>
+  <li><strong>Style Diversity</strong>: Enhanced scene adaptability</li>
+</ul>
+</div>
+
+</div>
+
+<h2 id="technical-specifications-comparison">🔧 Technical Specifications Comparison</h2>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Specification</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Wan2.1-I2V-14B</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Wan2.2-I2V-A14B</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Improvement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Architecture Type</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Traditional Diffusion Model</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">MoE Mixture of Experts</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Architecture Upgrade</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Parameter Scale</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">14B</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">27B (14B activated)</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">+93%</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Supported Resolution</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">480P</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">480P & 720P</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Dual Resolution</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Training Data</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Base Dataset</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Images +65.6%, Videos +83.2%</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Massive Expansion</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Aesthetic Quality</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Standard Quality</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Cinematic Aesthetics</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Quality Leap</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Motion Stability</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Basic Stability</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Significantly Enhanced</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Stability Improvement</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;">Integration Ecosystem</td>
+      <td style="padding: 12px;">ComfyUI</td>
+      <td style="padding: 12px;">ComfyUI + Diffusers + ModelScope</td>
+      <td style="padding: 12px;"><span style="background: #dcfce7; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Ecosystem Enhancement</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="system-requirements">💻 System Requirements</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 🖥️ Recommended Hardware Configuration
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Component</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Recommended Specs</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>CPU</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">16 vCPU</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">High-performance multi-core processor</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>Memory</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">60 GiB</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Large capacity system memory</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>GPU</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">1 × NVIDIA A10</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Professional GPU with 80GB+ VRAM</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<h2 id="usage-guide">🎯 Usage Guide</h2>
+<h1 id="comfyui-integration-usage-guide">🌐 ComfyUI Integration Usage Guide</h1>
+<h2 id="comfyui-web-ui-tutorial">📍 ComfyUI Web UI Tutorial</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 🚀 Step 1: Access Interface
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🔗 Interface Access</strong><br>
+  Click the access link at the service instance to enter the ComfyUI visual interface
+</div>
+
+![img_3.png](img_3.png)
+### 🔧 Step 2: Select Workflow
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<p style="margin: 0; color: #065f46;">Select the <code>official workflow in the top left</code> and open it</p>
+
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+
+![img_4.png](img_4.png)
+
+![img_3.png](img_3.png)
+</div>
+
+### 📤 Step 3: Upload Image
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">
+
+**In the LoadImage node:**
+- Select sample images for testing
+- Or upload custom images from your computer
+- Supports JPEG, PNG, WebP and other formats
+</div>
+
+### ✍️ Step 4: Set Text Description
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">✅ Positive Prompt</h4>
+<p style="margin: 0 0 8px 0; color: #065f46;">Fill in the <strong>TextEncode (Positive)</strong> node:</p>
+<div style="background: #f8fafc; padding: 8px; border-radius: 4px; font-family: monospace; font-size: 12px;">
+"Cinematic lighting, graceful movements, smooth animation, high quality"
+</div>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">❌ Negative Prompt</h4>
+<p style="margin: 0 0 8px 0; color: #9a3412;">Fill in the <strong>TextEncode (Negative)</strong> node:</p>
+<div style="background: #f8fafc; padding: 8px; border-radius: 4px; font-family: monospace; font-size: 12px;">
+"bad quality, blurry, distorted, static"
+</div>
+</div>
+
+</div>
+
+### ⚙️ Step 5: Configure Parameters
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">
+
+**In the WanVideoImageClipEncode node settings:**
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Parameter Name</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Recommended Value</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>generation_width</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">1280 (720P) / 854 (480P)</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Video width</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>generation_height</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">720 (720P) / 480 (480P)</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Video height</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>num_frames</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">81</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Number of video frames</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>noise_aug_strength</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">0</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Noise augmentation strength</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-weight: 500;"><strong>adjust_resolution</strong></td>
+      <td style="padding: 12px;">True</td>
+      <td style="padding: 12px;">Automatically adjust resolution</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+### 🎬 Step 6: Execute Workflow
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🚀 Start Generation</strong><br>
+  Click the <strong>"Queue Prompt"</strong> button in the right panel to start video generation<br>
+  Real-time status can be viewed in the progress bar during generation
+</div>
+
+</div>
+
+<h2 id="comfyui-api-calling-method">🔌 ComfyUI API Calling Method</h2>
+<h3 id="get-authentication-information">🔑 Get Authentication Information</h3>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">🔐 Get Token</h4>
+<p style="margin: 0 0 12px 0;">Click the settings button in the top right, open the bottom panel to get API Token</p>
+<div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+  <div style="background: #fed7aa; color: #ea580c; padding: 8px 16px; border-radius: 6px; display: inline-block;">
+    🔑 API Token Interface
+
+![img_1.png](img_1.png)
+  </div>
+</div>
+</div>
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+<h4 style="color: #2563eb; margin: 0 0 8px 0;">🌐 Get Server Address</h4>
+<p style="margin: 0 0 12px 0;">Get COMFYUI_SERVER address from service instance information</p>
+<div style="text-align: center; padding: 12px; background: #f8fafc; border-radius: 6px;">
+  <div style="background: #dbeafe; color: #2563eb; padding: 8px 16px; border-radius: 6px; display: inline-block;">
+    🌐 Server Address Configuration
+
+![img_2.png](img_2.png)
+  </div>
+</div>
+</div>
+
+</div>
+
+<h3 id="python-api-call-example">💻 Python API Call Example</h3>
+<details style="border: 2px solid #2563eb; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(145deg, #f8fafc, #eff6ff); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);">
+<summary style="font-weight: bold; font-size: 18px; color: white; cursor: pointer; padding: 16px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; margin: -20px -20px 20px -20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);">
+🐍 Click to expand complete Python API call code
+</summary>
+
+
+<pre><code class="language-python">import requests, json, uuid, time, random, os
+
+# 🔧 配置参数 - Wan2.2 14B 图生视频专用
+COMFYUI_SERVER = &quot;127.0.0.1:8188&quot;  # 本地服务器
+COMFYUI_TOKEN = &quot;&quot;  # 本地通常不需要token
+UNET_HIGH_NOISE_MODEL = &quot;wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors&quot;
+UNET_LOW_NOISE_MODEL = &quot;wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors&quot;
+CLIP_MODEL = &quot;umt5_xxl_fp8_e4m3fn_scaled.safetensors&quot;
+VAE_MODEL = &quot;wan_2.1_vae.safetensors&quot;
+
+# 🎯 预设参数
+IMAGE_PATH = &quot;input_image.jpg&quot;
+PROMPT = &quot;The white dragon warrior stands still, eyes full of determination and strength. The camera slowly moves closer or circles around the warrior, highlighting the powerful presence and heroic spirit of the character.&quot;
+NEG_PROMPT = &quot;色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走&quot;
+
+class ComfyUIWan22_14B_I2VClient:
+    def __init__(self, server=COMFYUI_SERVER, token=COMFYUI_TOKEN):
+        self.base_url = f&quot;http://{server}&quot;
+        self.token = token
+        self.client_id = str(uuid.uuid4())
+        self.headers = {&quot;Content-Type&quot;: &quot;application/json&quot;}
+        if token:
+            self.headers[&quot;Authorization&quot;] = f&quot;Bearer {token}&quot;
+
+    def upload_image(self, image_path):
+        &quot;&quot;&quot;📤 上传图片到ComfyUI&quot;&quot;&quot;
+        if not os.path.exists(image_path):
+            raise Exception(f&quot;图片文件不存在: {image_path}&quot;)
+
+        try:
+            with open(image_path, 'rb') as f:
+                files = {'image': (os.path.basename(image_path), f, 'image/png')}
+                headers = {}
+                if self.token:
+                    headers[&quot;Authorization&quot;] = f&quot;Bearer {self.token}&quot;
+
+                response = requests.post(f&quot;{self.base_url}/upload/image&quot;, files=files, headers=headers)
+                print(f&quot;Upload response: {response.text}&quot;)
+
+                if response.status_code != 200:
+                    raise Exception(f&quot;上传失败，状态码: {response.status_code}&quot;)
+
+                result = response.json()
+                if 'name' not in result:
+                    raise Exception(f&quot;上传响应中没有文件名: {result}&quot;)
+
+                return result['name']
+        except Exception as e:
+            raise Exception(f&quot;图片上传失败: {e}&quot;)
+
+    def generate_wan22_14b_i2v(self, image_path, prompt, neg_prompt, steps=20, cfg=3.5, width=1280, height=704, frames=81, fps=16):
+        &quot;&quot;&quot;🎬 Wan2.2 14B 图生视频生成 - 双阶段采样&quot;&quot;&quot;
+        print(&quot;📤 正在上传图片...&quot;)
+        image_name = self.upload_image(image_path)
+        print(f&quot;✅ 图片上传成功: {image_name}&quot;)
+
+        print(&quot;🎬 开始 Wan2.2 14B 图生视频任务...&quot;)
+
+        # 完全基于你提供的图生视频 JSON 工作流
+        workflow = {
+            &quot;6&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;text&quot;: prompt,
+                    &quot;clip&quot;: [&quot;38&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;CLIPTextEncode&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;CLIP Text Encode (Positive Prompt)&quot;}
+            },
+            &quot;7&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;text&quot;: neg_prompt,
+                    &quot;clip&quot;: [&quot;38&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;CLIPTextEncode&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;CLIP Text Encode (Negative Prompt)&quot;}
+            },
+            &quot;8&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;samples&quot;: [&quot;58&quot;, 0],
+                    &quot;vae&quot;: [&quot;39&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;VAEDecode&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;VAE解码&quot;}
+            },
+            &quot;37&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;unet_name&quot;: UNET_HIGH_NOISE_MODEL,
+                    &quot;weight_dtype&quot;: &quot;default&quot;
+                },
+                &quot;class_type&quot;: &quot;UNETLoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;UNet加载器&quot;}
+            },
+            &quot;38&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;clip_name&quot;: CLIP_MODEL,
+                    &quot;type&quot;: &quot;wan&quot;,
+                    &quot;device&quot;: &quot;default&quot;
+                },
+                &quot;class_type&quot;: &quot;CLIPLoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;加载CLIP&quot;}
+            },
+            &quot;39&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;vae_name&quot;: VAE_MODEL
+                },
+                &quot;class_type&quot;: &quot;VAELoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;加载VAE&quot;}
+            },
+            &quot;54&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;shift&quot;: 8.000000000000002,
+                    &quot;model&quot;: [&quot;37&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;ModelSamplingSD3&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;采样算法（SD3）&quot;}
+            },
+            &quot;55&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;shift&quot;: 8,
+                    &quot;model&quot;: [&quot;56&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;ModelSamplingSD3&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;采样算法（SD3）&quot;}
+            },
+            &quot;56&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;unet_name&quot;: UNET_LOW_NOISE_MODEL,
+                    &quot;weight_dtype&quot;: &quot;default&quot;
+                },
+                &quot;class_type&quot;: &quot;UNETLoader&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;UNet加载器&quot;}
+            },
+            &quot;57&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;add_noise&quot;: &quot;enable&quot;,
+                    &quot;noise_seed&quot;: random.randint(1, 1000000000000000),
+                    &quot;steps&quot;: steps,
+                    &quot;cfg&quot;: cfg,
+                    &quot;sampler_name&quot;: &quot;euler&quot;,
+                    &quot;scheduler&quot;: &quot;simple&quot;,
+                    &quot;start_at_step&quot;: 0,
+                    &quot;end_at_step&quot;: 10,
+                    &quot;return_with_leftover_noise&quot;: &quot;enable&quot;,
+                    &quot;model&quot;: [&quot;54&quot;, 0],
+                    &quot;positive&quot;: [&quot;63&quot;, 0],
+                    &quot;negative&quot;: [&quot;63&quot;, 1],
+                    &quot;latent_image&quot;: [&quot;63&quot;, 2]
+                },
+                &quot;class_type&quot;: &quot;KSamplerAdvanced&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;K采样器（高级）&quot;}
+            },
+            &quot;58&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;add_noise&quot;: &quot;disable&quot;,
+                    &quot;noise_seed&quot;: 0,
+                    &quot;steps&quot;: steps,
+                    &quot;cfg&quot;: cfg,
+                    &quot;sampler_name&quot;: &quot;euler&quot;,
+                    &quot;scheduler&quot;: &quot;simple&quot;,
+                    &quot;start_at_step&quot;: 10,
+                    &quot;end_at_step&quot;: 10000,
+                    &quot;return_with_leftover_noise&quot;: &quot;disable&quot;,
+                    &quot;model&quot;: [&quot;55&quot;, 0],
+                    &quot;positive&quot;: [&quot;63&quot;, 0],
+                    &quot;negative&quot;: [&quot;63&quot;, 1],
+                    &quot;latent_image&quot;: [&quot;57&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;KSamplerAdvanced&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;K采样器（高级）&quot;}
+            },
+            &quot;60&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;fps&quot;: fps,
+                    &quot;images&quot;: [&quot;8&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;CreateVideo&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;创建视频&quot;}
+            },
+            &quot;61&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;filename_prefix&quot;: &quot;video/ComfyUI_I2V_14B&quot;,
+                    &quot;format&quot;: &quot;auto&quot;,
+                    &quot;codec&quot;: &quot;auto&quot;,
+                    &quot;video&quot;: [&quot;60&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;SaveVideo&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;保存视频&quot;}
+            },
+            &quot;62&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;image&quot;: image_name
+                },
+                &quot;class_type&quot;: &quot;LoadImage&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;加载图像&quot;}
+            },
+            &quot;63&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;width&quot;: width,
+                    &quot;height&quot;: height,
+                    &quot;length&quot;: frames,
+                    &quot;batch_size&quot;: 1,
+                    &quot;positive&quot;: [&quot;6&quot;, 0],
+                    &quot;negative&quot;: [&quot;7&quot;, 0],
+                    &quot;vae&quot;: [&quot;39&quot;, 0],
+                    &quot;start_image&quot;: [&quot;62&quot;, 0]
+                },
+                &quot;class_type&quot;: &quot;WanImageToVideo&quot;,
+                &quot;_meta&quot;: {&quot;title&quot;: &quot;Wan图像到视频&quot;}
+            }
+        }
+
+        print(&quot;📤 提交 Wan2.2 14B 图生视频双阶段采样工作流...&quot;)
+        response = requests.post(f&quot;{self.base_url}/prompt&quot;, headers=self.headers, json={&quot;prompt&quot;: workflow, &quot;client_id&quot;: self.client_id})
+        print(f&quot;API Response: {response.text}&quot;)
+
+        if response.status_code != 200:
+            raise Exception(f&quot;API请求失败，状态码: {response.status_code}&quot;)
+
+        result = response.json()
+        if &quot;error&quot; in result:
+            raise Exception(f&quot;Workflow error: {result['error']}&quot;)
+        if &quot;prompt_id&quot; not in result:
+            raise Exception(f&quot;No prompt_id in response: {result}&quot;)
+        return result[&quot;prompt_id&quot;]
+
+    def get_status(self, task_id):
+        &quot;&quot;&quot;📊 获取任务状态&quot;&quot;&quot;
+        try:
+            queue_data = requests.get(f&quot;{self.base_url}/queue&quot;, headers=self.headers).json()
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_running&quot;, [])):
+                return &quot;processing&quot;
+            if any(item[1] == task_id for item in queue_data.get(&quot;queue_pending&quot;, [])):
+                return &quot;pending&quot;
+            history_response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            return &quot;completed&quot; if history_response.status_code == 200 and task_id in history_response.json() else &quot;processing&quot;
+        except:
+            return &quot;processing&quot;
+
+    def download_video(self, task_id, output_path=&quot;wan22_14b_i2v_output.mp4&quot;):
+        &quot;&quot;&quot;📥 下载生成的视频&quot;&quot;&quot;
+        try:
+            response = requests.get(f&quot;{self.base_url}/history/{task_id}&quot;, headers=self.headers)
+            history = response.json()
+            if task_id in history:
+                for output in history[task_id]['outputs'].values():
+                    # 查找视频文件
+                    if 'videos' in output:
+                        filename = output['videos'][0]['filename']
+                        video_response = requests.get(f&quot;{self.base_url}/view?filename={filename}&quot;, headers=self.headers)
+                        with open(output_path, &quot;wb&quot;) as f:
+                            f.write(video_response.content)
+                        return output_path
+                    # 兼容其他可能的输出格式
+                    elif 'gifs' in output:
+                        filename = output['gifs'][0]['filename']
+                        video_response = requests.get(f&quot;{self.base_url}/view?filename={filename}&quot;, headers=self.headers)
+                        with open(output_path, &quot;wb&quot;) as f:
+                            f.write(video_response.content)
+                        return output_path
+        except Exception as e:
+            print(f&quot;Download error: {e}&quot;)
+        return None
+
+def main():
+    &quot;&quot;&quot;🚀 主函数 - 执行 Wan2.2 14B 图生视频任务&quot;&quot;&quot;
+    client = ComfyUIWan22_14B_I2VClient()
+    try:
+        print(f&quot;🎬 开始 Wan2.2 14B 图生视频任务...&quot;)
+        print(f&quot;📷 输入图片: {IMAGE_PATH}&quot;)
+        print(f&quot;📝 正向提示词: {PROMPT}&quot;)
+        print(f&quot;🚫 负向提示词: {NEG_PROMPT}&quot;)
+        print(f&quot;🔧 使用双阶段采样：高噪声I2V模型 + 低噪声I2V模型&quot;)
+
+        if not os.path.exists(IMAGE_PATH):
+            print(f&quot;❌ 图片文件不存在: {IMAGE_PATH}&quot;)
+            print(&quot;请确保当前目录下有输入图片文件&quot;)
+            return
+
+        # 14B 图生视频生成
+        task_id = client.generate_wan22_14b_i2v(IMAGE_PATH, PROMPT, NEG_PROMPT, 20, 3.5, 1280, 704, 81, 16)
+        print(f&quot;🆔 Task ID: {task_id}&quot;)
+
+        while True:
+            status = client.get_status(task_id)
+            print(f&quot;📊 Current status: {status}&quot;)
+            if status == &quot;completed&quot;:
+                print(&quot;✅ Wan2.2 14B I2V Video ready!&quot;);
+                break
+            elif status == &quot;failed&quot;:
+                print(&quot;❌ Generation failed!&quot;);
+                exit(1)
+            time.sleep(15)  # 14B模型生成时间更长，增加轮询间隔
+
+        output_file = client.download_video(task_id, &quot;wan22_14b_i2v_output.mp4&quot;)
+        print(&quot;🎉 Video downloaded successfully!&quot; if output_file else &quot;❌ Failed to download video&quot;)
+        if output_file:
+            print(f&quot;📁 Saved as: {output_file}&quot;)
+
+    except Exception as e:
+        print(f&quot;❌ Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+</code></pre>
+
+
+</details>
+
+<h3 id="comfyui-api-endpoint-description">🔗 ComfyUI API Endpoint Description</h3>
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Endpoint</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Method</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Function</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e40af; font-weight: 600;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/queue</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Get queue status</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">View current task queue and running status</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/prompt</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Submit workflow</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Execute Wan2.2 Image-to-Video task</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/history/{prompt_id}</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">GET</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Get execution history</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">View task execution results and outputs</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9; font-family: monospace; background: #f8fafc;">/upload/image</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">POST</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Upload image</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Upload input image file</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; font-family: monospace; background: #f8fafc;">/view</td>
+      <td style="padding: 12px;">GET</td>
+      <td style="padding: 12px;">Download output file</td>
+      <td style="padding: 12px;">Get generated result files</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="comfyui-node-detailed-description">⚙️ ComfyUI Node Detailed Description</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">📤 Input Nodes</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>LoadImage</strong>: Load input image</li>
+  <li><strong>WanVideoTextEncode</strong>: Text encoder</li>
+  <li><strong>WanVideoImageClipEncode</strong>: Image encoder</li>
+</ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">🧠 Model Nodes</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>WanVideoModelLoader</strong>: Wan2.2 model loader</li>
+  <li><strong>WanVideoVAELoader</strong>: VAE model loader</li>
+  <li><strong>LoadWanVideoT5TextEncoder</strong>: T5 text encoder</li>
+</ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">⚡ Processing Nodes</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>WanVideoSampler</strong>: Video sampler</li>
+  <li><strong>WanVideoDecode</strong>: Video decoder</li>
+  <li><strong>WanVideoBlockSwap</strong>: Memory optimization</li>
+</ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+<h3 style="margin-top: 0; color: #1e40af;">📤 Output Nodes</h3>
+<ul style="margin: 0; padding-left: 20px;">
+  <li><strong>VHS_VideoCombine</strong>: Video synthesis output</li>
+  <li><strong>PreviewImage</strong>: Image preview</li>
+  <li><strong>SaveImage</strong>: Image save</li>
+</ul>
+</div>
+
+</div>
+
+<hr />
+<h2 id="performance-benchmarks">📊 Performance Benchmarks</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### ⚡ Computational Efficiency Comparison
+
+<div style="overflow-x: auto; margin: 16px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <thead style="background: #f8fafc;">
+    <tr>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">GPU Model</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Single GPU</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">4×GPU</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">8×GPU</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0;">Optimization Features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>A100 80GB</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Recommended Config</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Efficient Parallel</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Optimal Performance</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">FSDP + Ulysses</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>H100 80GB</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Best Single Card</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Ultra-fast Processing</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Top Performance</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">FlashAttention3</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;"><strong>RTX 4090</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Consumer Choice</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">-</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">-</td>
+      <td style="padding: 12px; border-bottom: 1px solid #f1f5f9;">Model Offloading</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>🎯 Performance Advantages</strong><br>
+  • MoE Architecture: 27B parameters, 14B activated, same inference cost<br>
+  • Built-in FSDP and Ulysses distributed implementation<br>
+  • Automatic model parameter type conversion optimization<br>
+  • Average performance data after warm-up and multiple sampling
+</div>
+
+</div>
+
+<h2 id="prompt-writing-guide">💡 Prompt Writing Guide</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;">
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+<h4 style="color: #059669; margin: 0 0 8px 0;">✅ Positive Prompt Examples</h4>
+<div style="background: #f8fafc; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<p style="margin: 0; font-style: italic; color: #065f46; font-size: 14px;">"Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard. The fluffy-furred feline gazes directly at the camera with a relaxed expression."</p>
+</div>
+<div style="background: #f8fafc; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<p style="margin: 0; font-style: italic; color: #065f46; font-size: 14px;">"Cinematic lighting, graceful movements, smooth animation, high quality, professional cinematography"</p>
+</div>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px;">
+<h4 style="color: #ea580c; margin: 0 0 8px 0;">❌ Negative Prompt Suggestions</h4>
+<div style="background: #f8fafc; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<p style="margin: 0; font-style: italic; color: #9a3412; font-size: 14px;">"bad quality video, low quality, blurry, distorted, choppy animation, static, bad anatomy"</p>
+</div>
+<div style="background: #f8fafc; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<p style="margin: 0; font-style: italic; color: #9a3412; font-size: 14px;">"unnatural movement, jerky motion, inconsistent, artifacts, noise"</p>
+</div>
+</div>
+
+</div>
+
+<h2 id="integration-ecosystem">🔗 Integration Ecosystem</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px;">
+  <strong>🎨 ComfyUI</strong><br>
+  <div style="margin-top: 8px;">
+    <span style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px;">✅ Integrated</span>
+    <span style="background: #dbeafe; color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 12px;">EN/CN Docs</span>
+  </div>
+  <p style="margin: 8px 0 0 0; color: #1e40af; font-size: 14px;">Visual workflow, easy to use</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px;">
+  <strong>🤗 Diffusers</strong><br>
+  <div style="margin-top: 8px;">
+    <span style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px;">✅ Integrated</span>
+    <span style="background: #dbeafe; color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 12px;">I2V-A14B</span>
+  </div>
+  <p style="margin: 8px 0 0 0; color: #065f46; font-size: 14px;">Standardized API interface</p>
+</div>
+
+<div style="background: #fef3c7; border-left: 4px solid #d97706; padding: 16px; border-radius: 4px;">
+  <strong>🤖 ModelScope</strong><br>
+  <div style="margin-top: 8px;">
+    <span style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px;">✅ Official Support</span>
+    <span style="background: #dbeafe; color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 12px;">Native Integration</span>
+  </div>
+  <p style="margin: 8px 0 0 0; color: #9a3412; font-size: 14px;">Model hosting and distribution</p>
+</div>
+
+<div style="background: #f3e8ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px;">
+  <strong>🐙 GitHub</strong><br>
+  <div style="margin-top: 8px;">
+    <span style="background: #dcfce7; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px;">✅ Open Source</span>
+    <span style="background: #dbeafe; color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 12px;">Complete Code</span>
+  </div>
+  <p style="margin: 8px 0 0 0; color: #5b21b6; font-size: 14px;">Open source, community-driven</p>
+</div>
+
+</div>
+
+<h2 id="application-scenarios">🎯 Application Scenarios</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+
+<div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #2563eb;">🎬</div>
+<h4 style="margin: 0 0 8px 0; color: #1e40af;">Film Production</h4>
+<p style="margin: 0; color: #1e40af;">Cinematic-grade aesthetic quality, professional video production</p>
+</div>
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #059669;">🛍️</div>
+<h4 style="margin: 0 0 8px 0; color: #059669;">Commercial Marketing</h4>
+<p style="margin: 0; color: #065f46;">Product showcase animations, marketing video production</p>
+</div>
+
+<div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #ea580c;">🎨</div>
+<h4 style="margin: 0 0 8px 0; color: #ea580c;">Artistic Creation</h4>
+<p style="margin: 0; color: #9a3412;">Digital art animation, creative video generation</p>
+</div>
+
+<div style="background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px; border-radius: 4px; text-align: center;">
+<div style="font-size: 2.5em; margin-bottom: 12px; color: #7c3aed;">📱</div>
+<h4 style="margin: 0 0 8px 0; color: #7c3aed;">Social Media</h4>
+<p style="margin: 0; color: #5b21b6;">Short video production, social content creation</p>
+</div>
+
+</div>
+
+<h2 id="license-and-citation">📄 License and Citation</h2>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 16px 0;">
+
+### 📋 Open Source License
+
+<div style="background: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin: 16px 0; border-radius: 4px;">
+  <strong>📜 Apache 2.0 License</strong><br>
+  • Free to use and distribute<br>
+  • Commercial-friendly open source license<br>
+  • Complete usage rights granted<br>
+  • Must comply with relevant laws and regulations
+</div>
+
+### 📚 Academic Citation
+
+
+<pre><code class="language-bibtex">@article{wan2025,
+      title={Wan: Open and Advanced Large-Scale Video Generative Models}, 
+      author={Team Wan and Ang Wang and Baole Ai and Bin Wen and Chaojie Mao and Chen-Wei Xie and Di Chen and Feiwu Yu and Haiming Zhao and Jianxiao Yang and Jianyuan Zeng and Jiayu Wang and Jingfeng Zhang and Jingren Zhou and Jinkai Wang and Jixuan Chen and Kai Zhu and Kang Zhao and Keyu Yan and Lianghua Huang and Mengyang Feng and Ningyi Zhang and Pandeng Li and Pingyu Wu and Ruihang Chu and Ruili Feng and Shiwei Zhang and Siyang Sun and Tao Fang and Tianxing Wang and Tianyi Gui and Tingyu Weng and Tong Shen and Wei Lin and Wei Wang and Wei Wang and Wenmeng Zhou and Wente Wang and Wenting Shen and Wenyuan Yu and Xianzhong Shi and Xiaoming Huang and Xin Xu and Yan Kou and Yangyu Lv and Yifei Li and Yijing Liu and Yiming Wang and Yingya Zhang and Yitong Huang and Yong Li and You Wu and Yu Liu and Yulin Pan and Yun Zheng and Yuntao Hong and Yupeng Shi and Yutong Feng and Zeyinzi Jiang and Zhen Han and Zhi-Fan Wu and Ziyu Liu},
+      journal = {arXiv preprint arXiv:2503.20314},
+      year={2025}
+}
+</code></pre>
+
+
+</div>
+
+<div style="text-align: center; padding: 16px; background: #f8fafc; border-radius: 6px; margin-top: 24px;">
+  <p style="margin: 0; color: #64748b; font-size: 14px;">
+    🎬 <strong>Tongyi Wanxiang 2.2 Image-to-Video A14B</strong> | Open and Advanced Large-Scale Video Generation Model
+  </p>
+  <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 12px;">
+    © 2025 Tongyi Wanxiang Team | Apache 2.0 Open Source License | Turn Every Image into Amazing Video
+  </p>
+</div>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-11-25 12:05:08.383777+00:00
+  -->
+</body>
+</html>
