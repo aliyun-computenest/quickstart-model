@@ -10,7 +10,6 @@ Qwen3 嵌入模型系列是 Qwen 家族的最新专有模型，专门设计用�
 
 #### Python调用
 以下为 Python 示例代码： 其中${ApiKey}需要填写页面上的ApiKey；${ServerUrl}需要填写页面上的公网地址或内网地址，不需要带上/v1。
-
 ```python
 import json
 
