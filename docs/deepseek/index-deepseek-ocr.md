@@ -25,7 +25,7 @@ API 调用的基本结构如下：
 
 **参数说明：**
 - `${ServerIP}`：内网地址或公网地址中的 IP 地址
-- `${ApiKey}`：页面提供的 ApiKey
+- `${ApiKey}`：页面提供的 ApiKey 
 - `${ModelName}`：模型名称
 
 **图片格式支持：**
