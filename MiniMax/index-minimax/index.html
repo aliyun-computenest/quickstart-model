@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index minimax - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#_1">模型简介</a></li>
+              
+          
+              <li><a href="#_2">使用说明</a></li>
+              
+                  <li><a href="#api">API 调用方式</a></li>
+                  
+                      <li class="li-h3"><a href="#curl">Curl 命令调用</a></li>
+                  
+                      <li class="li-h3"><a href="#python-sdk">Python SDK 调用</a></li>
+                  
+              
+                  <li><a href="#web">Web 应用访问</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="_1">模型简介</h2>
+<p>MiniMax 大模型是由 MiniMax 公司研发的一系列先进的人工智能语言模型。MiniMax 模型在自然语言理解、文本生成、逻辑推理等方面表现出色，能够处理复杂的对话场景和多轮交互任务。</p>
+<p>MiniMax 大模型具有以下特点：</p>
+<ul>
+<li><strong>强大的语言理解能力</strong>：能够准确理解用户意图，处理复杂的语义表达</li>
+<li><strong>流畅的文本生成</strong>：生成自然流畅、逻辑清晰的文本内容</li>
+<li><strong>多场景适配</strong>：适用于客服对话、内容创作、智能助手等多种应用场景</li>
+<li><strong>持续优化</strong>：基于海量数据训练，模型能力持续迭代升级</li>
+</ul>
+<h2 id="_2">使用说明</h2>
+<p><strong>快速开始</strong></p>
+<p>在完成模型部署后，可以在计算巢服务实例概览页面看到模型的使用方式，里面提供了 API 调用示例、内网访问地址、公网访问地址、Web应用地址和 ApiKey。</p>
+<p><img alt="模型使用说明界面" src="../../image-cn/img-llm-use-desc.png" /></p>
+<h3 id="api">API 调用方式</h3>
+<h4 id="curl">Curl 命令调用</h4>
+<p><img alt="API调用示例" src="../../image-cn/img-api-call.png" /></p>
+<p><strong>参数说明</strong></p>
+<ul>
+<li><code>${ServerIP}</code>：内网地址或公网地址中的 IP 地址</li>
+<li><code>${ApiKey}</code>：页面提供的 ApiKey</li>
+<li><code>${ModelName}</code>：模型名称</li>
+</ul>
+<p>Curl 命令调用可以直接使用服务实例概览页面中的 API 调用示例，调用模型 API 的具体结构如下：</p>
+<pre><code class="language-bash">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+  -d '{
+    &quot;model&quot;: &quot;${ModelName}&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级&quot;
+      }
+    ]
+  }'
+</code></pre>
+<h4 id="python-sdk">Python SDK 调用</h4>
+<p><strong>配置说明</strong></p>
+<ul>
+<li><code>${ApiKey}</code>：填写页面上的 ApiKey</li>
+<li><code>${ServerUrl}</code>：填写页面上的公网地址或内网地址，需要带上 <code>/v1</code></li>
+</ul>
+<p>以下为 Python 示例代码：</p>
+<pre><code class="language-python">from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+print(model)
+
+def main():
+    stream = True
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;你好，介绍一下你自己，越详细越好。&quot;,
+                    }
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="web">Web 应用访问</h3>
+<ol>
+<li>在服务实例概览页面中，点击 Web 应用对应的链接。</li>
+</ol>
+<p><img alt="Web应用访问入口" src="../../image-cn/img-web.png" /></p>
+<ol>
+<li>在模型服务 Web 页面输入框中输入问题，即可与大模型进行对话。</li>
+</ol>
+<p><img alt="模型对话界面" src="../../image-cn/img-appflow.png" /></p>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2026-04-27 07:07:14.823545+00:00
+  -->
+</body>
+</html>

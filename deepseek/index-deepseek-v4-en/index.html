@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>Index deepseek v4 en - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="../../search/main.js"></script>
+  
+
+  
+
+  <script src="../../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#model-introduction">Model Introduction</a></li>
+              
+          
+              <li><a href="#user-guide">User Guide</a></li>
+              
+                  <li><a href="#api-call-methods">API Call Methods</a></li>
+                  
+                      <li class="li-h3"><a href="#curl-command">Curl Command</a></li>
+                  
+                      <li class="li-h3"><a href="#python-sdk-call">Python SDK Call</a></li>
+                  
+              
+                  <li><a href="#web-application-access">Web Application Access</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h2 id="model-introduction">Model Introduction</h2>
+<p>DeepSeek-V4 is a new generation of large language models developed and open-sourced by DeepSeek, marking the entry of large models into the era of universal million-token context. The V4 series introduces innovative architectural upgrades, leveraging core components such as Sparse MQA and Fused MoE Mega Kernel to achieve a leap in computational efficiency for ultra-long sequences, while reaching top-tier performance in Agent capabilities, world knowledge, and reasoning.</p>
+<p>DeepSeek-V4 is available in two versions: <strong>Pro</strong> and <strong>Flash</strong>:</p>
+<ul>
+<li><strong>DeepSeek-V4-Pro</strong>: 1.6T total parameters (49B activated), designed for high-quality reasoning and complex Agent scenarios, with performance on par with the world's top closed-source models</li>
+<li><strong>DeepSeek-V4-Flash</strong>: 284B total parameters (13B activated), optimized for speed and cost, ideal for real-time interaction and large-scale deployment</li>
+</ul>
+<p>DeepSeek-V4 large language model offers the following core features:</p>
+<ul>
+<li><strong>Million-token Ultra-long Context</strong>: Equipped with a 1M token context window by default, capable of processing entire novels, complete code repositories, or large document collections in a single pass, completely breaking the limitations of long-text processing scenarios</li>
+<li><strong>World-class Reasoning Performance</strong>: In benchmarks covering mathematics, STEM, and competitive coding, V4-Pro surpasses all publicly evaluated open-source models, reaching a level comparable to top-tier closed-source models</li>
+<li><strong>Powerful Agent Capabilities</strong>: As the Agentic Coding model used daily by DeepSeek's internal team, it offers coding and tool-calling capabilities superior to Sonnet 4.5 and approaching Opus 4.6 in non-thinking mode</li>
+<li><strong>Thinking Mode Switching</strong>: Supports free switching between thinking and non-thinking modes, balancing the needs of deep reasoning and rapid response scenarios</li>
+<li><strong>Structured Output and Function Calling</strong>: Natively supports JSON output, Function Calling, and other features, enabling seamless integration with various business systems and Agent frameworks</li>
+<li><strong>Innovative Architecture and Efficient Inference</strong>: Adopts Sparse MQA, Fused MoE Mega Kernel and other architectures, delivering significantly leading inference efficiency in long-context scenarios, with adaptation to domestic Ascend chips</li>
+</ul>
+<h2 id="user-guide">User Guide</h2>
+<p><strong>Quick Start</strong></p>
+<p>After the model deployment is complete, you can see how to use the model on the ComputeNest service instance overview page, which provides API call examples, private network address, public network address, web application address, and ApiKey.</p>
+<p><img alt="Model usage instructions" src="../../image-en/img-llm-use-desc.png" /></p>
+<h3 id="api-call-methods">API Call Methods</h3>
+<h4 id="curl-command">Curl Command</h4>
+<p><img alt="API call example" src="../../image-en/img-api-call.png" /></p>
+<p><strong>Parameter Description</strong></p>
+<ul>
+<li><code>${ServerIP}</code>: IP address from internal or public network address</li>
+<li><code>${ApiKey}</code>: ApiKey provided on the page</li>
+<li><code>${ModelName}</code>: Model name</li>
+</ul>
+<p>You can directly use the API call example on the service instance overview page. The specific structure of the model API call is as follows:</p>
+<pre><code class="language-bash">curl -X Post http://${ServerIP}:8000/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer ${ApiKey}&quot; \
+  -d '{
+    &quot;model&quot;: &quot;${ModelName}&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;给闺女写一份来自未来2035的信，同时告诉她要好好学习科技，做科技的主人，推动科技，经济发展；她现在是3年级&quot;
+      }
+    ]
+  }'
+</code></pre>
+<h4 id="python-sdk-call">Python SDK Call</h4>
+<p><strong>Configuration</strong></p>
+<ul>
+<li><code>${ApiKey}</code>: Fill in the ApiKey from the page</li>
+<li><code>${ServerUrl}</code>: Fill in the public or private network address from the page, with <code>/v1</code> appended</li>
+</ul>
+<p>Python example code:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+##### API 配置 #####
+openai_api_key = &quot;${ApiKey}&quot;
+openai_api_base = &quot;${ServerUrl}&quot;
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+models = client.models.list()
+model = models.data[0].id
+print(model)
+
+def main():
+    stream = True
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: [
+                    {
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;text&quot;: &quot;你好，介绍一下你自己，越详细越好。&quot;,
+                    }
+                ],
+            }
+        ],
+        model=model,
+        max_completion_tokens=1024,
+        stream=stream,
+    )
+
+    if stream:
+        for chunk in chat_completion:
+            print(chunk.choices[0].delta.content, end=&quot;&quot;)
+    else:
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="web-application-access">Web Application Access</h3>
+<ol>
+<li>On the service instance overview page, click the link for the web application.</li>
+</ol>
+<p><img alt="Web application access" src="../../image-en/img-web.png" /></p>
+<ol>
+<li>Enter your question in the model service web page input box to chat with the large model.</li>
+</ol>
+<p><img alt="Model chat interface" src="../../image-en/img-appflow.png" /></p>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2026-04-27 07:07:14.967887+00:00
+  -->
+</body>
+</html>
